@@ -10,7 +10,7 @@
     padding: 5px;
 }
 
-.columns--3--bs2 [class*="col-"] {
+.columns--3--bs2 [class*="span"] {
     float: left;
     width: calc(100% / 3);
 }
