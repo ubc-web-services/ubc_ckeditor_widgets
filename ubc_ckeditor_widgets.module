@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains ubc_ckeditor_widgets.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function ubc_ckeditor_widgets_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the ckeditor_entity_link module.
+    case 'help.page.ubc_ckeditor_widgets':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Adds UBC buttons to CKEditor.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+
+/**
+ * TODO - look into conditional loading - for now it's just anyone who can access content.
+ */
+function ubc_ckeditor_widgets_preprocess_page(&$variables) {
+  $variables['#attached']['library'][] = 'ubc_ckeditor_widgets/accordion';
+}

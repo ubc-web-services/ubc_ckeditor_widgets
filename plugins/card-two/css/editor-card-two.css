@@ -1,0 +1,58 @@
+.card--two * {
+    box-sizing: border-box;
+}
+
+.card--two {
+    position: relative;
+    margin: 10px;
+    background: #eee;
+    border: 1px dashed #ddd;
+}
+
+.card--two .flex-item {
+    float: left;
+    width: 50%;
+}
+
+.card--two .card__image-area,
+.card--two .card__content,
+.card--two .card__footer {
+    margin: 5px;
+    box-shadow: 0 1px 1px #ddd inset;
+    border: 1px solid #cccccc;
+    background: rgba(255, 255, 255, .5);
+    padding: 1em;
+}
+
+.card--two .flex-item .card__footer {
+    position: relative !important;
+}
+
+.card--two:before {
+    background: none repeat scroll 0 0 #007eab;
+    color: #fff;
+    content: "Two Cards";
+    opacity: 0.65;
+    line-height: 1em;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: table;
+    padding: 2px 4px;
+    z-index: 9999;
+    border-bottom-left-radius: 3px;
+}
+
+.card--two:after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+
+
+/* fix for resized images */
+
+.card--two img {
+    width: 100%;
+    height: auto;
+}
