@@ -1,6 +1,9 @@
 # ubc_ckeditor_widgets.libraries.yml
 
-accordion:
+widgets:
+  css:
+    layout:
+      css/ubc.ckeditor.widgets.css: {}
   js:
     js/ubc_ckeditor_widgets.js: {}
   dependencies:

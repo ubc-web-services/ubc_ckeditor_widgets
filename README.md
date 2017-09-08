@@ -1,2 +1,2 @@
 # ubc_ckeditor_widgets
-Adds some common widgets to CKeditor
+A Drupal 8 module to add some common widgets to CKeditor

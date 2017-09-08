@@ -31,5 +31,5 @@ function ubc_ckeditor_widgets_help($route_name, RouteMatchInterface $route_match
  * TODO - look into conditional loading - for now it's just anyone who can access content.
  */
 function ubc_ckeditor_widgets_preprocess_page(&$variables) {
-  $variables['#attached']['library'][] = 'ubc_ckeditor_widgets/accordion';
+  $variables['#attached']['library'][] = 'ubc_ckeditor_widgets/widgets';
 }
