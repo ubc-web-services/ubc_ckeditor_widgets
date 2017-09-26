@@ -1,0 +1,35 @@
+.unit-icon * {
+    box-sizing: border-box;
+}
+
+.unit-icon {
+    margin: 5px;
+    box-shadow: 0 1px 1px #ddd inset;
+    border: 1px solid #cccccc;
+    background: rgba(255, 255, 255, .5);
+    padding: 1em;
+}
+
+.unit-icon--size-xs {
+    font-size: .75em;
+}
+
+.unit-icon--size-sm {
+    font-size: .875em;
+}
+
+.unit-icon--size-lg {
+    font-size: 2em;
+}
+
+.unit-icon--size-xl {
+    font-size: 3em;
+}
+
+.unit-icon--align-right {
+    text-align: right;
+}
+
+.unit-icon--align-center {
+    text-align: center;
+}
