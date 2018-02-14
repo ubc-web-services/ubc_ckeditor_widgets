@@ -15,8 +15,8 @@ function ubc_ckeditor_widgets_help($route_name, RouteMatchInterface $route_match
     // Main module help for the ckeditor_entity_link module.
     case 'help.page.ubc_ckeditor_widgets':
       $output = '';
-      $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('Adds UBC buttons to CKEditor.') . '</p>';
+      $output .= '<h3>' . t('About UBC CKEditor Widgets') . '</h3>';
+      $output .= '<p>' . t('This module adds UBC buttons to the CKEditor wysiwyg. These buttons allow the insertion of prebuilt html markup, styled to be in keeping with the UBC CLF (common look and feel) design specifications.') . '</p>';
       return $output;
 
     default:
@@ -25,10 +25,6 @@ function ubc_ckeditor_widgets_help($route_name, RouteMatchInterface $route_match
 
 /**
  * Implements hook_preprocess_page().
- */
-
-/**
- * TODO - look into conditional loading - for now it's just anyone who can access content.
  */
 function ubc_ckeditor_widgets_preprocess_page(&$variables) {
   $variables['#attached']['library'][] = 'ubc_ckeditor_widgets/widgets';
