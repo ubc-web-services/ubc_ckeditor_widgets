@@ -1,6 +1,6 @@
 name: UBC CKEditor Widgets
 type: module
-description: This plugin adds bootstrap buttons feature to the editor.
+description: This plugin adds widget buttons feature to the editor.
 # core: 8.x
 package: UBC Web Services
 dependencies:
