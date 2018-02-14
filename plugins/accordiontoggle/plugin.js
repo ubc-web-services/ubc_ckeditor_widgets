@@ -18,7 +18,7 @@
                         selector: '.expandcollapse'
                     }
                 },
-                allowedContent: 'button(!widget-expandcollapse)[!data-state]; span(!fa-angle-down,!fa)',
+                allowedContent: 'button(!widget-expandcollapse)[!data-state]',
                 upcast: function(element) {
                     return element.name == 'button' && element.hasClass('widget-expandcollapse');
                 }
