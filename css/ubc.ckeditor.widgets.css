@@ -64,29 +64,33 @@
     width: 100%
 }
 
-.flex-1 {
-    -webkit-box-flex: 1;
-    flex: 1;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  
-  .flex-2 {
-    -webkit-box-flex: 2;
-    flex: 2;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
 .flex-item .card {
     height: 100%;
     position: relative
 }
 
+.flex-1,
+.flex-2 {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
 @media (min-width:768px) {
+    .flex-1 {
+        -webkit-box-flex: 1;
+        flex: 1;
+    }
+      
+    .flex-2 {
+        -webkit-box-flex: 2;
+        flex: 2;
+    }
+
     .card--two .flex-item {
         width: 50%
     }
+
     .card--three .flex-item {
         width: calc(100% / 3)
     }
