@@ -12,7 +12,7 @@
             editor.addContentsCss(this.path + 'css/editor-accordiontoggle.css');
             // Register the widget.
             editor.widgets.add('accordiontoggle', {
-                template: '<button class="widget-expandcollapse" data-state="0"><span class="fa fa-angle-down">&nbsp;</span> Open All Accordions</button>',
+                template: '<button class="widget-expandcollapse" data-state="0">Open All Accordions</button>',
                 editables: {
                     content: {
                         selector: '.expandcollapse'
