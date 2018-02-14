@@ -27,7 +27,7 @@ class Clfbutton extends CKEditorPluginBase {
    * {@inheritdoc}
    */
   public function getLibraries(Editor $editor) {
-    return array();
+    return [];
   }
 
   /**
@@ -41,19 +41,19 @@ class Clfbutton extends CKEditorPluginBase {
    * {@inheritdoc}
    */
   public function getButtons() {
-    return array(
-      'clfbutton' => array(
+    return [
+      'clfbutton' => [
         'label' => t('CLF Button'),
         'image' => drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/clfbutton/icons/clfbutton.png',
-      ),
-    );
+      ],
+    ];
   }
 
   /**
    * {@inheritdoc}
    */
   public function getConfig(Editor $editor) {
-    return array();
+    return [];
   }
 
 }

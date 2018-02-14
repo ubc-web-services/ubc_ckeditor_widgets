@@ -20,14 +20,14 @@ class BS2_3columns extends CKEditorPluginBase {
    * Implements \Drupal\ckeditor\Plugin\CKEditorPluginInterface::getFile().
    */
   public function getFile() {
-    return drupal_get_path('module', 'ubc_ckeditor_widgets') .  '/plugins/bs2-3columns/plugin.js';
+    return drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/bs2-3columns/plugin.js';
   }
 
   /**
    * {@inheritdoc}
    */
   public function getLibraries(Editor $editor) {
-    return array();
+    return [];
   }
 
   /**
@@ -41,19 +41,19 @@ class BS2_3columns extends CKEditorPluginBase {
    * {@inheritdoc}
    */
   public function getButtons() {
-    return array(
-      'bs2-3columns' => array(
+    return [
+      'bs2-3columns' => [
         'label' => t('Three Columns (Bootstrap 2)'),
         'image' => drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/bs2-3columns/icons/bs2-3columns.png',
-      ),
-    );
+      ],
+    ];
   }
 
   /**
    * {@inheritdoc}
    */
   public function getConfig(Editor $editor) {
-    return array();
+    return [];
   }
 
 }

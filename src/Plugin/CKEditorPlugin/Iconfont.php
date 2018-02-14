@@ -20,14 +20,14 @@ class Iconfont extends CKEditorPluginBase {
    * Implements \Drupal\ckeditor\Plugin\CKEditorPluginInterface::getFile().
    */
   public function getFile() {
-    return drupal_get_path('module', 'ubc_ckeditor_widgets') .  '/plugins/iconfont/plugin.js';
+    return drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/iconfont/plugin.js';
   }
 
   /**
    * {@inheritdoc}
    */
   public function getLibraries(Editor $editor) {
-    return array();
+    return [];
   }
 
   /**
@@ -41,19 +41,19 @@ class Iconfont extends CKEditorPluginBase {
    * {@inheritdoc}
    */
   public function getButtons() {
-    return array(
-      'iconfont' => array(
+    return [
+      'iconfont' => [
         'label' => t('Icon Font'),
         'image' => drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/iconfont/icons/iconfont.png',
-      ),
-    );
+      ],
+    ];
   }
 
   /**
    * {@inheritdoc}
    */
   public function getConfig(Editor $editor) {
-    return array();
+    return [];
   }
 
 }
