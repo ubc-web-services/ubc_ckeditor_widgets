@@ -69,6 +69,11 @@
     position: relative
 }
 
+.flex-1,
+.flex-2 {
+    width: 100%;
+}
+
 @media (min-width:768px) {
     .flex-1 {
         -webkit-box-flex: 1;
@@ -87,7 +92,7 @@
     .card--two .flex-item {
         width: 50%
     }
-    
+
     .card--three .flex-item {
         width: calc(100% / 3)
     }
