@@ -16,7 +16,7 @@
       });
 
       editor.widgets.add('iconfont', {
-        allowedContent: 'div(!unit-icon,unit-icon-*,fa,fa-*,align-*)',
+        allowedContent: 'div(!unit-icon,unit-icon-*,fa,fa-*,align-*)[*]',
 
         requiredContent: 'div(unit-icon)',
         editables: {
