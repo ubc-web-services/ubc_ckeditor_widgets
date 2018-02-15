@@ -1,7 +1,7 @@
 (function($, Drupal) {
     Drupal.behaviors.ubcCkeditorWidgets = {
         attach: function(context, settings) {
-            // Control Accordion Open / Close 
+            // Control Accordion Open / Close
             $('.accordion', context).once('accordion_widget').each(function() {
                 $(this).find('.accordion__tab').first().click(function(e) {
                     e.preventDefault();
@@ -16,7 +16,6 @@
                     e.preventDefault();
                     var newstate = $(this).attr('data-state') ^ 1,
                         text = newstate ? "Close" : "Open";
-                    icon = newstate ? "up" : "down";
 
                     // if state=0, show all the accordion content on the page
                     if ($(this).attr('data-state') === "0") {
@@ -31,7 +30,7 @@
                         $('.accordion').removeClass('accordion--open').addClass('accordion--closed');
                     }
                     // toggle expand collapse text
-                    $(this).html('<span class="fa fa-angle-' + icon + '">&nbsp;</span>' + text + ' All Accordions');
+                    $(this).html( text + ' All Accordions');
                     // update the state on the expandcollapse trigger
                     $(this).attr('data-state', newstate);
                 });

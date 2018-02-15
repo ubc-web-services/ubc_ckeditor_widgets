@@ -52,12 +52,6 @@
 
 .flex-item {
   box-sizing: border-box;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding-left: 15px;
-  padding-right: 15px;
-  width: 100%;
 }
 
 .flex-item .card {
@@ -65,6 +59,7 @@
   position: relative;
 }
 
+.flex-item,
 .flex-1,
 .flex-2 {
   width: 100%;
@@ -73,6 +68,7 @@
 }
 
 @media (min-width:768px) {
+  .flex-item,
   .flex-1 {
     -webkit-box-flex: 1;
     flex: 1;
@@ -82,17 +78,13 @@
     -webkit-box-flex: 2;
     flex: 2;
   }
-
-  .card--two .flex-item {
-    width: 50%;
-  }
-
-  .card--three .flex-item {
-    width: calc(100% / 3);
-  }
 }
 
 /* Accordions */
 .accordion--closed .accordion__content {
   display: none;
+}
+
+.unit-icon {
+  display: inline;
 }
