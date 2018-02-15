@@ -6,21 +6,21 @@ use Drupal\editor\Entity\Editor;
 use Drupal\ckeditor\CKEditorPluginBase;
 
 /**
- * Defines the "bs3-2columns-1-2" plugin.
+ * Defines the "bs2-2columns" plugin.
  *
  * @CKEditorPlugin(
- *   id = "bs3-2columns-1-2",
- *   label = @Translation("CKEditor Two Columns"),
+ *   id = "bs2-2columns",
+ *   label = @Translation("CKEditor Two Columns (Bootstrap 2)"),
  *   module = "ubc_ckeditor_widgets"
  * )
  */
-class BS3_2columns_1_2 extends CKEditorPluginBase {
+class BS2TwoColumns extends CKEditorPluginBase {
 
   /**
    * Implements \Drupal\ckeditor\Plugin\CKEditorPluginInterface::getFile().
    */
   public function getFile() {
-    return drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/bs3-2columns-1-2/plugin.js';
+    return drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/bs2-2columns/plugin.js';
   }
 
   /**
@@ -42,9 +42,9 @@ class BS3_2columns_1_2 extends CKEditorPluginBase {
    */
   public function getButtons() {
     return [
-      'bs3-2columns-1-2' => [
-        'label' => t('Two Columns: 1/3 2/3 (Bootstrap 3)'),
-        'image' => drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/bs3-2columns-1-2/icons/bs3-2columns-1-2.png',
+      'bs2-2columns' => [
+        'label' => t('Two Columns: 1/2 1/2 (Bootstrap 2)'),
+        'image' => drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/bs2-2columns/icons/bs2-2columns.png',
       ],
     ];
   }

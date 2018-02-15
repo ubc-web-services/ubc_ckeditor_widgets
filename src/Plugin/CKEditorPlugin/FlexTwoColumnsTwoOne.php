@@ -6,21 +6,21 @@ use Drupal\editor\Entity\Editor;
 use Drupal\ckeditor\CKEditorPluginBase;
 
 /**
- * Defines the "card-three" plugin.
+ * Defines the "flex-2columns-2-1" plugin.
  *
  * @CKEditorPlugin(
- *   id = "card-three",
- *   label = @Translation("Three Cards"),
+ *   id = "flex-2columns-2-1",
+ *   label = @Translation("CKEditor Three Columns"),
  *   module = "ubc_ckeditor_widgets"
  * )
  */
-class Card_three extends CKEditorPluginBase {
+class FlexTwoColumnsTwoOne extends CKEditorPluginBase {
 
   /**
    * Implements \Drupal\ckeditor\Plugin\CKEditorPluginInterface::getFile().
    */
   public function getFile() {
-    return drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/card-three/plugin.js';
+    return drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/flex-2columns-2-1/plugin.js';
   }
 
   /**
@@ -42,9 +42,9 @@ class Card_three extends CKEditorPluginBase {
    */
   public function getButtons() {
     return [
-      'card-three' => [
-        'label' => t('Three Cards'),
-        'image' => drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/card-three/icons/card-three.png',
+      'flex-2columns-2-1' => [
+        'label' => t('Two Columns 2/3 1/3 (Flexbox)'),
+        'image' => drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/flex-2columns-2-1/icons/flex-2columns-2-1.png',
       ],
     ];
   }

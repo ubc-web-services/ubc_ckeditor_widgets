@@ -14,7 +14,7 @@ use Drupal\ckeditor\CKEditorPluginBase;
  *   module = "ubc_ckeditor_widgets"
  * )
  */
-class Clfbutton extends CKEditorPluginBase {
+class ClfButton extends CKEditorPluginBase {
 
   /**
    * Implements \Drupal\ckeditor\Plugin\CKEditorPluginInterface::getFile().

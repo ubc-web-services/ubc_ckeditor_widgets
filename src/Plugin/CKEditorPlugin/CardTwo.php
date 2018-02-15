@@ -6,21 +6,21 @@ use Drupal\editor\Entity\Editor;
 use Drupal\ckeditor\CKEditorPluginBase;
 
 /**
- * Defines the "bs3-2columns-2-1" plugin.
+ * Defines the "card-two" plugin.
  *
  * @CKEditorPlugin(
- *   id = "bs3-2columns-2-1",
- *   label = @Translation("CKEditor Two Columns: 2/3 1/3"),
+ *   id = "card-two",
+ *   label = @Translation("Two Cards"),
  *   module = "ubc_ckeditor_widgets"
  * )
  */
-class BS3_2columns_2_1 extends CKEditorPluginBase {
+class CardTwo extends CKEditorPluginBase {
 
   /**
    * Implements \Drupal\ckeditor\Plugin\CKEditorPluginInterface::getFile().
    */
   public function getFile() {
-    return drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/bs3-2columns-2-1/plugin.js';
+    return drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/card-two/plugin.js';
   }
 
   /**
@@ -42,9 +42,9 @@ class BS3_2columns_2_1 extends CKEditorPluginBase {
    */
   public function getButtons() {
     return [
-      'bs3-2columns-2-1' => [
-        'label' => t('Two Columns: 2/3 1/3 (Bootstrap 3)'),
-        'image' => drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/bs3-2columns-2-1/icons/bs3-2columns-2-1.png',
+      'card-two' => [
+        'label' => t('Two Cards'),
+        'image' => drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/card-two/icons/card-two.png',
       ],
     ];
   }
