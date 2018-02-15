@@ -1,11 +1,7 @@
 @font-face {
   font-family: 'ubc_itapsc';
   src: url('../fonts/ubc_itapsc.eot?4343587');
-  src: url('../fonts/ubc_itapsc.eot?4343587#iefix') format('embedded-opentype'),
-  url('../fonts/ubc_itapsc.woff2?4343587') format('woff2'),
-  url('../fonts/ubc_itapsc.woff?4343587') format('woff'),
-  url('../fonts/ubc_itapsc.ttf?4343587') format('truetype'),
-  url('../fonts/ubc_itapsc.svg?4343587#ubc_itapsc') format('svg');
+  src: url('../fonts/ubc_itapsc.eot?4343587#iefix') format('embedded-opentype'), url('../fonts/ubc_itapsc.woff2?4343587') format('woff2'), url('../fonts/ubc_itapsc.woff?4343587') format('woff'), url('../fonts/ubc_itapsc.ttf?4343587') format('truetype'), url('../fonts/ubc_itapsc.svg?4343587#ubc_itapsc') format('svg');
   font-weight: normal;
   font-style: normal;
 }

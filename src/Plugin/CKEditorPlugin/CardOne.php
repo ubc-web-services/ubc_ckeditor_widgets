@@ -6,21 +6,21 @@ use Drupal\editor\Entity\Editor;
 use Drupal\ckeditor\CKEditorPluginBase;
 
 /**
- * Defines the "flex-3columns" plugin.
+ * Defines the "card-one" plugin.
  *
  * @CKEditorPlugin(
- *   id = "flex-3columns",
- *   label = @Translation("CKEditor Three Columns"),
+ *   id = "card-one",
+ *   label = @Translation("One Card"),
  *   module = "ubc_ckeditor_widgets"
  * )
  */
-class Flex_3columns extends CKEditorPluginBase {
+class CardOne extends CKEditorPluginBase {
 
   /**
    * Implements \Drupal\ckeditor\Plugin\CKEditorPluginInterface::getFile().
    */
   public function getFile() {
-    return drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/flex-3columns/plugin.js';
+    return drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/card-one/plugin.js';
   }
 
   /**
@@ -42,9 +42,9 @@ class Flex_3columns extends CKEditorPluginBase {
    */
   public function getButtons() {
     return [
-      'flex-3columns' => [
-        'label' => t('Three Columns (Flexbox)'),
-        'image' => drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/flex-3columns/icons/flex-3columns.png',
+      'card-one' => [
+        'label' => t('One Card'),
+        'image' => drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/card-one/icons/card-one.png',
       ],
     ];
   }

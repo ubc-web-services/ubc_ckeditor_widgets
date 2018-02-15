@@ -6,21 +6,21 @@ use Drupal\editor\Entity\Editor;
 use Drupal\ckeditor\CKEditorPluginBase;
 
 /**
- * Defines the "flex-2columns-2-1" plugin.
+ * Defines the "bs2-3columns" plugin.
  *
  * @CKEditorPlugin(
- *   id = "flex-2columns-2-1",
- *   label = @Translation("CKEditor Three Columns"),
+ *   id = "bs2-3columns",
+ *   label = @Translation("CKEditor Three Columns (Bootstrap 2)"),
  *   module = "ubc_ckeditor_widgets"
  * )
  */
-class Flex_2columns_2_1 extends CKEditorPluginBase {
+class BS2ThreeColumns extends CKEditorPluginBase {
 
   /**
    * Implements \Drupal\ckeditor\Plugin\CKEditorPluginInterface::getFile().
    */
   public function getFile() {
-    return drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/flex-2columns-2-1/plugin.js';
+    return drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/bs2-3columns/plugin.js';
   }
 
   /**
@@ -42,9 +42,9 @@ class Flex_2columns_2_1 extends CKEditorPluginBase {
    */
   public function getButtons() {
     return [
-      'flex-2columns-2-1' => [
-        'label' => t('Two Columns 2/3 1/3 (Flexbox)'),
-        'image' => drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/flex-2columns-2-1/icons/flex-2columns-2-1.png',
+      'bs2-3columns' => [
+        'label' => t('Three Columns (Bootstrap 2)'),
+        'image' => drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/bs2-3columns/icons/bs2-3columns.png',
       ],
     ];
   }

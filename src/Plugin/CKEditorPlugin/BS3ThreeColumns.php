@@ -6,21 +6,21 @@ use Drupal\editor\Entity\Editor;
 use Drupal\ckeditor\CKEditorPluginBase;
 
 /**
- * Defines the "fontawesome-icon" plugin.
+ * Defines the "bs3-3columns" plugin.
  *
  * @CKEditorPlugin(
- *   id = "fontawesome-icon",
- *   label = @Translation("Fontawesome Icon"),
+ *   id = "bs3-3columns",
+ *   label = @Translation("CKEditor Three Columns"),
  *   module = "ubc_ckeditor_widgets"
  * )
  */
-class Fontawesome_icon extends CKEditorPluginBase {
+class BS3ThreeColumns extends CKEditorPluginBase {
 
   /**
    * Implements \Drupal\ckeditor\Plugin\CKEditorPluginInterface::getFile().
    */
   public function getFile() {
-    return drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/fontawesome-icon/plugin.js';
+    return drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/bs3-3columns/plugin.js';
   }
 
   /**
@@ -42,9 +42,9 @@ class Fontawesome_icon extends CKEditorPluginBase {
    */
   public function getButtons() {
     return [
-      'fontawesome-icon' => [
-        'label' => t('Fontawesome Icon'),
-        'image' => drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/fontawesome-icon/icons/fontawesome-icon.png',
+      'bs3-3columns' => [
+        'label' => t('Three Columns (Bootstrap 3)'),
+        'image' => drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/bs3-3columns/icons/bs3-3columns.png',
       ],
     ];
   }

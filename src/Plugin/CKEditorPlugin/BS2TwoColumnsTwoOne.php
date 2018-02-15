@@ -14,7 +14,7 @@ use Drupal\ckeditor\CKEditorPluginBase;
  *   module = "ubc_ckeditor_widgets"
  * )
  */
-class BS2_2columns_2_1 extends CKEditorPluginBase {
+class BS2TwoColumnsTwoOne extends CKEditorPluginBase {
 
   /**
    * Implements \Drupal\ckeditor\Plugin\CKEditorPluginInterface::getFile().
