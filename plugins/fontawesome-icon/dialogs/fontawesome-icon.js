@@ -5,7 +5,12 @@ CKEDITOR.dialog.add('fontawesome-icon', function (editor) {
     minHeight: 100,
     contents: [{
       id: 'info',
-      elements: [{
+      elements: [
+      {
+        type: 'html',
+        html: '<style>.cke_dialog_ui_input_select{ width: 100%; }</style>'
+      },
+      {
           id: 'icon',
           type: 'select',
           label: 'Icon',

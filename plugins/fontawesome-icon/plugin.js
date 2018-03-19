@@ -1,14 +1,20 @@
 'use strict';
 (function () {
-
   CKEDITOR.plugins.add('fontawesome-icon', {
     requires: 'widget',
     icons: 'fontawesome-icon',
     init: function (editor) {
+      //CKEDITOR.scriptLoader.load(this.path + 'resources/select2/select2.full.min.js');
       // Register the editing dialog.
       CKEDITOR.dialog.add('fontawesome-icon', this.path + 'dialogs/fontawesome-icon.js');
+      //editor.on( 'dialogShow', function( dialogShowEvent ) {
+        //jQuery('.cke_dialog_ui_input_select').select2({
+          //placeholder: 'Select an option'
+        //});
+      //});
       editor.addContentsCss(this.path + 'css/contents.css');
-      editor.addContentsCss(this.path + 'fontawesome/css/font-awesome.min.css');
+      //editor.addContentsCss(this.path + 'resources/select2/select2.full.min.css');
+      editor.addContentsCss('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
       editor.ui.addButton('fontawesome-icon', {
         label: 'Insert a fontawesome icon',
         icon: this.path + 'icons/fontawesome-icon.png',
@@ -34,6 +40,7 @@
         },
 
         init: function () {
+
           if (this.element.hasClass('fa-lg'))
             this.setData('size', 'lg');
           if (this.element.hasClass('fa-2x'))
