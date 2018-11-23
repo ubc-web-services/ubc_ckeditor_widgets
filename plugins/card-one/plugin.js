@@ -26,7 +26,7 @@
                 editables: {
                     imagearea1: {
                         selector: '.first-image',
-                        allowedContent: 'img[!src,class,data-*,alt,title]{width,height};source[data-*,srcset];media;picture[data-*];a[href,class,target,data-*](*)'
+                        allowedContent: 'img[!src,class,data-*,alt,title]{width,height};source[data-*,srcset];media;picture[data-*];a[href,class,target,data-*](*);drupal-entity[data-*'
                     },
                     content1: {
                         selector: '.first-content',
