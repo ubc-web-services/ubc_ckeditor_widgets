@@ -1,45 +1,7 @@
 /* Add basic layout and state styles */
 
-/* Columns */
-.columns--2.row,
-.columns--2-2-1.row,
-.columns--2-1-2.row,
-.columns--3.row {
-  margin-left: -15px;
-  margin-right: -15px;
-}
 
-.columns--2.row:after,
-.columns--2-2-1.row:after,
-.columns--2-1-2.row:after,
-.columns--3.row:after {
-  content: " ";
-  display: table;
-  clear: both;
-}
-
-.col-md-4,
-.col-md-6,
-.col-md-8 {
-  box-sizing: border-box;
-  padding-left: 15px;
-  padding-right: 15px;
-  float: left;
-}
-
-@media (min-width:768px) {
-  .col-md-4 {
-    width: calc(100% / 3);
-  }
-  .col-md-6 {
-    width: 50%;
-  }
-  .col-md-8 {
-    width: calc(100% / 3 * 2);
-  }
-}
-
-/* Cards */
+/* Cards & Grid*/
 .flex-grid {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -81,7 +43,7 @@
 }
 
 /* Accordions */
-.accordion--closed .accordion__content {
+.accordion__content {
   display: none;
 }
 
