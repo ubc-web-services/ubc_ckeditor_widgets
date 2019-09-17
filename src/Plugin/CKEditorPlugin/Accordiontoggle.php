@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\ubc_ckeditor_widgets\Plugin\CKEditorPlugin;
+namespace Drupal\ubc_clf_widgets\Plugin\CKEditorPlugin;
 
 use Drupal\editor\Entity\Editor;
 use Drupal\ckeditor\CKEditorPluginBase;
@@ -11,7 +11,7 @@ use Drupal\ckeditor\CKEditorPluginBase;
  * @CKEditorPlugin(
  *   id = "accordiontoggle",
  *   label = @Translation("CKEditor accordion toggle"),
- *   module = "ubc_ckeditor_widgets"
+ *   module = "ubc_clf_widgets"
  * )
  */
 class AccordionToggle extends CKEditorPluginBase {
@@ -20,7 +20,7 @@ class AccordionToggle extends CKEditorPluginBase {
    * Implements \Drupal\ckeditor\Plugin\CKEditorPluginInterface::getFile().
    */
   public function getFile() {
-    return drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/accordiontoggle/plugin.js';
+    return drupal_get_path('module', 'ubc_clf_widgets') . '/plugins/accordiontoggle/plugin.js';
   }
 
   /**
@@ -44,7 +44,7 @@ class AccordionToggle extends CKEditorPluginBase {
     return [
       'accordiontoggle' => [
         'label' => t('Accordion Toggle'),
-        'image' => drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/accordiontoggle/icons/accordiontoggle.png',
+        'image' => drupal_get_path('module', 'ubc_clf_widgets') . '/plugins/accordiontoggle/icons/accordiontoggle.png',
       ],
     ];
   }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\ubc_ckeditor_widgets\Plugin\CKEditorPlugin;
+namespace Drupal\ubc_clf_widgets\Plugin\CKEditorPlugin;
 
 use Drupal\editor\Entity\Editor;
 use Drupal\ckeditor\CKEditorPluginBase;
@@ -11,7 +11,7 @@ use Drupal\ckeditor\CKEditorPluginBase;
  * @CKEditorPlugin(
  *   id = "accordion",
  *   label = @Translation("CKEditor accordion"),
- *   module = "ubc_ckeditor_widgets"
+ *   module = "ubc_clf_widgets"
  * )
  */
 class Accordion extends CKEditorPluginBase {
@@ -20,7 +20,7 @@ class Accordion extends CKEditorPluginBase {
    * Implements \Drupal\ckeditor\Plugin\CKEditorPluginInterface::getFile().
    */
   public function getFile() {
-    return drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/accordion/plugin.js';
+    return drupal_get_path('module', 'ubc_clf_widgets') . '/plugins/accordion/plugin.js';
   }
 
   /**
@@ -44,7 +44,7 @@ class Accordion extends CKEditorPluginBase {
     return [
       'accordion' => [
         'label' => t('Accordion'),
-        'image' => drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/accordion/icons/accordion.png',
+        'image' => drupal_get_path('module', 'ubc_clf_widgets') . '/plugins/accordion/icons/accordion.png',
       ],
     ];
   }

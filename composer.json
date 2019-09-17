@@ -1,5 +1,5 @@
 {
-  "name": "ubc-web-services/ubc_ckeditor_widgets",
+  "name": "ubc-web-services/ubc_clf_widgets",
   "description": "A Drupal 8 module to add some common widgets to CKeditor",
   "type": "drupal-module",
   "authors": [{

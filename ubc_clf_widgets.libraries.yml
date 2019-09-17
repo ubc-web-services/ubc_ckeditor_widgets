@@ -3,9 +3,9 @@
 widgets:
   css:
     layout:
-      css/ubc.ckeditor.widgets.css: {}
+      css/ubc.clf.widgets.css: {}
   js:
-    js/ubc_ckeditor_widgets.js: {}
+    js/ubc_clf_widgets.js: {}
   dependencies:
     - core/jquery
     - core/jquery.once

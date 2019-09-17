@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains ubc_ckeditor_widgets.module.
+ * Contains ubc_clf_widgets.module.
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
@@ -10,10 +10,10 @@ use Drupal\Core\Routing\RouteMatchInterface;
 /**
  * Implements hook_help().
  */
-function ubc_ckeditor_widgets_help($route_name, RouteMatchInterface $route_match) {
+function ubc_clf_widgets_help($route_name, RouteMatchInterface $route_match) {
   switch ($route_name) {
     // Main module help for the ckeditor_entity_link module.
-    case 'help.page.ubc_ckeditor_widgets':
+    case 'help.page.ubc_clf_widgets':
       $output = '';
       $output .= '<h3>' . t('About UBC CKEditor Widgets') . '</h3>';
       $output .= '<p>' . t('This module adds UBC buttons to the CKEditor wysiwyg. These buttons allow the insertion of prebuilt html markup, styled to be in keeping with the UBC CLF (common look and feel) design specifications.') . '</p>';
@@ -26,6 +26,6 @@ function ubc_ckeditor_widgets_help($route_name, RouteMatchInterface $route_match
 /**
  * Implements hook_preprocess_page().
  */
-function ubc_ckeditor_widgets_preprocess_page(&$variables) {
-  $variables['#attached']['library'][] = 'ubc_ckeditor_widgets/widgets';
+function ubc_clf_widgets_preprocess_page(&$variables) {
+  $variables['#attached']['library'][] = 'ubc_clf_widgets/widgets';
 }
