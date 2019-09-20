@@ -1,52 +1,45 @@
 /* Add basic layout and state styles */
 
-
-/* Cards & Grid*/
-.flex-grid {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  margin-left: -15px;
-  margin-right: -15px;
-}
-
-.flex-item {
-  box-sizing: border-box;
-}
-
+/* Cards */
 .flex-item .card {
   height: 100%;
   position: relative;
 }
 
-.flex-item,
-.flex-1,
-.flex-2 {
-  width: 100%;
-  padding-left: 15px;
-  padding-right: 15px;
-}
+@media (min-width: 960px) {
 
-@media (min-width:768px) {
-  .flex-item,
-  .flex-1 {
-    -webkit-box-flex: 1;
-    flex: 1;
+  .md--flex-grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -1rem;
+    margin-left: -1rem;
   }
 
-  .flex-2 {
-    -webkit-box-flex: 2;
+  .md--flex-grid .md--flex-1 {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .md--flex-grid .md--flex-2 {
+    -ms-flex: 2;
     flex: 2;
+    padding-right: 1rem;
+    padding-left: 1rem;
   }
-}
 
-/* Accordions */
-.accordion__content {
-  display: none;
 }
 
 .unit-icon {
   display: inline;
+}
+
+.widget-svgicon {
+  display: inline-block;
+  margin-right: auto;
+  margin-left: auto;
+  -ms-grid-row-align: center;
+  align-self: center;
 }

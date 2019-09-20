@@ -1,0 +1,12 @@
+# ubc_ckeditor_widgets.libraries.yml
+
+widgets:
+  css:
+    layout:
+      css/ubc.ckeditor.widgets.css: {}
+  js:
+    js/ubc_ckeditor_widgets.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal

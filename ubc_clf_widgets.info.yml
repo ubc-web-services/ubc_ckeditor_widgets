@@ -1,9 +1,0 @@
-name: UBC CLF Widgets
-type: module
-description: This plugin adds widget buttons feature to the editor with CLF 8 styles.
-package: UBC Web Services
-dependencies:
-  - ckeditor
-
-version: '8.x-1.0'
-core: '8.x'

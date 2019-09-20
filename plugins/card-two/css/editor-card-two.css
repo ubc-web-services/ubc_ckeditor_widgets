@@ -9,26 +9,7 @@
   border: 1px dashed #ddd;
 }
 
-.card--two .flex-item {
-  float: left;
-  width: 50%;
-}
-
-.card--two .card__image-area,
-.card--two .card__content,
-.card--two .card__footer {
-  margin: 5px;
-  box-shadow: 0 1px 1px #ddd inset;
-  border: 1px solid #cccccc;
-  background: rgba(255, 255, 255, .5);
-  padding: 1em;
-}
-
-.card--two .flex-item .card__footer {
-  position: relative !important;
-}
-
-.card--two:before {
+.card--two::before {
   background: none repeat scroll 0 0 #007eab;
   color: #fff;
   content: "Two Cards";
@@ -43,12 +24,21 @@
   border-bottom-left-radius: 3px;
 }
 
-.card--two:after {
+.card--two::after {
   content: " ";
   display: table;
   clear: both;
 }
 
+.card--two .ubc-card__media,
+.card--two .ubc-card__content,
+.card--two .ubc-card__actions  {
+  margin: 5px;
+  box-shadow: 0 1px 1px #ddd inset;
+  border: 1px solid #cccccc;
+  background: rgba(255, 255, 255, .5);
+  padding: 1em;
+}
 
 /* fix for resized images */
 

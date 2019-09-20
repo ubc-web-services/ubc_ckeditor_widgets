@@ -2,28 +2,14 @@
   box-sizing: border-box;
 }
 
-.card--one {
+.card--one .ubc-card {
   position: relative;
   margin: 10px;
   background: #eee;
   border: 1px dashed #ddd;
 }
 
-.card--one .card__image-area,
-.card--one .card__content,
-.card--one .card__footer {
-  margin: 5px;
-  box-shadow: 0 1px 1px #ddd inset;
-  border: 1px solid #cccccc;
-  background: rgba(255, 255, 255, .5);
-  padding: 1em;
-}
-
-.card--one .flex-item .card__footer {
-  position: relative !important;
-}
-
-.card--one:before {
+.card--one .ubc-card::before {
   background: none repeat scroll 0 0 #007eab;
   color: #fff;
   content: "One Card";
@@ -38,12 +24,22 @@
   border-bottom-left-radius: 3px;
 }
 
-.card--one:after {
+.card--one .ubc-card::after {
   content: " ";
   display: table;
   clear: both;
 }
 
+.card--one .ubc-card__media,
+.card--one .ubc-card__content,
+.card--one .ubc-card__actions {
+  margin: 5px;
+  box-shadow: 0 1px 1px #ddd inset;
+  border: 1px solid #cccccc;
+  background: rgba(255, 255, 255, .5);
+  padding: 1em;
+  background: #fff;
+}
 
 /* fix for resized images */
 

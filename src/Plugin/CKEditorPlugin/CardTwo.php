@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\ubc_clf_widgets\Plugin\CKEditorPlugin;
+namespace Drupal\ubc_ckeditor_widgets\Plugin\CKEditorPlugin;
 
 use Drupal\editor\Entity\Editor;
 use Drupal\ckeditor\CKEditorPluginBase;
@@ -11,7 +11,7 @@ use Drupal\ckeditor\CKEditorPluginBase;
  * @CKEditorPlugin(
  *   id = "card-two",
  *   label = @Translation("Two Cards"),
- *   module = "ubc_clf_widgets"
+ *   module = "ubc_ckeditor_widgets"
  * )
  */
 class CardTwo extends CKEditorPluginBase {
@@ -20,7 +20,7 @@ class CardTwo extends CKEditorPluginBase {
    * Implements \Drupal\ckeditor\Plugin\CKEditorPluginInterface::getFile().
    */
   public function getFile() {
-    return drupal_get_path('module', 'ubc_clf_widgets') . '/plugins/card-two/plugin.js';
+    return drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/card-two/plugin.js';
   }
 
   /**
@@ -44,7 +44,7 @@ class CardTwo extends CKEditorPluginBase {
     return [
       'card-two' => [
         'label' => t('Two Cards'),
-        'image' => drupal_get_path('module', 'ubc_clf_widgets') . '/plugins/card-two/icons/card-two.png',
+        'image' => drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/card-two/icons/card-two.png',
       ],
     ];
   }

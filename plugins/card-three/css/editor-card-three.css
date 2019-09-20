@@ -9,26 +9,7 @@
   border: 1px dashed #ddd;
 }
 
-.card--three .flex-item {
-  float: left;
-  width: calc(100% / 3);
-}
-
-.card--three .card__image-area,
-.card--three .card__content,
-.card--three .card__footer {
-  margin: 5px;
-  box-shadow: 0 1px 1px #ddd inset;
-  border: 1px solid #cccccc;
-  background: rgba(255, 255, 255, .5);
-  padding: 1em;
-}
-
-.card--three .flex-item .card__footer {
-  position: relative !important;
-}
-
-.card--three:before {
+.card--three::before {
   background: none repeat scroll 0 0 #007eab;
   color: #fff;
   content: "Three Cards";
@@ -43,12 +24,21 @@
   border-bottom-left-radius: 3px;
 }
 
-.card--three:after {
+.card--three::after {
   content: " ";
   display: table;
   clear: both;
 }
 
+.card--three .ubc-card__media,
+.card--three .ubc-card__content,
+.card--three .ubc-card__actions  {
+  margin: 5px;
+  box-shadow: 0 1px 1px #ddd inset;
+  border: 1px solid #cccccc;
+  background: rgba(255, 255, 255, .5);
+  padding: 1em;
+}
 
 /* fix for resized images */
 
