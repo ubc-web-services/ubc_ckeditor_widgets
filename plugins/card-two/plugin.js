@@ -18,14 +18,14 @@
 
                 template: '<div class="widget-card card--two md--flex-grid">' +
                     '<div class="md--flex-1"><div class="ubc-card ubc-card--vert ubc-card--shadow text-black hover--no-underline group">' +
-                    '<div class="first-image ubc-card__media object-cover"><a class="card__link" href="#" ><img src="http://placehold.it/700x350" alt="some alt text" title=""></a></div>' +
+                    '<div class="first-image ubc-card__media object-cover"><a class="card__link" href="#" ><img src="http://placehold.it/700x350" alt="some alt text"></a></div>' +
                     '<div class="first-content ubc-card__content">' +
                     '<div class="card__meta">metadata</div>' +
                     '<h3 class="card__title">Sample Title</h3>' +
                     '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>' +
                     '<div class="first-footer ubc-card__actions text-right"><a href="#" class="unit-button unit-button--light unit-button--has-icon-right unit-button--editor">Read more</a></div></div></div>' +
                     '<div class="md--flex-1"><div class="ubc-card ubc-card--vert ubc-card--shadow text-black hover--no-underline group">' +
-                    '<div class="second-image ubc-card__media object-cover"><a class="card__link" href="#" ><img src="http://placehold.it/700x350" alt="some alt text" title=""></a></div>' +
+                    '<div class="second-image ubc-card__media object-cover"><a class="card__link" href="#" ><img src="http://placehold.it/700x350" alt="some alt text"></a></div>' +
                     '<div class="second-content ubc-card__content">' +
                     '<div class="card__meta">metadata</div>' +
                     '<h3 class="card__title">Sample Title</h3>' +

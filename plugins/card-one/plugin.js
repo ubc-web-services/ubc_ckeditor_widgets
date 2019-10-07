@@ -17,7 +17,7 @@
             editor.widgets.add('card-one', {
 
                 template: '<div class="widget-card card--one"><div class="ubc-card ubc-card--vert ubc-card--shadow text-black hover--no-underline group">' +
-                '<div class="first-image ubc-card__media object-cover"><a class="card__link" href="#" ><img src="http://placehold.it/700x350" alt="some alt text" title=""></a></div>' +
+                '<div class="first-image ubc-card__media object-cover"><a class="card__link" href="#" ><img src="http://placehold.it/700x350" alt="some alt text"></a></div>' +
                 '<div class="first-content ubc-card__content">' +
                 '<div class="card__meta">metadata</div>' +
                 '<h3 class="card__title">Sample Title</h3>' +
