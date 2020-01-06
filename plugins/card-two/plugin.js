@@ -36,7 +36,7 @@
                 editables: {
                     imagearea1: {
                         selector: '.first-image',
-                        allowedContent: 'img[!src,class,data-*,alt,title]{width,height};source[data-*,srcset];media;picture[data-*];a[href,class,target,data-*,aria-*](*);drupal-entity[data-*]'
+                        allowedContent: 'img[!src,class,data-*,alt,title]{width,height};source[data-*,srcset];media;picture[data-*];a[href,class,target,data-*,aria-*](*);drupal-entity[data-*];drupal-media[data-*]'
                     },
                     content1: {
                         selector: '.first-content',
@@ -48,7 +48,7 @@
                     },
                     imagearea2: {
                         selector: '.second-image',
-                        allowedContent: 'img[!src,class,data-*,alt,title]{width,height};source[data-*,srcset];media;picture[data-*];a[href,class,target,data-*,aria-*](*);drupal-entity[data-*]'
+                        allowedContent: 'img[!src,class,data-*,alt,title]{width,height};source[data-*,srcset];media;picture[data-*];a[href,class,target,data-*,aria-*](*);drupal-entity[data-*];drupal-media[data-*]'
                     },
                     content2: {
                         selector: '.second-content',
