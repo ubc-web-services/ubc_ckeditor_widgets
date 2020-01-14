@@ -1,17 +1,39 @@
 (function($, Drupal) {
     Drupal.behaviors.ubcCkeditorWidgets = {
         attach: function(context, settings) {
-            // Control Accordion Open / Close
-            /*
-            $('.accordion', context).once('accordion_widget').each(function() {
-                $(this).find('.accordion__tab').first().click(function(e) {
-                    e.preventDefault();
-                    //Expand or collapse this panel
-                    $(this).next().slideToggle('fast');
-                    $(this).parent().toggleClass('accordion--closed accordion--open');
-                });
+            // add toggle attribute function
+            $.fn.toggleAttr = function (attr, val) {
+                var hasAttr = $(this).attr(attr);
+                if (hasAttr) {
+                $(this).removeAttr(attr);
+                } else {
+                $(this).attr(attr, val);
+                }
+                return this;
+            };
+
+            // add toggle attribute value function
+            $.fn.toggleAttrVal = function (attr, val1, val2) {
+                var currentValue = $(this).attr(attr);
+                if (currentValue === val1) {
+                $(this).attr(attr, val2);
+                return this;
+                }
+                if (currentValue === val2) {
+                $(this).attr(attr, val1);
+                return this;
+                }
+                $(this).attr(attr, val1);
+                return this;
+            };
+
+            // show hidden content when trigger is clicked
+            $('.js-reveal__trigger', context).on('click', function (e) {
+                e.preventDefault();
+                $(this).find('use').toggleAttrVal('xlink:href', '#icon-minus', '#icon-plus');
+                $(this).toggleClass('is-open').closest('.js-reveal__parent').next('.js-reveal__target')
+                .toggleClass('is-open').toggleAttr('hidden', true);
             });
-            */
 
             $('.widget-expandcollapse', context).once('toggle_widget').each(function() {
                 $(this).click(function(e) {
