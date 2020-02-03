@@ -27,6 +27,7 @@
           },
           cite: {
               selector: 'cite',
+              allowedContent:  'p(*);',
           }
 
         },
