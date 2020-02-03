@@ -8,7 +8,7 @@
       // Register the toolbar buttons for the CKEditor editor instance.
       editor.ui.addButton('widget-quote', {
         label: 'Insert a quote',
-        icon: this.path + 'icons/quote-left.svg',
+        icon: this.path + 'icons/quote-left.png',
         command: 'widget-quote'
       });
       // Register the widget.
