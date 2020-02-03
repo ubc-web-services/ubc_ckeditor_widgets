@@ -4,7 +4,7 @@
     requires: 'widget',
     init: function (editor) {
       // Add our plugin-specific CSS to style the widget within CKEditor.
-      //editor.addContentsCss(this.path + 'css/editor-flex-2columns.css');
+      editor.addContentsCss(this.path + 'css/editor-widget-quote.css');
       // Register the toolbar buttons for the CKEditor editor instance.
       editor.ui.addButton('widget-quote', {
         label: 'Insert a quote',
