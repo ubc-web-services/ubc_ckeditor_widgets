@@ -44,7 +44,7 @@ class WidgetQuote extends CKEditorPluginBase {
     return [
       'widget-quote' => [
         'label' => t('Insert Quote'),
-        'image' => drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/widget-quote/icons/quote-left.svg',
+        'image' => drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/widget-quote/icons/quote-left.png',
       ],
     ];
   }
