@@ -22,11 +22,9 @@
         editables: {
           quote: {
             selector:'blockquote',  
-            allowedContent:  'p(*);a[*](*)',
           },
           cite: {
             selector: '.cite',
-            allowedContent:  'p(*);',
           }
 
         },
