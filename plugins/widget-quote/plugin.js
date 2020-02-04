@@ -24,9 +24,9 @@
             selector:'blockquote',
             allowedContent:  'p(*);a[*](*)',
           },
-          cite: {
-              selector: 'cite',
-              allowedContent:  'p(*);',
+          author: {
+            selector: 'cite',
+            allowedContent:  'p(*);',
           }
 
         },
