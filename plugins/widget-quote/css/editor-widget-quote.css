@@ -1,8 +1,8 @@
-.quote * {
+.widget-quote * {
     box-sizing: border-box;
   }
   
-  .quote {
+  .widget-quote {
     position: relative;
     margin: 10px;
     background: #eee;
@@ -10,19 +10,19 @@
     padding: 5px;
   }
   
-  cite, blockquote {
+  .cite, blockquote {
     box-shadow: 0 1px 1px #ddd inset;
     border: 1px solid #cccccc;
     background: #fff;
     padding: 1em;
   }
   
-    cite {
+    .cite {
     font-weight: bold;
     margin-bottom: 5px;
   }
   
-  .quote:before {
+  .widget-quote:before {
     background: none repeat scroll 0 0 #007eab;
     color: #fff;
     content: "Quote";

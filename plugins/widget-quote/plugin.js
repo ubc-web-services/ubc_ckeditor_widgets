@@ -13,25 +13,25 @@
       });
       // Register the widget.
       editor.widgets.add('widget-quote', {
-        template: '<div class="quote">' +
+        template: '<div class="widget-quote">' +
         '<blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</blockquote>' +
-        '<cite>John Smith, Manager</cite>' +
+        '<div class="cite">John Smith, Manager</div>' +
         '</div>',
-        allowedContent: 'div(!quote);blockquote(*);cite(*);',
+        allowedContent: 'div(!quote);blockquote(*);div(*);',
         // Minimum HTML which is required by this widget to work.
         editables: {
           quote: {
             selector:'blockquote',
             allowedContent:  'p(*);a[*](*)',
           },
-          author: {
-            selector: 'cite',
+          cite: {
+            selector: '.cite',
             allowedContent:  'p(*);',
           }
 
         },
         upcast: function (element) {
-          return element.name == 'div' && element.hasClass('quote');
+          return element.name == 'div' && element.hasClass('widget-quote');
         }
       });
     }
