@@ -1,28 +1,28 @@
 .widget-quote * {
     box-sizing: border-box;
-  }
+}
   
-  .widget-quote {
+.widget-quote {
     position: relative;
     margin: 10px;
     background: #eee;
     border: 1px dashed #ddd;
     padding: 5px;
-  }
+}
   
-  .cite, blockquote {
+.cite, blockquote {
     box-shadow: 0 1px 1px #ddd inset;
     border: 1px solid #cccccc;
     background: #fff;
     padding: 1em;
-  }
+}
   
-    .cite {
+.cite {
     font-weight: bold;
     margin-bottom: 5px;
-  }
+}
   
-  .widget-quote:before {
+.widget-quote:before {
     background: none repeat scroll 0 0 #007eab;
     color: #fff;
     content: "Quote";
@@ -35,4 +35,4 @@
     border-bottom-left-radius: 3px;
     right: 0;
     top: 0;
-  }
+}

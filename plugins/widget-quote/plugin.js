@@ -21,7 +21,7 @@
         // Minimum HTML which is required by this widget to work.
         editables: {
           quote: {
-            selector:'blockquote',
+            selector:'blockquote',  
             allowedContent:  'p(*);a[*](*)',
           },
           cite: {
