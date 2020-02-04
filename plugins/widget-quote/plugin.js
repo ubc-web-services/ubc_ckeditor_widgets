@@ -17,7 +17,7 @@
         '<blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</blockquote>' +
         '<div class="cite">John Smith, Manager</div>' +
         '</div>',
-        allowedContent: 'div(!quote);blockquote(*);div(*);',
+        allowedContent: 'div(!quote);blockquote(!*);div(!*);',
         // Minimum HTML which is required by this widget to work.
         editables: {
           quote: {
