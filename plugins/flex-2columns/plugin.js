@@ -7,7 +7,7 @@
       editor.addContentsCss(this.path + 'css/editor-flex-2columns.css');
       // Register the toolbar buttons for the CKEditor editor instance.
       editor.ui.addButton('flex-2columns', {
-        label: 'Insert 3 columns',
+        label: 'Insert 2 columns',
         icon: this.path + 'icons/flex-2columns.png',
         command: 'flex-2columns'
       });
