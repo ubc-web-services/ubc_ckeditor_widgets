@@ -13,9 +13,9 @@
             // Register the widget.
             editor.widgets.add('accordion', {
                 template: '<div class="widget-accordion">' +
-                '<div class="accordion accordion__heading js-reveal__parent"><div class="accordion__trigger js-reveal__trigger" aria-expanded="false"><h3>Accordion title goes in here</h3></div></div>' +
-                '<div class="accordion__content js-reveal__target clearfix" hidden><p>Accordion contents happen in here</p></div>' +
-                '</div>',
+                    '<div class="accordion js-reveal__parent"><div class="js-reveal__trigger accordion__trigger" aria-expanded="false">Accordion title goes in here</div></div>' +
+                    '<div class="js-reveal__target accordion__content clearfix" hidden><p>Accordion contents happen in here</p></div>' +
+                    '</div>',
                 editables: {
                     title: {
                         selector: '.accordion__trigger',
@@ -25,9 +25,7 @@
                         selector: '.accordion__content'
                     }
                 },
-                allowedContent: 'div(!widget-accordion); div(!accordion,!accordion__heading,!js-reveal__parent); div(!accordion__trigger,!js-reveal__trigger)[aria-*]; div(!accordion__content,!js-reveal__target,clearfix)[hidden]',
-                //
-                //      requiredContent: 'div(accordion)',
+                allowedContent: 'div(!widget-accordion); div(!accordion,!js-reveal__parent);div(!js-reveal__trigger,!accordion__trigger)[aria-expanded];div(!js-reveal__target,!accordion__content)[hidden]',
                 upcast: function(element) {
                     return element.name == 'div' && element.hasClass('widget-accordion');
                 }

@@ -10,7 +10,21 @@
   padding: 5px;
 }
 
-.widget-accordion::before {
+.accordion__trigger,
+.accordion__content {
+  box-shadow: 0 1px 1px #ddd inset;
+  border: 1px solid #cccccc;
+  background: #fff;
+  padding: 1em;
+}
+
+.accordion__trigger {
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.widget-accordion:before {
   background: none repeat scroll 0 0 #007eab;
   color: #fff;
   content: "Accordion";
@@ -25,34 +39,13 @@
   top: 0;
 }
 
-.accordion__trigger {
-  font-weight: bold;
-  margin-top: 0;
-  margin-bottom: 5px;
-}
-
-.accordion__trigger h3,
-.accordion__trigger h4,
-.accordion__trigger h5,
-.accordion__trigger h6 {
-  margin-top: 0 !important;
-}
-
-.accordion__trigger,
-.accordion__content {
-  box-shadow: 0 1px 1px #ddd inset;
-  border: 1px solid #cccccc;
-  background: #fff;
-  padding: 1em;
-}
-
-.accordion__content {
-  display: block !important;
-}
-
 /* fix for resized images */
-
 .accordion__content img {
   width: 100%;
   height: auto;
+}
+
+/* Ensure collapsing content is expanded  */
+.accordion__content[hidden] {
+  display: block;
 }
