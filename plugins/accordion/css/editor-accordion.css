@@ -24,6 +24,13 @@
   margin-bottom: 5px;
 }
 
+.accordion__trigger h3,
+.accordion__trigger h4,
+.accordion__trigger h5,
+.accordion__trigger h6 {
+  margin-top: 0 !important;
+}
+
 .widget-accordion:before {
   background: none repeat scroll 0 0 #007eab;
   color: #fff;
