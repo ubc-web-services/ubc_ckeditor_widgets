@@ -7,6 +7,4 @@ widgets:
   js:
     js/ubc_ckeditor_widgets.js: {}
   dependencies:
-    - core/jquery
-    - core/jquery.once
     - core/drupal
