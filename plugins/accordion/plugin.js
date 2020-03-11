@@ -19,7 +19,7 @@
                 editables: {
                     title: {
                         selector: '.accordion__trigger',
-                        allowedContent: 'h3;h4;h5;h6;em'
+                        allowedContent: 'h3;h4;h5;h6;p;em'
                     },
                     content: {
                         selector: '.accordion__content'

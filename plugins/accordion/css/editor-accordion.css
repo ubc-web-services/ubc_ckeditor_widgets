@@ -24,6 +24,7 @@
   margin-bottom: 5px;
 }
 
+.accordion__trigger p,
 .accordion__trigger h3,
 .accordion__trigger h4,
 .accordion__trigger h5,
@@ -31,7 +32,7 @@
   margin-top: 0 !important;
 }
 
-.widget-accordion:before {
+.widget-accordion::before {
   background: none repeat scroll 0 0 #007eab;
   color: #fff;
   content: "Accordion";
