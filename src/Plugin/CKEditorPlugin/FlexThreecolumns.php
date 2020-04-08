@@ -43,7 +43,7 @@ class FlexThreeColumns extends CKEditorPluginBase {
   public function getButtons() {
     return [
       'flex-3columns' => [
-        'label' => t('Three Columns (Flexbox)'),
+        'label' => $this->t('Three Columns (Flexbox)'),
         'image' => drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/flex-3columns/icons/flex-3columns.png',
       ],
     ];

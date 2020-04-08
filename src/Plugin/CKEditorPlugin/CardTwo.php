@@ -43,7 +43,7 @@ class CardTwo extends CKEditorPluginBase {
   public function getButtons() {
     return [
       'card-two' => [
-        'label' => t('Two Cards'),
+        'label' => $this->t('Two Cards'),
         'image' => drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/card-two/icons/card-two.png',
       ],
     ];

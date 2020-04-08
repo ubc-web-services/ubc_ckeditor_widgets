@@ -43,7 +43,7 @@ class CardWIcon extends CKEditorPluginBase {
   public function getButtons() {
     return [
       'card-w-icon' => [
-        'label' => t('Card with Icon'),
+        'label' => $this->t('Card with Icon'),
         'image' => drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/card-w-icon/icons/card-w-icon.png',
       ],
     ];

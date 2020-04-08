@@ -43,7 +43,7 @@ class FlexTwoColumnsTwoOne extends CKEditorPluginBase {
   public function getButtons() {
     return [
       'flex-2columns-2-1' => [
-        'label' => t('Two Columns 2/3 1/3 (Flexbox)'),
+        'label' => $this->t('Two Columns 2/3 1/3 (Flexbox)'),
         'image' => drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/flex-2columns-2-1/icons/flex-2columns-2-1.png',
       ],
     ];

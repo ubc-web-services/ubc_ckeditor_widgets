@@ -43,7 +43,7 @@ class CardThree extends CKEditorPluginBase {
   public function getButtons() {
     return [
       'card-three' => [
-        'label' => t('Three Cards'),
+        'label' => $this->t('Three Cards'),
         'image' => drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/card-three/icons/card-three.png',
       ],
     ];

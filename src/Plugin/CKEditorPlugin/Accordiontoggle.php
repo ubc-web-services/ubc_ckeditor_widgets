@@ -43,7 +43,7 @@ class AccordionToggle extends CKEditorPluginBase {
   public function getButtons() {
     return [
       'accordiontoggle' => [
-        'label' => t('Accordion Toggle'),
+        'label' => $this->t('Accordion Toggle'),
         'image' => drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/accordiontoggle/icons/accordiontoggle.png',
       ],
     ];

@@ -43,7 +43,7 @@ class FontawesomeIcon extends CKEditorPluginBase {
   public function getButtons() {
     return [
       'fontawesome-icon' => [
-        'label' => t('Fontawesome Icon'),
+        'label' => $this->t('Fontawesome Icon'),
         'image' => drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/fontawesome-icon/icons/fontawesome-icon.png',
       ],
     ];

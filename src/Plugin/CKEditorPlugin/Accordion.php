@@ -43,7 +43,7 @@ class Accordion extends CKEditorPluginBase {
   public function getButtons() {
     return [
       'accordion' => [
-        'label' => t('Accordion'),
+        'label' => $this->t('Accordion'),
         'image' => drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/accordion/icons/accordion.png',
       ],
     ];

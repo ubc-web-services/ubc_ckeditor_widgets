@@ -43,7 +43,7 @@ class CardOne extends CKEditorPluginBase {
   public function getButtons() {
     return [
       'card-one' => [
-        'label' => t('One Card'),
+        'label' => $this->t('One Card'),
         'image' => drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/card-one/icons/card-one.png',
       ],
     ];
