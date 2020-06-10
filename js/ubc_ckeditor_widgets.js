@@ -50,10 +50,10 @@
                         $('.widget-accordion .js-reveal__trigger').attr('aria-expanded','false').find('use').attr('xlink:href','#icon-plus');
                         $('.widget-accordion .js-reveal__trigger').removeClass('is-open').closest('.js-reveal__parent').next('.js-reveal__target').removeClass('is-open').attr('hidden',true);
                     }
-                    // toggle expand collapse text
-                    $(this).html( text + ' All Accordions');
+                    // toggle expand collapse text on all occurrences of toggle buttons
+                    $('.widget-expandcollapse').html( text + ' All Accordions');
                     // update the state on the expandcollapse trigger
-                    $(this).attr('data-state', newstate);
+                    $('.widget-expandcollapse').attr('data-state', newstate);
                 });
             });
         }
