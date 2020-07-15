@@ -7,8 +7,8 @@
       toggleAccordion() {
         const accordionItem = document.querySelectorAll(this.node);
         accordionItem.forEach((item, key) => {
-          item.addEventListener('click', () => {
-            let btn = item.querySelector('.js-reveal__trigger');
+          let btn = item.querySelector('.js-reveal__trigger');
+          btn.addEventListener('click', () => {
             let target = item.querySelector('.js-reveal__target');
             let expanded = btn.getAttribute('aria-expanded') === 'true';
             btn.setAttribute('aria-expanded', !expanded);
