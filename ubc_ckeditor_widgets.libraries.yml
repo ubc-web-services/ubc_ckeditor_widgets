@@ -5,6 +5,6 @@ widgets:
     layout:
       css/ubc.ckeditor.widgets.css: {}
   js:
-    js/ubc_ckeditor_widgets.js: {}
+    js/ubc_ckeditor_widgets.min.js: { minified: true }
   dependencies:
     - core/drupal
