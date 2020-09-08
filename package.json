@@ -1,6 +1,6 @@
 {
   "name": "ubc_ckeditor_widgets",
-  "version": "1.0.0",
+  "version": "3.0-beta4",
   "description": "A Drupal 8 module to add some common widgets to CKeditor",
   "main": "index.js",
   "scripts": {
