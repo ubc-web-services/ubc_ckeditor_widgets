@@ -6,6 +6,9 @@ files/
 sites/*/files
 sites/*/private
 
+# Ignore paths for dependencies.
+node_modules/
+
 # Ignore default text files
 robots.txt
 /CHANGELOG.txt
