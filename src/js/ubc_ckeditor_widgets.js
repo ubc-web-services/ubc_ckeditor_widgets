@@ -10,6 +10,14 @@
           btn.classList.toggle('is-open');
           item.classList.toggle('is-open');
           target.toggleAttribute('hidden');
+          target.animate([
+            { transition: 'opacity', opacity: '0' },
+            { opacity: '100' }
+          ], {
+            duration: 250,
+            easing: 'linear',
+            iterations: 1
+          });
         });
       });
     }
