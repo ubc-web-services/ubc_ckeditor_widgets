@@ -8,3 +8,4 @@ widgets:
     js/ubc_ckeditor_widgets.js: { minified: true }
   dependencies:
     - core/drupal
+    - core/drupalSettings
