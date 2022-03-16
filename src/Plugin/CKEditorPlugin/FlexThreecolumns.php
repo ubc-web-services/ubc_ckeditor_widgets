@@ -14,36 +14,41 @@ use Drupal\ckeditor\CKEditorPluginBase;
  *   module = "ubc_ckeditor_widgets"
  * )
  */
-class FlexThreeColumns extends CKEditorPluginBase {
+class FlexThreeColumns extends CKEditorPluginBase
+{
 
   /**
    * Implements \Drupal\ckeditor\Plugin\CKEditorPluginInterface::getFile().
    */
-  public function getFile() {
+  public function getFile()
+  {
     return drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/flex-3columns/plugin.js';
   }
 
   /**
    * {@inheritdoc}
    */
-  public function getLibraries(Editor $editor) {
+  public function getLibraries(Editor $editor)
+  {
     return [];
   }
 
   /**
    * {@inheritdoc}
    */
-  public function isInternal() {
+  public function isInternal()
+  {
     return FALSE;
   }
 
   /**
    * {@inheritdoc}
    */
-  public function getButtons() {
+  public function getButtons()
+  {
     return [
       'flex-3columns' => [
-        'label' => $this->t('Three Columns (Flexbox)'),
+        'label' => $this->t('DEPRECATED - use column options widget - Three Columns (Flexbox)'),
         'image' => drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/flex-3columns/icons/flex-3columns.png',
       ],
     ];
@@ -52,8 +57,8 @@ class FlexThreeColumns extends CKEditorPluginBase {
   /**
    * {@inheritdoc}
    */
-  public function getConfig(Editor $editor) {
+  public function getConfig(Editor $editor)
+  {
     return [];
   }
-
 }

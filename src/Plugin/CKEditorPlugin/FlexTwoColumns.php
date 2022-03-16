@@ -14,36 +14,41 @@ use Drupal\ckeditor\CKEditorPluginBase;
  *   module = "ubc_ckeditor_widgets"
  * )
  */
-class FlexTwoColumns extends CKEditorPluginBase {
+class FlexTwoColumns extends CKEditorPluginBase
+{
 
   /**
    * Implements \Drupal\ckeditor\Plugin\CKEditorPluginInterface::getFile().
    */
-  public function getFile() {
+  public function getFile()
+  {
     return drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/flex-2columns/plugin.js';
   }
 
   /**
    * {@inheritdoc}
    */
-  public function getLibraries(Editor $editor) {
+  public function getLibraries(Editor $editor)
+  {
     return [];
   }
 
   /**
    * {@inheritdoc}
    */
-  public function isInternal() {
+  public function isInternal()
+  {
     return FALSE;
   }
 
   /**
    * {@inheritdoc}
    */
-  public function getButtons() {
+  public function getButtons()
+  {
     return [
       'flex-2columns' => [
-        'label' => $this->t('Two Columns (Flexbox)'),
+        'label' => $this->t('DEPRECATED - use column options widget - Two Columns (Flexbox)'),
         'image' => drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/flex-2columns/icons/flex-2columns.png',
       ],
     ];
@@ -52,8 +57,8 @@ class FlexTwoColumns extends CKEditorPluginBase {
   /**
    * {@inheritdoc}
    */
-  public function getConfig(Editor $editor) {
+  public function getConfig(Editor $editor)
+  {
     return [];
   }
-
 }

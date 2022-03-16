@@ -3,25 +3,22 @@
 }
 
 .md--flex-grid {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  margin-left: -15px;
-  margin-right: -15px;
+  flex-wrap: wrap;
+  gap: 1.5rem;
   margin: 10px;
-  background: #eee;
+  background: transparent;
   border: 1px dashed #ddd;
   padding: 5px;
 }
 
 .md--flex-1 {
-  -webkit-box-flex: 1;
   flex: 1;
-  padding-right: 15px;
+  margin: 5px;
   box-shadow: 0 1px 1px #ddd inset;
   border: 1px solid #cccccc;
-  background: #fff;
   padding: 1em;
+  background: rgba(255,255,255,.25);
 }
 
 .columns--2:before {
