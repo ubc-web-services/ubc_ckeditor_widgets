@@ -9,3 +9,4 @@ widgets:
   dependencies:
     - core/drupal
     - core/drupalSettings
+    - core/once
