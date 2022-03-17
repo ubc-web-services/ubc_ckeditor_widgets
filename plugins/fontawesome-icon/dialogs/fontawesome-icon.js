@@ -252,6 +252,33 @@ CKEDITOR.dialog.add('fontawesome-icon', function (editor) {
           }
         },
         {
+          id: 'background',
+          type: 'select',
+          label: 'Icon Colour',
+          items: [
+            ['Default', ''],
+            ['White', 'text-white'],
+            ['Light Grey', 'text-grey-100'],
+            ['Unit Primary Color', 'text-unit-primary'],
+            ['Unit Secondary Color', 'text-unit-secondary'],
+            ['Unit Tertiary Color', 'text-unit-tertiary'],
+            ['Unit Accent Color', 'text-unit-accent'],
+            ['UBC Blue', 'text-ubc-blue'],
+            ['UBC Blue: Sea', 'text-ubc-blue-sea'],
+            ['UBC Blue: Cobalt', 'text-ubc-blue-cobalt'],
+            ['UBC Blue: Neptune', 'text-ubc-blue-neptune'],
+            ['UBC Blue: Cornflower', 'text-ubc-blue-cornflower'],
+            ['UBC Blue: Polar', 'text-ubc-blue-polar'],
+            ['UBC Blue: Frost', 'text-ubc-blue-frost']
+          ],
+          setup: function (widget) {
+            this.setValue(widget.data.background);
+          },
+          commit: function (widget) {
+            widget.setData('background', this.getValue());
+          }
+        },
+        {
           id: 'align',
           type: 'select',
           label: 'Align',
