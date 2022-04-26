@@ -148,6 +148,12 @@
 .widget-card--horizontal .ubc-card .ubc-card__actions {
   flex: none;
 }
+
+/* allow media embeds to take up full vertical space */
+.widget-card--horizontal .ubc-card__media div {
+  height: 100%;
+}
+
 .widget-card--horizontal .ubc-card .ubc-card__content_wrapper {
   flex: 1;
   display: flex;
