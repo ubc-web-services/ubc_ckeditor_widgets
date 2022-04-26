@@ -39,3 +39,5 @@ xmlrpc.php
 /themes
 
 .DS_Store
+
+.parcel-cache
