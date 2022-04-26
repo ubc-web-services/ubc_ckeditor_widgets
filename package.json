@@ -9,6 +9,14 @@
     "watch": "parcel watch",
     "build": "parcel build"
   },
+  "targets": {
+    "main": {
+      "optimize": true
+    },
+    "module": {
+      "optimize": true
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ubc-web-services/ubc_ckeditor_widgets.git"
@@ -36,6 +44,6 @@
     "defaults",
     "last 2 versions",
     "not dead",
-    "ie 11"
+    "not ie 11"
   ]
 }
