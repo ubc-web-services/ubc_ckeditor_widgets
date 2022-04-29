@@ -135,18 +135,22 @@
 
 }
 
-.widget-card--horizontal .ubc-card--horiz {
-  display: flex;
-  flex-direction: row;
-}
+@media (min-width: 480px) {
 
-.widget-card--horizontal.widget-card--reverse .ubc-card--horiz {
-  flex-direction: row-reverse;
+  .widget-card--horizontal .ubc-card--horiz {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .widget-card--horizontal.widget-card--reverse .ubc-card--horiz {
+    flex-direction: row-reverse;
+  }
+
 }
 
 .widget-card--horizontal .ubc-card .ubc-card__media,
 .widget-card--horizontal .ubc-card .ubc-card__actions {
-  flex: none;
+  flex: inherit;
 }
 
 /* allow media embeds to take up full vertical space */
