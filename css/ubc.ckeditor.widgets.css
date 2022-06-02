@@ -179,6 +179,10 @@
   align-self: center;
 }
 
+.accordion__trigger button {
+  text-align: left;
+}
+
 .text-white {
   color: #fff;
 }
