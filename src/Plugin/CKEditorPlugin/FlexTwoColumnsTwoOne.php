@@ -22,7 +22,7 @@ class FlexTwoColumnsTwoOne extends CKEditorPluginBase
    */
   public function getFile()
   {
-    return drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/flex-2columns-2-1/plugin.js';
+    return \Drupal::service('extension.list.module')->getPath('ubc_ckeditor_widgets') . '/plugins/flex-2columns-2-1/plugin.js';
   }
 
   /**
@@ -49,7 +49,7 @@ class FlexTwoColumnsTwoOne extends CKEditorPluginBase
     return [
       'flex-2columns-2-1' => [
         'label' => $this->t('DEPRECATED - use column options widget - Two Columns 2/3 1/3 (Flexbox)'),
-        'image' => drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/flex-2columns-2-1/icons/flex-2columns-2-1.png',
+        'image' => \Drupal::service('extension.list.module')->getPath('ubc_ckeditor_widgets') . '/plugins/flex-2columns-2-1/icons/flex-2columns-2-1.png',
       ],
     ];
   }

@@ -20,7 +20,7 @@ class CardThree extends CKEditorPluginBase {
    * Implements \Drupal\ckeditor\Plugin\CKEditorPluginInterface::getFile().
    */
   public function getFile() {
-    return drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/card-three/plugin.js';
+    return \Drupal::service('extension.list.module')->getPath('ubc_ckeditor_widgets') . '/plugins/card-three/plugin.js';
   }
 
   /**
@@ -44,7 +44,7 @@ class CardThree extends CKEditorPluginBase {
     return [
       'card-three' => [
         'label' => $this->t('Three Cards'),
-        'image' => drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/card-three/icons/card-three.png',
+        'image' => \Drupal::service('extension.list.module')->getPath('ubc_ckeditor_widgets') . '/plugins/card-three/icons/card-three.png',
       ],
     ];
   }

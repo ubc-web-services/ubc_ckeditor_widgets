@@ -22,7 +22,7 @@ class CardHorizontal extends CKEditorPluginBase
    */
   public function getFile()
   {
-    return drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/card-horizontal/plugin.js';
+    return \Drupal::service('extension.list.module')->getPath('ubc_ckeditor_widgets') . '/plugins/card-horizontal/plugin.js';
   }
 
   /**
@@ -49,7 +49,7 @@ class CardHorizontal extends CKEditorPluginBase
     return [
       'card-horizontal' => [
         'label' => $this->t('Horizontal Card'),
-        'image' => drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/card-horizontal/icons/card-horizontal.png',
+        'image' => \Drupal::service('extension.list.module')->getPath('ubc_ckeditor_widgets') . '/plugins/card-horizontal/icons/card-horizontal.png',
       ],
     ];
   }

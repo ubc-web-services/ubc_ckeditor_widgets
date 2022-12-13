@@ -20,7 +20,7 @@ class AccordionToggle extends CKEditorPluginBase {
    * Implements \Drupal\ckeditor\Plugin\CKEditorPluginInterface::getFile().
    */
   public function getFile() {
-    return drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/accordiontoggle/plugin.js';
+    return \Drupal::service('extension.list.module')->getPath('ubc_ckeditor_widgets') . '/plugins/accordiontoggle/plugin.js';
   }
 
   /**
@@ -44,7 +44,7 @@ class AccordionToggle extends CKEditorPluginBase {
     return [
       'accordiontoggle' => [
         'label' => $this->t('Accordion Toggle'),
-        'image' => drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/accordiontoggle/icons/accordiontoggle.png',
+        'image' => \Drupal::service('extension.list.module')->getPath('ubc_ckeditor_widgets') . '/plugins/accordiontoggle/icons/accordiontoggle.png',
       ],
     ];
   }

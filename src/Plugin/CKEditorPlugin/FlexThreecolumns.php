@@ -22,7 +22,7 @@ class FlexThreeColumns extends CKEditorPluginBase
    */
   public function getFile()
   {
-    return drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/flex-3columns/plugin.js';
+    return \Drupal::service('extension.list.module')->getPath('ubc_ckeditor_widgets') . '/plugins/flex-3columns/plugin.js';
   }
 
   /**
@@ -49,7 +49,7 @@ class FlexThreeColumns extends CKEditorPluginBase
     return [
       'flex-3columns' => [
         'label' => $this->t('DEPRECATED - use column options widget - Three Columns (Flexbox)'),
-        'image' => drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/flex-3columns/icons/flex-3columns.png',
+        'image' => \Drupal::service('extension.list.module')->getPath('ubc_ckeditor_widgets') . '/plugins/flex-3columns/icons/flex-3columns.png',
       ],
     ];
   }
