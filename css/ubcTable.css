@@ -1,0 +1,37 @@
+figure.table.ck-widget  {
+    min-width: 100%;
+}
+
+td.w-half,
+td.w-one-third,
+td.w-one-quarter,
+td.w-one-fifth,
+td.w-one-sixth,
+th.w-half,
+th.w-one-third,
+th.w-one-quarter,
+th.w-one-fifth,
+th.w-one-sixth {
+    position: relative;
+}
+
+td.w-half::after,
+td.w-one-third::after,
+td.w-one-quarter::after,
+td.w-one-fifth::after,
+td.w-one-sixth::after,
+th.w-half::after,
+th.w-one-third::after,
+th.w-one-quarter::after,
+th.w-one-fifth::after,
+th.w-one-sixth::after {
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    font-weight: normal;
+    content: 'defines width';
+    background-color: rgba(0,0,0,.1);
+    color: rgba(0,0,0,.8);
+    padding: .5em;
+    font-size: .5rem;
+}

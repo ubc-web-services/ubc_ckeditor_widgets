@@ -1,0 +1,22 @@
+/* General styles - should be moved to theme */
+.ubc-accordion-toggle {
+    color: #0055b7;
+}
+
+/* Editor-specific styles */
+
+.widget-accordion-toggle.ck-widget {
+    margin-top: 1.25rem;
+    position: relative;
+}
+
+.widget-accordion-toggle.ck-widget::after {
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    content: 'Accordion Toggle';
+    background-color: #ccc;
+    color: #111;
+    padding: .5em;
+    font-size: .5rem;
+}

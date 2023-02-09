@@ -1,12 +1,88 @@
-# ubc_ckeditor_widgets.libraries.yml
+# This adds the plugin JavaScript to the page.
 
-widgets:
+# Add all required styles and JS to the public facing site
+ubc_ckeditor_widgets.ui:
+  version: 1.x
   css:
-    layout:
-      css/ubc.ckeditor.widgets.css: {}
+    theme:
+      css/ubcWidgetDefaultStyles.css: { }
   js:
-    js/ubc_ckeditor_widgets.js: { minified: true }
+    js/functional/ubcAccordion.ui.js: { }
   dependencies:
     - core/drupal
     - core/drupalSettings
     - core/once
+
+# Accordion
+ubc_accordion:
+  version: 1.x
+  css:
+    theme:
+      css/ubcAccordion.css: { }
+  js:
+    js/build/ubcAccordion.js: { preprocess: false, minified: true }
+  dependencies:
+    - core/ckeditor5
+
+ubc_accordion.admin:
+  version: 1.x
+  css:
+    theme:
+      css/ubcAccordion.admin.css: { }
+
+# Accordion Toggle
+ubc_accordion_toggle:
+  version: 1.x
+  css:
+    theme:
+      css/ubcAccordionToggle.css: { }
+  js:
+    js/build/ubcAccordionToggle.js: { preprocess: false, minified: true }
+  dependencies:
+    - core/ckeditor5
+
+ubc_accordion_toggle.admin:
+  version: 1.x
+  css:
+    theme:
+      css/ubcAccordionToggle.admin.css: { }
+
+# Tables
+ubc_table:
+  version: 1.x
+  css:
+    theme:
+      css/ubcTable.css: { }
+  js:
+    js/build/ubcTableClass.js: { preprocess: false, minified: true }
+  dependencies:
+    - core/ckeditor5
+
+# Table Cells
+ubc_table_cell:
+  version: 1.x
+  js:
+    js/build/ubcTableCellClass.js: { preprocess: false, minified: true }
+  dependencies:
+    - core/ckeditor5
+
+# Columns
+ubc_columns:
+  version: 1.x
+  css:
+    theme:
+      css/ubcColumns.css: { }
+
+ubc_columns_two:
+  version: 1.x
+  js:
+    js/build/ubcColumnsTwo.js: { preprocess: false, minified: true }
+  dependencies:
+    - ubc_ckeditor_widgets/ubc_columns
+    - core/ckeditor5
+
+ubc_columns_two.admin:
+  version: 1.x
+  css:
+    theme:
+      css/ubcColumnsTwo.admin.css: { }

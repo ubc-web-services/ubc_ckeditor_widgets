@@ -1,0 +1,135 @@
+/* General styles - ideally should be moved to theme, but may be better here in log run */
+
+/* Accordions */
+.accordion__trigger h2,
+.accordion__trigger h3,
+.accordion__trigger h4,
+.accordion__trigger h5,
+.accordion__trigger h6 {
+    margin-bottom: 0;
+    padding-right: 2rem;
+    margin-top: 0;
+    line-height: 1.4;
+}
+
+.accordion__title {
+    letter-spacing: 0.025em;
+    font-family: var(--text-font-stack);
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-size: var(--base-font-size);
+    display: block; /* to allow font size in span to override parent */
+}
+
+/* Columns */
+@media (max-width: 767px) {
+
+    .widget-column-options .first-child--mt-0:not(.widget-region-one) > :first-child {
+      margin-top: 1.625rem;
+    }
+
+}
+
+@media (min-width: 768px) {
+
+    .widget--md--grid {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        grid-template-rows: auto;
+    }
+
+    .widget-gap-wide .widget--md--grid {
+        gap: 4rem;
+    }
+
+    .widget-column-options .widget-region-one {
+        grid-area: a;
+    }
+
+    .widget-column-options .widget-region-two {
+        grid-area: b;
+    }
+
+    .widget-column-options .widget-region-three {
+        grid-area: c;
+    }
+
+    .widget-column-options .widget-region-four {
+        grid-area: d;
+    }
+
+    .widget-columns-2.align-equal .widget--md--grid {
+        grid-template-areas:
+        'a a a a a a b b b b b b';
+    }
+
+    .widget-columns-3.align-equal .widget--md--grid {
+        grid-template-areas:
+        'a a a a b b b b c c c c';
+    }
+
+    .widget-columns-4.align-equal .widget--md--grid {
+        grid-template-areas:
+        'a a a b b b c c c d d d';
+    }
+
+    .widget-columns-2.align-large-left .widget--md--grid {
+        grid-template-areas:
+        'a a a a a a a a b b b b';
+    }
+
+    .widget-columns-3.align-large-left .widget--md--grid {
+        grid-template-areas:
+        'a a a a a a b b b c c c';
+    }
+
+    .widget-columns-3.align-large-center .widget--md--grid {
+        grid-template-areas:
+        'a a a b b b b b b c c c';
+    }
+
+    .widget-columns-2.align-large-right .widget--md--grid {
+        grid-template-areas:
+        'a a a a b b b b b b b b';
+    }
+
+    .widget-columns-3.align-large-right .widget--md--grid {
+        grid-template-areas:
+        'a a a b b b c c c c c c';
+    }
+
+    .widget-columns-2.widget-keylines .widget-region-one,
+    .widget-columns-3.widget-keylines .widget-region-one,
+    .widget-columns-3.widget-keylines .widget-region-two,
+    .widget-columns-4.widget-keylines .widget-region-one,
+    .widget-columns-4.widget-keylines .widget-region-two,
+    .widget-columns-4.widget-keylines .widget-region-three {
+        position: relative;
+    }
+
+    .widget-columns-2.widget-keylines .widget-region-one::after,
+    .widget-columns-3.widget-keylines .widget-region-one::after,
+    .widget-columns-3.widget-keylines .widget-region-two::after,
+    .widget-columns-4.widget-keylines .widget-region-one::after,
+    .widget-columns-4.widget-keylines .widget-region-two::after,
+    .widget-columns-4.widget-keylines .widget-region-three::after {
+        content: '';
+        right: -1rem;
+        top: 0;
+        height: 100%;
+        width: 1px;
+        position: absolute;
+        background-color: #e0e0e0;
+    }
+
+    .widget-columns-2.widget-gap-wide .widget-region-one::after,
+    .widget-columns-3.widget-gap-wide .widget-region-one::after,
+    .widget-columns-3.widget-gap-wide .widget-region-two::after,
+    .widget-columns-4.widget-gap-wide .widget-region-one::after,
+    .widget-columns-4.widget-gap-wide .widget-region-two::after,
+    .widget-columns-4.widget-gap-wide .widget-region-three::after {
+        right: -2rem;
+    }
+
+}
