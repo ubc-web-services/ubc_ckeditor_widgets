@@ -65,24 +65,3 @@ ubc_table_cell:
     js/build/ubcTableCellClass.js: { preprocess: false, minified: true }
   dependencies:
     - core/ckeditor5
-
-# Columns
-ubc_columns:
-  version: 1.x
-  css:
-    theme:
-      css/ubcColumns.css: { }
-
-ubc_columns_two:
-  version: 1.x
-  js:
-    js/build/ubcColumnsTwo.js: { preprocess: false, minified: true }
-  dependencies:
-    - ubc_ckeditor_widgets/ubc_columns
-    - core/ckeditor5
-
-ubc_columns_two.admin:
-  version: 1.x
-  css:
-    theme:
-      css/ubcColumnsTwo.admin.css: { }
