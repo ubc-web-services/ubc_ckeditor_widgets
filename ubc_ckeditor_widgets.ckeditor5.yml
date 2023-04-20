@@ -103,3 +103,60 @@ ubc_ckeditor_widgets_ubctablecellclass:
       - <td class="w-half w-one-third w-one-quarter w-one-fifth w-one-sixth">
     conditions:
       plugins: [ ckeditor5_table ]
+
+
+## this is one of the configurations I tried, the second, uncommented one is another version I tried, neither has worked for me.
+
+# ubc_ckeditor_widgets_ubccardhorizontal:
+#   ckeditor5:
+#     plugins:
+#       - ubcCardHorizontal.UbcCardHorizontal
+#     config:
+#       table:
+#         contentToolbar: [ cardHorizontalUbc ]
+#   drupal:
+#     label: UBC Card Horizontal
+#     library: ubc_ckeditor_widgets/ubc_card_horizontal
+#     elements:
+#       - <th>
+#       - <th class="w-half w-one-third w-one-quarter w-one-fifth w-one-sixth">
+#       - <td>
+#       - <td class="w-half w-one-third w-one-quarter w-one-fifth w-one-sixth">
+
+ubc_ckeditor_widgets_ubccardhorizontal:
+  # Use the provider: property for this plugin to depend on another module.
+  # Configuration that will be sent to CKEditor 5 JavaScript plugins.
+  ckeditor5:
+    plugins:
+      - ubccardHorizontal.ubcCardHorizontal
+    # *Additional configuration properties*
+    # config: data sent to the constructor of any CKEditor 5 plugin
+    #   editorPluginName:
+    #     editorPluginProperty: editorPluginValue
+    config:
+      accordion:
+        contentToolbar: [ cardHorizontalUbc ]
+  # Configuration that will be used directly by Drupal.
+  drupal:
+    label: UBC Card Horizontal
+    # The library loaded while using the editor.
+    library: ubc_ckeditor_widgets/ubc_card_horizontal
+    # The library loaded when configuring the text format using this plugin.
+    toolbar_items:
+      # This should match the name of the corresponding plugin exported in the
+      # plugin's index.js.
+      UbcAccordion:
+        label: UBC Card Horizontal
+    # If the plugin does not provide elements, set this as
+    # `elements: false`
+    elements:
+      # Note that it necessary for elements to separately provide both the tag
+      # (f.e. `<h3>`) and the attribute being added to the tag
+      # (f.e. `<h3 class="ubc-cardhorizontal-title">`).
+      - <div>
+      - <div class="clearfix widget-cardhorizontal cardhorizontal js-reveal__parent js-reveal__target cardhorizontal__content js-reveal__trigger cardhorizontal__trigger" hidden aria-expanded>
+    # *Additional configuration properties*
+    # conditions: for setting additional criteria that must be met for the
+    #   plugin to be active.
+    # class: Optional PHP class that makes it possible for the plugin to provide
+    #   dynamic values, or a configuration UI.
