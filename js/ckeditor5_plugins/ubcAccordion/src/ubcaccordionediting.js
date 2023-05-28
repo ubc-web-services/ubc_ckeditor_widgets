@@ -83,17 +83,13 @@ export default class UbcAccordionEditing extends Plugin {
 
 
     schema.register('ubcAccordionTitle', {
-      // This creates a boundary for external actions such as clicking and
-      // and keypress. For example, when the cursor is inside this box, the
-      // keyboard shortcut for "select all" will be limited to the contents of
-      // the box.
       isLimit: true,
-      // This is only to be used within ubcAccordion.
       allowIn: 'ubcAccordion',
       // Allow text only (e.g. text with attributes).
       allowContentOf: '$text',
-      // Allow h3 elements.
+      // Allow other elements.
       allowChildren: ['heading2', 'heading3', 'heading4', 'heading5', 'heading6'],
+      // Allow other attributes.
       allowAttributes: 'aria-expanded',
     });
 

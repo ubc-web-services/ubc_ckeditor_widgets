@@ -1,5 +1,5 @@
 /**
- * @file defines InsertUbcAccordionToggleCommand, which is executed when the ubcAccordionToggle
+ * @file defines InsertUbcTableClassCommand, which is executed when the ubcTableClass
  * toolbar button is pressed.
  */
 

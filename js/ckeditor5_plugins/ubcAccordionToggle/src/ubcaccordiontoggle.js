@@ -7,7 +7,7 @@
  * before it's made discoverable via index.js.
  */
 
-// The contents of UbcAccordionUI and UbcAccordion editing could be included in this
+// The contents of UbcAccordionToggleUI and UbcAccordionToggle editing could be included in this
 // file, but it is recommended to separate these concerns in different files.
 import UbcAccordionToggleEditing from './ubcaccordiontoggleediting';
 import UbcAccordionToggleUI from './ubcaccordiontoggleui';

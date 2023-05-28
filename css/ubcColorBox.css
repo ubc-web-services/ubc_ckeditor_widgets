@@ -1,0 +1,17 @@
+/* Editor-specific styles */
+
+.widget-color-box.ck-widget {
+    margin-top: 1.25rem;
+    position: relative;
+}
+
+.widget-color-box.ck-widget::after {
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    content: 'Color Box';
+    background-color: #ccc;
+    color: #111;
+    padding: .5em;
+    font-size: .5rem;
+}

@@ -21,14 +21,14 @@ export default class InsertUbcAccordionToggleCommand extends Command {
     const { selection } = model.document;
 
     // Determine if the cursor (selection) is in a position where adding a
-    // ubcAccordion is permitted. This is based on the schema of the model(s)
+    // ubcAccordionToggle is permitted. This is based on the schema of the model(s)
     // currently containing the cursor.
     const allowedIn = model.schema.findAllowedParent(
       selection.getFirstPosition(),
       'ubcAccordionToggle',
     );
 
-    // If the cursor is not in a location where a ubcAccordion can be added, return
+    // If the cursor is not in a location where a ubcAccordionToggle can be added, return
     // null so the addition doesn't happen.
     this.isEnabled = allowedIn !== null;
   }
@@ -36,7 +36,7 @@ export default class InsertUbcAccordionToggleCommand extends Command {
 
 function createUbcAccordionToggle(writer) {
   // Create instances of the three elements registered with the editor in
-  // ubcaccordionediting.js.
+  // ubcaccordiontoggleediting.js.
   const ubcAccordionToggle = writer.createElement('ubcAccordionToggle', { 'data-state': '0' });
   writer.insertText('Open All Accordions', ubcAccordionToggle);
 

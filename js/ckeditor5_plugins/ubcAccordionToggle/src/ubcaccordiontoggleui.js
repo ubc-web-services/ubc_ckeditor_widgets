@@ -1,5 +1,5 @@
 /**
- * @file registers the ubcAccordion toolbar button and binds functionality to it.
+ * @file registers the ubcAccordionToggle toolbar button and binds functionality to it.
  */
 
 import { Plugin } from 'ckeditor5/src/core';

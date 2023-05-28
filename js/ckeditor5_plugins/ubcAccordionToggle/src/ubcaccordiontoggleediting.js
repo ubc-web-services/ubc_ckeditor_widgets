@@ -10,15 +10,15 @@ import InsertUbcAccordionToggleCommand from './insertubcaccordiontogglecommand';
  * plugin-specific data models that are then converted to markup that
  * is inserted in the DOM.
  *
- * CKEditor 5 internally interacts with ubcAccordion as this model:
+ * CKEditor 5 internally interacts with ubcAccordionToggle as this model:
  * <ubcAccordionToggle>
- * </ubcAccordion>
+ * </ubcAccordionToggle>
  *
  * Which is converted for the browser/user as this markup
- * <button class="widget-expandcollapse unit-button text-xs" dta-state="0">
+ * <button class="widget-expandcollapse unit-button text-xs" data-state="0">
  * </button>
  *
- * This file has the logic for defining the ubcAccordion model, and for how it is
+ * This file has the logic for defining the ubcAccordionToggle model, and for how it is
  * converted to standard DOM markup.
  */
 export default class UbcAccordionToggleEditing extends Plugin {
@@ -44,7 +44,7 @@ export default class UbcAccordionToggleEditing extends Plugin {
   /*
    * This registers the structure that will be seen by CKEditor 5 as
    * <ubcAccordionToggle>
-   * </ubcAccordion>
+   * </ubcAccordionToggle>
    *
    * The logic in _defineConverters() will determine how this is converted to
    * markup.
@@ -77,7 +77,7 @@ export default class UbcAccordionToggleEditing extends Plugin {
     // Upcast Converters: determine how existing HTML is interpreted by the
     // editor. These trigger when an editor instance loads.
     //
-    // If <div class="widget-accordion"> is present in the existing markup
+    // If <button class="widget-expandcollapse unit-button text-xs" data-state="1"> is present in the existing markup
     // processed by CKEditor, then CKEditor recognizes and loads it as a
     // <ubcAccordionToggle> model.
     conversion.for('upcast').elementToElement({
@@ -99,7 +99,7 @@ export default class UbcAccordionToggleEditing extends Plugin {
     // These trigger when content is saved.
     //
     // Instances of <ubcAccordionToggle> are saved as
-    // <div class="widget-accordion">{{inner content}}</div>.
+    // <button class="widget-expandcollapse unit-button text-xs" data-state="1">{{inner content}}</button>.
     conversion.for('dataDowncast').elementToElement({
       model: 'ubcAccordionToggle',
       view: (modelElement, { writer: viewWriter }) => {
