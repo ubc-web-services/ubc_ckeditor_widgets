@@ -1,9 +1,16 @@
-import { Plugin } from 'ckeditor5/src/core';
-import { toWidget, toWidgetEditable } from 'ckeditor5/src/widget';
-import { Widget } from 'ckeditor5/src/widget';
-import InsertUbcCardVerticalOneCommand from './insertubccardverticalonecommand';
+import {
+  Plugin
+} from 'ckeditor5/src/core';
+import {
+  toWidget,
+  toWidgetEditable
+} from 'ckeditor5/src/widget';
+import {
+  Widget
+} from 'ckeditor5/src/widget';
+import UbcCardVerticalOneCommand from './ubccardverticalonecommand';
 
-// cSpell:ignore ubccardverticalone insertubccardverticalonecommand
+// cSpell:ignore ubccardverticalone ubccardverticalonecommand
 
 /**
  * CKEditor 5 plugins do not work directly with the DOM. They are defined as
@@ -13,9 +20,9 @@ import InsertUbcCardVerticalOneCommand from './insertubccardverticalonecommand';
  * CKEditor 5 internally interacts with ubcCardVerticalOne as this model:
  * <ubcCardVerticalOne>
  *  <ubcCardVerticalOneInner>
-*      <ubcCardVerticalOneImage></ubcCardVerticalOneImage>
-*      <ubcCardVerticalOneContent></ubcCardVerticalOneContent>
-*      <ubcCardVerticalOneFooter></ubcCardVerticalOneFooter>
+ *      <ubcCardVerticalOneImage></ubcCardVerticalOneImage>
+ *      <ubcCardVerticalOneContent></ubcCardVerticalOneContent>
+ *      <ubcCardVerticalOneFooter></ubcCardVerticalOneFooter>
  *  </ubcCardVerticalOneInner>
  * </ubcCardVerticalOne>
  *
@@ -33,22 +40,38 @@ import InsertUbcCardVerticalOneCommand from './insertubccardverticalonecommand';
  * converted to standard DOM markup.
  */
 export default class UbcCardVerticalOneEditing extends Plugin {
+
   static get requires() {
     return [Widget];
   }
 
+  constructor(editor) {
+    super(editor);
+  }
+
   init() {
-    this.editor.model.schema.extend( 'heading2', { allowAttributes: [ 'class' ] } );
-    this.editor.model.schema.extend( 'heading3', { allowAttributes: [ 'class' ] } );
-    this.editor.model.schema.extend( 'heading4', { allowAttributes: [ 'class' ] } );
-    this.editor.model.schema.extend( 'heading5', { allowAttributes: [ 'class' ] } );
-    this.editor.model.schema.extend( 'heading6', { allowAttributes: [ 'class' ] } );
-    this.editor.conversion.attributeToAttribute( { model: 'class', view: 'class' } );
+    const editor = this.editor;
+
+    editor.model.schema.extend('heading2', {
+      allowAttributes: ['class']
+    });
+    editor.model.schema.extend('heading3', {
+      allowAttributes: ['class']
+    });
+    editor.model.schema.extend('heading4', {
+      allowAttributes: ['class']
+    });
+    editor.model.schema.extend('heading5', {
+      allowAttributes: ['class']
+    });
+    editor.model.schema.extend('heading6', {
+      allowAttributes: ['class']
+    });
     this._defineSchema();
     this._defineConverters();
-    this.editor.commands.add(
-      'insertUbcCardVerticalOne',
-      new InsertUbcCardVerticalOneCommand(this.editor),
+    editor.commands.add(
+      'ubcCardVerticalOne',
+      new UbcCardVerticalOneCommand(editor),
     );
   }
 
@@ -72,9 +95,10 @@ export default class UbcCardVerticalOneEditing extends Plugin {
     schema.register('ubcCardVerticalOne', {
       // Behaves like a self-contained object (e.g. an image).
       isObject: true,
-      allowAttributes: 'class',
+      allowAttributes: 'class backgroundclass marginclass shadowclass',
       // Allow in places where other blocks are allowed (e.g. directly in the root).
       allowWhere: '$block',
+      allowChildren: ['ubcCardVerticalOneInner'],
     });
 
     schema.register('ubcCardVerticalOneInner', {
@@ -134,7 +158,9 @@ export default class UbcCardVerticalOneEditing extends Plugin {
    */
   _defineConverters() {
     // Converters are registered via the central editor object.
-    const { conversion } = this.editor;
+    const {
+      conversion
+    } = this.editor;
 
     // Upcast Converters: determine how existing HTML is interpreted by the
     // editor. These trigger when an editor instance loads.
@@ -146,7 +172,7 @@ export default class UbcCardVerticalOneEditing extends Plugin {
       model: 'ubcCardVerticalOne',
       view: {
         name: 'div',
-        classes: ['widget-card', 'card--one'],
+        classes: ['widget-card', 'card--one', 'widget-card--vertical-one'],
       },
     });
 
@@ -201,11 +227,13 @@ export default class UbcCardVerticalOneEditing extends Plugin {
     // <div class="widget-card card--one">{{inner content}}</div>.
     conversion.for('dataDowncast').elementToElement({
       model: 'ubcCardVerticalOne',
-      view: ( modelElement, { writer } ) => {
+      view: (modelElement, {
+        writer
+      }) => {
         return writer.createContainerElement(
-            'div', {
-              class: 'widget-card card--one',
-            },
+          'div', {
+            class: 'widget-card card--one widget-card--vertical-one',
+          },
         );
       },
     });
@@ -222,11 +250,13 @@ export default class UbcCardVerticalOneEditing extends Plugin {
     // <div class="first-image ubc-card__media object-cover">{{inner content}}</div>.
     conversion.for('dataDowncast').elementToElement({
       model: 'ubcCardVerticalOneImage',
-      view: ( modelElement, { writer } ) => {
+      view: (modelElement, {
+        writer
+      }) => {
         return writer.createContainerElement(
-            'div', {
-              class: 'first-image ubc-card__media object-cover',
-            },
+          'div', {
+            class: 'first-image ubc-card__media object-cover',
+          },
         );
       },
     });
@@ -235,11 +265,13 @@ export default class UbcCardVerticalOneEditing extends Plugin {
     // <div class="first-content ubc-card__content">{{inner content}}</div>.
     conversion.for('dataDowncast').elementToElement({
       model: 'ubcCardVerticalOneContent',
-      view: ( modelElement, { writer } ) => {
+      view: (modelElement, {
+        writer
+      }) => {
         return writer.createContainerElement(
-            'div', {
-              class: 'first-content ubc-card__content',
-            },
+          'div', {
+            class: 'first-content ubc-card__content',
+          },
         );
       },
     });
@@ -248,11 +280,13 @@ export default class UbcCardVerticalOneEditing extends Plugin {
     // <div class="first-footer ubc-card__actions">{{inner content}}</div>.
     conversion.for('dataDowncast').elementToElement({
       model: 'ubcCardVerticalOneFooter',
-      view: ( modelElement, { writer } ) => {
+      view: (modelElement, {
+        writer
+      }) => {
         return writer.createContainerElement(
-            'div', {
-              class: 'first-footer ubc-card__actions',
-            },
+          'div', {
+            class: 'first-footer ubc-card__actions',
+          },
         );
       },
     });
@@ -265,17 +299,24 @@ export default class UbcCardVerticalOneEditing extends Plugin {
     // Convert the <ubcCardVerticalOne> model into a container widget in the editor UI.
     conversion.for('editingDowncast').elementToElement({
       model: 'ubcCardVerticalOne',
-      view: (modelElement, { writer: viewWriter }) => {
+      view: (modelElement, {
+        writer: viewWriter
+      }) => {
         const div = viewWriter.createContainerElement('div', {
-          class: 'widget-card card--one',
+          class: 'widget-card card--one widget-card--vertical-one',
         });
-        return toWidget(div, viewWriter, { label: 'UBC Vertical Card widget', hasSelectionHandle: true });
+        return toWidget(div, viewWriter, {
+          label: 'UBC Vertical Card widget',
+          hasSelectionHandle: true
+        });
       },
     });
 
     conversion.for('editingDowncast').elementToElement({
       model: 'ubcCardVerticalOneInner',
-      view: (modelElement, { writer: viewWriter }) => {
+      view: (modelElement, {
+        writer: viewWriter
+      }) => {
         const div = viewWriter.createEditableElement('div', {
           class: 'ubc-card ubc-card--vert hover--no-underline group',
         });
@@ -286,7 +327,9 @@ export default class UbcCardVerticalOneEditing extends Plugin {
     // Convert the <ubcCardVerticalOneImage> model into an editable <div> widget.
     conversion.for('editingDowncast').elementToElement({
       model: 'ubcCardVerticalOneImage',
-      view: (modelElement, { writer: viewWriter }) => {
+      view: (modelElement, {
+        writer: viewWriter
+      }) => {
         const div = viewWriter.createEditableElement('div', {
           class: 'first-image ubc-card__media object-cover',
         });
@@ -297,7 +340,9 @@ export default class UbcCardVerticalOneEditing extends Plugin {
     // Convert the <ubcCardVerticalOneContent> model into an editable <div> widget.
     conversion.for('editingDowncast').elementToElement({
       model: 'ubcCardVerticalOneContent',
-      view: (modelElement, { writer: viewWriter }) => {
+      view: (modelElement, {
+        writer: viewWriter
+      }) => {
         const div = viewWriter.createEditableElement('div', {
           class: 'first-content ubc-card__content',
         });
@@ -308,7 +353,9 @@ export default class UbcCardVerticalOneEditing extends Plugin {
     // Convert the <ubcCardVerticalOneFooter> model into an editable <div> widget.
     conversion.for('editingDowncast').elementToElement({
       model: 'ubcCardVerticalOneFooter',
-      view: (modelElement, { writer: viewWriter }) => {
+      view: (modelElement, {
+        writer: viewWriter
+      }) => {
         const div = viewWriter.createEditableElement('div', {
           class: 'first-footer ubc-card__actions',
         });

@@ -1,5 +1,7 @@
-import { Plugin } from 'ckeditor5/src/core';
-import InsertUbcTableClassCommand from './insertubctableclasscommand';
+import {
+  Plugin
+} from 'ckeditor5/src/core';
+import UbcTableClassCommand from './ubctableclasscommand';
 
 /**
  * CKEditor 5 plugins do not work directly with the DOM. They are defined as
@@ -23,28 +25,39 @@ export default class UbcTableClassEditing extends Plugin {
   init() {
     const editor = this.editor;
     const model = editor.model;
-
-    const table_classes = [
-      { id: 'plain', classes: 'table--plain' },
-      { id: 'condensed', classes: 'table--condensed' },
-      { id: 'striped', classes: 'table--striped' },
-      { id: 'hover', classes: 'table--hover' },
+    const table_classes = [{
+        id: 'plain',
+        classes: 'table--plain'
+      },
+      {
+        id: 'condensed',
+        classes: 'table--condensed'
+      },
+      {
+        id: 'striped',
+        classes: 'table--striped'
+      },
+      {
+        id: 'hover',
+        classes: 'table--hover'
+      },
     ];
 
-    model.schema.extend( 'table', {
-      allowAttributes: [ 'plain', 'condensed', 'striped', 'hover', 'class' ]
-    } );
+    model.schema.extend('table', {
+      allowAttributes: ['plain', 'condensed', 'striped', 'hover', 'class']
+    });
 
     // Define all the commands.
-    editor.commands.add( 'setPlainClass', new InsertUbcTableClassCommand( editor, 'plain' ) );
-    editor.commands.add( 'setCondensedClass', new InsertUbcTableClassCommand( editor, 'condensed' ) );
-    editor.commands.add( 'setStripedClass', new InsertUbcTableClassCommand( editor, 'striped' ) );
-    editor.commands.add( 'setHoverClass', new InsertUbcTableClassCommand( editor, 'hover' ) );
+    editor.commands.add('setPlainClass', new UbcTableClassCommand(editor, 'plain'));
+    editor.commands.add('setCondensedClass', new UbcTableClassCommand(editor, 'condensed'));
+    editor.commands.add('setStripedClass', new UbcTableClassCommand(editor, 'striped'));
+    editor.commands.add('setHoverClass', new UbcTableClassCommand(editor, 'hover'));
 
-    table_classes.forEach( ( tableClass ) => {
-      editor.model.schema.extend( 'table', { allowAttributes: tableClass.id } );
-
-      editor.conversion.for( 'upcast' ).attributeToAttribute( {
+    table_classes.forEach((tableClass) => {
+      editor.model.schema.extend('table', {
+        allowAttributes: tableClass.id
+      });
+      editor.conversion.for('upcast').attributeToAttribute({
         model: {
           name: 'table',
           key: tableClass.id,
@@ -54,17 +67,16 @@ export default class UbcTableClassEditing extends Plugin {
           key: 'class',
           value: tableClass.classes,
         },
-      } );
+      });
 
       const val = 'attribute:' + tableClass.id + ':table';
-
       // Apply attribute to table element no matter if it's needed or not.
-      editor.conversion.for( 'downcast' ).add( dispatcher => {
-        dispatcher.on( val, ( evt, data, conversionApi ) => {
-          const viewElement = conversionApi.mapper.toViewElement( data.item );
-          conversionApi.writer.addClass( tableClass.classes, viewElement );
-        } );
+      editor.conversion.for('downcast').add(dispatcher => {
+        dispatcher.on(val, (evt, data, conversionApi) => {
+          const viewElement = conversionApi.mapper.toViewElement(data.item);
+          conversionApi.writer.addClass(tableClass.classes, viewElement);
+        });
       });
-    } );
+    });
   }
 }

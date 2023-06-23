@@ -2,8 +2,12 @@
  * @file registers the ubcAccordionToggle toolbar button and binds functionality to it.
  */
 
-import { Plugin } from 'ckeditor5/src/core';
-import { ButtonView } from 'ckeditor5/src/ui';
+import {
+  Plugin
+} from 'ckeditor5/src/core';
+import {
+  ButtonView
+} from 'ckeditor5/src/ui';
 import icon from '../../../../icons/ubcAccordionToggle.svg';
 
 export default class UbcAccordionToggleUI extends Plugin {
@@ -12,7 +16,7 @@ export default class UbcAccordionToggleUI extends Plugin {
 
     // This will register the ubcAccordion toolbar button.
     editor.ui.componentFactory.add('ubcAccordionToggle', (locale) => {
-      const command = editor.commands.get('insertUbcAccordionToggle');
+      const command = editor.commands.get('ubcAccordionToggle');
       const buttonView = new ButtonView(locale);
 
       // Create the toolbar button.
@@ -27,7 +31,7 @@ export default class UbcAccordionToggleUI extends Plugin {
 
       // Execute the command when the button is clicked (executed).
       this.listenTo(buttonView, 'execute', () =>
-        editor.execute('insertUbcAccordionToggle'),
+        editor.execute('ubcAccordionToggle'),
       );
 
       return buttonView;

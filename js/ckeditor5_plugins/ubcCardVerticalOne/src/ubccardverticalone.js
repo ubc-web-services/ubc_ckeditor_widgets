@@ -11,7 +11,11 @@
 // The contents of UbcCardVerticalOneUI and UbcCardVerticalOne editing could be included in this
 // file, but it is recommended to separate these concerns in different files.
 import UbcCardVerticalOneEditing from './ubccardverticaloneediting';
-import UbcCardVerticalOneUI from './ubccardverticaloneoui';
+import UbcCardVerticalOneUI from './ubccardverticaloneui';
+import UbcCardVerticalOneToolbar from './ubccardverticalonetoolbar';
+import UbcCardVerticalOneBackground from './ubccardverticalonebackground';
+import UbcCardVerticalOneShadow from './ubccardverticaloneshadow';
+import UbcCardVerticalOneMargin from './ubccardverticalonemargin';
 import { Plugin } from 'ckeditor5/src/core';
 
 export default class UbcCardVerticalOne extends Plugin {
@@ -19,6 +23,13 @@ export default class UbcCardVerticalOne extends Plugin {
   // are not seen as individual plugins by CKEditor 5. CKEditor 5 will only
   // discover the plugins explicitly exported in index.js.
   static get requires() {
-    return [UbcCardVerticalOneEditing, UbcCardVerticalOneUI];
+    return [
+      UbcCardVerticalOneEditing,
+      UbcCardVerticalOneUI,
+      UbcCardVerticalOneToolbar,
+      UbcCardVerticalOneBackground,
+      UbcCardVerticalOneShadow,
+      UbcCardVerticalOneMargin
+    ];
   }
 }

@@ -1,0 +1,19 @@
+# Set Defaults for the module options
+align_styles: "align-left|Left\r\nalign-center|Center\r\nalign-right|Right"
+background_colors: "bg-transparent|None\r\nbg-white|White\r\nbg-grey-100|Light Grey\r\nbg-unit-primary|Unit Primary\r\nbg-unit-secondary|Unit Secondary\r\nbg-unit-tertiary|Unit Tertiary\r\nbg-unit-accent|Unit Accent\r\nbg-ubc-blue|UBC Blue\r\nbg-ubc-blue-sea|UBC Blue Sea\r\nbg-ubc-blue-cobalt|UBC Blue Cobalt\r\nbg-ubc-blue-neptune|UBC Blue Neptune\r\nbg-ubc-blue-cornflower|UBC Blue Cornflower\r\nbg-ubc-blue-polar|UBC Blue Polar\r\nbg-ubc-blue-frost|UBC Blue Frost"
+gap_styles: "gap-0|None\r\ngap-4|Small\r\ngap-6|Normal\r\ngap-12|Large\r\ngap-16|Extra Large"
+margin_styles: "my-0|None\r\nmy-4|Small\r\nmy-6|Normal\r\nmy-12|Large\r\nmy-16|Extra Large"
+padding_styles: "p-0|None\r\np-4|Small\r\np-6|Normal\r\np-12|Large\r\np-16|Extra Large"
+three_column_layout_styles: "align-equal|Equal Width\r\nalign-large-left|Align Large Left\r\nalign-large-center|Align Large Center\r\nalign-large-right|Align Large Right"
+two_column_layout_styles: "align-equal|Equal Width\r\nalign-large-left|Align Large Left\r\nalign-large-right|Align Large Right"
+
+# default_card_horizontal_styles: ""
+# default_card_vertical_one_styles: ""
+# default_card_vertical_two_styles: ""
+# default_card_vertical_three_styles: ""
+# default_color_box_styles: ""
+# default_columns_two_styles: ""
+# default_columns_three_styles: ""
+# default_columns_four_styles: ""
+
+

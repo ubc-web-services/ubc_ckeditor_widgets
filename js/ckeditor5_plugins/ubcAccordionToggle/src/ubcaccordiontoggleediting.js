@@ -1,7 +1,14 @@
-import { Plugin } from 'ckeditor5/src/core';
-import { toWidget, toWidgetEditable } from 'ckeditor5/src/widget';
-import { Widget } from 'ckeditor5/src/widget';
-import InsertUbcAccordionToggleCommand from './insertubcaccordiontogglecommand';
+import {
+  Plugin
+} from 'ckeditor5/src/core';
+import {
+  toWidget,
+  toWidgetEditable
+} from 'ckeditor5/src/widget';
+import {
+  Widget
+} from 'ckeditor5/src/widget';
+import UbcAccordionToggleCommand from './ubcaccordiontogglecommand';
 
 // cSpell:ignore ubcaccordiontoggle insertubcaccordiontogglecommand
 
@@ -30,8 +37,8 @@ export default class UbcAccordionToggleEditing extends Plugin {
     this._defineSchema();
     this._defineConverters();
     this.editor.commands.add(
-      'insertUbcAccordionToggle',
-      new InsertUbcAccordionToggleCommand(this.editor),
+      'ubcAccordionToggle',
+      new UbcAccordionToggleCommand(this.editor),
     );
     /*
     this.editor.editing.mapper.on(
@@ -59,11 +66,10 @@ export default class UbcAccordionToggleEditing extends Plugin {
       // Allow in places where other blocks are allowed (e.g. directly in the root).
       allowIn: 'paragraph',
       allowWhere: '$block',
-      allowAttributes: [ 'data-state', 'class' ],
+      allowAttributes: ['data-state', 'class'],
     });
 
-    schema.addChildCheck((context, childDefinition) => {
-    });
+    schema.addChildCheck((context, childDefinition) => {});
   }
 
   /**
@@ -72,7 +78,9 @@ export default class UbcAccordionToggleEditing extends Plugin {
    */
   _defineConverters() {
     // Converters are registered via the central editor object.
-    const { conversion } = this.editor;
+    const {
+      conversion
+    } = this.editor;
 
     // Upcast Converters: determine how existing HTML is interpreted by the
     // editor. These trigger when an editor instance loads.
@@ -87,9 +95,11 @@ export default class UbcAccordionToggleEditing extends Plugin {
         classes: ['widget-expandcollapse', 'unit-button', 'text-xs'],
         'data-state': '1',
       },
-      model: ( viewElement, conversionApi ) => {
+      model: (viewElement, conversionApi) => {
         const modelWriter = conversionApi.writer;
-        const element = modelWriter.createElement( 'ubcAccordionToggle', { 'data-state': '0' });
+        const element = modelWriter.createElement('ubcAccordionToggle', {
+          'data-state': '0'
+        });
         modelWriter.insertText('Open All Accordions', element);
         return element;
       },
@@ -102,7 +112,9 @@ export default class UbcAccordionToggleEditing extends Plugin {
     // <button class="widget-expandcollapse unit-button text-xs" data-state="1">{{inner content}}</button>.
     conversion.for('dataDowncast').elementToElement({
       model: 'ubcAccordionToggle',
-      view: (modelElement, { writer: viewWriter }) => {
+      view: (modelElement, {
+        writer: viewWriter
+      }) => {
         const button = viewWriter.createContainerElement('button', {
           class: 'widget-expandcollapse unit-button text-xs',
           'data-state': '1',
@@ -119,12 +131,17 @@ export default class UbcAccordionToggleEditing extends Plugin {
     // Convert the <ubcAccordionToggle> model into a container widget in the editor UI.
     conversion.for('editingDowncast').elementToElement({
       model: 'ubcAccordionToggle',
-      view: (modelElement, { writer: viewWriter }) => {
+      view: (modelElement, {
+        writer: viewWriter
+      }) => {
         const button = viewWriter.createContainerElement('button', {
           class: 'widget-expandcollapse unit-button text-xs',
           'data-state': '1',
         });
-        return toWidget(button, viewWriter, { label: 'UBC Accordion Toggle widget', hasSelectionHandle: true });
+        return toWidget(button, viewWriter, {
+          label: 'UBC Accordion Toggle widget',
+          hasSelectionHandle: true
+        });
       },
     });
   }

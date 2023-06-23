@@ -12,7 +12,9 @@
 // file, but it is recommended to separate these concerns in different files.
 import UbcAccordionEditing from './ubcaccordionediting';
 import UbcAccordionUI from './ubcaccordionui';
-import { Plugin } from 'ckeditor5/src/core';
+import {
+  Plugin
+} from 'ckeditor5/src/core';
 
 export default class UbcAccordion extends Plugin {
   // Note that UbcAccordionEditing and UbcAccordionUI also extend `Plugin`, but these

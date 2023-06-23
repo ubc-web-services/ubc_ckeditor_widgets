@@ -1,0 +1,59 @@
+.widget-accordion * {
+  box-sizing: border-box;
+}
+
+.widget-accordion {
+  position: relative;
+  margin: 10px;
+  background: #eee;
+  border: 1px dashed #ddd;
+  padding: 5px;
+}
+
+.accordion__trigger,
+.accordion__content {
+  box-shadow: 0 1px 1px #ddd inset;
+  border: 1px solid #cccccc;
+  background: #fff;
+  padding: 1em;
+}
+
+.accordion__trigger {
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.accordion__trigger p,
+.accordion__trigger h3,
+.accordion__trigger h4,
+.accordion__trigger h5,
+.accordion__trigger h6 {
+  margin-top: 0 !important;
+}
+
+.widget-accordion::before {
+  background: none repeat scroll 0 0 #007eab;
+  color: #fff;
+  content: "Accordion";
+  opacity: 0.65;
+  line-height: 1em;
+  position: absolute;
+  line-height: 1em;
+  z-index: 9999;
+  padding: 2px 4px;
+  border-bottom-left-radius: 3px;
+  right: 0;
+  top: 0;
+}
+
+/* fix for resized images */
+.accordion__content img {
+  width: 100%;
+  height: auto;
+}
+
+/* Ensure collapsing content is expanded  */
+.accordion__content[hidden] {
+  display: block;
+}

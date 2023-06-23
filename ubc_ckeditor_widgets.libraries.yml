@@ -201,3 +201,14 @@ ubc_table_cell:
     js/build/ubcTableCellClass.js: { preprocess: false, minified: true }
   dependencies:
     - core/ckeditor5
+
+v4_widgets:
+  css:
+    layout:
+      css/ubc.ckeditor4.widgets.css: {}
+  js:
+    js/ckeditor4/ubc_ckeditor_widgets.js: { minified: true }
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+    - core/once

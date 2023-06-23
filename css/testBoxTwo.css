@@ -1,0 +1,17 @@
+/* Editor-specific styles */
+
+.widget-test-box-two.ck-widget {
+    margin-top: 1.25rem;
+    position: relative;
+}
+
+.widget-test-box-two.ck-widget::after {
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    content: 'Test Box Two';
+    background-color: #ccc;
+    color: #111;
+    padding: .5em;
+    font-size: .5rem;
+}

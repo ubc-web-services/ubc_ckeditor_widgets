@@ -1,7 +1,14 @@
-import { Plugin } from 'ckeditor5/src/core';
-import { toWidget, toWidgetEditable } from 'ckeditor5/src/widget';
-import { Widget } from 'ckeditor5/src/widget';
-import InsertUbcAccordionCommand from './insertubcaccordioncommand';
+import {
+  Plugin
+} from 'ckeditor5/src/core';
+import {
+  toWidget,
+  toWidgetEditable
+} from 'ckeditor5/src/widget';
+import {
+  Widget
+} from 'ckeditor5/src/widget';
+import UbcAccordionCommand from './ubcaccordioncommand';
 
 // cSpell:ignore ubcaccordion insertubcaccordioncommand
 
@@ -36,17 +43,20 @@ export default class UbcAccordionEditing extends Plugin {
   }
 
   init() {
+
     this._defineSchema();
     this._defineConverters();
+    this.editor.model.schema.extend('ubcAccordion', {
+      allowAttributes: ['class']
+    });
+    this.editor.conversion.attributeToAttribute({
+      model: 'class',
+      view: 'class'
+    });
     this.editor.commands.add(
-      'insertUbcAccordion',
-      new InsertUbcAccordionCommand(this.editor),
+      'ubcAccordion',
+      new UbcAccordionCommand(this.editor),
     );
-
-    const accordion_classes = [
-      { id: 'open', classes: 'is-open', aria: 'true', hidden: '' },
-      { id: 'closed', classes: '', aria: 'false', hidden: 'hidden' },
-    ];
   }
 
   /*
@@ -68,6 +78,7 @@ export default class UbcAccordionEditing extends Plugin {
       isObject: true,
       // Allow in places where other blocks are allowed (e.g. directly in the root).
       allowWhere: '$block',
+      allowAttributes: ['class'],
     });
 
     schema.register('ubcAccordionTitleWrapper', {
@@ -120,7 +131,9 @@ export default class UbcAccordionEditing extends Plugin {
    */
   _defineConverters() {
     // Converters are registered via the central editor object.
-    const { conversion } = this.editor;
+    const {
+      conversion
+    } = this.editor;
 
     // Upcast Converters: determine how existing HTML is interpreted by the
     // editor. These trigger when an editor instance loads.
@@ -193,12 +206,14 @@ export default class UbcAccordionEditing extends Plugin {
     // <div class="js-reveal__trigger accordion__trigger" aria-expanded="false">{{inner content}}</div>.
     conversion.for('dataDowncast').elementToElement({
       model: 'ubcAccordionTitle',
-      view: ( modelElement, { writer } ) => {
+      view: (modelElement, {
+        writer
+      }) => {
         return writer.createContainerElement(
-            'div', {
-              class: 'js-reveal__trigger accordion__trigger',
-              'aria-expanded': false,
-            },
+          'div', {
+            class: 'js-reveal__trigger accordion__trigger',
+            'aria-expanded': false,
+          },
         );
       },
     });
@@ -207,12 +222,14 @@ export default class UbcAccordionEditing extends Plugin {
     // <div class="js-reveal__target accordion__content clearfix" hidden>{{inner content}}</div>.
     conversion.for('dataDowncast').elementToElement({
       model: 'ubcAccordionDescription',
-      view: ( modelElement, { writer } ) => {
+      view: (modelElement, {
+        writer
+      }) => {
         return writer.createContainerElement(
-            'div', {
-              class: 'js-reveal__target accordion__content clearfix',
-              'hidden': 'hidden',
-            },
+          'div', {
+            class: 'js-reveal__target accordion__content clearfix',
+            'hidden': 'hidden',
+          },
         );
       },
     });
@@ -225,17 +242,24 @@ export default class UbcAccordionEditing extends Plugin {
     // Convert the <ubcAccordion> model into a container widget in the editor UI.
     conversion.for('editingDowncast').elementToElement({
       model: 'ubcAccordion',
-      view: (modelElement, { writer: viewWriter }) => {
+      view: (modelElement, {
+        writer: viewWriter
+      }) => {
         const div = viewWriter.createContainerElement('div', {
           class: 'widget-accordion',
         });
-        return toWidget(div, viewWriter, { label: 'UBC Accordion widget', hasSelectionHandle: true });
+        return toWidget(div, viewWriter, {
+          label: 'UBC Accordion widget',
+          hasSelectionHandle: true
+        });
       },
     });
 
     conversion.for('editingDowncast').elementToElement({
       model: 'ubcAccordionTitleWrapper',
-      view: (modelElement, { writer: viewWriter }) => {
+      view: (modelElement, {
+        writer: viewWriter
+      }) => {
         const div = viewWriter.createEditableElement('div', {
           class: 'accordion js-reveal__parent',
         });
@@ -246,7 +270,9 @@ export default class UbcAccordionEditing extends Plugin {
     // Convert the <ubcAccordionTitle> model into an editable <div> widget.
     conversion.for('editingDowncast').elementToElement({
       model: 'ubcAccordionTitle',
-      view: (modelElement, { writer: viewWriter }) => {
+      view: (modelElement, {
+        writer: viewWriter
+      }) => {
         const div = viewWriter.createEditableElement('div', {
           class: 'js-reveal__trigger accordion__trigger',
           'aria-expanded': 'true',
@@ -258,11 +284,13 @@ export default class UbcAccordionEditing extends Plugin {
     // Convert the <ubcAccordionDescription> model into an editable <div> widget.
     conversion.for('editingDowncast').elementToElement({
       model: 'ubcAccordionDescription',
-      view: (modelElement, { writer: viewWriter }) => {
+      view: (modelElement, {
+        writer: viewWriter
+      }) => {
         const div = viewWriter.createEditableElement('div', {
           class: 'js-reveal__target accordion__content clearfix',
         });
-        return toWidgetEditable(div, viewWriter, { label: 'UBC Accordion widget', hasSelectionHandle: true });
+        return toWidgetEditable(div, viewWriter);
       },
     });
   }

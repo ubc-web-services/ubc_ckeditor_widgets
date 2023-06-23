@@ -1,9 +1,16 @@
-import { Plugin } from 'ckeditor5/src/core';
-import { toWidget, toWidgetEditable } from 'ckeditor5/src/widget';
-import { Widget } from 'ckeditor5/src/widget';
-import InsertUbcColumnsTwoCommand from './insertubccolumnstwocommand';
+import {
+  Plugin
+} from 'ckeditor5/src/core';
+import {
+  toWidget,
+  toWidgetEditable
+} from 'ckeditor5/src/widget';
+import {
+  Widget
+} from 'ckeditor5/src/widget';
+import UbcColumnsTwoCommand from './ubccolumnstwocommand';
 
-// cSpell:ignore ubccolumnstwo insertubccolumnstwocommand
+// cSpell:ignore ubccolumnstwo ubccolumnstwocommand
 
 /**
  * CKEditor 5 plugins do not work directly with the DOM. They are defined as
@@ -33,16 +40,21 @@ import InsertUbcColumnsTwoCommand from './insertubccolumnstwocommand';
  * converted to standard DOM markup.
  */
 export default class UbcColumnsTwoEditing extends Plugin {
+
   static get requires() {
     return [Widget];
+  }
+
+  constructor(editor) {
+    super(editor);
   }
 
   init() {
     this._defineSchema();
     this._defineConverters();
     this.editor.commands.add(
-      'insertUbcColumnsTwo',
-      new InsertUbcColumnsTwoCommand(this.editor),
+      'ubcColumnsTwo',
+      new UbcColumnsTwoCommand(this.editor),
     );
   }
 
@@ -67,7 +79,8 @@ export default class UbcColumnsTwoEditing extends Plugin {
       isObject: true,
       // Allow in places where other blocks are allowed (e.g. directly in the root).
       allowWhere: '$block',
-      allowAttributes: 'class',
+      allowAttributes: 'class gapclass keylineclass layoutclass marginclass',
+      allowChildren: ['ubcColumnsTwoWrapper'],
     });
 
     schema.register('ubcColumnsTwoWrapper', {
@@ -108,19 +121,21 @@ export default class UbcColumnsTwoEditing extends Plugin {
    */
   _defineConverters() {
     // Converters are registered via the central editor object.
-    const { conversion } = this.editor;
+    const {
+      conversion
+    } = this.editor;
 
     // Upcast Converters: determine how existing HTML is interpreted by the
     // editor. These trigger when an editor instance loads.
     //
-    // If <div class="widget-column-options widget-columns-2 align-equal"> is present in the existing markup
+    // If <div class="widget-column-options widget-columns-2"> is present in the existing markup
     // processed by CKEditor, then CKEditor recognizes and loads it as a
     // <ubcColumnsTwo> model.
     conversion.for('upcast').elementToElement({
       model: 'ubcColumnsTwo',
       view: {
         name: 'div',
-        classes: ['widget-column-options', 'widget-columns-2', 'align-equal'],
+        classes: ['widget-column-options', 'widget-columns-2'],
       },
     });
 
@@ -148,23 +163,30 @@ export default class UbcColumnsTwoEditing extends Plugin {
     // These trigger when content is saved.
     //
     // Instances of <ubcColumnsTwo> are saved as
-    // <div class="widget-column-options widget-columns-2 align-equal">{{inner content}}</div>.
+    // <div class="widget-column-options widget-columns-2">{{inner content}}</div>.
     conversion.for('dataDowncast').elementToElement({
       model: 'ubcColumnsTwo',
-      view: ( modelElement, { writer } ) => {
+      view: (modelElement, {
+        writer
+      }) => {
         return writer.createContainerElement(
-            'div', {
-              class: 'widget-column-options widget-columns-2 align-equal',
-            },
+          'div', {
+            class: 'widget-column-options widget-columns-2',
+          },
         );
       },
     });
 
     conversion.for('dataDowncast').elementToElement({
       model: 'ubcColumnsTwoWrapper',
-      view: {
-        name: 'div',
-        classes: 'widget--md--grid',
+      view: (modelElement, {
+        writer
+      }) => {
+        return writer.createContainerElement(
+          'div', {
+            class: 'widget--md--grid',
+          },
+        );
       },
     });
 
@@ -172,11 +194,13 @@ export default class UbcColumnsTwoEditing extends Plugin {
     // <div class="first-child--mt-0">{{inner content}}</div>.
     conversion.for('dataDowncast').elementToElement({
       model: 'ubcColumnsTwoColumn',
-      view: ( modelElement, { writer } ) => {
+      view: (modelElement, {
+        writer
+      }) => {
         return writer.createContainerElement(
-            'div', {
-              class: 'first-child--mt-0',
-            },
+          'div', {
+            class: 'first-child--mt-0',
+          },
         );
       },
     });
@@ -189,17 +213,24 @@ export default class UbcColumnsTwoEditing extends Plugin {
     // Convert the <ubcColumnsTwo> model into a container widget in the editor UI.
     conversion.for('editingDowncast').elementToElement({
       model: 'ubcColumnsTwo',
-      view: (modelElement, { writer: viewWriter }) => {
+      view: (modelElement, {
+        writer: viewWriter
+      }) => {
         const div = viewWriter.createContainerElement('div', {
-          class: 'widget-column-options widget-columns-2 align-equal',
+          class: 'widget-column-options widget-columns-2',
         });
-        return toWidget(div, viewWriter, { label: 'UBC Two Columns widget', hasSelectionHandle: true });
+        return toWidget(div, viewWriter, {
+          label: 'UBC Two Columns widget',
+          hasSelectionHandle: true
+        });
       },
     });
 
     conversion.for('editingDowncast').elementToElement({
       model: 'ubcColumnsTwoWrapper',
-      view: (modelElement, { writer: viewWriter }) => {
+      view: (modelElement, {
+        writer: viewWriter
+      }) => {
         const div = viewWriter.createEditableElement('div', {
           class: 'widget--md--grid',
         });
@@ -210,7 +241,9 @@ export default class UbcColumnsTwoEditing extends Plugin {
     // Convert the <ubcColumnsTwoColumn> model into an editable <div> widget.
     conversion.for('editingDowncast').elementToElement({
       model: 'ubcColumnsTwoColumn',
-      view: (modelElement, { writer: viewWriter }) => {
+      view: (modelElement, {
+        writer: viewWriter
+      }) => {
         const div = viewWriter.createEditableElement('div', {
           class: 'first-child--mt-0',
         });

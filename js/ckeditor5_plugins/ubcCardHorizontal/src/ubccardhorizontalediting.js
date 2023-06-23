@@ -1,9 +1,15 @@
-import { Plugin } from 'ckeditor5/src/core';
-import { toWidget, toWidgetEditable } from 'ckeditor5/src/widget';
-import { Widget } from 'ckeditor5/src/widget';
-import InsertUbcCardHorizontalCommand from './insertubccardhorizontalcommand';
-
-// cSpell:ignore ubccardhorizontal insertubccardhorizontalcommand
+import {
+  Plugin
+} from 'ckeditor5/src/core';
+import {
+  toWidget,
+  toWidgetEditable
+} from 'ckeditor5/src/widget';
+import {
+  Widget
+} from 'ckeditor5/src/widget';
+import UbcCardHorizontalCommand from './ubccardhorizontalcommand';
+// cSpell:ignore ubccardhorizontal ubcardhorizontalcommand
 
 /**
  * CKEditor 5 plugins do not work directly with the DOM. They are defined as
@@ -44,23 +50,40 @@ import InsertUbcCardHorizontalCommand from './insertubccardhorizontalcommand';
  * converted to standard DOM markup.
  */
 export default class UbcCardHorizontalEditing extends Plugin {
+
   static get requires() {
     return [Widget];
   }
 
-  init() {
+  constructor(editor) {
+    super(editor);
+  }
 
-    this.editor.model.schema.extend( 'heading2', { allowAttributes: [ 'class' ] } );
-    this.editor.model.schema.extend( 'heading3', { allowAttributes: [ 'class' ] } );
-    this.editor.model.schema.extend( 'heading4', { allowAttributes: [ 'class' ] } );
-    this.editor.model.schema.extend( 'heading5', { allowAttributes: [ 'class' ] } );
-    this.editor.model.schema.extend( 'heading6', { allowAttributes: [ 'class' ] } );
-    this.editor.conversion.attributeToAttribute( { model: 'class', view: 'class' } );
+  init() {
+    this.editor.model.schema.extend('heading2', {
+      allowAttributes: ['class']
+    });
+    this.editor.model.schema.extend('heading3', {
+      allowAttributes: ['class']
+    });
+    this.editor.model.schema.extend('heading4', {
+      allowAttributes: ['class']
+    });
+    this.editor.model.schema.extend('heading5', {
+      allowAttributes: ['class']
+    });
+    this.editor.model.schema.extend('heading6', {
+      allowAttributes: ['class']
+    });
+    this.editor.conversion.attributeToAttribute({
+      model: 'class',
+      view: 'class'
+    });
     this._defineSchema();
     this._defineConverters();
     this.editor.commands.add(
-      'insertUbcCardHorizontal',
-      new InsertUbcCardHorizontalCommand(this.editor),
+      'ubcCardHorizontal',
+      new UbcCardHorizontalCommand(this.editor),
     );
   }
 
@@ -87,9 +110,10 @@ export default class UbcCardHorizontalEditing extends Plugin {
     schema.register('ubcCardHorizontal', {
       // Behaves like a self-contained object (e.g. an image).
       isObject: true,
-      allowAttributes: 'class',
+      allowAttributes: 'class backgroundclass layoutclass marginclass shadowclass',
       // Allow in places where other blocks are allowed (e.g. directly in the root).
       allowWhere: '$block',
+      allowChildren: ['ubcCardHorizontalWrapper'],
     });
 
     schema.register('ubcCardHorizontalWrapper', {
@@ -118,7 +142,6 @@ export default class UbcCardHorizontalEditing extends Plugin {
       allowIn: 'ubcCardHorizontal',
       allowChildren: ['ubcCardHorizontalContent', 'ubcCardHorizontalFooter'],
     });
-
 
     schema.register('ubcCardHorizontalContent', {
       isLimit: true,
@@ -156,7 +179,9 @@ export default class UbcCardHorizontalEditing extends Plugin {
    */
   _defineConverters() {
     // Converters are registered via the central editor object.
-    const { conversion } = this.editor;
+    const {
+      conversion
+    } = this.editor;
 
     // Upcast Converters: determine how existing HTML is interpreted by the
     // editor. These trigger when an editor instance loads.
@@ -231,9 +256,14 @@ export default class UbcCardHorizontalEditing extends Plugin {
     // <div class="widget-card widget-card--horizontal">{{inner content}}</div>.
     conversion.for('dataDowncast').elementToElement({
       model: 'ubcCardHorizontal',
-      view: {
-        name: 'div',
-        classes: ['widget-card', 'widget-card--horizontal'],
+      view: (modelElement, {
+        writer
+      }) => {
+        return writer.createContainerElement(
+          'div', {
+            class: 'widget-card widget-card--horizontal',
+          },
+        );
       },
     });
 
@@ -249,11 +279,13 @@ export default class UbcCardHorizontalEditing extends Plugin {
     // <div class="first-image ubc-card__media">{{inner content}}</div>.
     conversion.for('dataDowncast').elementToElement({
       model: 'ubcCardHorizontalImage',
-      view: ( modelElement, { writer } ) => {
+      view: (modelElement, {
+        writer
+      }) => {
         return writer.createContainerElement(
-            'div', {
-              class: 'first-image ubc-card__media',
-            },
+          'div', {
+            class: 'first-image ubc-card__media',
+          },
         );
       },
     });
@@ -262,11 +294,13 @@ export default class UbcCardHorizontalEditing extends Plugin {
     // <div class="ubc-card__content_wrapper">{{inner content}}</div>.
     conversion.for('dataDowncast').elementToElement({
       model: 'ubcCardHorizontalInner',
-      view: ( modelElement, { writer } ) => {
+      view: (modelElement, {
+        writer
+      }) => {
         return writer.createContainerElement(
-            'div', {
-              class: 'ubc-card__content_wrapper',
-            },
+          'div', {
+            class: 'ubc-card__content_wrapper',
+          },
         );
       },
     });
@@ -275,11 +309,13 @@ export default class UbcCardHorizontalEditing extends Plugin {
     // <div class="first-content ubc-card__content">{{inner content}}</div>.
     conversion.for('dataDowncast').elementToElement({
       model: 'ubcCardHorizontalContent',
-      view: ( modelElement, { writer } ) => {
+      view: (modelElement, {
+        writer
+      }) => {
         return writer.createContainerElement(
-            'div', {
-              class: 'first-content ubc-card__content',
-            },
+          'div', {
+            class: 'first-content ubc-card__content',
+          },
         );
       },
     });
@@ -288,11 +324,13 @@ export default class UbcCardHorizontalEditing extends Plugin {
     // <div class="first-footer ubc-card__actions">{{inner content}}</div>.
     conversion.for('dataDowncast').elementToElement({
       model: 'ubcCardHorizontalFooter',
-      view: ( modelElement, { writer } ) => {
+      view: (modelElement, {
+        writer
+      }) => {
         return writer.createContainerElement(
-            'div', {
-              class: 'first-footer ubc-card__actions',
-            },
+          'div', {
+            class: 'first-footer ubc-card__actions',
+          },
         );
       },
     });
@@ -305,17 +343,24 @@ export default class UbcCardHorizontalEditing extends Plugin {
     // Convert the <ubcCardHorizontal> model into a container widget in the editor UI.
     conversion.for('editingDowncast').elementToElement({
       model: 'ubcCardHorizontal',
-      view: (modelElement, { writer: viewWriter }) => {
+      view: (modelElement, {
+        writer: viewWriter
+      }) => {
         const div = viewWriter.createContainerElement('div', {
           class: 'widget-card widget-card--horizontal',
         });
-        return toWidget(div, viewWriter, { label: 'UBC CardHorizontal widget', hasSelectionHandle: true });
+        return toWidget(div, viewWriter, {
+          label: 'UBC Card Horizontal widget',
+          hasSelectionHandle: true
+        });
       },
     });
 
     conversion.for('editingDowncast').elementToElement({
       model: 'ubcCardHorizontalWrapper',
-      view: (modelElement, { writer: viewWriter }) => {
+      view: (modelElement, {
+        writer: viewWriter
+      }) => {
         const div = viewWriter.createEditableElement('div', {
           class: 'ubc-card ubc-card--horiz hover--no-underline group',
         });
@@ -326,7 +371,9 @@ export default class UbcCardHorizontalEditing extends Plugin {
     // Convert the <ubcCardHorizontalImage> model into an editable <div> widget.
     conversion.for('editingDowncast').elementToElement({
       model: 'ubcCardHorizontalImage',
-      view: (modelElement, { writer: viewWriter }) => {
+      view: (modelElement, {
+        writer: viewWriter
+      }) => {
         const div = viewWriter.createEditableElement('div', {
           class: 'first-image ubc-card__media',
         });
@@ -337,7 +384,9 @@ export default class UbcCardHorizontalEditing extends Plugin {
     // Convert the <ubcCardHorizontalInner> model into an editable <div> widget.
     conversion.for('editingDowncast').elementToElement({
       model: 'ubcCardHorizontalInner',
-      view: (modelElement, { writer: viewWriter }) => {
+      view: (modelElement, {
+        writer: viewWriter
+      }) => {
         const div = viewWriter.createEditableElement('div', {
           class: 'ubc-card__content_wrapper',
         });
@@ -348,7 +397,9 @@ export default class UbcCardHorizontalEditing extends Plugin {
     // Convert the <ubcCardHorizontalContent> model into an editable <div> widget.
     conversion.for('editingDowncast').elementToElement({
       model: 'ubcCardHorizontalContent',
-      view: (modelElement, { writer: viewWriter }) => {
+      view: (modelElement, {
+        writer: viewWriter
+      }) => {
         const div = viewWriter.createEditableElement('div', {
           class: 'first-content ubc-card__content',
         });
@@ -359,7 +410,9 @@ export default class UbcCardHorizontalEditing extends Plugin {
     // Convert the <ubcCardHorizontalFooter> model into an editable <div> widget.
     conversion.for('editingDowncast').elementToElement({
       model: 'ubcCardHorizontalFooter',
-      view: (modelElement, { writer: viewWriter }) => {
+      view: (modelElement, {
+        writer: viewWriter
+      }) => {
         const div = viewWriter.createEditableElement('div', {
           class: 'first-footer ubc-card__actions',
         });

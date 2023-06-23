@@ -1,0 +1,7 @@
+ubc_ckeditor_widgets.settings:
+  path: /admin/config/content/ubc-ckeditor-widgets
+  defaults:
+    _form: Drupal\ubc_ckeditor_widgets\Form\UbcCkeditorWidgetsSettingsForm
+    _title: UBC CKEditor Widgets Configuration
+  requirements:
+    _permission: administer ubc ckeditor widgets

@@ -12,13 +12,28 @@
 // file, but it is recommended to separate these concerns in different files.
 import UbcCardHorizontalEditing from './ubccardhorizontalediting';
 import UbcCardHorizontalUI from './ubccardhorizontalui';
-import { Plugin } from 'ckeditor5/src/core';
+import UbcCardHorizontalToolbar from './ubccardhorizontaltoolbar';
+import UbcCardHorizontalBackground from './ubccardhorizontalbackground';
+import UbcCardHorizontalShadow from './ubccardhorizontalshadow';
+import UbcCardHorizontalMargin from './ubccardhorizontalmargin';
+import UbcCardHorizontalLayout from './ubccardhorizontallayout';
+import {
+  Plugin
+} from 'ckeditor5/src/core';
 
 export default class UbcCardHorizontal extends Plugin {
   // Note that UbcCardHorizontalEditing and UbcCardHorizontalUI also extend `Plugin`, but these
   // are not seen as individual plugins by CKEditor 5. CKEditor 5 will only
   // discover the plugins explicitly exported in index.js.
   static get requires() {
-    return [UbcCardHorizontalEditing, UbcCardHorizontalUI];
+    return [
+      UbcCardHorizontalEditing,
+      UbcCardHorizontalUI,
+      UbcCardHorizontalToolbar,
+      UbcCardHorizontalBackground,
+      UbcCardHorizontalShadow,
+      UbcCardHorizontalMargin,
+      UbcCardHorizontalLayout
+    ];
   }
 }

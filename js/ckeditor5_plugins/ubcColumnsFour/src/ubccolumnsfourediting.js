@@ -1,9 +1,16 @@
-import { Plugin } from 'ckeditor5/src/core';
-import { toWidget, toWidgetEditable } from 'ckeditor5/src/widget';
-import { Widget } from 'ckeditor5/src/widget';
-import InsertUbcColumnsFourCommand from './insertubccolumnsfourcommand';
+import {
+  Plugin
+} from 'ckeditor5/src/core';
+import {
+  toWidget,
+  toWidgetEditable
+} from 'ckeditor5/src/widget';
+import {
+  Widget
+} from 'ckeditor5/src/widget';
+import UbcColumnsFourCommand from './ubccolumnsfourcommand';
 
-// cSpell:ignore ubccolumnsfour insertubccolumnsfourcommand
+// cSpell:ignore ubccolumnsfour ubccolumnsfourcommand
 
 /**
  * CKEditor 5 plugins do not work directly with the DOM. They are defined as
@@ -44,12 +51,16 @@ export default class UbcColumnsFourEditing extends Plugin {
     return [Widget];
   }
 
+  constructor(editor) {
+    super(editor);
+  }
+
   init() {
     this._defineSchema();
     this._defineConverters();
     this.editor.commands.add(
-      'insertUbcColumnsFour',
-      new InsertUbcColumnsFourCommand(this.editor),
+      'ubcColumnsFour',
+      new UbcColumnsFourCommand(this.editor),
     );
   }
 
@@ -76,7 +87,8 @@ export default class UbcColumnsFourEditing extends Plugin {
       isObject: true,
       // Allow in places where other blocks are allowed (e.g. directly in the root).
       allowWhere: '$block',
-      allowAttributes: 'class',
+      allowAttributes: 'class gapclass keylineclass marginclass',
+      allowChildren: ['ubcColumnsFourWrapper'],
     });
 
     schema.register('ubcColumnsFourWrapper', {
@@ -118,7 +130,9 @@ export default class UbcColumnsFourEditing extends Plugin {
    */
   _defineConverters() {
     // Converters are registered via the central editor object.
-    const { conversion } = this.editor;
+    const {
+      conversion
+    } = this.editor;
 
     // Upcast Converters: determine how existing HTML is interpreted by the
     // editor. These trigger when an editor instance loads.
@@ -161,20 +175,27 @@ export default class UbcColumnsFourEditing extends Plugin {
     // <div class="widget-column-options widget-columns-4 align-equal">{{inner content}}</div>.
     conversion.for('dataDowncast').elementToElement({
       model: 'ubcColumnsFour',
-      view: ( modelElement, { writer } ) => {
+      view: (modelElement, {
+        writer
+      }) => {
         return writer.createContainerElement(
-            'div', {
-              class: 'widget-column-options widget-columns-4 align-equal',
-            },
+          'div', {
+            class: 'widget-column-options widget-columns-4 align-equal',
+          },
         );
       },
     });
 
     conversion.for('dataDowncast').elementToElement({
       model: 'ubcColumnsFourWrapper',
-      view: {
-        name: 'div',
-        classes: 'widget--md--grid',
+      view: (modelElement, {
+        writer
+      }) => {
+        return writer.createContainerElement(
+          'div', {
+            class: 'widget--md--grid',
+          },
+        );
       },
     });
 
@@ -182,11 +203,13 @@ export default class UbcColumnsFourEditing extends Plugin {
     // <div class="first-child--mt-0">{{inner content}}</div>.
     conversion.for('dataDowncast').elementToElement({
       model: 'ubcColumnsFourColumn',
-      view: ( modelElement, { writer } ) => {
+      view: (modelElement, {
+        writer
+      }) => {
         return writer.createContainerElement(
-            'div', {
-              class: 'first-child--mt-0',
-            },
+          'div', {
+            class: 'first-child--mt-0',
+          },
         );
       },
     });
@@ -199,17 +222,24 @@ export default class UbcColumnsFourEditing extends Plugin {
     // Convert the <ubcColumnsFour> model into a container widget in the editor UI.
     conversion.for('editingDowncast').elementToElement({
       model: 'ubcColumnsFour',
-      view: (modelElement, { writer: viewWriter }) => {
+      view: (modelElement, {
+        writer: viewWriter
+      }) => {
         const div = viewWriter.createContainerElement('div', {
           class: 'widget-column-options widget-columns-4 align-equal',
         });
-        return toWidget(div, viewWriter, { label: 'UBC Four Columns widget', hasSelectionHandle: true });
+        return toWidget(div, viewWriter, {
+          label: 'UBC Four Columns widget',
+          hasSelectionHandle: true
+        });
       },
     });
 
     conversion.for('editingDowncast').elementToElement({
       model: 'ubcColumnsFourWrapper',
-      view: (modelElement, { writer: viewWriter }) => {
+      view: (modelElement, {
+        writer: viewWriter
+      }) => {
         const div = viewWriter.createEditableElement('div', {
           class: 'widget--md--grid',
         });
@@ -220,7 +250,9 @@ export default class UbcColumnsFourEditing extends Plugin {
     // Convert the <ubcColumnsFourColumn> model into an editable <div> widget.
     conversion.for('editingDowncast').elementToElement({
       model: 'ubcColumnsFourColumn',
-      view: (modelElement, { writer: viewWriter }) => {
+      view: (modelElement, {
+        writer: viewWriter
+      }) => {
         const div = viewWriter.createEditableElement('div', {
           class: 'first-child--mt-0',
         });

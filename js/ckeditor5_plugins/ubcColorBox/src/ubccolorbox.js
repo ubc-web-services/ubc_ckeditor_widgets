@@ -12,13 +12,30 @@
 // file, but it is recommended to separate these concerns in different files.
 import UbcColorBoxEditing from './ubccolorboxediting';
 import UbcColorBoxUI from './ubccolorboxui';
-import { Plugin } from 'ckeditor5/src/core';
+import UbcColorBoxToolbar from './ubccolorboxtoolbar';
+import UbcColorBoxAlign from './ubccolorboxalign';
+import UbcColorBoxBackground from './ubccolorboxbackground';
+import UbcColorBoxPadding from './ubccolorboxpadding';
+import UbcColorBoxMargin from './ubccolorboxmargin';
+import UbcColorBoxShadow from './ubccolorboxshadow';
+import {
+  Plugin
+} from 'ckeditor5/src/core';
 
 export default class UbcColorBox extends Plugin {
   // Note that UbcColorBoxEditing and UbcColorBoxUI also extend `Plugin`, but these
   // are not seen as individual plugins by CKEditor 5. CKEditor 5 will only
   // discover the plugins explicitly exported in index.js.
   static get requires() {
-    return [UbcColorBoxEditing, UbcColorBoxUI];
+    return [
+      UbcColorBoxEditing,
+      UbcColorBoxUI,
+      UbcColorBoxToolbar,
+      UbcColorBoxAlign,
+      UbcColorBoxBackground,
+      UbcColorBoxPadding,
+      UbcColorBoxShadow,
+      UbcColorBoxMargin
+    ];
   }
 }

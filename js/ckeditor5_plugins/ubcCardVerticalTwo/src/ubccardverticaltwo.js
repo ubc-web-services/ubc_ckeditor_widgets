@@ -11,13 +11,28 @@
 // file, but it is recommended to separate these concerns in different files.
 import UbcCardVerticalTwoEditing from './ubccardverticaltwoediting';
 import UbcCardVerticalTwoUI from './ubccardverticaltwoui';
-import { Plugin } from 'ckeditor5/src/core';
+import UbcCardVerticalTwoToolbar from './ubccardverticaltwotoolbar';
+import UbcCardVerticalTwoBackground from './ubccardverticaltwobackground';
+import UbcCardVerticalTwoShadow from './ubccardverticaltwoshadow';
+import UbcCardVerticalTwoMargin from './ubccardverticaltwomargin';
+import UbcCardVerticalTwoGap from './ubccardverticaltwogap';
+import {
+  Plugin
+} from 'ckeditor5/src/core';
 
 export default class UbcCardVerticalTwo extends Plugin {
   // Note that UbcCardVerticalTwoEditing and UbcCardVerticalTwoUI also extend `Plugin`, but these
   // are not seen as individual plugins by CKEditor 5. CKEditor 5 will only
   // discover the plugins explicitly exported in index.js.
   static get requires() {
-    return [UbcCardVerticalTwoEditing, UbcCardVerticalTwoUI];
+    return [
+      UbcCardVerticalTwoEditing,
+      UbcCardVerticalTwoUI,
+      UbcCardVerticalTwoToolbar,
+      UbcCardVerticalTwoBackground,
+      UbcCardVerticalTwoShadow,
+      UbcCardVerticalTwoMargin,
+      UbcCardVerticalTwoGap
+    ];
   }
 }

@@ -1,9 +1,16 @@
-import { Plugin } from 'ckeditor5/src/core';
-import { toWidget, toWidgetEditable } from 'ckeditor5/src/widget';
-import { Widget } from 'ckeditor5/src/widget';
-import InsertUbcColorBoxCommand from './insertubccolorboxcommand';
+import {
+  Plugin
+} from 'ckeditor5/src/core';
+import {
+  toWidget,
+  toWidgetEditable
+} from 'ckeditor5/src/widget';
+import {
+  Widget
+} from 'ckeditor5/src/widget';
+import UbcColorBoxCommand from './ubccolorboxcommand';
 
-// cSpell:ignore ubccolorbox insertubccolorboxcommand
+// cSpell:ignore ubccolorbox ubccolorboxcommand
 
 /**
  * CKEditor 5 plugins do not work directly with the DOM. They are defined as
@@ -27,16 +34,18 @@ import InsertUbcColorBoxCommand from './insertubccolorboxcommand';
  * converted to standard DOM markup.
  */
 export default class UbcColorBoxEditing extends Plugin {
+
   static get requires() {
     return [Widget];
   }
 
   init() {
+    const editor = this.editor;
     this._defineSchema();
     this._defineConverters();
-    this.editor.commands.add(
-      'insertUbcColorBox',
-      new InsertUbcColorBoxCommand(this.editor),
+    editor.commands.add(
+      'ubcColorBox',
+      new UbcColorBoxCommand(editor),
     );
   }
 
@@ -58,7 +67,7 @@ export default class UbcColorBoxEditing extends Plugin {
       isObject: true,
       // Allow in places where other blocks are allowed (e.g. directly in the root).
       allowWhere: '$block',
-      allowAttributes: 'class',
+      allowAttributes: 'class alignclass backgroundclass marginclass paddingclass shadowclass',
       allowChildren: ['ubcColorBoxInner'],
     });
 
@@ -88,7 +97,9 @@ export default class UbcColorBoxEditing extends Plugin {
    */
   _defineConverters() {
     // Converters are registered via the central editor object.
-    const { conversion } = this.editor;
+    const {
+      conversion
+    } = this.editor;
 
     // Upcast Converters: determine how existing HTML is interpreted by the
     // editor. These trigger when an editor instance loads.
@@ -119,25 +130,28 @@ export default class UbcColorBoxEditing extends Plugin {
     // <div class="widget-color-box">{{inner content}}</div>.
     conversion.for('dataDowncast').elementToElement({
       model: 'ubcColorBox',
-      view: ( modelElement, { writer } ) => {
+      view: (modelElement, {
+        writer
+      }) => {
         return writer.createContainerElement(
-            'div', {
-              class: 'widget-color-box',
-            },
+          'div', {
+            class: 'widget-color-box',
+          },
         );
       },
     });
-
 
     // Instances of <ubcColorBoxInner> are saved as
     // <div class="widget-content first-child--mt-0">{{inner content}}</div>.
     conversion.for('dataDowncast').elementToElement({
       model: 'ubcColorBoxInner',
-      view: ( modelElement, { writer } ) => {
+      view: (modelElement, {
+        writer
+      }) => {
         return writer.createContainerElement(
-            'div', {
-              class: 'widget-content first-child--mt-0',
-            },
+          'div', {
+            class: 'widget-content first-child--mt-0',
+          },
         );
       },
     });
@@ -150,18 +164,25 @@ export default class UbcColorBoxEditing extends Plugin {
     // Convert the <ubcColorBox> model into a container widget in the editor UI.
     conversion.for('editingDowncast').elementToElement({
       model: 'ubcColorBox',
-      view: (modelElement, { writer: viewWriter }) => {
+      view: (modelElement, {
+        writer: viewWriter
+      }) => {
         const div = viewWriter.createContainerElement('div', {
           class: 'widget-color-box',
         });
-        return toWidget(div, viewWriter, { label: 'UBC Color Box widget', hasSelectionHandle: true });
+        return toWidget(div, viewWriter, {
+          label: 'UBC Color Box widget',
+          hasSelectionHandle: true
+        });
       },
     });
 
     // Convert the <ubcColorBoxInner> model into an editable <div> widget.
     conversion.for('editingDowncast').elementToElement({
       model: 'ubcColorBoxInner',
-      view: (modelElement, { writer: viewWriter }) => {
+      view: (modelElement, {
+        writer: viewWriter
+      }) => {
         const div = viewWriter.createEditableElement('div', {
           class: 'widget-content first-child--mt-0',
         });

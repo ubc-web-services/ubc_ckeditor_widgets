@@ -3,16 +3,24 @@
  */
 
 import { Plugin } from 'ckeditor5/src/core';
-import { ButtonView } from 'ckeditor5/src/ui';
+import { ButtonView, ContextualBalloon } from 'ckeditor5/src/ui';
 import icon from '../../../../icons/ubcCardHorizontal.svg';
 
 export default class UbcCardHorizontalUI extends Plugin {
+
+  /**
+  * @inheritdoc
+  */
+  static get requires() {
+    return [ContextualBalloon];
+  }
+
   init() {
     const editor = this.editor;
 
     // This will register the ubcCardHorizontal toolbar button.
     editor.ui.componentFactory.add('ubcCardHorizontal', (locale) => {
-      const command = editor.commands.get('insertUbcCardHorizontal');
+      const command = editor.commands.get('ubcCardHorizontal');
       const buttonView = new ButtonView(locale);
 
       // Create the toolbar button.
@@ -27,9 +35,8 @@ export default class UbcCardHorizontalUI extends Plugin {
 
       // Execute the command when the button is clicked (executed).
       this.listenTo(buttonView, 'execute', () =>
-        editor.execute('insertUbcCardHorizontal'),
+        editor.execute('ubcCardHorizontal'),
       );
-
       return buttonView;
     });
   }

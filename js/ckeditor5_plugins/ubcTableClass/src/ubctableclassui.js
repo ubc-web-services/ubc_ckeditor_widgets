@@ -2,9 +2,18 @@
  * @file registers the simpleBox toolbar button and binds functionality to it.
  */
 
-import { Plugin } from 'ckeditor5/src/core';
-import { addListToDropdown, createDropdown, Model, ButtonView } from 'ckeditor5/src/ui';
-import { Collection } from 'ckeditor5/src/utils';
+import {
+  Plugin
+} from 'ckeditor5/src/core';
+import {
+  addListToDropdown,
+  createDropdown,
+  Model,
+  ButtonView
+} from 'ckeditor5/src/ui';
+import {
+  Collection
+} from 'ckeditor5/src/utils';
 
 import tableColumnIcon from '../../../../icons/adjustments.svg';
 
@@ -23,47 +32,52 @@ export default class UbcTableClassUi extends Plugin {
     const editor = this.editor;
     const t = this.editor.t;
 
-    editor.ui.componentFactory.add( 'tableUbc', locale => {
-      const options = [
-        {
+    editor.ui.componentFactory.add('tableUbc', locale => {
+      const options = [{
           type: 'button',
           model: {
             commandName: 'setPlainClass',
-            label: t( 'Plain' ),
+            label: t('Plain'),
             bindIsOn: true
           }
         },
-        { type: 'separator' },
+        {
+          type: 'separator'
+        },
         {
           type: 'button',
           model: {
             commandName: 'setCondensedClass',
-            label: t( 'Condensed' ),
+            label: t('Condensed'),
             bindIsOn: true
           }
         },
-        { type: 'separator' },
+        {
+          type: 'separator'
+        },
         {
           type: 'button',
           model: {
             commandName: 'setStripedClass',
-            label: t( 'Striped' ),
+            label: t('Striped'),
             bindIsOn: true
           }
         },
-        { type: 'separator' },
+        {
+          type: 'separator'
+        },
         {
           type: 'button',
           model: {
             commandName: 'setHoverClass',
-            label: t( 'Hover' ),
+            label: t('Hover'),
             bindIsOn: true
           }
         },
       ];
 
-      return this._prepareDropdown( t( 'UBC Table Classes' ), tableColumnIcon, options, locale );
-    } );
+      return this._prepareDropdown(t('UBC Table Classes'), tableColumnIcon, options, locale);
+    });
   }
 
   /**
@@ -76,32 +90,29 @@ export default class UbcTableClassUi extends Plugin {
    * @param {module:utils/locale~Locale} locale
    * @returns {module:ui/dropdown/dropdownview~DropdownView}
    */
-  _prepareDropdown( label, icon, options, locale ) {
+  _prepareDropdown(label, icon, options, locale) {
     const editor = this.editor;
-    const dropdownView = createDropdown( locale );
-    const commands = this._fillDropdownWithListOptions( dropdownView, options );
+    const dropdownView = createDropdown(locale);
+    const commands = this._fillDropdownWithListOptions(dropdownView, options);
 
     // Decorate dropdown's button.
-    dropdownView.buttonView.set( {
+    dropdownView.buttonView.set({
       label,
       icon,
       tooltip: true
-    } );
+    });
 
     // Make dropdown button disabled when all options are disabled.
-    dropdownView.bind( 'isEnabled' ).toMany( commands, 'isEnabled', ( ...areEnabled ) => {
-      return areEnabled.some( isEnabled => isEnabled );
-    } );
-
-    this.listenTo( dropdownView, 'execute', evt => {
-      editor.execute( evt.source.commandName );
-
+    dropdownView.bind('isEnabled').toMany(commands, 'isEnabled', (...areEnabled) => {
+      return areEnabled.some(isEnabled => isEnabled);
+    });
+    this.listenTo(dropdownView, 'execute', evt => {
+      editor.execute(evt.source.commandName);
       // Toggling a switch button view should not move the focus to the editable.
-      if ( !( evt.source instanceof ButtonView ) ) {
+      if (!(evt.source instanceof ButtonView)) {
         editor.editing.view.focus();
       }
-    } );
-
+    });
     return dropdownView;
   }
 
@@ -114,17 +125,14 @@ export default class UbcTableClassUi extends Plugin {
    * @param {Array.<module:ui/dropdown/utils~ListDropdownItemDefinition>} options The list of options for the dropdown.
    * @returns {Array.<module:core/command~Command>} Commands the list options are interacting with.
    */
-  _fillDropdownWithListOptions( dropdownView, options ) {
+  _fillDropdownWithListOptions(dropdownView, options) {
     const editor = this.editor;
     const commands = [];
     const itemDefinitions = new Collection();
-
-    for ( const option of options ) {
-      addListOption( option, editor, commands, itemDefinitions );
+    for (const option of options) {
+      addListOption(option, editor, commands, itemDefinitions);
     }
-
-    addListToDropdown( dropdownView, itemDefinitions, editor.ui.componentFactory );
-
+    addListToDropdown(dropdownView, itemDefinitions, editor.ui.componentFactory);
     return commands;
   }
 }
@@ -136,27 +144,28 @@ export default class UbcTableClassUi extends Plugin {
 // @param {Array.<module:core/command~Command>} commands The list of commands to update.
 // @param {Iterable.<module:ui/dropdown/utils~ListDropdownItemDefinition>} itemDefinitions
 // A collection of dropdown items to update with the given option.
-function addListOption( option, editor, commands, itemDefinitions ) {
-  const model = option.model = new Model( option.model );
-  const { commandName, bindIsOn } = option.model;
+function addListOption(option, editor, commands, itemDefinitions) {
+  const model = option.model = new Model(option.model);
+  const {
+    commandName,
+    bindIsOn
+  } = option.model;
 
-  if ( option.type === 'button' ) {
-    const command = editor.commands.get( commandName );
-
-    commands.push( command );
-
-    model.set( { commandName } );
-
-    model.bind( 'isEnabled' ).to( command );
-
-    if ( bindIsOn ) {
-      model.bind( 'isOn' ).to( command, 'value' );
+  if (option.type === 'button') {
+    const command = editor.commands.get(commandName);
+    commands.push(command);
+    model.set({
+      commandName
+    });
+    model.bind('isEnabled').to(command);
+    if (bindIsOn) {
+      model.bind('isOn').to(command, 'value');
     }
   }
 
-  model.set( {
+  model.set({
     withText: true
-  } );
+  });
 
-  itemDefinitions.add( option );
+  itemDefinitions.add(option);
 }

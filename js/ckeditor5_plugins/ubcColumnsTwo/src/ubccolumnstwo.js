@@ -12,13 +12,28 @@
 // file, but it is recommended to separate these concerns in different files.
 import UbcColumnsTwoEditing from './ubccolumnstwoediting';
 import UbcColumnsTwoUI from './ubccolumnstwoui';
-import { Plugin } from 'ckeditor5/src/core';
+import UbcColumnsTwoToolbar from './ubccolumnstwotoolbar';
+import UbcColumnsTwoGap from './ubccolumnstwogap';
+import UbcColumnsTwoKeyline from './ubccolumnstwokeyline';
+import UbcColumnsTwoMargin from './ubccolumnstwomargin';
+import UbcColumnsTwoLayout from './ubccolumnstwolayout';
+import {
+  Plugin
+} from 'ckeditor5/src/core';
 
 export default class UbcColumnsTwo extends Plugin {
   // Note that UbcColumnsTwoEditing and UbcColumnsTwoUI also extend `Plugin`, but these
   // are not seen as individual plugins by CKEditor 5. CKEditor 5 will only
   // discover the plugins explicitly exported in index.js.
   static get requires() {
-    return [UbcColumnsTwoEditing, UbcColumnsTwoUI];
+    return [
+      UbcColumnsTwoEditing,
+      UbcColumnsTwoUI,
+      UbcColumnsTwoToolbar,
+      UbcColumnsTwoGap,
+      UbcColumnsTwoKeyline,
+      UbcColumnsTwoMargin,
+      UbcColumnsTwoLayout
+    ];
   }
 }

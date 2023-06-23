@@ -1,9 +1,16 @@
-import { Plugin } from 'ckeditor5/src/core';
-import { toWidget, toWidgetEditable } from 'ckeditor5/src/widget';
-import { Widget } from 'ckeditor5/src/widget';
-import InsertUbcColumnsThreeCommand from './insertubccolumnsthreecommand';
+import {
+  Plugin
+} from 'ckeditor5/src/core';
+import {
+  toWidget,
+  toWidgetEditable
+} from 'ckeditor5/src/widget';
+import {
+  Widget
+} from 'ckeditor5/src/widget';
+import UbcColumnsThreeCommand from './ubccolumnsthreecommand';
 
-// cSpell:ignore ubccolumnsthree insertubccolumnsthreecommand
+// cSpell:ignore ubccolumnsthree ubccolumnsthreecommand
 
 /**
  * CKEditor 5 plugins do not work directly with the DOM. They are defined as
@@ -37,16 +44,21 @@ import InsertUbcColumnsThreeCommand from './insertubccolumnsthreecommand';
  * converted to standard DOM markup.
  */
 export default class UbcColumnsThreeEditing extends Plugin {
+
   static get requires() {
     return [Widget];
+  }
+
+  constructor(editor) {
+    super(editor);
   }
 
   init() {
     this._defineSchema();
     this._defineConverters();
     this.editor.commands.add(
-      'insertUbcColumnsThree',
-      new InsertUbcColumnsThreeCommand(this.editor),
+      'ubcColumnsThree',
+      new UbcColumnsThreeCommand(this.editor),
     );
   }
 
@@ -72,7 +84,8 @@ export default class UbcColumnsThreeEditing extends Plugin {
       isObject: true,
       // Allow in places where other blocks are allowed (e.g. directly in the root).
       allowWhere: '$block',
-      allowAttributes: 'class',
+      allowAttributes: 'class gapclass keylineclass layoutclass marginclass',
+      allowChildren: ['ubcColumnsThreeWrapper'],
     });
 
     schema.register('ubcColumnsThreeWrapper', {
@@ -86,14 +99,12 @@ export default class UbcColumnsThreeEditing extends Plugin {
       allowChildren: ['ubcColumnsThreeColumn'],
     });
 
-
     schema.register('ubcColumnsThreeColumn', {
       isLimit: true,
       allowIn: 'ubcColumnsThree',
       allowContentOf: '$root',
       allowAttributes: 'class',
     });
-
 
     schema.addChildCheck((context, childDefinition) => {
       // Disallow ubcColumnsThree inside ubcColumnsThreeSecond.
@@ -115,7 +126,9 @@ export default class UbcColumnsThreeEditing extends Plugin {
    */
   _defineConverters() {
     // Converters are registered via the central editor object.
-    const { conversion } = this.editor;
+    const {
+      conversion
+    } = this.editor;
 
     // Upcast Converters: determine how existing HTML is interpreted by the
     // editor. These trigger when an editor instance loads.
@@ -127,7 +140,7 @@ export default class UbcColumnsThreeEditing extends Plugin {
       model: 'ubcColumnsThree',
       view: {
         name: 'div',
-        classes: ['widget-column-options', 'widget-columns-3', 'align-equal'],
+        classes: ['widget-column-options', 'widget-columns-3'],
       },
     });
 
@@ -158,20 +171,27 @@ export default class UbcColumnsThreeEditing extends Plugin {
     // <div class="widget-accordion">{{inner content}}</div>.
     conversion.for('dataDowncast').elementToElement({
       model: 'ubcColumnsThree',
-      view: ( modelElement, { writer } ) => {
+      view: (modelElement, {
+        writer
+      }) => {
         return writer.createContainerElement(
-            'div', {
-              class: 'widget-column-options widget-columns-3 align-equal',
-            },
+          'div', {
+            class: 'widget-column-options widget-columns-3',
+          },
         );
       },
     });
 
     conversion.for('dataDowncast').elementToElement({
       model: 'ubcColumnsThreeWrapper',
-      view: {
-        name: 'div',
-        classes: 'widget--md--grid',
+      view: (modelElement, {
+        writer
+      }) => {
+        return writer.createContainerElement(
+          'div', {
+            class: 'widget--md--grid',
+          },
+        );
       },
     });
 
@@ -179,11 +199,13 @@ export default class UbcColumnsThreeEditing extends Plugin {
     // <div class="first-child--mt-0">{{inner content}}</div>.
     conversion.for('dataDowncast').elementToElement({
       model: 'ubcColumnsThreeColumn',
-      view: ( modelElement, { writer } ) => {
+      view: (modelElement, {
+        writer
+      }) => {
         return writer.createContainerElement(
-            'div', {
-              class: 'first-child--mt-0',
-            },
+          'div', {
+            class: 'first-child--mt-0',
+          },
         );
       },
     });
@@ -196,17 +218,24 @@ export default class UbcColumnsThreeEditing extends Plugin {
     // Convert the <ubcColumnsThree> model into a container widget in the editor UI.
     conversion.for('editingDowncast').elementToElement({
       model: 'ubcColumnsThree',
-      view: (modelElement, { writer: viewWriter }) => {
+      view: (modelElement, {
+        writer: viewWriter
+      }) => {
         const div = viewWriter.createContainerElement('div', {
-          class: 'widget-column-options widget-columns-3 align-equal',
+          class: 'widget-column-options widget-columns-3',
         });
-        return toWidget(div, viewWriter, { label: 'UBC Three Columns widget', hasSelectionHandle: true });
+        return toWidget(div, viewWriter, {
+          label: 'UBC Three Columns widget',
+          hasSelectionHandle: true
+        });
       },
     });
 
     conversion.for('editingDowncast').elementToElement({
       model: 'ubcColumnsThreeWrapper',
-      view: (modelElement, { writer: viewWriter }) => {
+      view: (modelElement, {
+        writer: viewWriter
+      }) => {
         const div = viewWriter.createEditableElement('div', {
           class: 'widget--md--grid',
         });
@@ -217,7 +246,9 @@ export default class UbcColumnsThreeEditing extends Plugin {
     // Convert the <ubcColumnsThreeColumn> model into an editable <div> widget.
     conversion.for('editingDowncast').elementToElement({
       model: 'ubcColumnsThreeColumn',
-      view: (modelElement, { writer: viewWriter }) => {
+      view: (modelElement, {
+        writer: viewWriter
+      }) => {
         const div = viewWriter.createEditableElement('div', {
           class: 'first-child--mt-0',
         });

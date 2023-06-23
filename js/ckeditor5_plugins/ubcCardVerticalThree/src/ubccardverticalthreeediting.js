@@ -1,9 +1,16 @@
-import { Plugin } from 'ckeditor5/src/core';
-import { toWidget, toWidgetEditable } from 'ckeditor5/src/widget';
-import { Widget } from 'ckeditor5/src/widget';
-import InsertUbcCardVerticalThreeCommand from './insertubccardverticalthreecommand';
+import {
+  Plugin
+} from 'ckeditor5/src/core';
+import {
+  toWidget,
+  toWidgetEditable
+} from 'ckeditor5/src/widget';
+import {
+  Widget
+} from 'ckeditor5/src/widget';
+import UbcCardVerticalThreeCommand from './ubccardverticalthreecommand';
 
-// cSpell:ignore ubccardverticalthree insertubccardverticalthreecommand
+// cSpell:ignore ubccardverticalthree ubccardverticalthreecommand
 
 /**
  * CKEditor 5 plugins do not work directly with the DOM. They are defined as
@@ -64,29 +71,42 @@ import InsertUbcCardVerticalThreeCommand from './insertubccardverticalthreecomma
  * converted to standard DOM markup.
  */
 export default class UbcCardVerticalThreeEditing extends Plugin {
+
   static get requires() {
     return [Widget];
   }
 
+  constructor(editor) {
+    super(editor);
+  }
+
   init() {
-    this.editor.model.schema.extend( 'heading2', { allowAttributes: [ 'class' ] } );
-    this.editor.model.schema.extend( 'heading3', { allowAttributes: [ 'class' ] } );
-    this.editor.model.schema.extend( 'heading4', { allowAttributes: [ 'class' ] } );
-    this.editor.model.schema.extend( 'heading5', { allowAttributes: [ 'class' ] } );
-    this.editor.model.schema.extend( 'heading6', { allowAttributes: [ 'class' ] } );
-    this.editor.conversion.attributeToAttribute( { model: 'class', view: 'class' } );
+    const editor = this.editor;
+    editor.model.schema.extend('heading2', {
+      allowAttributes: ['class']
+    });
+    editor.model.schema.extend('heading3', {
+      allowAttributes: ['class']
+    });
+    editor.model.schema.extend('heading4', {
+      allowAttributes: ['class']
+    });
+    editor.model.schema.extend('heading5', {
+      allowAttributes: ['class']
+    });
+    editor.model.schema.extend('heading6', {
+      allowAttributes: ['class']
+    });
+    editor.conversion.attributeToAttribute({
+      model: 'class',
+      view: 'class'
+    });
     this._defineSchema();
     this._defineConverters();
-    this.editor.commands.add(
-      'insertUbcCardVerticalThree',
-      new InsertUbcCardVerticalThreeCommand(this.editor),
+    editor.commands.add(
+      'ubcCardVerticalThree',
+      new UbcCardVerticalThreeCommand(editor),
     );
-    /*
-    this.editor.editing.mapper.on(
-      'viewToModelPosition',
-      viewToModelPositionOutsideModelElement( this.editor.model, viewElement => viewElement.hasClass( 'placeholder' ) )
-    );
-    */
   }
 
   /*
@@ -105,7 +125,7 @@ export default class UbcCardVerticalThreeEditing extends Plugin {
       isObject: true,
       // Allow in places where other blocks are allowed (e.g. directly in the root).
       allowWhere: '$block',
-      allowAttributes: 'class',
+      allowAttributes: 'class backgroundclass gapclass marginclass shadowclass',
       allowChildren: ['ubcCardVerticalThreeContainer'],
     });
 
@@ -115,7 +135,7 @@ export default class UbcCardVerticalThreeEditing extends Plugin {
       // and keypress. For example, when the cursor is inside this box, the
       // keyboard shortcut for "select all" will be limited to the contents of
       // the box.
-      isLimit: true,
+      isLimit: false,
       // This is only to be used within ubcCardVerticalThree.
       allowIn: 'ubcCardVerticalThree',
       allowChildren: ['ubcCardVerticalThreeInner'],
@@ -138,7 +158,7 @@ export default class UbcCardVerticalThreeEditing extends Plugin {
       isSelectable: true,
       allowIn: 'ubcCardVerticalThreeInner',
       allowAttributes: 'class',
-      allowContentOf: [ '$block', '$blockObject' ],
+      allowContentOf: ['$block', '$blockObject'],
       // Allow image elements.
       allowChildren: ['drupalMedia', 'imageBlock', 'imageInline', 'htmlImg'],
     });
@@ -161,8 +181,7 @@ export default class UbcCardVerticalThreeEditing extends Plugin {
       allowChildren: ['paragraph'],
     });
 
-    schema.addChildCheck((context, childDefinition) => {
-    });
+    schema.addChildCheck((context, childDefinition) => {});
   }
 
   /**
@@ -171,7 +190,9 @@ export default class UbcCardVerticalThreeEditing extends Plugin {
    */
   _defineConverters() {
     // Converters are registered via the central editor object.
-    const { conversion } = this.editor;
+    const {
+      conversion
+    } = this.editor;
 
     // Upcast Converters: determine how existing HTML is interpreted by the
     // editor. These trigger when an editor instance loads.
@@ -183,7 +204,7 @@ export default class UbcCardVerticalThreeEditing extends Plugin {
       model: 'ubcCardVerticalThree',
       view: {
         name: 'div',
-        classes: ['widget-card', 'card--three', 'md--flex-grid'],
+        classes: ['widget-card', 'card--three', 'widget-card--vertical-three', 'md--flex-grid'],
       },
     });
 
@@ -234,33 +255,39 @@ export default class UbcCardVerticalThreeEditing extends Plugin {
     // <div class="widget-card card--one">{{inner content}}</div>.
     conversion.for('dataDowncast').elementToElement({
       model: 'ubcCardVerticalThree',
-      view: ( modelElement, { writer } ) => {
+      view: (modelElement, {
+        writer
+      }) => {
         return writer.createContainerElement(
-            'div', {
-              class: 'widget-card card--three md--flex-grid',
-            },
+          'div', {
+            class: 'widget-card card--three widget-card--vertical-three md--flex-grid',
+          },
         );
       },
     });
 
     conversion.for('dataDowncast').elementToElement({
       model: 'ubcCardVerticalThreeContainer',
-      view: ( modelElement, { writer } ) => {
+      view: (modelElement, {
+        writer
+      }) => {
         return writer.createContainerElement(
-            'div', {
-              class: 'md--flex-1',
-            },
+          'div', {
+            class: 'md--flex-1',
+          },
         );
       },
     });
 
     conversion.for('dataDowncast').elementToElement({
       model: 'ubcCardVerticalThreeInner',
-      view: ( modelElement, { writer } ) => {
+      view: (modelElement, {
+        writer
+      }) => {
         return writer.createContainerElement(
-            'div', {
-              class: 'ubc-card ubc-card--vert hover--no-underline group',
-            },
+          'div', {
+            class: 'ubc-card ubc-card--vert hover--no-underline group',
+          },
         );
       },
     });
@@ -269,11 +296,13 @@ export default class UbcCardVerticalThreeEditing extends Plugin {
     // <div class="ubc-card__media object-cover">{{inner content}}</div>.
     conversion.for('dataDowncast').elementToElement({
       model: 'ubcCardVerticalThreeImage',
-      view: ( modelElement, { writer } ) => {
+      view: (modelElement, {
+        writer
+      }) => {
         return writer.createEditableElement(
-            'div', {
-              class: 'ubc-card__media object-cover',
-            },
+          'div', {
+            class: 'ubc-card__media object-cover',
+          },
         );
       },
     });
@@ -282,11 +311,13 @@ export default class UbcCardVerticalThreeEditing extends Plugin {
     // <div class="ubc-card__content">{{inner content}}</div>.
     conversion.for('dataDowncast').elementToElement({
       model: 'ubcCardVerticalThreeContent',
-      view: ( modelElement, { writer } ) => {
+      view: (modelElement, {
+        writer
+      }) => {
         return writer.createEditableElement(
-            'div', {
-              class: 'ubc-card__content',
-            },
+          'div', {
+            class: 'ubc-card__content',
+          },
         );
       },
     });
@@ -295,11 +326,13 @@ export default class UbcCardVerticalThreeEditing extends Plugin {
     // <div class="ubc-card__actions">{{inner content}}</div>.
     conversion.for('dataDowncast').elementToElement({
       model: 'ubcCardVerticalThreeFooter',
-      view: ( modelElement, { writer } ) => {
+      view: (modelElement, {
+        writer
+      }) => {
         return writer.createEditableElement(
-            'div', {
-              class: 'ubc-card__actions',
-            },
+          'div', {
+            class: 'ubc-card__actions',
+          },
         );
       },
     });
@@ -312,17 +345,24 @@ export default class UbcCardVerticalThreeEditing extends Plugin {
     // Convert the <ubcCardVerticalThree> model into a container widget in the editor UI.
     conversion.for('editingDowncast').elementToElement({
       model: 'ubcCardVerticalThree',
-      view: (modelElement, { writer: viewWriter }) => {
+      view: (modelElement, {
+        writer: viewWriter
+      }) => {
         const div = viewWriter.createContainerElement('div', {
-          class: 'widget-card card--three md--flex-grid',
+          class: 'widget-card card--three widget-card--vertical-three md--flex-grid',
         });
-        return toWidget(div, viewWriter, { label: 'UBC Vertical 3 Card widget', hasSelectionHandle: true });
+        return toWidget(div, viewWriter, {
+          label: 'UBC Vertical 3 Card widget',
+          hasSelectionHandle: true
+        });
       },
     });
 
     conversion.for('editingDowncast').elementToElement({
       model: 'ubcCardVerticalThreeContainer',
-      view: (modelElement, { writer: viewWriter }) => {
+      view: (modelElement, {
+        writer: viewWriter
+      }) => {
         const div = viewWriter.createContainerElement('div', {
           class: 'md--flex-1',
         });
@@ -332,7 +372,9 @@ export default class UbcCardVerticalThreeEditing extends Plugin {
 
     conversion.for('editingDowncast').elementToElement({
       model: 'ubcCardVerticalThreeInner',
-      view: (modelElement, { writer: viewWriter }) => {
+      view: (modelElement, {
+        writer: viewWriter
+      }) => {
         const div = viewWriter.createContainerElement('div', {
           class: 'ubc-card ubc-card--vert hover--no-underline group',
         });
@@ -343,7 +385,9 @@ export default class UbcCardVerticalThreeEditing extends Plugin {
     // Convert the <ubcCardVerticalThreeImage> model into an editable <div> widget.
     conversion.for('editingDowncast').elementToElement({
       model: 'ubcCardVerticalThreeImage',
-      view: (modelElement, { writer: viewWriter }) => {
+      view: (modelElement, {
+        writer: viewWriter
+      }) => {
         const div = viewWriter.createEditableElement('div', {
           class: 'ubc-card__media object-cover',
         });
@@ -354,7 +398,9 @@ export default class UbcCardVerticalThreeEditing extends Plugin {
     // Convert the <ubcCardVerticalThreeContent> model into an editable <div> widget.
     conversion.for('editingDowncast').elementToElement({
       model: 'ubcCardVerticalThreeContent',
-      view: (modelElement, { writer: viewWriter }) => {
+      view: (modelElement, {
+        writer: viewWriter
+      }) => {
         const div = viewWriter.createEditableElement('div', {
           class: 'ubc-card__content',
         });
@@ -365,7 +411,9 @@ export default class UbcCardVerticalThreeEditing extends Plugin {
     // Convert the <ubcCardVerticalThreeFooter> model into an editable <div> widget.
     conversion.for('editingDowncast').elementToElement({
       model: 'ubcCardVerticalThreeFooter',
-      view: (modelElement, { writer: viewWriter }) => {
+      view: (modelElement, {
+        writer: viewWriter
+      }) => {
         const div = viewWriter.createEditableElement('div', {
           class: 'ubc-card__actions',
         });

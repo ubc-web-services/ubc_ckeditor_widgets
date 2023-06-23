@@ -9,14 +9,16 @@
 
 import UbcTableCellClassEditing from './ubctablecellclassediting';
 import UbcTableCellClassUi from './ubctablecellclassui';
-import { Plugin } from 'ckeditor5/src/core';
+import {
+  Plugin
+} from 'ckeditor5/src/core';
 
 export default class UbcTableCellClass extends Plugin {
   /**
    * @inheritDoc
    */
   static get requires() {
-    return [ UbcTableCellClassEditing, UbcTableCellClassUi ];
+    return [UbcTableCellClassEditing, UbcTableCellClassUi];
   }
 
   /**

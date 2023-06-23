@@ -10,14 +10,9 @@ ubc_ckeditor_widgets_ubcaccordion:
   # Configuration that will be sent to CKEditor 5 JavaScript plugins.
   ckeditor5:
     plugins:
+      # form of [plugin dir].[plugin name]
       - ubcAccordion.UbcAccordion
     # *Additional configuration properties*
-    # config: data sent to the constructor of any CKEditor 5 plugin
-    #   editorPluginName:
-    #     editorPluginProperty: editorPluginValue
-    config:
-      ubcAccordion:
-        contentToolbar: [ accordionUbc ]
   # Configuration that will be used directly by Drupal.
   drupal:
     label: Accordion
@@ -37,12 +32,9 @@ ubc_ckeditor_widgets_ubcaccordion:
       # (i.e. `<h3>`) and the attribute being added to the tag
       # (i.e. `<h3 class="accordion__title">`).
       - <div>
-      - <div class="clearfix widget-accordion accordion js-reveal__parent js-reveal__target accordion__content js-reveal__trigger accordion__trigger" hidden aria-expanded>
+      - <div class hidden data-* aria-expanded>
     # *Additional configuration properties*
-    # conditions: for setting additional criteria that must be met for the
-    #   plugin to be active.
-    # class: Optional PHP class that makes it possible for the plugin to provide
-    #   dynamic values, or a configuration UI.
+
 
 ubc_ckeditor_widgets_ubcaccordiontoggle:
   ckeditor5:
@@ -50,55 +42,39 @@ ubc_ckeditor_widgets_ubcaccordiontoggle:
       - ubcAccordionToggle.UbcAccordionToggle
   drupal:
     label: Accordion Toggle
-    # The library loaded while using the editor.
     library: ubc_ckeditor_widgets/ubc_accordion_toggle
-    # The library loaded when configuring the text format using this plugin.
     admin_library: ubc_ckeditor_widgets/ubc_accordion_toggle.admin
     toolbar_items:
-      # This should match the name of the corresponding plugin exported in the
-      # plugin's index.js.
       UbcAccordionToggle:
         label: Accordion Toggle
-    # If the plugin does not provide elements, set this as
-    # `elements: false`
     elements:
       - <button>
       - <button class="text-xs widget-expandcollapse unit-button" data-state data-cke-ignore-events>
 
 ubc_ckeditor_widgets_ubccardhorizontal:
-  # Use the provider: property for this plugin to depend on another module.
-  # Configuration that will be sent to CKEditor 5 JavaScript plugins.
   ckeditor5:
     plugins:
-    # form of [plugin dir].[plugin name]
       - ubcCardHorizontal.UbcCardHorizontal
-    # *Additional configuration properties*
-    # config: data sent to the constructor of any CKEditor 5 plugin
-    #   editorPluginName:
-    #     editorPluginProperty: editorPluginValue
     config:
       ubcCardHorizontal:
-        contentToolbar: [ cardHorizontalUbc ]
-  # Configuration that will be used directly by Drupal.
+        contentToolbar:
+          - 'ubcCardHorizontalLayoutOptions'
+          - '|'
+          - 'ubcCardHorizontalMarginOptions'
+          - '|'
+          - 'ubcCardHorizontalBackgroundOptions'
+          - '|'
+          - 'ubcCardHorizontalShadowToggle'
   drupal:
     label: Horizontal Card
-    # The library loaded while using the editor.
     library: ubc_ckeditor_widgets/ubc_card_horizontal
-    # The library loaded when configuring the text format using this plugin.
     admin_library: ubc_ckeditor_widgets/ubc_card_horizontal.admin
     toolbar_items:
-      # This should match the name of the corresponding plugin exported in the
-      # plugin's index.js.
       UbcCardHorizontal:
         label: Horizontal Card
-    # If the plugin does not provide elements, set this as
-    # `elements: false`
     elements:
-      # Note that it necessary for elements to separately provide both the tag
-      # (i.e. `<h3>`) and the attribute being added to the tag
-      # (i.e. `<h3 class="accordion__title">`).
       - <div>
-      - <div class="bg-white widget-card widget-card--horizontal widget-card--reverse ubc-card ubc-card--horiz hover--no-underline group first-image ubc-card__media ubc-card__content_wrapper first-content ubc-card__content first-footer ubc-card__actions widget-color-box widget-content first-child--mt-0 align-center align-left align-right bg-grey-100 bg-unit-primary bg-unit-secondary bg-unit-tertiary bg-unit-accent bg-ubc-blue bg-ubc-blue-sea bg-ubc-blue-cobalt bg-ubc-blue-neptune bg-ubc-blue-cornflower bg-ubc-blue-polar bg-ubc-blue-frost">
+      - <div class>
       - <h2>
       - <h2 class="card__title">
       - <h3>
@@ -109,45 +85,29 @@ ubc_ckeditor_widgets_ubccardhorizontal:
       - <h5 class="card__title">
       - <h6>
       - <h6 class="card__title">
-    # *Additional configuration properties*
-    # conditions: for setting additional criteria that must be met for the
-    #   plugin to be active.
-    # class: Optional PHP class that makes it possible for the plugin to provide
-    #   dynamic values, or a configuration UI.
 
 ubc_ckeditor_widgets_ubccardverticalone:
-  # Use the provider: property for this plugin to depend on another module.
-  # Configuration that will be sent to CKEditor 5 JavaScript plugins.
   ckeditor5:
     plugins:
       - ubcCardVerticalOne.UbcCardVerticalOne
-    # *Additional configuration properties*
-    # config: data sent to the constructor of any CKEditor 5 plugin
-    #   editorPluginName:
-    #     editorPluginProperty: editorPluginValue
     config:
       ubcCardVerticalOne:
-        contentToolbar: [ cardVerticalOneUbc ]
-  # Configuration that will be used directly by Drupal.
+        contentToolbar:
+          - 'ubcCardVerticalOneMarginOptions'
+          - '|'
+          - 'ubcCardVerticalOneBackgroundOptions'
+          - '|'
+          - 'ubcCardVerticalOneShadowToggle'
   drupal:
     label: Vertical Card
-    # The library loaded while using the editor.
     library: ubc_ckeditor_widgets/ubc_card_vertical_one
-    # The library loaded when configuring the text format using this plugin.
     admin_library: ubc_ckeditor_widgets/ubc_card_vertical_one.admin
     toolbar_items:
-      # This should match the name of the corresponding plugin exported in the
-      # plugin's index.js.
       UbcCardVerticalOne:
         label: Vertical Card
-    # If the plugin does not provide elements, set this as
-    # `elements: false`
     elements:
-      # Note that it necessary for elements to separately provide both the tag
-      # (i.e. `<h3>`) and the attribute being added to the tag
-      # (i.e. `<h3 class="accordion__title">`).
       - <div>
-      - <div class="widget-card card--one ubc-card ubc-card--vert hover--no-underline group first-image ubc-card__media object-cover first-content ubc-card__content first-footer ubc-card__actions bg-white bg-grey-100 bg-unit-primary bg-unit-secondary bg-unit-tertiary bg-unit-accent bg-ubc-blue bg-ubc-blue-sea bg-ubc-blue-cobalt bg-ubc-blue-neptune bg-ubc-blue-cornflower bg-ubc-blue-polar bg-ubc-blue-frost">
+      - <div class>
       - <h2>
       - <h2 class="card__title">
       - <h3>
@@ -158,45 +118,31 @@ ubc_ckeditor_widgets_ubccardverticalone:
       - <h5 class="card__title">
       - <h6>
       - <h6 class="card__title">
-    # *Additional configuration properties*
-    # conditions: for setting additional criteria that must be met for the
-    #   plugin to be active.
-    # class: Optional PHP class that makes it possible for the plugin to provide
-    #   dynamic values, or a configuration UI.
 
 ubc_ckeditor_widgets_ubccardverticaltwo:
-  # Use the provider: property for this plugin to depend on another module.
-  # Configuration that will be sent to CKEditor 5 JavaScript plugins.
   ckeditor5:
     plugins:
       - ubcCardVerticalTwo.UbcCardVerticalTwo
-    # *Additional configuration properties*
-    # config: data sent to the constructor of any CKEditor 5 plugin
-    #   editorPluginName:
-    #     editorPluginProperty: editorPluginValue
     config:
       ubcCardVerticalTwo:
-        contentToolbar: [ cardVerticalTwoUbc ]
-  # Configuration that will be used directly by Drupal.
+        contentToolbar:
+          - 'ubcCardVerticalTwoMarginOptions'
+          - '|'
+          - 'ubcCardVerticalTwoGapOptions'
+          - '|'
+          - 'ubcCardVerticalTwoBackgroundOptions'
+          - '|'
+          - 'ubcCardVerticalTwoShadowToggle'
   drupal:
     label: Two Vertical Cards
-    # The library loaded while using the editor.
     library: ubc_ckeditor_widgets/ubc_card_vertical_two
-    # The library loaded when configuring the text format using this plugin.
     admin_library: ubc_ckeditor_widgets/ubc_card_vertical_two.admin
     toolbar_items:
-      # This should match the name of the corresponding plugin exported in the
-      # plugin's index.js.
       UbcCardVerticalTwo:
         label: Two Vertical Cards
-    # If the plugin does not provide elements, set this as
-    # `elements: false`
     elements:
-      # Note that it necessary for elements to separately provide both the tag
-      # (i.e. `<h3>`) and the attribute being added to the tag
-      # (i.e. `<h3 class="accordion__title">`).
       - <div>
-      - <div class="object-cover bg-white widget-card card card--two md--flex-grid md--flex-1 ubc-card ubc-card--vert hover--no-underline group first-image second-image ubc-card__media first-content second-content ubc-card__content first-footer second-footer ubc-card__actions bg-grey-100 bg-unit-primary bg-unit-secondary bg-unit-tertiary bg-unit-accent bg-ubc-blue bg-ubc-blue-sea bg-ubc-blue-cobalt bg-ubc-blue-neptune bg-ubc-blue-cornflower bg-ubc-blue-polar bg-ubc-blue-frost">
+      - <div class>
       - <h2>
       - <h2 class="card__title">
       - <h3>
@@ -207,45 +153,31 @@ ubc_ckeditor_widgets_ubccardverticaltwo:
       - <h5 class="card__title">
       - <h6>
       - <h6 class="card__title">
-    # *Additional configuration properties*
-    # conditions: for setting additional criteria that must be met for the
-    #   plugin to be active.
-    # class: Optional PHP class that makes it possible for the plugin to provide
-    #   dynamic values, or a configuration UI.
 
 ubc_ckeditor_widgets_ubccardverticalthree:
-  # Use the provider: property for this plugin to depend on another module.
-  # Configuration that will be sent to CKEditor 5 JavaScript plugins.
   ckeditor5:
     plugins:
       - ubcCardVerticalThree.UbcCardVerticalThree
-    # *Additional configuration properties*
-    # config: data sent to the constructor of any CKEditor 5 plugin
-    #   editorPluginName:
-    #     editorPluginProperty: editorPluginValue
     config:
       ubcCardVerticalThree:
-        contentToolbar: [ cardVerticalThreeUbc ]
-  # Configuration that will be used directly by Drupal.
+        contentToolbar:
+          - 'ubcCardVerticalThreeMarginOptions'
+          - '|'
+          - 'ubcCardVerticalThreeGapOptions'
+          - '|'
+          - 'ubcCardVerticalThreeBackgroundOptions'
+          - '|'
+          - 'ubcCardVerticalThreeShadowToggle'
   drupal:
     label: Three Vertical Cards
-    # The library loaded while using the editor.
     library: ubc_ckeditor_widgets/ubc_card_vertical_three
-    # The library loaded when configuring the text format using this plugin.
     admin_library: ubc_ckeditor_widgets/ubc_card_vertical_three.admin
     toolbar_items:
-      # This should match the name of the corresponding plugin exported in the
-      # plugin's index.js.
       UbcCardVerticalThree:
         label: Three Vertical Cards
-    # If the plugin does not provide elements, set this as
-    # `elements: false`
     elements:
-      # Note that it necessary for elements to separately provide both the tag
-      # (i.e. `<h3>`) and the attribute being added to the tag
-      # (i.e. `<h3 class="accordion__title">`).
       - <div>
-      - <div class="bg-white widget-card card-three card card__image-area first-image second-image third-image card__content first-content second-content third-content card__footer first-footer second-footer third-footer bg-grey-100 bg-unit-primary bg-unit-secondary bg-unit-tertiary bg-unit-accent bg-ubc-blue bg-ubc-blue-sea bg-ubc-blue-cobalt bg-ubc-blue-neptune bg-ubc-blue-cornflower bg-ubc-blue-polar bg-ubc-blue-frost">
+      - <div class>
       - <h2>
       - <h2 class="card__title">
       - <h3>
@@ -256,177 +188,115 @@ ubc_ckeditor_widgets_ubccardverticalthree:
       - <h5 class="card__title">
       - <h6>
       - <h6 class="card__title">
-    # *Additional configuration properties*
-    # conditions: for setting additional criteria that must be met for the
-    #   plugin to be active.
-    # class: Optional PHP class that makes it possible for the plugin to provide
-    #   dynamic values, or a configuration UI.
 
 ubc_ckeditor_widgets_ubccolorbox:
-  # Use the provider: property for this plugin to depend on another module.
-  # Configuration that will be sent to CKEditor 5 JavaScript plugins.
   ckeditor5:
     plugins:
       - ubcColorBox.UbcColorBox
-    # *Additional configuration properties*
-    # config: data sent to the constructor of any CKEditor 5 plugin
-    #   editorPluginName:
-    #     editorPluginProperty: editorPluginValue
     config:
       ubcColorBox:
-        contentToolbar: [ colorBoxUbc ]
-  # Configuration that will be used directly by Drupal.
+        contentToolbar:
+          - 'ubcColorBoxAlignLeft'
+          - 'ubcColorBoxAlignNone'
+          - 'ubcColorBoxAlignRight'
+          - '|'
+          - 'ubcColorBoxPaddingOptions'
+          - '|'
+          - 'ubcColorBoxMarginOptions'
+          - '|'
+          - 'ubcColorBoxBackgroundOptions'
+          - '|'
+          - 'ubcColorBoxShadowToggle'
   drupal:
     label: Color Box
-    # The library loaded while using the editor.
     library: ubc_ckeditor_widgets/ubc_color_box
-    # The library loaded when configuring the text format using this plugin.
     admin_library: ubc_ckeditor_widgets/ubc_color_box.admin
     toolbar_items:
-      # This should match the name of the corresponding plugin exported in the
-      # plugin's index.js.
       UbcColorBox:
         label: Color Box
-    # If the plugin does not provide elements, set this as
-    # `elements: false`
     elements:
-      # Note that it necessary for elements to separately provide both the tag
-      # (i.e. `<h3>`) and the attribute being added to the tag
-      # (i.e. `<h3 class="accordion__title">`).
       - <div>
-      - <div class="p-4 p-6 p-12 p-16 my-4 my-6 my-12 my-16 bg-white widget-color-box widget-content first-child--mt-0 align-center align-left align-right bg-grey-100 bg-unit-primary bg-unit-secondary bg-unit-tertiary bg-unit-accent bg-ubc-blue bg-ubc-blue-sea bg-ubc-blue-cobalt bg-ubc-blue-neptune bg-ubc-blue-cornflower bg-ubc-blue-polar bg-ubc-blue-frost">
-    # *Additional configuration properties*
-    # conditions: for setting additional criteria that must be met for the
-    #   plugin to be active.
-    # class: Optional PHP class that makes it possible for the plugin to provide
-    #   dynamic values, or a configuration UI.
+      - <div class>
 
 ubc_ckeditor_widgets_ubccolumnstwo:
-  # Use the provider: property for this plugin to depend on another module.
-  # Configuration that will be sent to CKEditor 5 JavaScript plugins.
   ckeditor5:
     plugins:
       - ubcColumnsTwo.UbcColumnsTwo
-    # *Additional configuration properties*
-    # config: data sent to the constructor of any CKEditor 5 plugin
-    #   editorPluginName:
-    #     editorPluginProperty: editorPluginValue
     config:
       ubcColumnsTwo:
-        contentToolbar: [ columnsTwoUbc ]
-  # Configuration that will be used directly by Drupal.
+        contentToolbar:
+          - 'ubcColumnsTwoLayoutOptions'
+          - '|'
+          - 'ubcColumnsTwoMarginOptions'
+          - '|'
+          - 'ubcColumnsTwoGapOptions'
+          - '|'
+          - 'ubcColumnsTwoKeylineToggle'
   drupal:
     label: Two Columns
-    # The library loaded while using the editor.
     library: ubc_ckeditor_widgets/ubc_columns_two
-    # The library loaded when configuring the text format using this plugin.
     admin_library: ubc_ckeditor_widgets/ubc_columns_two.admin
     toolbar_items:
-      # This should match the name of the corresponding plugin exported in the
-      # plugin's index.js.
       UbcColumnsTwo:
         label: Two Columns
-    # If the plugin does not provide elements, set this as
-    # `elements: false`
     elements:
-      # Note that it necessary for elements to separately provide both the tag
-      # (i.e. `<h3>`) and the attribute being added to the tag
-      # (i.e. `<h3 class="accordion__title">`).
       - <div>
-      - <div class="widget-column-options widget-columns-2 widget--md--grid widget-region-one widget-region-two align-equal align-large-left align-large-right widget-keylines widget-gap-wide first-child--mt-0">
-    # *Additional configuration properties*
-    # conditions: for setting additional criteria that must be met for the
-    #   plugin to be active.
-    # class: Optional PHP class that makes it possible for the plugin to provide
-    #   dynamic values, or a configuration UI.
+      - <div class>
 
 ubc_ckeditor_widgets_ubccolumnsthree:
-  # Use the provider: property for this plugin to depend on another module.
-  # Configuration that will be sent to CKEditor 5 JavaScript plugins.
   ckeditor5:
     plugins:
       - ubcColumnsThree.UbcColumnsThree
-    # *Additional configuration properties*
-    # config: data sent to the constructor of any CKEditor 5 plugin
-    #   editorPluginName:
-    #     editorPluginProperty: editorPluginValue
     config:
       ubcColumnsThree:
-        contentToolbar: [ columnsThreeUbc ]
-  # Configuration that will be used directly by Drupal.
+        contentToolbar:
+          - 'ubcColumnsThreeLayoutOptions'
+          - '|'
+          - 'ubcColumnsThreeMarginOptions'
+          - '|'
+          - 'ubcColumnsThreeGapOptions'
+          - '|'
+          - 'ubcColumnsThreeKeylineToggle'
   drupal:
     label: Three Columns
-    # The library loaded while using the editor.
     library: ubc_ckeditor_widgets/ubc_columns_three
-    # The library loaded when configuring the text format using this plugin.
     admin_library: ubc_ckeditor_widgets/ubc_columns_three.admin
     toolbar_items:
-      # This should match the name of the corresponding plugin exported in the
-      # plugin's index.js.
       UbcColumnsThree:
         label: Three Columns
-    # If the plugin does not provide elements, set this as
-    # `elements: false`
     elements:
-      # Note that it necessary for elements to separately provide both the tag
-      # (i.e. `<h3>`) and the attribute being added to the tag
-      # (i.e. `<h3 class="accordion__title">`).
       - <div>
-      - <div class="widget-column-options widget-columns-3 widget--md--grid widget-region-one widget-region-two widget-region-three align-equal align-large-left align-large-right widget-keylines widget-gap-wide first-child--mt-0">
-    # *Additional configuration properties*
-    # conditions: for setting additional criteria that must be met for the
-    #   plugin to be active.
-    # class: Optional PHP class that makes it possible for the plugin to provide
-    #   dynamic values, or a configuration UI.
+      - <div class>
 
 ubc_ckeditor_widgets_ubccolumnsfour:
-  # Use the provider: property for this plugin to depend on another module.
-  # Configuration that will be sent to CKEditor 5 JavaScript plugins.
   ckeditor5:
     plugins:
       - ubcColumnsFour.UbcColumnsFour
-    # *Additional configuration properties*
-    # config: data sent to the constructor of any CKEditor 5 plugin
-    #   editorPluginName:
-    #     editorPluginProperty: editorPluginValue
     config:
       ubcColumnsFour:
-        contentToolbar: [ columnsFourUbc ]
-  # Configuration that will be used directly by Drupal.
+        contentToolbar:
+          - 'ubcColumnsFourMarginOptions'
+          - '|'
+          - 'ubcColumnsFourGapOptions'
+          - '|'
+          - 'ubcColumnsFourKeylineToggle'
   drupal:
     label: Four Columns
-    # The library loaded while using the editor.
     library: ubc_ckeditor_widgets/ubc_columns_four
-    # The library loaded when configuring the text format using this plugin.
     admin_library: ubc_ckeditor_widgets/ubc_columns_four.admin
     toolbar_items:
-      # This should match the name of the corresponding plugin exported in the
-      # plugin's index.js.
       UbcColumnsFour:
         label: Four Columns
-    # If the plugin does not provide elements, set this as
-    # `elements: false`
     elements:
-      # Note that it necessary for elements to separately provide both the tag
-      # (i.e. `<h3>`) and the attribute being added to the tag
-      # (i.e. `<h3 class="accordion__title">`).
       - <div>
-      - <div class="widget-column-options widget-columns-4 widget--md--grid widget-region-one widget-region-two widget-region-three widget-region-four align-equal align-large-left align-large-right widget-keylines widget-gap-wide first-child--mt-0">
-    # *Additional configuration properties*
-    # conditions: for setting additional criteria that must be met for the
-    #   plugin to be active.
-    # class: Optional PHP class that makes it possible for the plugin to provide
-    #   dynamic values, or a configuration UI.
+      - <div class>
 
 ubc_ckeditor_widgets_ubctableclass:
   ckeditor5:
     plugins:
-      #- table.TableProperties
-      #- table.TableCellProperties
       - ubcTableClass.UbcTableClass
     config:
       table:
-        #contentToolbar: [ tableProperties, tableCellProperties, tableUbc ]
         contentToolbar: [ tableUbc ]
   drupal:
     label: UBC Table Toolbar Items

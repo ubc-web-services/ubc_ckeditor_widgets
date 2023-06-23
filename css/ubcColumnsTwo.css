@@ -25,3 +25,8 @@
 .widget-columns-2 .widget-region-two {
     flex: 1;
 }
+
+.widget-columns-2.align-large-left .widget-region-one,
+.widget-columns-2.align-large-right .widget-region-two {
+    flex: 2;
+}
