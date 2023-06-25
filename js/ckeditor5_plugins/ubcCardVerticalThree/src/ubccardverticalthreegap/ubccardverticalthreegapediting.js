@@ -60,7 +60,7 @@ export default class UbcCardVerticalThreeGapEditing extends Plugin {
           value: /\bgap-[\S]+/
         },
         model: {
-          key: 'paddingclass',
+          key: 'gapclass',
           value: viewElement => {
             const regexp = /\bgap-([\S]+)/;
             const match = viewElement.getAttribute('class').match(regexp);
@@ -71,7 +71,7 @@ export default class UbcCardVerticalThreeGapEditing extends Plugin {
     conversion
       .for('downcast')
       .attributeToAttribute({
-        model: 'paddingclass',
+        model: 'gapclass',
         view: modelAttributeValue => ({
           key: 'class',
           value: modelAttributeValue

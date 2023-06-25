@@ -10,6 +10,7 @@ import {
   ButtonView,
   ContextualBalloon
 } from 'ckeditor5/src/ui';
+import icon from '../../../../../icons/addKeyline.svg';
 
 export default class UbcColumnsTwoKeylineUI extends Plugin {
 
@@ -36,6 +37,7 @@ export default class UbcColumnsTwoKeylineUI extends Plugin {
       buttonView.set({
         label: editor.t('Toggle Keylines'),
         tooltip: true,
+        //icon,
         withText: true,
       });
       // Bind the state of the button to the command.

@@ -52,7 +52,11 @@ ubc_card_horizontal:
   version: 1.x
   css:
     theme:
-      css/ubcCardHorizontal.css: { }
+      css/bg.color.css: { }
+      css/drop.shadow.css: {}
+      css/gap.css: { }
+      css/m.css: { }
+      css/ubcCard.css: { }
   js:
     js/build/ubcCardHorizontal.js: { preprocess: false, minified: true }
   dependencies:
@@ -62,14 +66,18 @@ ubc_card_horizontal.admin:
   version: 1.x
   css:
     theme:
-      css/ubcCardHorizontal.admin.css: { }
+      css/ubcCard.admin.css: { }
 
 # Card Vertical One
 ubc_card_vertical_one:
   version: 1.x
   css:
     theme:
-      css/ubcCardVerticalOne.css: { }
+      css/bg.color.css: { }
+      css/drop.shadow.css: {}
+      css/gap.css: { }
+      css/m.css: { }
+      css/ubcCard.css: { }
   js:
     js/build/ubcCardVerticalOne.js: { preprocess: false, minified: true }
   dependencies:
@@ -79,14 +87,18 @@ ubc_card_vertical_one.admin:
   version: 1.x
   css:
     theme:
-      css/ubcCardVerticalOne.admin.css: { }
+      css/ubcCard.admin.css: { }
 
 # Card Vertical Two
 ubc_card_vertical_two:
   version: 1.x
   css:
     theme:
-      css/ubcCardVerticalTwo.css: { }
+      css/bg.color.css: { }
+      css/drop.shadow.css: {}
+      css/gap.css: { }
+      css/m.css: { }
+      css/ubcCard.css: { }
   js:
     js/build/ubcCardVerticalTwo.js: { preprocess: false, minified: true }
   dependencies:
@@ -96,14 +108,18 @@ ubc_card_vertical_two.admin:
   version: 1.x
   css:
     theme:
-      css/ubcCardVerticalTwo.admin.css: { }
+      css/ubcCard.admin.css: { }
 
 # Card Vertical Three
 ubc_card_vertical_three:
   version: 1.x
   css:
     theme:
-      css/ubcCardVerticalThree.css: { }
+      css/bg.color.css: { }
+      css/drop.shadow.css: {}
+      css/gap.css: { }
+      css/m.css: { }
+      css/ubcCard.css: { }
   js:
     js/build/ubcCardVerticalThree.js: { preprocess: false, minified: true }
   dependencies:
@@ -113,13 +129,17 @@ ubc_card_vertical_three.admin:
   version: 1.x
   css:
     theme:
-      css/ubcCardVerticalThree.admin.css: { }
+      css/ubcCard.admin.css: { }
 
 # Color Box
 ubc_color_box:
   version: 1.x
   css:
     theme:
+      css/bg.color.css: { }
+      css/drop.shadow.css: {}
+      css/m.css: { }
+      css/p.css: { }
       css/ubcColorBox.css: { }
   js:
     js/build/ubcColorBox.js: { preprocess: false, minified: true }
@@ -137,7 +157,9 @@ ubc_columns_two:
   version: 1.x
   css:
     theme:
-      css/ubcColumnsTwo.css: { }
+      css/m.css: { }
+      css/gap.css: { }
+      css/ubcColumns.css: { }
   js:
     js/build/ubcColumnsTwo.js: { preprocess: false, minified: true }
   dependencies:
@@ -147,14 +169,16 @@ ubc_columns_two.admin:
   version: 1.x
   css:
     theme:
-      css/ubcColumnsTwo.admin.css: { }
+      css/ubcColumns.admin.css: { }
 
 # Three columns
 ubc_columns_three:
   version: 1.x
   css:
     theme:
-      css/ubcColumnsThree.css: { }
+      css/m.css: { }
+      css/gap.css: { }
+      css/ubcColumns.css: { }
   js:
     js/build/ubcColumnsThree.js: { preprocess: false, minified: true }
   dependencies:
@@ -164,14 +188,16 @@ ubc_columns_three.admin:
   version: 1.x
   css:
     theme:
-      css/ubcColumnsThree.admin.css: { }
+      css/ubcColumns.admin.css: { }
 
 # Four columns
 ubc_columns_four:
   version: 1.x
   css:
     theme:
-      css/ubcColumnsFour.css: { }
+      css/m.css: { }
+      css/gap.css: { }
+      css/ubcColumns.css: { }
   js:
     js/build/ubcColumnsFour.js: { preprocess: false, minified: true }
   dependencies:
@@ -181,7 +207,7 @@ ubc_columns_four.admin:
   version: 1.x
   css:
     theme:
-      css/ubcColumnsFour.admin.css: { }
+      css/ubcColumns.admin.css: { }
 
 # Tables
 ubc_table:

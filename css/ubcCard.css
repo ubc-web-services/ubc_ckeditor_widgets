@@ -1,0 +1,118 @@
+/* Editor-specific styles */
+.widget-card.ck-widget {
+  position: relative;
+}
+
+.widget-card.ck-widget::after {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  background-color: #ccc;
+  color: #111;
+  padding: .5em;
+  font-size: .5rem;
+}
+
+.widget-card.widget-card--horizontal.ck-widget::after {
+  content: 'Horizontal Card';
+}
+
+.widget-card.widget-card--horizontal.ck-widget .ubc-card__media {
+  min-width: 2rem;
+}
+
+.widget-card.card--one.ck-widget::after {
+  content: 'Vertical Card';
+}
+
+.widget-card.card--two.ck-widget::after {
+  content: 'Two Vertical Cards';
+}
+
+.widget-card.card--three.ck-widget::after {
+  content: 'Three Vertical Cards';
+}
+
+/* Cards */
+.widget-card .ubc-card {
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    isolation: isolate;
+  }
+
+  .widget-card .ubc-card__media {
+    margin-top: 0;
+    flex: none;
+  }
+
+  .widget-card .ubc-card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .widget-card .ubc-card__content,
+  .widget-card .ubc-card__actions {
+    padding: 1rem;
+  }
+
+  .widget-card .ubc-card__actions {
+    margin-top: auto;
+  }
+
+  .widget-card .ubc-card__content> :first-child,
+  .widget-card .ubc-card__actions>p {
+    margin-top: 0;
+  }
+
+
+@media (min-width: 960px) {
+
+    .md--flex-grid {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .md--flex-grid .md--flex-1 {
+      flex: 1;
+    }
+
+    .md--flex-grid .md--flex-2 {
+      flex: 2;
+    }
+
+  }
+
+  @media (min-width: 480px) {
+
+    .widget-card--horizontal .ubc-card--horiz {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .widget-card--horizontal.widget-card__reverse .ubc-card--horiz {
+      flex-direction: row-reverse;
+    }
+
+  }
+
+  .widget-card--horizontal .ubc-card .ubc-card__media {
+    flex: inherit;
+  }
+
+  /* allow media embeds to take up full vertical space */
+  .widget-card--horizontal .ubc-card__media div {
+    height: 100%;
+  }
+
+  .widget-card--horizontal .ubc-card .ubc-card__content_wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .widget-card--horizontal .ubc-card .ubc-card__content {
+    flex: 1;
+  }

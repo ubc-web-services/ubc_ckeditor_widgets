@@ -71,7 +71,7 @@ export default class UbcColumnsTwoKeylineEditing extends Plugin {
     conversion
       .for('downcast')
       .attributeToAttribute({
-        model: 'shadowclass',
+        model: 'keylineclass',
         view: modelAttributeValue => ({
           key: 'class',
           value: modelAttributeValue

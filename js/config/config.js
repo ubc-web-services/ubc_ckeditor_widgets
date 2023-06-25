@@ -33,8 +33,9 @@ export const gapStyles = [
     {'label' : 'None', 'value' : 'gap-0'},
     {'label' : 'Small', 'value' : 'gap-4'},
     {'label' : 'Medium', 'value' : 'gap-6'},
-    {'label' : 'Large', 'value' : 'gap-12'},
-    {'label' : 'Extra Large', 'value' : 'gap-16'},
+    {'label' : 'Large', 'value' : 'gap-8'},
+    {'label' : 'XLarge', 'value' : 'gap-12'},
+    {'label' : 'XXLarge', 'value' : 'gap-16'},
 ];
 
 export const layoutStyles = [
@@ -44,18 +45,20 @@ export const layoutStyles = [
 
 export const marginStyles = [
     {'label' : 'None', 'value' : 'my-0'},
-    {'label' : 'Small', 'value' : 'my-4'},
-    {'label' : 'Medium', 'value' : 'my-6'},
-    {'label' : 'Large', 'value' : 'my-12'},
-    {'label' : 'Extra Large', 'value' : 'my-16'},
+    {'label' : 'Small Vertical', 'value' : 'my-4'},
+    {'label' : 'Medium Vertical', 'value' : 'my-6'},
+    {'label' : 'Large Vertical', 'value' : 'my-8'},
+    {'label' : 'XLarge Vertical', 'value' : 'my-12'},
+    {'label' : 'XXLarge Vertical', 'value' : 'my-16'},
 ];
 
 export const paddingStyles = [
     {'label' : 'None', 'value' : 'p-0'},
     {'label' : 'Small', 'value' : 'p-4'},
     {'label' : 'Medium', 'value' : 'p-6'},
-    {'label' : 'Large', 'value' : 'p-12'},
-    {'label' : 'Extra Large', 'value' : 'p-16'},
+    {'label' : 'Large', 'value' : 'p-8'},
+    {'label' : 'XLarge', 'value' : 'p-12'},
+    {'label' : 'XXLarge', 'value' : 'p-16'},
 ];
 
 export const shadowStyles = [
