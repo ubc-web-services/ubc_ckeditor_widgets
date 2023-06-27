@@ -41,7 +41,7 @@ export default class UbcTableClassEditing extends Plugin {
      * Commands for the buttons
      */
     editor.commands.add(
-      'UbcTableClass',
+      'ubcTableClass',
       new UbcTableClassCommand(editor)
     );
   }

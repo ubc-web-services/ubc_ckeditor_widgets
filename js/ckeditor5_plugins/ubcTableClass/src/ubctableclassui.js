@@ -34,7 +34,7 @@ export default class UbcTableClassUI extends Plugin {
       return style;
     });
     const values = alloptions.value;
-    const command = editor.commands.get('UbcTableClass');
+    const command = editor.commands.get('ubcTableClass');
 
     editor.ui.componentFactory.add('tableUbc', locale => {
       const dropdownView = createDropdown(locale);
@@ -66,7 +66,7 @@ export default class UbcTableClassUI extends Plugin {
 // Prepares dropdown items.
 function _prepareListOptions(options, command) {
   const itemDefinitions = new Collection();
-  const activecommand = 'UbcTableClass';
+  const activecommand = 'ubcTableClass';
   let alloptions = tableStyles.map(style => {
     return style;
   });

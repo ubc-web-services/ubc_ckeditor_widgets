@@ -33,13 +33,7 @@ function ubc_ckeditor_widgets_page_attachments_alter(array &$page) {
   * The style sets of the various plugins.
   * NOTE - these are not yet in use - refer to active styles in js/config/config.js
   */
-  // NOT NEEDED (alignStyles) - these will be static and require icons / layout, so they are better hardcoded
-/*   $page['#attached']['drupalSettings']['ubcCkeditorWidgets']['alignStyles'] = [
-    ['label' => 'Left', 'value' => 'align-left'],
-    ['label' => 'Center', 'value' => 'align-center'],
-    ['label' => 'Right', 'value' => 'align-right'],
-  ];
- */
+
   $page['#attached']['drupalSettings']['ubcCkeditorWidgets']['backgroundColors'] = [
     ['label' => 'None', 'value' => 'bg-transparent'],
     ['label' => 'White', 'value' => 'bg-white'],
@@ -56,6 +50,27 @@ function ubc_ckeditor_widgets_page_attachments_alter(array &$page) {
     ['label' => 'UBC Polar Blue', 'value' => 'bg-ubc-blue-polar'],
     ['label' => 'UBC Frost Blue', 'value' => 'bg-ubc-blue-frost'],
   ];
+
+  /*
+  $page['#attached']['drupalSettings']['ubcCkeditorWidgets']['buttonSize'] = [
+    ['label' => 'Default', 'value' => ''],
+    ['label' => 'XSmall', 'value' => 'text-xs'],
+    ['label' => 'Small', 'value' => 'text-sm'],
+    ['label' => 'Medium', 'value' => 'text-md'],
+    ['label' => 'Large', 'value' => 'text-lg'],
+    ['label' => 'XLarge', 'value' => 'text-xl'],
+    ['label' => 'XXLarge', 'value' => 'text-2xl'],
+  ];
+
+  $page['#attached']['drupalSettings']['ubcCkeditorWidgets']['buttonStyle'] = [
+    ['label' => 'Default Style', 'value' => ''],
+    ['label' => 'Light Button', 'value' => 'unit-button--light'],
+    ['label' => 'Dark Button', 'value' => 'unit-button--dark'],
+    ['label' => 'Simple Button', 'value' => 'unit-button--simple'],
+    ['label' => 'Outline Button', 'value' => 'unit-button--outline'],
+    ['label' => 'Transparent Button', 'value' => 'unit-button--transparent'],
+  ];
+  */
 
   $page['#attached']['drupalSettings']['ubcCkeditorWidgets']['gapStyles'] = [
     ['label' => 'None', 'value' => 'gap-0'],
