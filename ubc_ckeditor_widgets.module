@@ -33,12 +33,13 @@ function ubc_ckeditor_widgets_page_attachments_alter(array &$page) {
   * The style sets of the various plugins.
   * NOTE - these are not yet in use - refer to active styles in js/config/config.js
   */
-  $page['#attached']['drupalSettings']['ubcCkeditorWidgets']['alignStyles'] = [
+  // NOT NEEDED (alignStyles) - these will be static and require icons / layout, so they are better hardcoded
+/*   $page['#attached']['drupalSettings']['ubcCkeditorWidgets']['alignStyles'] = [
     ['label' => 'Left', 'value' => 'align-left'],
     ['label' => 'Center', 'value' => 'align-center'],
     ['label' => 'Right', 'value' => 'align-right'],
   ];
-
+ */
   $page['#attached']['drupalSettings']['ubcCkeditorWidgets']['backgroundColors'] = [
     ['label' => 'None', 'value' => 'bg-transparent'],
     ['label' => 'White', 'value' => 'bg-white'],
@@ -83,6 +84,14 @@ function ubc_ckeditor_widgets_page_attachments_alter(array &$page) {
     ['label' => 'XXLarge', 'value' => 'p-16'],
   ];
 
+  $page['#attached']['drupalSettings']['ubcCkeditorWidgets']['tableStyles'] = [
+    ['label' => 'None', 'value' => 'table--nostyle'],
+    ['label' => 'Plain', 'value' => 'table--plain'],
+    ['label' => 'Condensed', 'value' => 'table--condensed'],
+    ['label' => 'Striped', 'value' => 'table--striped'],
+    ['label' => 'Stripe on hover', 'value' => 'table--hover'],
+  ];
+
   $page['#attached']['drupalSettings']['ubcCkeditorWidgets']['threeColumnLayoutStyles'] = [
     ['label' => 'Equal Width', 'value' => 'align-equal'],
     ['label' => 'Align Large Left', 'value' => 'align-large-left'],
@@ -94,6 +103,15 @@ function ubc_ckeditor_widgets_page_attachments_alter(array &$page) {
     ['label' => 'Equal Width', 'value' => 'align-equal'],
     ['label' => 'Align Large Left', 'value' => 'align-large-left'],
     ['label' => 'Align Large Right', 'value' => 'align-large-right'],
+  ];
+
+  $page['#attached']['drupalSettings']['ubcCkeditorWidgets']['widthStyles'] = [
+    ['label' => 'Column width: Auto', 'value' => 'w-auto'],
+    ['label' => 'Column width: 1/2', 'value' => 'w-half'],
+    ['label' => 'Column width: 1/3', 'value' => 'w-one-third'],
+    ['label' => 'Column width: 1/4', 'value' => 'w-one-quarter'],
+    ['label' => 'Column width: 1/5', 'value' => 'w-one-fifth'],
+    ['label' => 'Column width: 1/6', 'value' => 'w-one-sixth'],
   ];
 
   /**

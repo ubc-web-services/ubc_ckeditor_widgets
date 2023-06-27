@@ -132,7 +132,7 @@ export default class UbcCardHorizontalEditing extends Plugin {
       isContent: true,
       isSelectable: true,
       allowIn: 'ubcCardHorizontal',
-      allowContentOf: '$block',
+      allowContentOf: ['$block', '$blockObject'],
       // Allow image elements.
       allowChildren: ['drupalMedia', 'imageBlock', 'imageInline', 'htmlImg'],
     });

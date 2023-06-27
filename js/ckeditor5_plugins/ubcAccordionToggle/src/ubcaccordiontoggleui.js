@@ -33,7 +33,6 @@ export default class UbcAccordionToggleUI extends Plugin {
       this.listenTo(buttonView, 'execute', () =>
         editor.execute('ubcAccordionToggle'),
       );
-
       return buttonView;
     });
   }

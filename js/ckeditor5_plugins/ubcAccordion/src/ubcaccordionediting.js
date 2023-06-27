@@ -145,7 +145,7 @@ export default class UbcAccordionEditing extends Plugin {
       model: 'ubcAccordion',
       view: {
         name: 'div',
-        classes: 'widget-accordion',
+        classes: ['widget-accordion'],
       },
     });
 
@@ -188,17 +188,27 @@ export default class UbcAccordionEditing extends Plugin {
     // <div class="widget-accordion">{{inner content}}</div>.
     conversion.for('dataDowncast').elementToElement({
       model: 'ubcAccordion',
-      view: {
-        name: 'div',
-        classes: 'widget-accordion',
+      view: (modelElement, {
+        writer
+      }) => {
+        return writer.createContainerElement(
+          'div', {
+            class: 'widget-accordion',
+          },
+        );
       },
     });
 
     conversion.for('dataDowncast').elementToElement({
       model: 'ubcAccordionTitleWrapper',
-      view: {
-        name: 'div',
-        classes: ['accordion', 'js-reveal__parent'],
+      view: (modelElement, {
+        writer
+      }) => {
+        return writer.createContainerElement(
+          'div', {
+            class: 'accordion js-reveal__parent',
+          },
+        );
       },
     });
 

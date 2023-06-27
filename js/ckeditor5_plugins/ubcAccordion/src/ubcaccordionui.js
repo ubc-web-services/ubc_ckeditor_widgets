@@ -42,7 +42,6 @@ export default class UbcAccordionUI extends Plugin {
       this.listenTo(buttonView, 'execute', () =>
         editor.execute('ubcAccordion'),
       );
-
       return buttonView;
     });
   }

@@ -9,6 +9,15 @@ import {
 } from 'ckeditor5/src/core';
 
 export default class UbcAccordionCommand extends Command {
+
+  /**
+   * @inheritDoc
+   */
+  constructor(editor, attributeName) {
+    super(editor);
+    this.attributeName = attributeName;
+  }
+
   execute(attributes) {
     const {
       model
@@ -28,6 +37,7 @@ export default class UbcAccordionCommand extends Command {
     const {
       selection
     } = model.document;
+    const accordion = selection.getFirstPosition().findAncestor('ubcAccordion');
 
     // Determine if the cursor (selection) is in a position where adding a
     // ubcAccordion is permitted. This is based on the schema of the model(s)
@@ -40,6 +50,11 @@ export default class UbcAccordionCommand extends Command {
     // If the cursor is not in a location where a ubcAccordion can be added, return
     // null so the addition doesn't happen.
     this.isEnabled = allowedIn !== null;
+    if (accordion) {
+      this.value = true;
+    } else {
+      this.value = false;
+    }
   }
 }
 

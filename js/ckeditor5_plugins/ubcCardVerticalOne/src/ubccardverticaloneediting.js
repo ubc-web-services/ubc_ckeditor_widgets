@@ -117,7 +117,7 @@ export default class UbcCardVerticalOneEditing extends Plugin {
       isContent: true,
       isSelectable: true,
       allowIn: 'ubcCardVerticalOne',
-      allowContentOf: '$block',
+      allowContentOf: ['$block', '$blockObject'],
       // Allow image elements.
       allowChildren: ['drupalMedia', 'imageBlock', 'imageInline', 'htmlImg'],
     });

@@ -66,6 +66,14 @@ export const shadowStyles = [
     {'label' : 'Drop Shadow', 'value' : 'drop-shadow-md'},
 ];
 
+export const tableStyles = [
+    {'label' : 'None', 'value' : 'table--nostyle'},
+    {'label' : 'Plain', 'value' : 'table--plain'},
+    {'label' : 'Condensed', 'value' : 'table--condensed'},
+    {'label' : 'Striped', 'value' : 'table--striped'},
+    {'label' : 'Stripe on hover', 'value' : 'table--hover'},
+  ];
+
 export const threeColumnLayoutStyles = [
     {'label' : 'Equal Width', 'value' : 'align-equal'},
     {'label' : 'Align Large Left', 'value' : 'align-large-left'},
@@ -78,6 +86,15 @@ export const twoColumnLayoutStyles = [
     {'label' : 'Align Large Left', 'value' : 'align-large-left'},
     {'label' : 'Align Large Right', 'value' : 'align-large-right'},
 ];
+
+export const widthStyles = [
+    {'label' : 'Column width: Auto', 'value' : 'w-auto'},
+    {'label' : 'Column width: 1/2', 'value' : 'w-half'},
+    {'label' : 'Column width: 1/3', 'value' : 'w-one-third'},
+    {'label' : 'Column width: 1/4', 'value' : 'w-one-quarter'},
+    {'label' : 'Column width: 1/5', 'value' : 'w-one-fifth'},
+    {'label' : 'Column width: 1/6', 'value' : 'w-one-sixth'},
+  ];
 
 
 /**

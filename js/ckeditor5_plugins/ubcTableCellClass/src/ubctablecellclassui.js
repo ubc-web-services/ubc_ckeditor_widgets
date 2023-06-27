@@ -1,5 +1,5 @@
 /**
- * @file registers the simpleBox toolbar button and binds functionality to it.
+ * @file registers the ubcCardVerticalTwo toolbar button and binds functionality to it.
  */
 
 import {
@@ -8,174 +8,89 @@ import {
 import {
   addListToDropdown,
   createDropdown,
-  Model,
-  ButtonView
+  Model
 } from 'ckeditor5/src/ui';
 import {
   Collection
 } from 'ckeditor5/src/utils';
+import {
+	widthStyles
+} from '../../../config/config';
+import tableResizeIcon from '../../../../icons/resize.svg';
 
-import tableColumnIcon from '../../../../icons/resize.svg';
+export default class UbcTableCellClassUI extends Plugin {
 
-export default class UbcTableCellClassUi extends Plugin {
   /**
    * @inheritDoc
    */
   static get pluginName() {
-    return 'UbcTableCellClassUi';
+    return 'UbcTableCellClassUI';
   }
 
-  /**
-   * @inheritDoc
-   */
   init() {
     const editor = this.editor;
-    const t = this.editor.t;
+    const t = editor.t;
+    let alloptions = widthStyles.map(style => {
+      return style;
+    });
+    const values = alloptions.value;
+    const command = editor.commands.get('ubcTableCellClass');
 
     editor.ui.componentFactory.add('tableCellUbc', locale => {
-      const options = [{
-          type: 'button',
-          model: {
-            commandName: 'setCellClass1',
-            label: t('Column width: 1/2'),
-            bindIsOn: true
-          }
-        },
-        {
-          type: 'separator'
-        },
-        {
-          type: 'button',
-          model: {
-            commandName: 'setCellClass2',
-            label: t('Column width: 1/3'),
-            bindIsOn: true
-          }
-        },
-        {
-          type: 'separator'
-        },
-        {
-          type: 'button',
-          model: {
-            commandName: 'setCellClass3',
-            label: t('Column width: 1/4'),
-            bindIsOn: true
-          }
-        },
-        {
-          type: 'separator'
-        },
-        {
-          type: 'button',
-          model: {
-            commandName: 'setCellClass4',
-            label: t('Column width: 1/5'),
-            bindIsOn: true
-          }
-        },
-        {
-          type: 'separator'
-        },
-        {
-          type: 'button',
-          model: {
-            commandName: 'setCellClass5',
-            label: t('Column width: 1/6'),
-            bindIsOn: true
-          }
-        },
-      ];
-      return this._prepareDropdown(t('Table Cell Widths'), tableColumnIcon, options, locale);
-    });
-  }
-
-  /**
-   * Creates a dropdown view from a set of options.
-   *
-   * @private
-   * @param {String} label The dropdown button label.
-   * @param {String} icon An icon for the dropdown button.
-   * @param {Array.<module:ui/dropdown/utils~ListDropdownItemDefinition>} options The list of options for the dropdown.
-   * @param {module:utils/locale~Locale} locale
-   * @returns {module:ui/dropdown/dropdownview~DropdownView}
-   */
-  _prepareDropdown(label, icon, options, locale) {
-    const editor = this.editor;
-    const dropdownView = createDropdown(locale);
-    const commands = this._fillDropdownWithListOptions(dropdownView, options);
-
-    // Decorate dropdown's button.
-    dropdownView.buttonView.set({
-      label,
-      icon,
-      tooltip: true
-    });
-
-    // Make dropdown button disabled when all options are disabled.
-    dropdownView.bind('isEnabled').toMany(commands, 'isEnabled', (...areEnabled) => {
-      return areEnabled.some(isEnabled => isEnabled);
-    });
-
-    this.listenTo(dropdownView, 'execute', evt => {
-      editor.execute(evt.source.commandName);
-      // Toggling a switch button view should not move the focus to the editable.
-      if (!(evt.source instanceof ButtonView)) {
+      const dropdownView = createDropdown(locale);
+      addListToDropdown(dropdownView, _prepareListOptions(values, command));
+      dropdownView.buttonView.set({
+        label: t('Table Cell Width'),
+        tooltip: true,
+        //withText: true,
+        icon: tableResizeIcon,
+      });
+      dropdownView.extendTemplate({
+        attributes: {
+          class: 'ck-cell-style-options-dropdown'
+        }
+      });
+      dropdownView.bind('isEnabled').to(command);
+      // Execute command when an item from the dropdown is selected.
+      this.listenTo(dropdownView, 'execute', evt => {
+        editor.execute(evt.source.commandName, {
+          value: evt.source.commandParam
+        });
         editor.editing.view.focus();
-      }
+      });
+      return dropdownView;
     });
-    return dropdownView;
-  }
-
-  /**
-   * Injects a {@link module:ui/list/listview~ListView} into the passed dropdown with buttons
-   * which execute editor commands as configured in passed options.
-   *
-   * @private
-   * @param {module:ui/dropdown/dropdownview~DropdownView} dropdownView
-   * @param {Array.<module:ui/dropdown/utils~ListDropdownItemDefinition>} options The list of options for the dropdown.
-   * @returns {Array.<module:core/command~Command>} Commands the list options are interacting with.
-   */
-  _fillDropdownWithListOptions(dropdownView, options) {
-    const editor = this.editor;
-    const commands = [];
-    const itemDefinitions = new Collection();
-
-    for (const option of options) {
-      addListOption(option, editor, commands, itemDefinitions);
-    }
-    addListToDropdown(dropdownView, itemDefinitions, editor.ui.componentFactory);
-    return commands;
   }
 }
 
-// Adds an option to a list view.
-//
-// @param {module:table/tableui~DropdownOption} option A configuration option.
-// @param {module:core/editor/editor~Editor} editor
-// @param {Array.<module:core/command~Command>} commands The list of commands to update.
-// @param {Iterable.<module:ui/dropdown/utils~ListDropdownItemDefinition>} itemDefinitions
-// A collection of dropdown items to update with the given option.
-function addListOption(option, editor, commands, itemDefinitions) {
-  const model = option.model = new Model(option.model);
-  const {
-    commandName,
-    bindIsOn
-  } = option.model;
-
-  if (option.type === 'button') {
-    const command = editor.commands.get(commandName);
-    commands.push(command);
-    model.set({
-      commandName
-    });
-    model.bind('isEnabled').to(command);
-    if (bindIsOn) {
-      model.bind('isOn').to(command, 'value');
-    }
-  }
-  model.set({
-    withText: true
+// Prepares dropdown items.
+function _prepareListOptions(options, command) {
+  const itemDefinitions = new Collection();
+  const activecommand = 'ubcTableCellClass';
+  let alloptions = widthStyles.map(style => {
+    return style;
   });
-  itemDefinitions.add(option);
+  // Create dropdown items.
+  for (const option of alloptions) {
+    const def = {
+      type: 'button',
+      model: new Model({
+        commandName: activecommand,
+        commandParam: option.value,
+        label: option.label,
+        withText: true
+      })
+    };
+    def.model.bind('isOn').to(command, 'value', value => {
+      if (value === option.value) {
+        return true;
+      }
+      if (!value || !option.value) {
+        return false;
+      }
+      return value.toLowerCase() === option.value.toLowerCase();
+    });
+    itemDefinitions.add(def);
+  }
+  return itemDefinitions;
 }
