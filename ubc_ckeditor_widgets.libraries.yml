@@ -1,11 +1,239 @@
-# ubc_ckeditor_widgets.libraries.yml
+# This adds the plugin JavaScript to the page.
 
-widgets:
+# Add all required styles and JS to the public facing site
+ubc_ckeditor_widgets.ui:
+  version: 1.x
+  css:
+    theme:
+      css/ubcWidgetDefaultStyles.css: { }
+  js:
+    js/functional/ubcAccordion.ui.js: { }
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+    - core/once
+
+# Accordion
+ubc_accordion:
+  version: 1.x
+  css:
+    theme:
+      css/ubcAccordion.css: { }
+  js:
+    js/build/ubcAccordion.js: { preprocess: false, minified: true }
+  dependencies:
+    - core/ckeditor5
+
+ubc_accordion.admin:
+  version: 1.x
+  css:
+    theme:
+      css/ubcAccordion.admin.css: { }
+
+# Accordion Toggle
+ubc_accordion_toggle:
+  version: 1.x
+  css:
+    theme:
+      css/ubcAccordionToggle.css: { }
+  js:
+    js/build/ubcAccordionToggle.js: { preprocess: false, minified: true }
+  dependencies:
+    - core/ckeditor5
+
+ubc_accordion_toggle.admin:
+  version: 1.x
+  css:
+    theme:
+      css/ubcAccordionToggle.admin.css: { }
+
+# Card Horizontal
+ubc_card_horizontal:
+  version: 1.x
+  css:
+    theme:
+      css/bg.color.css: { }
+      css/drop.shadow.css: {}
+      css/gap.css: { }
+      css/m.css: { }
+      css/ubcCard.css: { }
+  js:
+    js/build/ubcCardHorizontal.js: { preprocess: false, minified: true }
+  dependencies:
+    - core/ckeditor5
+
+ubc_card_horizontal.admin:
+  version: 1.x
+  css:
+    theme:
+      css/ubcCard.admin.css: { }
+
+# Card Vertical One
+ubc_card_vertical_one:
+  version: 1.x
+  css:
+    theme:
+      css/bg.color.css: { }
+      css/drop.shadow.css: {}
+      css/gap.css: { }
+      css/m.css: { }
+      css/ubcCard.css: { }
+  js:
+    js/build/ubcCardVerticalOne.js: { preprocess: false, minified: true }
+  dependencies:
+    - core/ckeditor5
+
+ubc_card_vertical_one.admin:
+  version: 1.x
+  css:
+    theme:
+      css/ubcCard.admin.css: { }
+
+# Card Vertical Two
+ubc_card_vertical_two:
+  version: 1.x
+  css:
+    theme:
+      css/bg.color.css: { }
+      css/drop.shadow.css: {}
+      css/gap.css: { }
+      css/m.css: { }
+      css/ubcCard.css: { }
+  js:
+    js/build/ubcCardVerticalTwo.js: { preprocess: false, minified: true }
+  dependencies:
+    - core/ckeditor5
+
+ubc_card_vertical_two.admin:
+  version: 1.x
+  css:
+    theme:
+      css/ubcCard.admin.css: { }
+
+# Card Vertical Three
+ubc_card_vertical_three:
+  version: 1.x
+  css:
+    theme:
+      css/bg.color.css: { }
+      css/drop.shadow.css: {}
+      css/gap.css: { }
+      css/m.css: { }
+      css/ubcCard.css: { }
+  js:
+    js/build/ubcCardVerticalThree.js: { preprocess: false, minified: true }
+  dependencies:
+    - core/ckeditor5
+
+ubc_card_vertical_three.admin:
+  version: 1.x
+  css:
+    theme:
+      css/ubcCard.admin.css: { }
+
+# Color Box
+ubc_color_box:
+  version: 1.x
+  css:
+    theme:
+      css/bg.color.css: { }
+      css/drop.shadow.css: {}
+      css/m.css: { }
+      css/p.css: { }
+      css/ubcColorBox.css: { }
+  js:
+    js/build/ubcColorBox.js: { preprocess: false, minified: true }
+  dependencies:
+    - core/ckeditor5
+
+ubc_color_box.admin:
+  version: 1.x
+  css:
+    theme:
+      css/ubcColorBox.admin.css: { }
+
+# Two columns
+ubc_columns_two:
+  version: 1.x
+  css:
+    theme:
+      css/m.css: { }
+      css/gap.css: { }
+      css/ubcColumns.css: { }
+  js:
+    js/build/ubcColumnsTwo.js: { preprocess: false, minified: true }
+  dependencies:
+    - core/ckeditor5
+
+ubc_columns_two.admin:
+  version: 1.x
+  css:
+    theme:
+      css/ubcColumns.admin.css: { }
+
+# Three columns
+ubc_columns_three:
+  version: 1.x
+  css:
+    theme:
+      css/m.css: { }
+      css/gap.css: { }
+      css/ubcColumns.css: { }
+  js:
+    js/build/ubcColumnsThree.js: { preprocess: false, minified: true }
+  dependencies:
+    - core/ckeditor5
+
+ubc_columns_three.admin:
+  version: 1.x
+  css:
+    theme:
+      css/ubcColumns.admin.css: { }
+
+# Four columns
+ubc_columns_four:
+  version: 1.x
+  css:
+    theme:
+      css/m.css: { }
+      css/gap.css: { }
+      css/ubcColumns.css: { }
+  js:
+    js/build/ubcColumnsFour.js: { preprocess: false, minified: true }
+  dependencies:
+    - core/ckeditor5
+
+ubc_columns_four.admin:
+  version: 1.x
+  css:
+    theme:
+      css/ubcColumns.admin.css: { }
+
+# Tables
+ubc_table:
+  version: 1.x
+  css:
+    theme:
+      css/ubcTable.css: { }
+  js:
+    js/build/ubcTableClass.js: { preprocess: false, minified: true }
+  dependencies:
+    - core/ckeditor5
+
+# Table Cells
+ubc_table_cell:
+  version: 1.x
+  js:
+    js/build/ubcTableCellClass.js: { preprocess: false, minified: true }
+  dependencies:
+    - core/ckeditor5
+
+v4_widgets:
   css:
     layout:
-      css/ubc.ckeditor.widgets.css: {}
+      css/ubc.ckeditor4.widgets.css: {}
   js:
-    js/ubc_ckeditor_widgets.js: { minified: true }
+    js/ckeditor4/ubc_ckeditor_widgets.js: { minified: true }
   dependencies:
     - core/drupal
     - core/drupalSettings

@@ -1,0 +1,147 @@
+/* Editor-specific styles */
+.widget-column-options.ck-widget {
+  position: relative;
+}
+
+.widget-column-options.ck-widget::after {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  background-color: #ccc;
+  color: #111;
+  padding: .5em;
+  font-size: .5rem;
+}
+
+.widget-columns-2.ck-widget::after {
+  content: 'Two Columns';
+}
+
+.widget-columns-3.ck-widget::after {
+  content: 'Three Columns';
+}
+
+.widget-columns-4.ck-widget::after {
+  content: 'Four Columns';
+}
+
+/* General styles for columns */
+.widget-column-options .widget--md--grid {
+    display: flex;
+    flex-direction: column;
+}
+
+.widget-column-options .widget-region-one,
+.widget-column-options .widget-region-two,
+.widget-column-options .widget-region-three,
+.widget-column-options .widget-region-four {
+    flex: 1;
+}
+
+/* Columns */
+@media (max-width: 767px) {
+
+  .widget-column-options .first-child--mt-0> :first-child {
+    margin-top: 1.625rem;
+  }
+
+}
+
+@media (min-width: 768px) {
+
+    .widget-column-options .widget--md--grid {
+        flex-direction: row;
+    }
+
+    .widget-columns-2.align-large-left .widget-region-one,
+    .widget-columns-3.align-large-left .widget-region-one,
+    .widget-columns-3.align-large-center .widget-region-two,
+    .widget-columns-2.align-large-right .widget-region-two,
+    .widget-columns-3.align-large-right .widget-region-three {
+        flex: 2;
+    }
+
+    .widget-columns-2.widget-keylines .widget-region-one,
+    .widget-columns-3.widget-keylines .widget-region-one,
+    .widget-columns-3.widget-keylines .widget-region-two,
+    .widget-columns-4.widget-keylines .widget-region-one,
+    .widget-columns-4.widget-keylines .widget-region-two,
+    .widget-columns-4.widget-keylines .widget-region-three {
+      position: relative;
+    }
+
+    .widget-columns-2.widget-keylines .widget-region-one::after,
+    .widget-columns-3.widget-keylines .widget-region-one::after,
+    .widget-columns-3.widget-keylines .widget-region-two::after,
+    .widget-columns-4.widget-keylines .widget-region-one::after,
+    .widget-columns-4.widget-keylines .widget-region-two::after,
+    .widget-columns-4.widget-keylines .widget-region-three::after {
+      content: '';
+      top: 0;
+      height: 100%;
+      width: 1px;
+      position: absolute;
+      background-color: #e0e0e0;
+    }
+
+    .widget-columns-2.gap-0 .widget-region-one::after,
+    .widget-columns-3.gap-0 .widget-region-one::after,
+    .widget-columns-3.gap-0 .widget-region-two::after,
+    .widget-columns-4.gap-0 .widget-region-one::after,
+    .widget-columns-4.gap-0 .widget-region-two::after,
+    .widget-columns-4.gap-0 .widget-region-three::after {
+      right: 0;
+    }
+
+    .widget-columns-2.gap-4 .widget-region-one::after,
+    .widget-columns-3.gap-4 .widget-region-one::after,
+    .widget-columns-3.gap-4 .widget-region-two::after,
+    .widget-columns-4.gap-4 .widget-region-one::after,
+    .widget-columns-4.gap-4 .widget-region-two::after,
+    .widget-columns-4.gap-4 .widget-region-three::after {
+      right: -.5rem
+    }
+
+    .widget-columns-2.gap-6 .widget-region-one::after,
+    .widget-columns-3.gap-6 .widget-region-one::after,
+    .widget-columns-3.gap-6 .widget-region-two::after,
+    .widget-columns-4.gap-6 .widget-region-one::after,
+    .widget-columns-4.gap-6 .widget-region-two::after,
+    .widget-columns-4.gap-6 .widget-region-three::after {
+      right: -.75rem
+    }
+
+    .widget-columns-2.gap-8 .widget-region-one::after,
+    .widget-columns-3.gap-8 .widget-region-one::after,
+    .widget-columns-3.gap-8 .widget-region-two::after,
+    .widget-columns-4.gap-8 .widget-region-one::after,
+    .widget-columns-4.gap-8 .widget-region-two::after,
+    .widget-columns-4.gap-8 .widget-region-three::after {
+      right: -1rem;
+    }
+
+    .widget-columns-2.gap-12 .widget-region-one::after,
+    .widget-columns-3.gap-12 .widget-region-one::after,
+    .widget-columns-3.gap-12 .widget-region-two::after,
+    .widget-columns-4.gap-12 .widget-region-one::after,
+    .widget-columns-4.gap-12 .widget-region-two::after,
+    .widget-columns-4.gap-12 .widget-region-three::after {
+      right: -1.5rem
+    }
+
+    .widget-columns-2.widget-gap-wide .widget-region-one::after,
+    .widget-columns-3.widget-gap-wide .widget-region-one::after,
+    .widget-columns-3.widget-gap-wide .widget-region-two::after,
+    .widget-columns-4.widget-gap-wide .widget-region-one::after,
+    .widget-columns-4.widget-gap-wide .widget-region-two::after,
+    .widget-columns-4.widget-gap-wide .widget-region-three::after,
+    .widget-columns-2.gap-16 .widget-region-one::after,
+    .widget-columns-3.gap-16 .widget-region-one::after,
+    .widget-columns-3.gap-16 .widget-region-two::after,
+    .widget-columns-4.gap-16 .widget-region-one::after,
+    .widget-columns-4.gap-16 .widget-region-two::after,
+    .widget-columns-4.gap-16 .widget-region-three::after {
+      right: -2rem;
+    }
+
+  }

@@ -1,0 +1,328 @@
+# If using yml to configure plugins, rename this to {module_name}.ckeditor5.yml.
+# If using annotations, this file can be removed.
+# @see https://www.drupal.org/docs/drupal-apis/plugin-api/annotations-based-plugins
+#   For information on using annotations to define plugins.
+# @see the CKEditor 5 module's README.md for more details regarding plugin
+#   configuration options.
+
+ubc_ckeditor_widgets_ubcaccordion:
+  # Use the provider: property for this plugin to depend on another module.
+  # Configuration that will be sent to CKEditor 5 JavaScript plugins.
+  ckeditor5:
+    plugins:
+      # form of [plugin dir].[plugin name]
+      - ubcAccordion.UbcAccordion
+    # *Additional configuration properties*
+  # Configuration that will be used directly by Drupal.
+  drupal:
+    label: Accordion
+    # The library loaded while using the editor.
+    library: ubc_ckeditor_widgets/ubc_accordion
+    # The library loaded when configuring the text format using this plugin.
+    admin_library: ubc_ckeditor_widgets/ubc_accordion.admin
+    toolbar_items:
+      # This should match the name of the corresponding plugin exported in the
+      # plugin's index.js.
+      UbcAccordion:
+        label: Accordion
+    # If the plugin does not provide elements, set this as
+    # `elements: false`
+    elements:
+      # Note that it necessary for elements to separately provide both the tag
+      # (i.e. `<h3>`) and the attribute being added to the tag
+      # (i.e. `<h3 class="accordion__title">`).
+      - <div>
+      - <div class hidden data-* aria-expanded>
+    # *Additional configuration properties*
+
+
+ubc_ckeditor_widgets_ubcaccordiontoggle:
+  ckeditor5:
+    plugins:
+      - ubcAccordionToggle.UbcAccordionToggle
+  drupal:
+    label: Accordion Toggle
+    library: ubc_ckeditor_widgets/ubc_accordion_toggle
+    admin_library: ubc_ckeditor_widgets/ubc_accordion_toggle.admin
+    toolbar_items:
+      UbcAccordionToggle:
+        label: Accordion Toggle
+    elements:
+      - <button>
+      - <button class="text-xs widget-expandcollapse unit-button" data-state data-cke-ignore-events>
+
+ubc_ckeditor_widgets_ubccardhorizontal:
+  ckeditor5:
+    plugins:
+      - ubcCardHorizontal.UbcCardHorizontal
+    config:
+      ubcCardHorizontal:
+        contentToolbar:
+          - 'ubcCardHorizontalLayoutOptions'
+          - '|'
+          - 'ubcCardHorizontalMarginOptions'
+          - '|'
+          - 'ubcCardHorizontalBackgroundOptions'
+          - '|'
+          - 'ubcCardHorizontalShadowToggle'
+  drupal:
+    label: Horizontal Card
+    library: ubc_ckeditor_widgets/ubc_card_horizontal
+    admin_library: ubc_ckeditor_widgets/ubc_card_horizontal.admin
+    toolbar_items:
+      UbcCardHorizontal:
+        label: Horizontal Card
+    elements:
+      - <div>
+      - <div class>
+      - <h2>
+      - <h2 class="card__title">
+      - <h3>
+      - <h3 class="card__title">
+      - <h4>
+      - <h4 class="card__title">
+      - <h5>
+      - <h5 class="card__title">
+      - <h6>
+      - <h6 class="card__title">
+
+ubc_ckeditor_widgets_ubccardverticalone:
+  ckeditor5:
+    plugins:
+      - ubcCardVerticalOne.UbcCardVerticalOne
+    config:
+      ubcCardVerticalOne:
+        contentToolbar:
+          - 'ubcCardVerticalOneMarginOptions'
+          - '|'
+          - 'ubcCardVerticalOneBackgroundOptions'
+          - '|'
+          - 'ubcCardVerticalOneShadowToggle'
+  drupal:
+    label: Vertical Card
+    library: ubc_ckeditor_widgets/ubc_card_vertical_one
+    admin_library: ubc_ckeditor_widgets/ubc_card_vertical_one.admin
+    toolbar_items:
+      UbcCardVerticalOne:
+        label: Vertical Card
+    elements:
+      - <div>
+      - <div class>
+      - <h2>
+      - <h2 class="card__title">
+      - <h3>
+      - <h3 class="card__title">
+      - <h4>
+      - <h4 class="card__title">
+      - <h5>
+      - <h5 class="card__title">
+      - <h6>
+      - <h6 class="card__title">
+
+ubc_ckeditor_widgets_ubccardverticaltwo:
+  ckeditor5:
+    plugins:
+      - ubcCardVerticalTwo.UbcCardVerticalTwo
+    config:
+      ubcCardVerticalTwo:
+        contentToolbar:
+          - 'ubcCardVerticalTwoMarginOptions'
+          - '|'
+          - 'ubcCardVerticalTwoGapOptions'
+          - '|'
+          - 'ubcCardVerticalTwoBackgroundOptions'
+          - '|'
+          - 'ubcCardVerticalTwoShadowToggle'
+  drupal:
+    label: Two Vertical Cards
+    library: ubc_ckeditor_widgets/ubc_card_vertical_two
+    admin_library: ubc_ckeditor_widgets/ubc_card_vertical_two.admin
+    toolbar_items:
+      UbcCardVerticalTwo:
+        label: Two Vertical Cards
+    elements:
+      - <div>
+      - <div class>
+      - <h2>
+      - <h2 class="card__title">
+      - <h3>
+      - <h3 class="card__title">
+      - <h4>
+      - <h4 class="card__title">
+      - <h5>
+      - <h5 class="card__title">
+      - <h6>
+      - <h6 class="card__title">
+
+ubc_ckeditor_widgets_ubccardverticalthree:
+  ckeditor5:
+    plugins:
+      - ubcCardVerticalThree.UbcCardVerticalThree
+    config:
+      ubcCardVerticalThree:
+        contentToolbar:
+          - 'ubcCardVerticalThreeMarginOptions'
+          - '|'
+          - 'ubcCardVerticalThreeGapOptions'
+          - '|'
+          - 'ubcCardVerticalThreeBackgroundOptions'
+          - '|'
+          - 'ubcCardVerticalThreeShadowToggle'
+  drupal:
+    label: Three Vertical Cards
+    library: ubc_ckeditor_widgets/ubc_card_vertical_three
+    admin_library: ubc_ckeditor_widgets/ubc_card_vertical_three.admin
+    toolbar_items:
+      UbcCardVerticalThree:
+        label: Three Vertical Cards
+    elements:
+      - <div>
+      - <div class>
+      - <h2>
+      - <h2 class="card__title">
+      - <h3>
+      - <h3 class="card__title">
+      - <h4>
+      - <h4 class="card__title">
+      - <h5>
+      - <h5 class="card__title">
+      - <h6>
+      - <h6 class="card__title">
+
+ubc_ckeditor_widgets_ubccolorbox:
+  ckeditor5:
+    plugins:
+      - ubcColorBox.UbcColorBox
+    config:
+      ubcColorBox:
+        contentToolbar:
+          - 'ubcColorBoxAlignLeft'
+          - 'ubcColorBoxAlignNone'
+          - 'ubcColorBoxAlignRight'
+          - '|'
+          - 'ubcColorBoxPaddingOptions'
+          - '|'
+          - 'ubcColorBoxMarginOptions'
+          - '|'
+          - 'ubcColorBoxBackgroundOptions'
+          - '|'
+          - 'ubcColorBoxShadowToggle'
+  drupal:
+    label: Color Box
+    library: ubc_ckeditor_widgets/ubc_color_box
+    admin_library: ubc_ckeditor_widgets/ubc_color_box.admin
+    toolbar_items:
+      UbcColorBox:
+        label: Color Box
+    elements:
+      - <div>
+      - <div class>
+
+ubc_ckeditor_widgets_ubccolumnstwo:
+  ckeditor5:
+    plugins:
+      - ubcColumnsTwo.UbcColumnsTwo
+    config:
+      ubcColumnsTwo:
+        contentToolbar:
+          - 'ubcColumnsTwoLayoutOptions'
+          - '|'
+          - 'ubcColumnsTwoMarginOptions'
+          - '|'
+          - 'ubcColumnsTwoGapOptions'
+          - '|'
+          - 'ubcColumnsTwoKeylineToggle'
+  drupal:
+    label: Two Columns
+    library: ubc_ckeditor_widgets/ubc_columns_two
+    admin_library: ubc_ckeditor_widgets/ubc_columns_two.admin
+    toolbar_items:
+      UbcColumnsTwo:
+        label: Two Columns
+    elements:
+      - <div>
+      - <div class>
+
+ubc_ckeditor_widgets_ubccolumnsthree:
+  ckeditor5:
+    plugins:
+      - ubcColumnsThree.UbcColumnsThree
+    config:
+      ubcColumnsThree:
+        contentToolbar:
+          - 'ubcColumnsThreeLayoutOptions'
+          - '|'
+          - 'ubcColumnsThreeMarginOptions'
+          - '|'
+          - 'ubcColumnsThreeGapOptions'
+          - '|'
+          - 'ubcColumnsThreeKeylineToggle'
+  drupal:
+    label: Three Columns
+    library: ubc_ckeditor_widgets/ubc_columns_three
+    admin_library: ubc_ckeditor_widgets/ubc_columns_three.admin
+    toolbar_items:
+      UbcColumnsThree:
+        label: Three Columns
+    elements:
+      - <div>
+      - <div class>
+
+ubc_ckeditor_widgets_ubccolumnsfour:
+  ckeditor5:
+    plugins:
+      - ubcColumnsFour.UbcColumnsFour
+    config:
+      ubcColumnsFour:
+        contentToolbar:
+          - 'ubcColumnsFourMarginOptions'
+          - '|'
+          - 'ubcColumnsFourGapOptions'
+          - '|'
+          - 'ubcColumnsFourKeylineToggle'
+  drupal:
+    label: Four Columns
+    library: ubc_ckeditor_widgets/ubc_columns_four
+    admin_library: ubc_ckeditor_widgets/ubc_columns_four.admin
+    toolbar_items:
+      UbcColumnsFour:
+        label: Four Columns
+    elements:
+      - <div>
+      - <div class>
+
+ubc_ckeditor_widgets_ubctableclass:
+  ckeditor5:
+    plugins:
+      - ubcTableClass.UbcTableClass
+    config:
+      table:
+        contentToolbar: [ tableUbc ]
+  drupal:
+    label: UBC Table Toolbar Items
+    library: ubc_ckeditor_widgets/ubc_table
+    elements:
+      - <figure>
+      - <figure class="responsive-figure-table" aria-live>
+      - <table>
+      - <table class="table--plain table--condensed table--striped table--hover">
+    conditions:
+      plugins: [ ckeditor5_table ]
+
+ubc_ckeditor_widgets_ubctablecellclass:
+  ckeditor5:
+    plugins:
+      - ubcTableCellClass.UbcTableCellClass
+    config:
+      table:
+        contentToolbar: [ tableCellUbc ]
+  drupal:
+    label: UBC Table Cell Toolbar Items
+    library: ubc_ckeditor_widgets/ubc_table_cell
+    elements:
+      - <th>
+      - <th class="w-half w-one-third w-one-quarter w-one-fifth w-one-sixth">
+      - <td>
+      - <td class="w-half w-one-third w-one-quarter w-one-fifth w-one-sixth">
+    conditions:
+      plugins: [ ckeditor5_table ]

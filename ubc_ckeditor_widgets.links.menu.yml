@@ -1,0 +1,5 @@
+ubc_ckeditor_widgets.settings:
+  title: UBC CKEditor Widgets
+  description: Manage UBC CKEditor Widget settings
+  parent: system.admin_config_content
+  route_name: ubc_ckeditor_widgets.settings

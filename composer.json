@@ -1,6 +1,6 @@
 {
   "name": "ubc-web-services/ubc_ckeditor_widgets",
-  "description": "A Drupal 8 module to add some common widgets to CKeditor",
+  "description": "A Drupal module to add some common widgets to CKeditor",
   "type": "drupal-module",
   "authors": [{
     "name": "O'Toole, James",

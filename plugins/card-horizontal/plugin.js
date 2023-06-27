@@ -16,14 +16,23 @@
       });
       // Register the widget.
       editor.widgets.add('card-horizontal', {
-        template: '<div class="widget-card widget-card--horizontal"><div class="ubc-card ubc-card--horiz hover--no-underline group">' +
-        '<div class="first-image ubc-card__media"><img src="https://via.placeholder.com/300x300" alt="some alt text"></div>' +
+        template: '<div class="widget-card widget-card--horizontal">' +
+        '<div class="ubc-card ubc-card--horiz hover--no-underline group">' +
+        '<div class="first-image ubc-card__media">' +
+        '<img src="https://via.placeholder.com/300x300" alt="some alt text">' +
+        '</div>' +
         '<div class="ubc-card__content_wrapper">' +
         '<div class="first-content ubc-card__content">' +
         '<h3 class="card__title">Sample Title</h3>' +
-        '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>' +
-        '<div class="first-footer ubc-card__actions"><p><a href="#" class="unit-button unit-button--editor">Read more</a></p></div>' +
-        '</div></div></div>',
+        '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>' +
+        '</div>' +
+        '<div class="first-footer ubc-card__actions">' +
+        '<p>' +
+        '<a href="#" class="unit-button unit-button--editor">Read more</a></p>' +
+        '</div>' +
+        '</div>' +
+        '</div>' +
+        '</div>',
 
         editables: {
           imagearea1: {

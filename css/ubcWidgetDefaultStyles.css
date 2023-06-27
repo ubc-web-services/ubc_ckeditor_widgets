@@ -1,0 +1,22 @@
+/* General styles - ideally should be moved to theme, but may be better here in log run */
+/* fix for text colors when focussed in edit mode */
+.ck-editor__nested-editable_focused > * {
+  color: #212121 !important;
+}
+
+/* Misc styles */
+
+.unit-icon {
+  display: inline;
+}
+
+.widget-svgicon {
+  display: inline-block;
+  margin-right: auto;
+  margin-left: auto;
+  align-self: center;
+}
+
+.text-white {
+  color: #fff;
+}
