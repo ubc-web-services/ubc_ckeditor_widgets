@@ -10,8 +10,8 @@ const jsonSettings = JSON.parse(drupalSettings);
 
 // styles from config
 export const backgroundStyles = jsonSettings.ubcCkeditorWidgets.backgroundColors;
-// export const buttonSize = jsonSettings.ubcCkeditorWidgets.buttonSize;
-// export const buttonStyle = jsonSettings.ubcCkeditorWidgets.buttonStyle;
+// const buttonSize = jsonSettings.ubcCkeditorWidgets.buttonSize;
+//export const buttonStyle = jsonSettings.ubcCkeditorWidgets.buttonStyle;
 export const gapStyles = jsonSettings.ubcCkeditorWidgets.gapStyles;
 export const marginStyles = jsonSettings.ubcCkeditorWidgets.marginStyles;
 export const paddingStyles = jsonSettings.ubcCkeditorWidgets.paddingStyles;
@@ -22,6 +22,7 @@ export const widthStyles = jsonSettings.ubcCkeditorWidgets.widthStyles;
 
 // assigned styles
 export const alignStyles = [
+    {'label' : 'Full', 'value' : 'align-full'},
     {'label' : 'Left', 'value' : 'align-left'},
     {'label' : 'Center', 'value' : 'align-center'},
     {'label' : 'Right', 'value' : 'align-right'},
@@ -99,6 +100,9 @@ export const defaultColumnsThreeStyles = {
 export const defaultColumnsTwoStyles = {
     'layoutclass': 'align-equal',
     'marginclass': 'my-6',
-    'gapclass': 'gap-6',
     'keylineclass': 'widget-keyline-none'
+};
+
+export const defaultColumnsGapStyle = {
+    'gapclass': 'gap-6'
 };

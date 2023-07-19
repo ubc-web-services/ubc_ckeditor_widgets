@@ -8,7 +8,8 @@ import {
   Command
 } from 'ckeditor5/src/core';
 import {
-  defaultColumnsThreeStyles
+  defaultColumnsThreeStyles,
+  defaultColumnsGapStyle
 } from '../../../config/config';
 
 export default class UbcColumnsThreeCommand extends Command {
@@ -84,7 +85,7 @@ function createUbcColumnsThree(writer) {
   const thirdColumn = writer.createElement('ubcColumnsThreeColumn', {
     class: 'widget-region-three'
   });
-  const wrapper = writer.createElement('ubcColumnsThreeWrapper');
+  const wrapper = writer.createElement('ubcColumnsThreeWrapper', defaultColumnsGapStyle);
 
   // Append the title and description elements to the ubcColumnsThree, which matches
   // the parent/child relationship as defined in their schemas.

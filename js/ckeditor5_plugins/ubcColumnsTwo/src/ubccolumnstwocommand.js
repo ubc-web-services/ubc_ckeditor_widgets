@@ -8,7 +8,8 @@ import {
   Command
 } from 'ckeditor5/src/core';
 import {
-  defaultColumnsTwoStyles
+  defaultColumnsTwoStyles,
+  defaultColumnsGapStyle
 } from '../../../config/config';
 
 export default class UbcColumnsTwoCommand extends Command {
@@ -81,7 +82,7 @@ function createUbcColumnsTwo(writer) {
   const secondColumn = writer.createElement('ubcColumnsTwoColumn', {
     class: 'widget-region-two'
   });
-  const wrapper = writer.createElement('ubcColumnsTwoWrapper');
+  const wrapper = writer.createElement('ubcColumnsTwoWrapper', defaultColumnsGapStyle);
 
   // Append the title and description elements to the ubcColumnsTwo, which matches
   // the parent/child relationship as defined in their schemas.

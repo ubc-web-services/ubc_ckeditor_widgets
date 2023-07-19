@@ -196,8 +196,9 @@ ubc_ckeditor_widgets_ubccolorbox:
     config:
       ubcColorBox:
         contentToolbar:
+          - 'ubcColorBoxAlignFull'
           - 'ubcColorBoxAlignLeft'
-          - 'ubcColorBoxAlignNone'
+          - 'ubcColorBoxAlignCenter'
           - 'ubcColorBoxAlignRight'
           - '|'
           - 'ubcColorBoxPaddingOptions'

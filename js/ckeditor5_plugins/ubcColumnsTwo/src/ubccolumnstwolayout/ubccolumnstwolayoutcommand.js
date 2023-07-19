@@ -70,7 +70,7 @@ export default class UbcColumnsTwoLayoutCommand extends Command {
     const model = this.editor.model;
     const doc = model.document;
     const thisattribute = 'layoutclass';
-    this.value = doc.selection.getAttribute(thisattribute);
+    //this.value = doc.selection.getAttribute(thisattribute);
     this.isEnabled = model.schema.getValidRanges(doc.selection, thisattribute);
   }
 }

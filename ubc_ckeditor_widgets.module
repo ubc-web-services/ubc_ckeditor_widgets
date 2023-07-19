@@ -109,15 +109,15 @@ function ubc_ckeditor_widgets_page_attachments_alter(array &$page) {
 
   $page['#attached']['drupalSettings']['ubcCkeditorWidgets']['threeColumnLayoutStyles'] = [
     ['label' => 'Equal Width', 'value' => 'align-equal'],
-    ['label' => 'Align Large Left', 'value' => 'align-large-left'],
-    ['label' => 'Align Large Center', 'value' => 'align-large-center'],
-    ['label' => 'Align Large Right', 'value' => 'align-large-right'],
+    ['label' => 'Large Left', 'value' => 'align-large-left'],
+    ['label' => 'Large Center', 'value' => 'align-large-center'],
+    ['label' => 'Large Right', 'value' => 'align-large-right'],
   ];
 
   $page['#attached']['drupalSettings']['ubcCkeditorWidgets']['twoColumnLayoutStyles'] = [
     ['label' => 'Equal Width', 'value' => 'align-equal'],
-    ['label' => 'Align Large Left', 'value' => 'align-large-left'],
-    ['label' => 'Align Large Right', 'value' => 'align-large-right'],
+    ['label' => 'Large Left', 'value' => 'align-large-left'],
+    ['label' => 'Large Right', 'value' => 'align-large-right'],
   ];
 
   $page['#attached']['drupalSettings']['ubcCkeditorWidgets']['widthStyles'] = [

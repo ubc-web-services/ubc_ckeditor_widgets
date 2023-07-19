@@ -40,9 +40,9 @@ export default class UbcColumnsTwoGapCommand extends Command {
 
     // Is the command triggered from the `ubcColumnsTwo`?
     if (selectedElement && selectedElement.is('element', 'ubcColumnsTwo')) {
-      modelElement = selectedElement;
+      modelElement = selectedElement.getChild(0);
     } else {
-      modelElement = selection.getFirstPosition().findAncestor('ubcColumnsTwo');
+      modelElement = selection.getFirstPosition().findAncestor('ubcColumnsTwo').getChild(0);
     }
 
     model.change(writer => {

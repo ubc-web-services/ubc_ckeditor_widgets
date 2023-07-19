@@ -84,48 +84,48 @@
       background-color: #e0e0e0;
     }
 
-    .widget-columns-2.gap-0 .widget-region-one::after,
-    .widget-columns-3.gap-0 .widget-region-one::after,
-    .widget-columns-3.gap-0 .widget-region-two::after,
-    .widget-columns-4.gap-0 .widget-region-one::after,
-    .widget-columns-4.gap-0 .widget-region-two::after,
-    .widget-columns-4.gap-0 .widget-region-three::after {
+    .widget-columns-2 .gap-0 .widget-region-one::after,
+    .widget-columns-3 .gap-0 .widget-region-one::after,
+    .widget-columns-3 .gap-0 .widget-region-two::after,
+    .widget-columns-4 .gap-0 .widget-region-one::after,
+    .widget-columns-4 .gap-0 .widget-region-two::after,
+    .widget-columns-4 .gap-0 .widget-region-three::after {
       right: 0;
     }
 
-    .widget-columns-2.gap-4 .widget-region-one::after,
-    .widget-columns-3.gap-4 .widget-region-one::after,
-    .widget-columns-3.gap-4 .widget-region-two::after,
-    .widget-columns-4.gap-4 .widget-region-one::after,
-    .widget-columns-4.gap-4 .widget-region-two::after,
-    .widget-columns-4.gap-4 .widget-region-three::after {
+    .widget-columns-2 .gap-4 .widget-region-one::after,
+    .widget-columns-3 .gap-4 .widget-region-one::after,
+    .widget-columns-3 .gap-4 .widget-region-two::after,
+    .widget-columns-4 .gap-4 .widget-region-one::after,
+    .widget-columns-4 .gap-4 .widget-region-two::after,
+    .widget-columns-4 .gap-4 .widget-region-three::after {
       right: -.5rem
     }
 
-    .widget-columns-2.gap-6 .widget-region-one::after,
-    .widget-columns-3.gap-6 .widget-region-one::after,
-    .widget-columns-3.gap-6 .widget-region-two::after,
-    .widget-columns-4.gap-6 .widget-region-one::after,
-    .widget-columns-4.gap-6 .widget-region-two::after,
-    .widget-columns-4.gap-6 .widget-region-three::after {
+    .widget-columns-2 .gap-6 .widget-region-one::after,
+    .widget-columns-3 .gap-6 .widget-region-one::after,
+    .widget-columns-3 .gap-6 .widget-region-two::after,
+    .widget-columns-4 .gap-6 .widget-region-one::after,
+    .widget-columns-4 .gap-6 .widget-region-two::after,
+    .widget-columns-4 .gap-6 .widget-region-three::after {
       right: -.75rem
     }
 
-    .widget-columns-2.gap-8 .widget-region-one::after,
-    .widget-columns-3.gap-8 .widget-region-one::after,
-    .widget-columns-3.gap-8 .widget-region-two::after,
-    .widget-columns-4.gap-8 .widget-region-one::after,
-    .widget-columns-4.gap-8 .widget-region-two::after,
-    .widget-columns-4.gap-8 .widget-region-three::after {
+    .widget-columns-2 .gap-8 .widget-region-one::after,
+    .widget-columns-3 .gap-8 .widget-region-one::after,
+    .widget-columns-3 .gap-8 .widget-region-two::after,
+    .widget-columns-4 .gap-8 .widget-region-one::after,
+    .widget-columns-4 .gap-8 .widget-region-two::after,
+    .widget-columns-4 .gap-8 .widget-region-three::after {
       right: -1rem;
     }
 
-    .widget-columns-2.gap-12 .widget-region-one::after,
-    .widget-columns-3.gap-12 .widget-region-one::after,
-    .widget-columns-3.gap-12 .widget-region-two::after,
-    .widget-columns-4.gap-12 .widget-region-one::after,
-    .widget-columns-4.gap-12 .widget-region-two::after,
-    .widget-columns-4.gap-12 .widget-region-three::after {
+    .widget-columns-2 .gap-12 .widget-region-one::after,
+    .widget-columns-3 .gap-12 .widget-region-one::after,
+    .widget-columns-3 .gap-12 .widget-region-two::after,
+    .widget-columns-4 .gap-12 .widget-region-one::after,
+    .widget-columns-4 .gap-12 .widget-region-two::after,
+    .widget-columns-4 .gap-12 .widget-region-three::after {
       right: -1.5rem
     }
 
@@ -135,12 +135,12 @@
     .widget-columns-4.widget-gap-wide .widget-region-one::after,
     .widget-columns-4.widget-gap-wide .widget-region-two::after,
     .widget-columns-4.widget-gap-wide .widget-region-three::after,
-    .widget-columns-2.gap-16 .widget-region-one::after,
-    .widget-columns-3.gap-16 .widget-region-one::after,
-    .widget-columns-3.gap-16 .widget-region-two::after,
-    .widget-columns-4.gap-16 .widget-region-one::after,
-    .widget-columns-4.gap-16 .widget-region-two::after,
-    .widget-columns-4.gap-16 .widget-region-three::after {
+    .widget-columns-2 .gap-16 .widget-region-one::after,
+    .widget-columns-3 .gap-16 .widget-region-one::after,
+    .widget-columns-3 .gap-16 .widget-region-two::after,
+    .widget-columns-4 .gap-16 .widget-region-one::after,
+    .widget-columns-4 .gap-16 .widget-region-two::after,
+    .widget-columns-4 .gap-16 .widget-region-three::after {
       right: -2rem;
     }
 

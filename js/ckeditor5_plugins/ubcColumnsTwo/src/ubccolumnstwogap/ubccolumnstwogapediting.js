@@ -29,7 +29,7 @@ export default class UbcColumnsTwoGapEditing extends Plugin {
     /*
      * Map the attributes - in the model, each group gets a custom attribute to contain it, and these then map to the class attribute in the view
      */
-    editor.model.schema.extend('ubcColumnsTwo', {
+    editor.model.schema.extend('ubcColumnsTwoWrapper', {
       allowAttributes: 'gapclass'
     });
     editor.conversion.attributeToAttribute({

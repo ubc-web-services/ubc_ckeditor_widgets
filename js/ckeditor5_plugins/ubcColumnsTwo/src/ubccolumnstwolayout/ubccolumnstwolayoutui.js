@@ -29,15 +29,15 @@ export default class UbcColumnsTwoLayoutUI extends Plugin {
   init() {
     const editor = this.editor;
     const t = editor.t;
-    let alloptions = twoColumnLayoutStyles.map(style => {
+    const options = twoColumnLayoutStyles.map(style => {
       return style;
     });
-    const values = alloptions.value;
+    //const values = options.value;
     const command = editor.commands.get('ubcColumnsTwoLayout');
 
     editor.ui.componentFactory.add('ubcColumnsTwoLayoutOptions', locale => {
       const dropdownView = createDropdown(locale);
-      addListToDropdown(dropdownView, _prepareListOptions(values, command));
+      addListToDropdown(dropdownView, _prepareListOptions(options, command));
       dropdownView.buttonView.set({
         label: t('Layout Options'),
         tooltip: true,
@@ -65,11 +65,11 @@ export default class UbcColumnsTwoLayoutUI extends Plugin {
 function _prepareListOptions(options, command) {
   const itemDefinitions = new Collection();
   const activecommand = 'ubcColumnsTwoLayout';
-  let alloptions = twoColumnLayoutStyles.map(style => {
-    return style;
-  });
+  // let options = twoColumnLayoutStyles.map(style => {
+  //   return style;
+  // });
   // Create dropdown items.
-  for (const option of alloptions) {
+  for (const option of options) {
     const def = {
       type: 'button',
       model: new Model({
@@ -79,15 +79,24 @@ function _prepareListOptions(options, command) {
         withText: true
       })
     };
-    def.model.bind('isOn').to(command, 'value', value => {
-      if (value === option.value) {
-        return true;
-      }
-      if (!value || !option.value) {
-        return false;
-      }
-      return value.toLowerCase() === option.value.toLowerCase();
-    });
+    //def.model.bind('isOn', 'isEnabled').to(command, option.value, 'isEnabled');
+    def.model.bind( 'isOn' ).to( command, 'value', value => value === option.value );
+
+    // def.model.bind('isOn').to(command, 'value', value => {
+		// 	const newValue = value ? parseFloat(value) : value;
+		// 	return newValue === option.value;
+		// });
+
+
+    // def.model.bind('isOn').to(command, 'value', value => {
+    //   if (value === option.view) {
+    //     return true;
+    //   }
+    //   if (!value || !option.view || value !== option.view ) {
+    //     return false;
+    //   }
+    //   //return value.toLowerCase() === option.value.toLowerCase();
+    // });
     itemDefinitions.add(def);
   }
   return itemDefinitions;

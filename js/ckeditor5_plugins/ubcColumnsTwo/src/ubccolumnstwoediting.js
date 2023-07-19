@@ -79,7 +79,7 @@ export default class UbcColumnsTwoEditing extends Plugin {
       isObject: true,
       // Allow in places where other blocks are allowed (e.g. directly in the root).
       allowWhere: '$block',
-      allowAttributes: 'class gapclass keylineclass layoutclass marginclass',
+      allowAttributes: 'class keylineclass layoutclass marginclass',
       allowChildren: ['ubcColumnsTwoWrapper'],
     });
 
@@ -91,6 +91,7 @@ export default class UbcColumnsTwoEditing extends Plugin {
       isLimit: true,
       // This is only to be used within ubcColumnsTwo.
       allowIn: 'ubcColumnsTwo',
+      allowAttributes: 'gapclass',
       allowChildren: ['ubcColumnsTwoColumn'],
     });
 

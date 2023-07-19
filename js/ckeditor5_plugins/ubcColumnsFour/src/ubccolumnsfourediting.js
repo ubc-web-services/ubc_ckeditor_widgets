@@ -87,7 +87,7 @@ export default class UbcColumnsFourEditing extends Plugin {
       isObject: true,
       // Allow in places where other blocks are allowed (e.g. directly in the root).
       allowWhere: '$block',
-      allowAttributes: 'class gapclass keylineclass marginclass',
+      allowAttributes: 'class keylineclass marginclass',
       allowChildren: ['ubcColumnsFourWrapper'],
     });
 
@@ -99,6 +99,7 @@ export default class UbcColumnsFourEditing extends Plugin {
       isLimit: true,
       // This is only to be used within ubcColumnsFour.
       allowIn: 'ubcColumnsFour',
+      allowAttributes: 'gapclass',
       allowChildren: ['ubcColumnsFourColumn'],
     });
 

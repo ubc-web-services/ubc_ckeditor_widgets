@@ -40,9 +40,9 @@ export default class UbcColumnsFourGapCommand extends Command {
 
     // Is the command triggered from the `ubcColumnsFour`?
     if (selectedElement && selectedElement.is('element', 'ubcColumnsFour')) {
-      modelElement = selectedElement;
+      modelElement = selectedElement.getChild(0);
     } else {
-      modelElement = selection.getFirstPosition().findAncestor('ubcColumnsFour');
+      modelElement = selection.getFirstPosition().findAncestor('ubcColumnsFour').getChild(0);
     }
 
     model.change(writer => {

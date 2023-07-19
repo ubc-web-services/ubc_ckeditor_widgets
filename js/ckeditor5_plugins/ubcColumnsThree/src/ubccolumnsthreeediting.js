@@ -84,7 +84,7 @@ export default class UbcColumnsThreeEditing extends Plugin {
       isObject: true,
       // Allow in places where other blocks are allowed (e.g. directly in the root).
       allowWhere: '$block',
-      allowAttributes: 'class gapclass keylineclass layoutclass marginclass',
+      allowAttributes: 'class keylineclass layoutclass marginclass',
       allowChildren: ['ubcColumnsThreeWrapper'],
     });
 
@@ -96,6 +96,7 @@ export default class UbcColumnsThreeEditing extends Plugin {
       isLimit: true,
       // This is only to be used within ubcColumnsThree.
       allowIn: 'ubcColumnsThree',
+      allowAttributes: 'gapclass',
       allowChildren: ['ubcColumnsThreeColumn'],
     });
 
