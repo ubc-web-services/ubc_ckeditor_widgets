@@ -42,6 +42,7 @@ export default class UbcCardVerticalThreeGapUI extends Plugin {
         label: t('Gap'),
         tooltip: true,
         withText: true,
+        class: 'cke5-ubccardverticalthree-gap-insert-button',
       });
       dropdownView.extendTemplate({
         attributes: {

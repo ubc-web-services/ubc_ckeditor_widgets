@@ -37,6 +37,7 @@ export default class UbcCardHorizontalShadowUI extends Plugin {
         label: editor.t('Toggle Shadow'),
         tooltip: true,
         withText: true,
+        class: 'cke5-ubccardhorizontal-shadow-insert-button',
       });
       // Bind the state of the button to the command.
       buttonView.bind('isEnabled').to(command);

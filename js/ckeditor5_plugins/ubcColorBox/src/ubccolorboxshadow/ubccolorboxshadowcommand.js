@@ -47,9 +47,11 @@ export default class UbcColorBoxShadowCommand extends Command {
     model.change(writer => {
       if (active === 'drop-shadow-md') {
         writer.setAttribute(thisattribute, 'drop-shadow-none', modelElement);
+        //modelElement.value = 'drop-shadow-none';
         this.isOn = false;
       } else {
         writer.setAttribute(thisattribute, 'drop-shadow-md', modelElement);
+        //modelElement.value = 'drop-shadow-md';
         this.isOn = true;
       }
     });

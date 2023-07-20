@@ -28,6 +28,7 @@ export default class UbcCardHorizontalUI extends Plugin {
         label: editor.t('Horizontal Card'),
         icon,
         tooltip: true,
+        class: 'cke5-ubccardhorizontal-insert-button',
       });
 
       // Bind the state of the button to the command.

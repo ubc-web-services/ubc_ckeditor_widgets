@@ -39,6 +39,7 @@ export default class UbcColumnsTwoKeylineUI extends Plugin {
         tooltip: true,
         //icon,
         withText: true,
+        class: 'cke5-ubccolumnstwo-keyline-insert-button',
       });
       // Bind the state of the button to the command.
       buttonView.bind('isEnabled').to(command);

@@ -45,6 +45,7 @@ export default class UbcColorBoxMarginUI extends Plugin {
         label: t('Margin'),
         tooltip: true,
         withText: true,
+        class: 'cke5-ubc-colorbox-margin-insert-button',
       });
       dropdownView.extendTemplate({
         attributes: {

@@ -74,5 +74,7 @@ export default class UbcColorBoxPaddingCommand extends Command {
     const thisattribute = 'paddingclass';
     this.value = doc.selection.getAttribute(thisattribute);
     this.isEnabled = model.schema.getValidRanges(doc.selection, thisattribute);
+    // this.value = doc.selection.getAttribute(this.thisattribute);
+    // this.isEnabled = model.schema.getValidRanges(doc.selection, this.thisattribute);
   }
 }

@@ -42,6 +42,7 @@ export default class UbcColumnsTwoLayoutUI extends Plugin {
         label: t('Layout Options'),
         tooltip: true,
         withText: true,
+        class: 'cke5-ubccolumnstwo-layout-insert-button',
       });
       dropdownView.extendTemplate({
         attributes: {

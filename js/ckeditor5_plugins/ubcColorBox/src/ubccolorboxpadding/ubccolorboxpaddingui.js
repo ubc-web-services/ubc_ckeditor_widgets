@@ -42,6 +42,7 @@ export default class UbcColorBoxPaddingUI extends Plugin {
         label: t('Padding'),
         tooltip: true,
         withText: true,
+        class: 'cke5-ubccolorbox-padding-insert-button',
       });
       dropdownView.extendTemplate({
         attributes: {

@@ -33,6 +33,7 @@ export default class UbcColumnsThreeUI extends Plugin {
         label: editor.t('Three Columns'),
         icon,
         tooltip: true,
+        class: 'cke5-ubccolumnsthree-insert-button',
       });
 
       // Bind the state of the button to the command.

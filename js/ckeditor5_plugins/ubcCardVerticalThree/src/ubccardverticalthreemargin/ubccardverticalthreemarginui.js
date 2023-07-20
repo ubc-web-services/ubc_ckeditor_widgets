@@ -45,6 +45,7 @@ export default class UbcCardVerticalThreeMarginUI extends Plugin {
         label: t('Margin'),
         tooltip: true,
         withText: true,
+        class: 'cke5-ubccardverticalthree-margin-insert-button',
       });
       dropdownView.extendTemplate({
         attributes: {

@@ -32,6 +32,7 @@ export default class UbcColumnsTwoUI extends Plugin {
         label: editor.t('Two Columns'),
         icon,
         tooltip: true,
+        class: 'cke5-ubccolumnstwo-insert-button',
       });
 
       // Bind the state of the button to the command.

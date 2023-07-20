@@ -45,6 +45,7 @@ export default class UbcCardVerticalOneMarginUI extends Plugin {
         label: t('Margin'),
         tooltip: true,
         withText: true,
+        class: 'cke5-ubccardverticalone-margin-insert-button',
       });
       dropdownView.extendTemplate({
         attributes: {

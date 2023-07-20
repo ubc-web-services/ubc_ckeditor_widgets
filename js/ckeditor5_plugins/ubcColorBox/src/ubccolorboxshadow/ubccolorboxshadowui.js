@@ -37,10 +37,13 @@ export default class UbcColorBoxShadowUI extends Plugin {
         label: editor.t('Toggle Shadow'),
         tooltip: true,
         withText: true,
+        class: 'cke5-ubccolorbox-shadow-insert-button',
       });
       // Bind the state of the button to the command.
       buttonView.bind('isEnabled').to(command);
       buttonView.bind('isOn').to(command);
+      //buttonView.bind( 'isOn' ).to( command, 'value', value => value === 'drop-shadow-md' );
+
       // Execute the command when the button is clicked (executed).
       this.listenTo(buttonView, 'execute', () =>
         editor.execute('ubcColorBoxShadow')

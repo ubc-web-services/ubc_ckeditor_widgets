@@ -24,6 +24,7 @@ export default class UbcAccordionToggleUI extends Plugin {
         label: editor.t('Toggle All Accordions'),
         icon,
         tooltip: true,
+        class: 'cke5-ubcaccordiontoggle-insert-button',
       });
 
       // Bind the state of the button to the command.

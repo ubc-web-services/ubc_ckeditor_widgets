@@ -37,6 +37,7 @@ export default class UbcColumnsThreeKeylineUI extends Plugin {
         label: editor.t('Toggle Keylines'),
         tooltip: true,
         withText: true,
+        class: 'cke5-ubccolumnsthree-keyline-insert-button',
       });
       // Bind the state of the button to the command.
       buttonView.bind('isEnabled').to(command);

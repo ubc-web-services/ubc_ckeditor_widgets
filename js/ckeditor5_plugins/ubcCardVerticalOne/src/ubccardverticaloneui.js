@@ -31,6 +31,7 @@ export default class UbcCardVerticalOneUI extends Plugin {
         label: editor.t('Vertical Card'),
         icon,
         tooltip: true,
+        class: 'cke5-ubccardverticalone-insert-button',
       });
       // Bind the state of the button to the command.
       buttonView.bind('isOn', 'isEnabled').to(command, 'value', 'isEnabled');

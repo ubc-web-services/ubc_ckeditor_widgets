@@ -45,6 +45,7 @@ export default class UbcCardHorizontalMarginUI extends Plugin {
         label: t('Margin'),
         tooltip: true,
         withText: true,
+        class: 'cke5-ubccardhorizontal-margin-insert-button',
       });
       dropdownView.extendTemplate({
         attributes: {

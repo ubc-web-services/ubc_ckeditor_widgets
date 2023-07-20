@@ -42,6 +42,7 @@ export default class UbcColorBoxBackgroundUI extends Plugin {
         label: t('Background Color'),
         tooltip: true,
         withText: true,
+        class: 'cke5-ubccolorbox-bgcolor-insert-button',
       });
       dropdownView.extendTemplate({
         attributes: {

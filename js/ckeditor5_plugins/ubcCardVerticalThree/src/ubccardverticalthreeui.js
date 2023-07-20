@@ -33,6 +33,7 @@ export default class UbcCardVerticalThreeUI extends Plugin {
         label: editor.t('Three Vertical Cards'),
         icon,
         tooltip: true,
+        class: 'cke5-ubccardverticalthree-insert-button',
       });
 
       // Bind the state of the button to the command.

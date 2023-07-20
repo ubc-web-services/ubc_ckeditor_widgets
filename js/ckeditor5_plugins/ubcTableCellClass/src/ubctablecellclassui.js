@@ -44,6 +44,7 @@ export default class UbcTableCellClassUI extends Plugin {
         tooltip: true,
         //withText: true,
         icon: tableResizeIcon,
+        class: 'cke5-ubctablecell-width-insert-button',
       });
       dropdownView.extendTemplate({
         attributes: {
@@ -78,7 +79,7 @@ function _prepareListOptions(options, command) {
         commandName: activecommand,
         commandParam: option.value,
         label: option.label,
-        withText: true
+        withText: true,
       })
     };
     def.model.bind('isOn').to(command, 'value', value => {

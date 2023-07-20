@@ -42,6 +42,7 @@ export default class UbcColumnsFourGapUI extends Plugin {
         label: t('Gap'),
         tooltip: true,
         withText: true,
+        class: 'cke5-ubccolumnsfour-gap-insert-button',
       });
       dropdownView.extendTemplate({
         attributes: {

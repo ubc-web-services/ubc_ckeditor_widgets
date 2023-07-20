@@ -42,6 +42,7 @@ export default class UbcCardHorizontalBackgroundUI extends Plugin {
         label: t('Background Color'),
         tooltip: true,
         withText: true,
+        class: 'cke5-ubc-cardhorizontal-bgcolor-insert-button',
       });
       dropdownView.extendTemplate({
         attributes: {

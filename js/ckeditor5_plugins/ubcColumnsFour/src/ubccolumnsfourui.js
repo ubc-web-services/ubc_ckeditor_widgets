@@ -33,6 +33,7 @@ export default class UbcColumnsFourUI extends Plugin {
         label: editor.t('Four Columns'),
         icon,
         tooltip: true,
+        class: 'cke5-ubccolumnsfour-insert-button',
       });
 
       // Bind the state of the button to the command.

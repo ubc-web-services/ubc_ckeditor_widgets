@@ -42,10 +42,11 @@ export default class UbcCardHorizontalLayoutUI extends Plugin {
         label: t('Layout Options'),
         tooltip: true,
         withText: true,
+        class: 'cke5-ubccardhorizontal-layout-insert-button',
       });
       dropdownView.extendTemplate({
         attributes: {
-          class: 'ck-card-horizontal-options-dropdown'
+          class: 'ck-layout-options-dropdown'
         }
       });
       dropdownView.bind('isEnabled').to(command);

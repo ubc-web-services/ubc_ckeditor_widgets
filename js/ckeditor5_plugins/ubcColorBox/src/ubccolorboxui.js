@@ -32,6 +32,7 @@ export default class UbcColorBoxUI extends Plugin {
         label: editor.t('Color Box'),
         icon,
         tooltip: true,
+        class: 'cke5-ubccolorbox-insert-button',
       });
       // Bind the state of the button to the command.
       buttonView.bind('isOn', 'isEnabled').to(command, 'value', 'isEnabled');

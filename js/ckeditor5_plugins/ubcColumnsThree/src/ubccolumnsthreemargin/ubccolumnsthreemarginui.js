@@ -45,6 +45,7 @@ export default class UbcColumnsThreeMarginUI extends Plugin {
         label: t('Margin'),
         tooltip: true,
         withText: true,
+        class: 'cke5-ubccolumnsthree-margin-insert-button',
       });
       dropdownView.extendTemplate({
         attributes: {

@@ -39,6 +39,7 @@ export default class UbcColorBoxAlignUI extends Plugin {
         icon: icons.objectFullWidth,
         tooltip: true,
         isOn: false,
+        class: 'cke5-ubccolorbox-align-full-button',
       });
       // Bind the state of the button to the command.
       buttonView.bind('isOn', 'isEnabled').to(command, 'value', 'isEnabled');
@@ -60,6 +61,7 @@ export default class UbcColorBoxAlignUI extends Plugin {
         icon: icons.objectLeft,
         tooltip: true,
         isOn: false,
+        class: 'cke5-ubccolorbox-align-left-button',
       });
       // Bind the state of the button to the command.
       buttonView.bind('isOn', 'isEnabled').to(command, 'value', 'isEnabled');
@@ -81,6 +83,7 @@ export default class UbcColorBoxAlignUI extends Plugin {
         icon: icons.objectCenter,
         tooltip: true,
         isOn: false,
+        class: 'cke5-ubccolorbox-align-center-button',
       });
       // Bind the state of the button to the command.
       buttonView.bind('isOn', 'isEnabled').to(command, 'value', 'isEnabled');
@@ -102,6 +105,7 @@ export default class UbcColorBoxAlignUI extends Plugin {
         icon: icons.objectRight,
         tooltip: true,
         isOn: false,
+        class: 'cke5-ubccolorbox-align-right-button',
       });
       // Bind the state of the button to the command.
       buttonView.bind('isOn', 'isEnabled').to(command, 'value', 'isEnabled');

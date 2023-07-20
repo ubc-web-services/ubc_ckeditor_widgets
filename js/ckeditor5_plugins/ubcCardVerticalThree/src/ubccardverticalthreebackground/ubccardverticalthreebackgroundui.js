@@ -42,6 +42,7 @@ export default class UbcCardVerticalThreeBackgroundUI extends Plugin {
         label: t('Background Color'),
         tooltip: true,
         withText: true,
+        class: 'cke5-ubccardverticalthree-bgcolor-insert-button',
       });
       dropdownView.extendTemplate({
         attributes: {

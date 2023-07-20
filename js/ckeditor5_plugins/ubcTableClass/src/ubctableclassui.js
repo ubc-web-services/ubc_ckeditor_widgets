@@ -44,6 +44,7 @@ export default class UbcTableClassUI extends Plugin {
         tooltip: true,
         //withText: true,
         icon: tableSettingsIcon,
+        class: 'cke5-ubctable-style-insert-button',
       });
       dropdownView.extendTemplate({
         attributes: {

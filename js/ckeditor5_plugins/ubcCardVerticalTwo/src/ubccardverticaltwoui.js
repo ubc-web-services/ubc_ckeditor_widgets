@@ -34,6 +34,7 @@ export default class UbcCardVerticalTwoUI extends Plugin {
         label: editor.t('Two Vertical Cards'),
         icon,
         tooltip: true,
+        class: 'cke5-ubccardverticaltwo-insert-button',
       });
 
       // Bind the state of the button to the command.

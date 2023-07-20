@@ -33,6 +33,7 @@ export default class UbcAccordionUI extends Plugin {
         label: editor.t('Accordion'),
         icon,
         tooltip: true,
+        class: 'cke5-ubcaccordion-insert-button',
       });
 
       // Bind the state of the button to the command.
