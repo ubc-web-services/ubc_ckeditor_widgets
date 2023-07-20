@@ -30,6 +30,27 @@ export default class UbcColorBoxAlignUI extends Plugin {
   init() {
     const editor = this.editor;
 
+    editor.ui.componentFactory.add('ubcColorBoxAlignFull', (locale) => {
+      const command = editor.commands.get('ubcColorBoxAlignment');
+      const buttonView = new ButtonView(locale);
+      // Create the toolbar button.
+      buttonView.set({
+        label: editor.t('Full Width'),
+        icon: icons.objectFullWidth,
+        tooltip: true,
+        isOn: false,
+      });
+      // Bind the state of the button to the command.
+      buttonView.bind('isOn', 'isEnabled').to(command, 'value', 'isEnabled');
+      // Execute the command when the button is clicked (executed).
+      this.listenTo(buttonView, 'execute', () =>
+        editor.execute('ubcColorBoxAlignment', {
+          value: 'align-full'
+        })
+      );
+      return buttonView;
+    });
+
     editor.ui.componentFactory.add('ubcColorBoxAlignLeft', (locale) => {
       const command = editor.commands.get('ubcColorBoxAlignment');
       const buttonView = new ButtonView(locale);
@@ -51,13 +72,13 @@ export default class UbcColorBoxAlignUI extends Plugin {
       return buttonView;
     });
 
-    editor.ui.componentFactory.add('ubcColorBoxAlignNone', (locale) => {
+    editor.ui.componentFactory.add('ubcColorBoxAlignCenter', (locale) => {
       const command = editor.commands.get('ubcColorBoxAlignment');
       const buttonView = new ButtonView(locale);
       // Create the toolbar button.
       buttonView.set({
-        label: editor.t('Align None'),
-        icon: icons.objectFullWidth,
+        label: editor.t('Align Center'),
+        icon: icons.objectCenter,
         tooltip: true,
         isOn: false,
       });
