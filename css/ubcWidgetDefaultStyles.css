@@ -20,3 +20,22 @@
 .text-white {
   color: #fff;
 }
+
+/* legacy style for columns */
+@media (min-width: 960px) {
+
+  .md--flex-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .md--flex-grid .md--flex-1 {
+    flex: 1;
+  }
+
+  .md--flex-grid .md--flex-2 {
+    flex: 2;
+  }
+
+}
