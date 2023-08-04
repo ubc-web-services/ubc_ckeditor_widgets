@@ -5,7 +5,17 @@ ubc_ckeditor_widgets.ui:
   version: 1.x
   css:
     theme:
+      css/bg.color.css: { }
+      css/drop.shadow.css: {}
+      css/gap.css: { }
+      css/m.css: { }
       css/ubcWidgetDefaultStyles.css: { }
+      css/ubcAccordion.css: { }
+      css/ubcAccordionToggle.css: { }
+      css/ubcCard.css: { }
+      css/ubcColorBox.css: { }
+      css/ubcColumns.css: { }
+      css/ubcTable.css: { }
   js:
     js/functional/ubcAccordion.ui.js: { }
   dependencies:
