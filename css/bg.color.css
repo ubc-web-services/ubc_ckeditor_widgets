@@ -20,7 +20,7 @@
 }
 
 .bg-white:not(.widget-card),
-.widget-card.bg-grey-100 .ubc-card {
+.widget-card.bg-white .ubc-card {
   background-color: #fff;
 }
 
