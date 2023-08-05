@@ -9,13 +9,13 @@ ubc_ckeditor_widgets.ui:
       css/drop.shadow.css: {}
       css/gap.css: { }
       css/m.css: { }
-      css/ubcWidgetDefaultStyles.css: { }
-      css/ubcAccordion.css: { }
-      css/ubcAccordionToggle.css: { }
-      css/ubcCard.css: { }
-      css/ubcColorBox.css: { }
-      css/ubcColumns.css: { }
-      css/ubcTable.css: { }
+      css/ubc.widget.default.styles.css: { }
+      css/ubc.accordion.css: { }
+      css/ubc.accordion.toggle.css: { }
+      css/ubc.card.css: { }
+      css/ubc.color.box.css: { }
+      css/ubc.columns.css: { }
+      css/ubc.table.css: { }
   js:
     js/functional/ubcAccordion.ui.js: { }
   dependencies:
@@ -28,7 +28,7 @@ ubc_accordion:
   version: 3.1.8
   css:
     theme:
-      css/ubcAccordion.css: { }
+      css/ubc.accordion.css: { }
   js:
     js/build/ubcAccordion.js: { preprocess: false, minified: true }
   dependencies:
@@ -45,7 +45,7 @@ ubc_accordion_toggle:
   version: 3.1.8
   css:
     theme:
-      css/ubcAccordionToggle.css: { }
+      css/ubc.accordion.toggle.css: { }
   js:
     js/build/ubcAccordionToggle.js: { preprocess: false, minified: true }
   dependencies:
@@ -66,7 +66,7 @@ ubc_card_horizontal:
       css/drop.shadow.css: {}
       css/gap.css: { }
       css/m.css: { }
-      css/ubcCard.css: { }
+      css/ubc.card.css: { }
   js:
     js/build/ubcCardHorizontal.js: { preprocess: false, minified: true }
   dependencies:
@@ -87,7 +87,7 @@ ubc_card_vertical_one:
       css/drop.shadow.css: {}
       css/gap.css: { }
       css/m.css: { }
-      css/ubcCard.css: { }
+      css/ubc.card.css: { }
   js:
     js/build/ubcCardVerticalOne.js: { preprocess: false, minified: true }
   dependencies:
@@ -108,7 +108,7 @@ ubc_card_vertical_two:
       css/drop.shadow.css: {}
       css/gap.css: { }
       css/m.css: { }
-      css/ubcCard.css: { }
+      css/ubc.card.css: { }
   js:
     js/build/ubcCardVerticalTwo.js: { preprocess: false, minified: true }
   dependencies:
@@ -129,7 +129,7 @@ ubc_card_vertical_three:
       css/drop.shadow.css: {}
       css/gap.css: { }
       css/m.css: { }
-      css/ubcCard.css: { }
+      css/ubc.card.css: { }
   js:
     js/build/ubcCardVerticalThree.js: { preprocess: false, minified: true }
   dependencies:
@@ -150,7 +150,7 @@ ubc_color_box:
       css/drop.shadow.css: {}
       css/m.css: { }
       css/p.css: { }
-      css/ubcColorBox.css: { }
+      css/ubc.color.box.css: { }
   js:
     js/build/ubcColorBox.js: { preprocess: false, minified: true }
   dependencies:
@@ -169,7 +169,7 @@ ubc_columns_two:
     theme:
       css/m.css: { }
       css/gap.css: { }
-      css/ubcColumns.css: { }
+      css/ubc.columns.css: { }
   js:
     js/build/ubcColumnsTwo.js: { preprocess: false, minified: true }
   dependencies:
@@ -188,7 +188,7 @@ ubc_columns_three:
     theme:
       css/m.css: { }
       css/gap.css: { }
-      css/ubcColumns.css: { }
+      css/ubc.columns.css: { }
   js:
     js/build/ubcColumnsThree.js: { preprocess: false, minified: true }
   dependencies:
@@ -207,7 +207,7 @@ ubc_columns_four:
     theme:
       css/m.css: { }
       css/gap.css: { }
-      css/ubcColumns.css: { }
+      css/ubc.columns.css: { }
   js:
     js/build/ubcColumnsFour.js: { preprocess: false, minified: true }
   dependencies:
@@ -224,7 +224,7 @@ ubc_table:
   version: 3.1.8
   css:
     theme:
-      css/ubcTable.css: { }
+      css/ubc.table.css: { }
   js:
     js/build/ubcTableClass.js: { preprocess: false, minified: true }
   dependencies:
