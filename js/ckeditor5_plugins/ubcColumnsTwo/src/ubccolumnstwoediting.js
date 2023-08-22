@@ -79,7 +79,7 @@ export default class UbcColumnsTwoEditing extends Plugin {
       isObject: true,
       // Allow in places where other blocks are allowed (e.g. directly in the root).
       allowWhere: '$block',
-      allowAttributes: 'class keylineclass layoutclass marginclass',
+      //allowAttributes: 'class',
       allowChildren: ['ubcColumnsTwoWrapper'],
     });
 
@@ -91,7 +91,6 @@ export default class UbcColumnsTwoEditing extends Plugin {
       isLimit: true,
       // This is only to be used within ubcColumnsTwo.
       allowIn: 'ubcColumnsTwo',
-      allowAttributes: 'gapclass',
       allowChildren: ['ubcColumnsTwoColumn'],
     });
 
@@ -136,7 +135,7 @@ export default class UbcColumnsTwoEditing extends Plugin {
       model: 'ubcColumnsTwo',
       view: {
         name: 'div',
-        classes: ['widget-column-options', 'widget-columns-2'],
+        classes: ['widget-columns-2'],
       },
     });
 

@@ -91,14 +91,14 @@ export const defaultColumnsFourStyles = {
 };
 
 export const defaultColumnsThreeStyles = {
-    'layoutclass': 'align-equal',
+    'layoutcol3class': 'align-equal',
     'marginclass': 'my-6',
     'gapclass': 'gap-6',
     'keylineclass': 'widget-keyline-none'
 };
 
 export const defaultColumnsTwoStyles = {
-    'layoutclass': 'align-equal',
+    'layoutcolclass': 'align-equal',
     'marginclass': 'my-6',
     'keylineclass': 'widget-keyline-none'
 };

@@ -67,10 +67,31 @@ export default class UbcColumnsFourGapCommand extends Command {
   }
 
   refresh() {
-    const model = this.editor.model;
-    const doc = model.document;
+    const {
+      model
+    } = this.editor;
+    const {
+      selection
+    } = model.document;
     const thisattribute = 'gapclass';
-    this.value = doc.selection.getAttribute(thisattribute);
-    this.isEnabled = model.schema.getValidRanges(doc.selection, thisattribute);
+    const columns = selection.getFirstPosition().findAncestor('ubcColumnsFour');
+
+    // Determine if the cursor (selection) is in a position where adding a
+    // ubcColumnsFour is permitted. This is based on the schema of the model(s)
+    // currently containing the cursor.
+    const allowedIn = model.schema.findAllowedParent(
+      selection.getFirstPosition(),
+      'ubcColumnsFour',
+    );
+
+    // If the cursor is not in a location where a ubcColumnsFour can be added, return
+    // null so the addition doesn't happen.
+    this.isEnabled = allowedIn !== null;
+    if (columns) {
+      this.value = columns.getChild(0).getAttribute( thisattribute );
+      //this.value = true;
+    } else {
+      this.value = false;
+    }
   }
 }

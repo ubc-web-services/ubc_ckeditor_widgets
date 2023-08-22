@@ -30,10 +30,10 @@ export default class UbcColumnsTwoLayoutEditing extends Plugin {
      * Map the attributes - in the model, each group gets a custom attribute to contain it, and these then map to the class attribute in the view
      */
     editor.model.schema.extend('ubcColumnsTwo', {
-      allowAttributes: 'layoutclass'
+      allowAttributes: 'layoutcolclass'
     });
     editor.conversion.attributeToAttribute({
-      model: 'layoutclass',
+      model: 'layoutcolclass',
       view: 'class'
     });
 
@@ -60,7 +60,7 @@ export default class UbcColumnsTwoLayoutEditing extends Plugin {
           value: /\balign-[\S]+/
         },
         model: {
-          key: 'layoutclass',
+          key: 'layoutcolclass',
           value: viewElement => {
             const regexp = /\balign-([\S]+)/;
             const match = viewElement.getAttribute('class').match(regexp);
@@ -71,7 +71,7 @@ export default class UbcColumnsTwoLayoutEditing extends Plugin {
     conversion
       .for('downcast')
       .attributeToAttribute({
-        model: 'layoutclass',
+        model: 'layoutcolclass',
         view: modelAttributeValue => ({
           key: 'class',
           value: modelAttributeValue

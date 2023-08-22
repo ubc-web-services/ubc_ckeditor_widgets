@@ -74,7 +74,9 @@ export default class UbcColumnsFourCommand extends Command {
 function createUbcColumnsFour(writer) {
   // Create instances of the three elements registered with the editor in
   // ubcaccordionediting.js.
-  const ubcColumnsFour = writer.createElement('ubcColumnsFour', defaultColumnsFourStyles);
+  const ubcColumnsFour = writer.createElement('ubcColumnsFour', defaultColumnsFourStyles, {
+    class: 'widget-column-options widget-columns-4 align-equal'
+  });
   const firstColumn = writer.createElement('ubcColumnsFourColumn', {
     class: 'widget-region-one'
   });
@@ -87,7 +89,9 @@ function createUbcColumnsFour(writer) {
   const fourthColumn = writer.createElement('ubcColumnsFourColumn', {
     class: 'widget-region-four'
   });
-  const wrapper = writer.createElement('ubcColumnsFourWrapper', defaultColumnsGapStyle);
+  const wrapper = writer.createElement('ubcColumnsFourWrapper', defaultColumnsGapStyle, {
+    class: 'widget--md--grid'
+  });
 
   // Append the title and description elements to the ubcColumnsFour, which matches
   // the parent/child relationship as defined in their schemas.

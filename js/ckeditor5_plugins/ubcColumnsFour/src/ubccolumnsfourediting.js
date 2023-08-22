@@ -87,7 +87,7 @@ export default class UbcColumnsFourEditing extends Plugin {
       isObject: true,
       // Allow in places where other blocks are allowed (e.g. directly in the root).
       allowWhere: '$block',
-      allowAttributes: 'class keylineclass marginclass',
+      //allowAttributes: 'class',
       allowChildren: ['ubcColumnsFourWrapper'],
     });
 
@@ -99,7 +99,6 @@ export default class UbcColumnsFourEditing extends Plugin {
       isLimit: true,
       // This is only to be used within ubcColumnsFour.
       allowIn: 'ubcColumnsFour',
-      allowAttributes: 'gapclass',
       allowChildren: ['ubcColumnsFourColumn'],
     });
 
@@ -138,14 +137,14 @@ export default class UbcColumnsFourEditing extends Plugin {
     // Upcast Converters: determine how existing HTML is interpreted by the
     // editor. These trigger when an editor instance loads.
     //
-    // If <div class="widget-column-options widget-columns-4"> is present in the existing markup
+    // If <div class="widget-columns-4"> is present in the existing markup
     // processed by CKEditor, then CKEditor recognizes and loads it as a
     // <ubcColumnsFour> model.
     conversion.for('upcast').elementToElement({
       model: 'ubcColumnsFour',
       view: {
         name: 'div',
-        classes: ['widget-column-options', 'widget-columns-4', 'align-equal'],
+        classes: ['widget-columns-4'],
       },
     });
 
@@ -153,7 +152,7 @@ export default class UbcColumnsFourEditing extends Plugin {
       model: 'ubcColumnsFourWrapper',
       view: {
         name: 'div',
-        classes: 'widget--md--grid',
+        //classes: 'widget--md--grid',
       },
     });
 

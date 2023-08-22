@@ -67,10 +67,31 @@ export default class UbcColumnsThreeMarginCommand extends Command {
   }
 
   refresh() {
-    const model = this.editor.model;
-    const doc = model.document;
+    const {
+      model
+    } = this.editor;
+    const {
+      selection
+    } = model.document;
     const thisattribute = 'marginclass';
-    this.value = doc.selection.getAttribute(thisattribute);
-    this.isEnabled = model.schema.getValidRanges(doc.selection, thisattribute);
+    const columnsthree = selection.getFirstPosition().findAncestor('ubcColumnsThree');
+
+    // Determine if the cursor (selection) is in a position where adding a
+    // ubcColumnsThree is permitted. This is based on the schema of the model(s)
+    // currently containing the cursor.
+    const allowedIn = model.schema.findAllowedParent(
+      selection.getFirstPosition(),
+      'ubcColumnsThree',
+    );
+
+    // If the cursor is not in a location where a ubcColumnsThree can be added, return
+    // null so the addition doesn't happen.
+    this.isEnabled = allowedIn !== null;
+    if (columnsthree) {
+      this.value = columnsthree.getAttribute( thisattribute );
+      //this.value = true;
+    } else {
+      this.value = false;
+    }
   }
 }

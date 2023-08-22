@@ -75,14 +75,18 @@ export default class UbcColumnsTwoCommand extends Command {
 function createUbcColumnsTwo(writer) {
   // Create instances of the three elements registered with the editor in
   // ubcaccordionediting.js.
-  const ubcColumnsTwo = writer.createElement('ubcColumnsTwo', defaultColumnsTwoStyles);
+  const ubcColumnsTwo = writer.createElement('ubcColumnsTwo', defaultColumnsTwoStyles, {
+    class: 'widget-column-options widget-columns-2'
+  });
   const firstColumn = writer.createElement('ubcColumnsTwoColumn', {
-    class: 'widget-region-one'
+    class: 'widget-region-one first-child--mt-0'
   });
   const secondColumn = writer.createElement('ubcColumnsTwoColumn', {
-    class: 'widget-region-two'
+    class: 'widget-region-two first-child--mt-0'
   });
-  const wrapper = writer.createElement('ubcColumnsTwoWrapper', defaultColumnsGapStyle);
+  const wrapper = writer.createElement('ubcColumnsTwoWrapper', defaultColumnsGapStyle, {
+    class: 'widget--md--grid'
+  });
 
   // Append the title and description elements to the ubcColumnsTwo, which matches
   // the parent/child relationship as defined in their schemas.

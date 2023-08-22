@@ -84,8 +84,8 @@ export default class UbcColumnsThreeEditing extends Plugin {
       isObject: true,
       // Allow in places where other blocks are allowed (e.g. directly in the root).
       allowWhere: '$block',
-      allowAttributes: 'class keylineclass layoutclass marginclass',
-      allowChildren: ['ubcColumnsThreeWrapper'],
+      //allowAttributes: 'class',
+      allowChildren: ['ubcColumnsThreeColumn'],
     });
 
     schema.register('ubcColumnsThreeWrapper', {
@@ -96,15 +96,14 @@ export default class UbcColumnsThreeEditing extends Plugin {
       isLimit: true,
       // This is only to be used within ubcColumnsThree.
       allowIn: 'ubcColumnsThree',
-      allowAttributes: 'gapclass',
       allowChildren: ['ubcColumnsThreeColumn'],
     });
 
     schema.register('ubcColumnsThreeColumn', {
       isLimit: true,
       allowIn: 'ubcColumnsThree',
-      allowContentOf: '$root',
       allowAttributes: 'class',
+      allowContentOf: '$root',
     });
 
     schema.addChildCheck((context, childDefinition) => {
@@ -141,7 +140,7 @@ export default class UbcColumnsThreeEditing extends Plugin {
       model: 'ubcColumnsThree',
       view: {
         name: 'div',
-        classes: ['widget-column-options', 'widget-columns-3'],
+        classes: ['widget-columns-3'],
       },
     });
 
@@ -169,7 +168,7 @@ export default class UbcColumnsThreeEditing extends Plugin {
     // These trigger when content is saved.
     //
     // Instances of <ubcColumnsThree> are saved as
-    // <div class="widget-accordion">{{inner content}}</div>.
+    // <div class="widget-column-options widget-columns-3">{{inner content}}</div>.
     conversion.for('dataDowncast').elementToElement({
       model: 'ubcColumnsThree',
       view: (modelElement, {

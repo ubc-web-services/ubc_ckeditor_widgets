@@ -36,7 +36,7 @@ export default class UbcColumnsTwoLayoutCommand extends Command {
     const selectedElement = selection.getSelectedElement();
     let modelElement = '';
     const currentvalue = options.value;
-    const thisattribute = 'layoutclass';
+    const thisattribute = 'layoutcolclass';
 
     // Is the command triggered from the `ubcColumnsTwo`?
     if (selectedElement && selectedElement.is('element', 'ubcColumnsTwo')) {
@@ -67,10 +67,33 @@ export default class UbcColumnsTwoLayoutCommand extends Command {
   }
 
   refresh() {
-    const model = this.editor.model;
-    const doc = model.document;
-    const thisattribute = 'layoutclass';
-    //this.value = doc.selection.getAttribute(thisattribute);
-    this.isEnabled = model.schema.getValidRanges(doc.selection, thisattribute);
+    const {
+      model
+    } = this.editor;
+    const {
+      selection
+    } = model.document;
+    const thisattribute = 'layoutcolclass';
+    const columnstwo = selection.getFirstPosition().findAncestor('ubcColumnsTwo');
+    //const regexp = /\balign-([\S]+)/;
+    //const match = viewElement.getAttribute('class').match(regexp);
+
+    // Determine if the cursor (selection) is in a position where adding a
+    // ubcColumnsTwo is permitted. This is based on the schema of the model(s)
+    // currently containing the cursor.
+    const allowedIn = model.schema.findAllowedParent(
+      selection.getFirstPosition(),
+      'ubcColumnsTwo',
+    );
+
+    // If the cursor is not in a location where a ubcColumnsTwo can be added, return
+    // null so the addition doesn't happen.
+    this.isEnabled = allowedIn !== null;
+    if (columnstwo) {
+      this.value = columnstwo.getAttribute( thisattribute );
+      //this.value = true;
+    } else {
+      this.value = false;
+    }
   }
 }

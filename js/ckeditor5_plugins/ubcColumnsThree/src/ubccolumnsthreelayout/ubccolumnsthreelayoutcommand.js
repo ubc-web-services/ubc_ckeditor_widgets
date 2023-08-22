@@ -36,7 +36,7 @@ export default class UbcColumnsThreeLayoutCommand extends Command {
     const selectedElement = selection.getSelectedElement();
     let modelElement = '';
     const currentvalue = options.value;
-    const thisattribute = 'layoutclass';
+    const thisattribute = 'layoutcol3class';
 
     // Is the command triggered from the `ubcColumnsThree`?
     if (selectedElement && selectedElement.is('element', 'ubcColumnsThree')) {
@@ -57,7 +57,6 @@ export default class UbcColumnsThreeLayoutCommand extends Command {
         for (const range of ranges) {
           if (currentvalue) {
             writer.setAttribute(thisattribute, currentvalue, range);
-            this.value = currentvalue;
           } else {
             writer.removeAttribute(thisattribute, range);
           }
@@ -67,10 +66,33 @@ export default class UbcColumnsThreeLayoutCommand extends Command {
   }
 
   refresh() {
-    const model = this.editor.model;
-    const doc = model.document;
-    const thisattribute = 'layoutclass';
-    this.value = doc.selection.getAttribute(thisattribute);
-    this.isEnabled = model.schema.getValidRanges(doc.selection, thisattribute);
+    const {
+      model
+    } = this.editor;
+    const {
+      selection
+    } = model.document;
+    const thisattribute = 'layoutcol3class';
+    const columnsthree = selection.getFirstPosition().findAncestor('ubcColumnsThree');
+    //const regexp = /\balign-([\S]+)/;
+    //const match = viewElement.getAttribute('class').match(regexp);
+
+    // Determine if the cursor (selection) is in a position where adding a
+    // ubcColumnsThree is permitted. This is based on the schema of the model(s)
+    // currently containing the cursor.
+    const allowedIn = model.schema.findAllowedParent(
+      selection.getFirstPosition(),
+      'ubcColumnsThree',
+    );
+
+    // If the cursor is not in a location where a ubcColumnsThree can be added, return
+    // null so the addition doesn't happen.
+    this.isEnabled = allowedIn !== null;
+    if (columnsthree) {
+      this.value = columnsthree.getAttribute( thisattribute );
+      //this.value = true;
+    } else {
+      this.value = false;
+    }
   }
 }

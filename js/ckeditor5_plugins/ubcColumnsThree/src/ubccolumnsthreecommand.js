@@ -75,7 +75,9 @@ export default class UbcColumnsThreeCommand extends Command {
 function createUbcColumnsThree(writer) {
   // Create instances of the three elements registered with the editor in
   // ubccolumnsthreeediting.js.
-  const ubcColumnsThree = writer.createElement('ubcColumnsThree', defaultColumnsThreeStyles);
+  const ubcColumnsThree = writer.createElement('ubcColumnsThree', defaultColumnsThreeStyles, {
+    class: 'widget-column-options widget-columns-3'
+  });
   const firstColumn = writer.createElement('ubcColumnsThreeColumn', {
     class: 'widget-region-one'
   });
@@ -85,7 +87,9 @@ function createUbcColumnsThree(writer) {
   const thirdColumn = writer.createElement('ubcColumnsThreeColumn', {
     class: 'widget-region-three'
   });
-  const wrapper = writer.createElement('ubcColumnsThreeWrapper', defaultColumnsGapStyle);
+  const wrapper = writer.createElement('ubcColumnsThreeWrapper', defaultColumnsGapStyle, {
+    class: 'widget--md--grid'
+  });
 
   // Append the title and description elements to the ubcColumnsThree, which matches
   // the parent/child relationship as defined in their schemas.
