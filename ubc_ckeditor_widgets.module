@@ -175,14 +175,14 @@ function ubc_ckeditor_widgets_page_attachments_alter(array &$page) {
 
   $page['#attached']['drupalSettings']['ubcCkeditorWidgets']['defaultColumnsThreeStyles'] = [
     ['gapclass' => 'gap-6'],
-    ['layoutclass' => 'align-equal'],
+    ['layoutcol3class' => 'align-equal'],
     ['marginclass' => 'my-6'],
     ['keylineclass' => 'widget-keyline-none'],
   ];
 
   $page['#attached']['drupalSettings']['ubcCkeditorWidgets']['defaultColumnsTwoStyles'] = [
     ['gapclass' => 'gap-6'],
-    ['layoutclass' => 'align-equal'],
+    ['layoutcolclass' => 'align-equal'],
     ['marginclass' => 'my-6'],
     ['keylineclass' => 'widget-keyline-none'],
   ];
