@@ -73,7 +73,9 @@ export default class UbcColorBoxCommand extends Command {
 function createUbcColorBox(writer) {
   // Create instances of the three elements registered with the editor in
   // ubcaccordionediting.js.
-  const ubcColorBox = writer.createElement('ubcColorBox', defaultColorBoxStyles);
+  const ubcColorBox = writer.createElement('ubcColorBox', defaultColorBoxStyles, {
+    class: 'widget-color-box'
+  });
   const ubcColorBoxInner = writer.createElement('ubcColorBoxInner');
 
   // Append the title and description elements to the ubcColorBox, which matches

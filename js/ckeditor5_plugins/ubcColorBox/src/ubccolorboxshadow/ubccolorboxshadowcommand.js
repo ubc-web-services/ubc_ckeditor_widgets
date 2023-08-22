@@ -5,6 +5,9 @@
 import {
   Command
 } from 'ckeditor5/src/core';
+import {
+  first
+} from 'ckeditor5/src/utils';
 /**
  *
  * @extends module:core/command~Command
@@ -37,23 +40,49 @@ export default class UbcColorBoxShadowCommand extends Command {
     let modelElement = '';
     const thisattribute = 'shadowclass';
 
-    if (selectedElement && selectedElement.is('element', 'ubcColorBox')) {
-      modelElement = selectedElement;
-    } else {
-      modelElement = selection.getFirstPosition().findAncestor('ubcColorBox');
-    }
-    let active = modelElement.getAttribute(thisattribute);
-
     model.change(writer => {
+      if (selectedElement && selectedElement.is('element', 'ubcColorBox')) {
+        modelElement = selectedElement;
+      } else {
+        modelElement = selection.getFirstPosition().findAncestor('ubcColorBox');
+      }
+      let active = modelElement.getAttribute(thisattribute);
+
       if (active === 'drop-shadow-md') {
         writer.setAttribute(thisattribute, 'drop-shadow-none', modelElement);
-        //modelElement.value = 'drop-shadow-none';
         this.isOn = false;
       } else {
         writer.setAttribute(thisattribute, 'drop-shadow-md', modelElement);
-        //modelElement.value = 'drop-shadow-md';
         this.isOn = true;
       }
     });
+  }
+
+  refresh() {
+    const {
+      model
+    } = this.editor;
+    const {
+      selection
+    } = model.document;
+    const thisattribute = 'shadowclass';
+    const valid = selection.getFirstPosition().findAncestor('ubcColorBox');
+
+    // Determine if the cursor (selection) is in a position where adding a
+    // ubcColorBox is permitted. This is based on the schema of the model(s)
+    // currently containing the cursor.
+    const allowedIn = model.schema.findAllowedParent(
+      selection.getFirstPosition(),
+      'ubcColorBox',
+    );
+
+    // If the cursor is not in a location where a ubcColorBox can be added, return
+    // null so the addition doesn't happen.
+    this.isEnabled = allowedIn !== null;
+    if (valid) {
+      this.value = valid.getAttribute( thisattribute );
+    } else {
+      this.value = false;
+    }
   }
 }

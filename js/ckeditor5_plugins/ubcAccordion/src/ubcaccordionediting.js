@@ -86,7 +86,6 @@ export default class UbcAccordionEditing extends Plugin {
       // and keypress. For example, when the cursor is inside this box, the
       // keyboard shortcut for "select all" will be limited to the contents of
       // the box.
-      isLimit: true,
       // This is only to be used within ubcAccordion.
       allowIn: 'ubcAccordion',
       allowChildren: 'ubcAccordionTitle',

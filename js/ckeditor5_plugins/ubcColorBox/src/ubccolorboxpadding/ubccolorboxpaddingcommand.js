@@ -59,7 +59,6 @@ export default class UbcColorBoxPaddingCommand extends Command {
         for (const range of ranges) {
           if (currentvalue) {
             writer.setAttribute(thisattribute, currentvalue, range);
-            this.value = currentvalue;
           } else {
             writer.removeAttribute(thisattribute, range);
           }
@@ -69,12 +68,31 @@ export default class UbcColorBoxPaddingCommand extends Command {
   }
 
   refresh() {
-    const model = this.editor.model;
-    const doc = model.document;
+    const {
+      model
+    } = this.editor;
+    const {
+      selection
+    } = model.document;
     const thisattribute = 'paddingclass';
-    this.value = doc.selection.getAttribute(thisattribute);
-    this.isEnabled = model.schema.getValidRanges(doc.selection, thisattribute);
-    // this.value = doc.selection.getAttribute(this.thisattribute);
-    // this.isEnabled = model.schema.getValidRanges(doc.selection, this.thisattribute);
+    const valid = selection.getFirstPosition().findAncestor('ubcColorBox');
+
+    // Determine if the cursor (selection) is in a position where adding a
+    // ubcColorBox is permitted. This is based on the schema of the model(s)
+    // currently containing the cursor.
+    const allowedIn = model.schema.findAllowedParent(
+      selection.getFirstPosition(),
+      'ubcColorBox',
+    );
+
+    // If the cursor is not in a location where a ubcColorBox can be added, return
+    // null so the addition doesn't happen.
+    this.isEnabled = allowedIn !== null;
+    if (valid) {
+      this.value = valid.getAttribute( thisattribute );
+      //this.value = true;
+    } else {
+      this.value = false;
+    }
   }
 }

@@ -40,13 +40,14 @@ export default class UbcColorBoxShadowUI extends Plugin {
         class: 'cke5-ubccolorbox-shadow-insert-button',
       });
       // Bind the state of the button to the command.
-      buttonView.bind('isEnabled').to(command);
-      buttonView.bind('isOn').to(command);
-      //buttonView.bind( 'isOn' ).to( command, 'value', value => value === 'drop-shadow-md' );
-
+      //buttonView.bind('isEnabled').to(command);
+      buttonView.bind( 'isEnabled' ).to( command, 'isEnabled' );
+			buttonView.bind('isOn').to(command);
+      //console.log('isOn value is ' + buttonView.isOn);
+      //console.log('isEnabled value is ' + buttonView.isEnabled);
       // Execute the command when the button is clicked (executed).
       this.listenTo(buttonView, 'execute', () =>
-        editor.execute('ubcColorBoxShadow')
+        editor.execute('ubcColorBoxShadow'),
       );
       return buttonView;
     });

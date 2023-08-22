@@ -38,11 +38,11 @@ export default class UbcColorBoxAlignUI extends Plugin {
         label: editor.t('Full Width'),
         icon: icons.objectFullWidth,
         tooltip: true,
-        isOn: false,
         class: 'cke5-ubccolorbox-align-full-button',
       });
       // Bind the state of the button to the command.
-      buttonView.bind('isOn', 'isEnabled').to(command, 'value', 'isEnabled');
+      buttonView.bind('isEnabled').to(command);
+      buttonView.bind('isOn').to(command);
       // Execute the command when the button is clicked (executed).
       this.listenTo(buttonView, 'execute', () =>
         editor.execute('ubcColorBoxAlignment', {
@@ -60,11 +60,11 @@ export default class UbcColorBoxAlignUI extends Plugin {
         label: editor.t('Align left and wrap text'),
         icon: icons.objectLeft,
         tooltip: true,
-        isOn: false,
         class: 'cke5-ubccolorbox-align-left-button',
       });
       // Bind the state of the button to the command.
-      buttonView.bind('isOn', 'isEnabled').to(command, 'value', 'isEnabled');
+      buttonView.bind('isEnabled').to(command);
+      buttonView.bind('isOn').to(command);
       // Execute the command when the button is clicked (executed).
       this.listenTo(buttonView, 'execute', () =>
         editor.execute('ubcColorBoxAlignment', {
@@ -82,11 +82,11 @@ export default class UbcColorBoxAlignUI extends Plugin {
         label: editor.t('Align Center'),
         icon: icons.objectCenter,
         tooltip: true,
-        isOn: false,
         class: 'cke5-ubccolorbox-align-center-button',
       });
       // Bind the state of the button to the command.
-      buttonView.bind('isOn', 'isEnabled').to(command, 'value', 'isEnabled');
+      buttonView.bind('isEnabled').to(command);
+      buttonView.bind('isOn').to(command);
       // Execute the command when the button is clicked (executed).
       this.listenTo(buttonView, 'execute', () =>
         editor.execute('ubcColorBoxAlignment', {
@@ -104,11 +104,11 @@ export default class UbcColorBoxAlignUI extends Plugin {
         label: editor.t('Align right and wrap text'),
         icon: icons.objectRight,
         tooltip: true,
-        isOn: false,
         class: 'cke5-ubccolorbox-align-right-button',
       });
       // Bind the state of the button to the command.
-      buttonView.bind('isOn', 'isEnabled').to(command, 'value', 'isEnabled');
+      buttonView.bind('isEnabled').to(command);
+      buttonView.bind('isOn').to(command);
       // Execute the command when the button is clicked (executed).
       this.listenTo(buttonView, 'execute', () => {
         editor.execute('ubcColorBoxAlignment', {

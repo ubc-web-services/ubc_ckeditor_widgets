@@ -58,8 +58,10 @@ export default class UbcColorBoxAlignCommand extends Command {
         for (const range of ranges) {
           if (currentvalue) {
             writer.setAttribute(thisattribute, currentvalue, range);
+            this.isOn = false;
           } else {
             writer.removeAttribute(thisattribute, range);
+            this.isOn = true;
           }
         }
       }
@@ -67,10 +69,30 @@ export default class UbcColorBoxAlignCommand extends Command {
   }
 
   refresh() {
-    const model = this.editor.model;
-    const doc = model.document;
+    const {
+      model
+    } = this.editor;
+    const {
+      selection
+    } = model.document;
     const thisattribute = 'alignclass';
-    this.value = doc.selection.getAttribute(thisattribute);
-    this.isEnabled = model.schema.getValidRanges(doc.selection, thisattribute);
+    const valid = selection.getFirstPosition().findAncestor('ubcColorBox');
+
+    // Determine if the cursor (selection) is in a position where adding a
+    // ubcColorBox is permitted. This is based on the schema of the model(s)
+    // currently containing the cursor.
+    const allowedIn = model.schema.findAllowedParent(
+      selection.getFirstPosition(),
+      'ubcColorBox',
+    );
+
+    // If the cursor is not in a location where a ubcColorBox can be added, return
+    // null so the addition doesn't happen.
+    this.isEnabled = allowedIn !== null;
+    if (valid) {
+      this.value = valid.getAttribute( thisattribute );
+    } else {
+      this.value = false;
+    }
   }
 }

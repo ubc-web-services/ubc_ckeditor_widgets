@@ -67,7 +67,6 @@ export default class UbcColorBoxEditing extends Plugin {
       isObject: true,
       // Allow in places where other blocks are allowed (e.g. directly in the root).
       allowWhere: '$block',
-      allowAttributes: 'class alignclass backgroundclass marginclass paddingclass shadowclass',
       allowChildren: ['ubcColorBoxInner'],
     });
 
