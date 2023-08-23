@@ -4,7 +4,7 @@ import {
 import {
   Widget
 } from 'ckeditor5/src/widget';
-import UbcTableClassCommand from './UbcTableClasscommand';
+import UbcTableClassCommand from './ubctableclasscommand';
 
 export default class UbcTableClassEditing extends Plugin {
 
