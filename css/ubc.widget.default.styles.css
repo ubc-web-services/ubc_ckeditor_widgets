@@ -27,6 +27,9 @@
   .md--flex-grid {
     display: flex;
     flex-wrap: wrap;
+  }
+
+  .md--flex-grid:not(.gap-0, .gap-4, .gap-8, .gap-12, .gap-16) {
     gap: 1.5rem;
   }
 
