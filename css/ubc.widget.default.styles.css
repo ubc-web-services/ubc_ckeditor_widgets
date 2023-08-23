@@ -29,6 +29,7 @@
     flex-wrap: wrap;
   }
 
+  /* for CKE4 widget support, we only apply the style if the gap class isn't there */
   .md--flex-grid:not(.gap-0, .gap-4, .gap-8, .gap-12, .gap-16) {
     gap: 1.5rem;
   }
