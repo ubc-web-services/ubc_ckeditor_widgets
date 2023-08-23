@@ -74,7 +74,7 @@ export default class UbcColumnsFourMarginCommand extends Command {
       selection
     } = model.document;
     const thisattribute = 'marginclass';
-    const columns = selection.getFirstPosition().findAncestor('ubcColumnsFour');
+    const thiselement = selection.getFirstPosition().findAncestor('ubcColumnsFour');
 
     // Determine if the cursor (selection) is in a position where adding a
     // ubcColumnsFour is permitted. This is based on the schema of the model(s)
@@ -87,8 +87,8 @@ export default class UbcColumnsFourMarginCommand extends Command {
     // If the cursor is not in a location where a ubcColumnsFour can be added, return
     // null so the addition doesn't happen.
     this.isEnabled = allowedIn !== null;
-    if (columns) {
-      this.value = columns.getAttribute( thisattribute );
+    if (thiselement) {
+      this.value = thiselement.getAttribute( thisattribute );
       //this.value = true;
     } else {
       this.value = false;

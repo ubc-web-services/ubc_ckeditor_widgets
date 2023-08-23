@@ -49,7 +49,7 @@ export default class UbcColorBoxCommand extends Command {
     const {
       selection
     } = model.document;
-    const colorbox = selection.getFirstPosition().findAncestor('ubcColorBox');
+    const thiselement = selection.getFirstPosition().findAncestor('ubcColorBox');
 
     // Determine if the cursor (selection) is in a position where adding a
     // colorBox is permitted. This is based on the schema of the model(s)
@@ -62,7 +62,7 @@ export default class UbcColorBoxCommand extends Command {
     // If the cursor is not in a location where a colorBox can be added, return
     // null so the addition doesn't happen.
     this.isEnabled = allowedIn !== null;
-    if (colorbox) {
+    if (thiselement) {
       this.value = true;
     } else {
       this.value = false;

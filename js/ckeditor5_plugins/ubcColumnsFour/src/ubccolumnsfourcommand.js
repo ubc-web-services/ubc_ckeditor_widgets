@@ -50,7 +50,7 @@ export default class UbcColumnsFourCommand extends Command {
     const {
       selection
     } = model.document;
-    const columns = selection.getFirstPosition().findAncestor('ubcColumnsFour')
+    const thiselement = selection.getFirstPosition().findAncestor('ubcColumnsFour')
 
     // Determine if the cursor (selection) is in a position where adding a
     // ubcColumnsFour is permitted. This is based on the schema of the model(s)
@@ -63,7 +63,7 @@ export default class UbcColumnsFourCommand extends Command {
     // If the cursor is not in a location where a ubcColumnsFour can be added, return
     // null so the addition doesn't happen.
     this.isEnabled = allowedIn !== null;
-    if (columns) {
+    if (thiselement) {
       this.value = true;
     } else {
       this.value = false;

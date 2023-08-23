@@ -74,7 +74,7 @@ export default class UbcColumnsTwoMarginCommand extends Command {
       selection
     } = model.document;
     const thisattribute = 'marginclass';
-    const columnstwo = selection.getFirstPosition().findAncestor('ubcColumnsTwo');
+    const thiselement = selection.getFirstPosition().findAncestor('ubcColumnsTwo');
 
     // Determine if the cursor (selection) is in a position where adding a
     // ubcColumnsTwo is permitted. This is based on the schema of the model(s)
@@ -87,8 +87,8 @@ export default class UbcColumnsTwoMarginCommand extends Command {
     // If the cursor is not in a location where a ubcColumnsTwo can be added, return
     // null so the addition doesn't happen.
     this.isEnabled = allowedIn !== null;
-    if (columnstwo) {
-      this.value = columnstwo.getAttribute( thisattribute );
+    if (thiselement) {
+      this.value = thiselement.getAttribute( thisattribute );
       //this.value = true;
     } else {
       this.value = false;

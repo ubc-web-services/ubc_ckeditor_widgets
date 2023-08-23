@@ -74,7 +74,7 @@ export default class UbcColumnsTwoLayoutCommand extends Command {
       selection
     } = model.document;
     const thisattribute = 'layoutcolclass';
-    const columnstwo = selection.getFirstPosition().findAncestor('ubcColumnsTwo');
+    const thiselement = selection.getFirstPosition().findAncestor('ubcColumnsTwo');
     //const regexp = /\balign-([\S]+)/;
     //const match = viewElement.getAttribute('class').match(regexp);
 
@@ -89,8 +89,8 @@ export default class UbcColumnsTwoLayoutCommand extends Command {
     // If the cursor is not in a location where a ubcColumnsTwo can be added, return
     // null so the addition doesn't happen.
     this.isEnabled = allowedIn !== null;
-    if (columnstwo) {
-      this.value = columnstwo.getAttribute( thisattribute );
+    if (thiselement) {
+      this.value = thiselement.getAttribute( thisattribute );
       //this.value = true;
     } else {
       this.value = false;

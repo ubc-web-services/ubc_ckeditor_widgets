@@ -73,9 +73,7 @@ export default class UbcColumnsThreeLayoutCommand extends Command {
       selection
     } = model.document;
     const thisattribute = 'layoutcol3class';
-    const columnsthree = selection.getFirstPosition().findAncestor('ubcColumnsThree');
-    //const regexp = /\balign-([\S]+)/;
-    //const match = viewElement.getAttribute('class').match(regexp);
+    const thiselement = selection.getFirstPosition().findAncestor('ubcColumnsThree');
 
     // Determine if the cursor (selection) is in a position where adding a
     // ubcColumnsThree is permitted. This is based on the schema of the model(s)
@@ -88,9 +86,8 @@ export default class UbcColumnsThreeLayoutCommand extends Command {
     // If the cursor is not in a location where a ubcColumnsThree can be added, return
     // null so the addition doesn't happen.
     this.isEnabled = allowedIn !== null;
-    if (columnsthree) {
-      this.value = columnsthree.getAttribute( thisattribute );
-      //this.value = true;
+    if (thiselement) {
+      this.value = thiselement.getAttribute( thisattribute );
     } else {
       this.value = false;
     }

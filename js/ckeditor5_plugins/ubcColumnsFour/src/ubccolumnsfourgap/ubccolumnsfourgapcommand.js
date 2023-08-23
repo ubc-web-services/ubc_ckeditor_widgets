@@ -74,7 +74,7 @@ export default class UbcColumnsFourGapCommand extends Command {
       selection
     } = model.document;
     const thisattribute = 'gapclass';
-    const columns = selection.getFirstPosition().findAncestor('ubcColumnsFour');
+    const thiselement = selection.getFirstPosition().findAncestor('ubcColumnsFour');
 
     // Determine if the cursor (selection) is in a position where adding a
     // ubcColumnsFour is permitted. This is based on the schema of the model(s)
@@ -87,8 +87,8 @@ export default class UbcColumnsFourGapCommand extends Command {
     // If the cursor is not in a location where a ubcColumnsFour can be added, return
     // null so the addition doesn't happen.
     this.isEnabled = allowedIn !== null;
-    if (columns) {
-      this.value = columns.getChild(0).getAttribute( thisattribute );
+    if (thiselement) {
+      this.value = thiselement.getChild(0).getAttribute( thisattribute );
       //this.value = true;
     } else {
       this.value = false;

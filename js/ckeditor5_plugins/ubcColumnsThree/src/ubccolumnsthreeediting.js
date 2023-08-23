@@ -84,7 +84,6 @@ export default class UbcColumnsThreeEditing extends Plugin {
       isObject: true,
       // Allow in places where other blocks are allowed (e.g. directly in the root).
       allowWhere: '$block',
-      //allowAttributes: 'class',
       allowChildren: ['ubcColumnsThreeColumn'],
     });
 

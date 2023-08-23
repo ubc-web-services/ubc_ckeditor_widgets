@@ -76,7 +76,7 @@ export default class UbcColorBoxAlignCommand extends Command {
       selection
     } = model.document;
     const thisattribute = 'alignclass';
-    const valid = selection.getFirstPosition().findAncestor('ubcColorBox');
+    const thiselement = selection.getFirstPosition().findAncestor('ubcColorBox');
 
     // Determine if the cursor (selection) is in a position where adding a
     // ubcColorBox is permitted. This is based on the schema of the model(s)
@@ -89,8 +89,8 @@ export default class UbcColorBoxAlignCommand extends Command {
     // If the cursor is not in a location where a ubcColorBox can be added, return
     // null so the addition doesn't happen.
     this.isEnabled = allowedIn !== null;
-    if (valid) {
-      this.value = valid.getAttribute( thisattribute );
+    if (thiselement) {
+      this.value = thiselement.getAttribute( thisattribute );
     } else {
       this.value = false;
     }

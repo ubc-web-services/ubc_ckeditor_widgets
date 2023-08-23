@@ -15,8 +15,8 @@ import UbcColorBoxUI from './ubccolorboxui';
 import UbcColorBoxToolbar from './ubccolorboxtoolbar';
 import UbcColorBoxAlign from './ubccolorboxalign';
 import UbcColorBoxBackground from './ubccolorboxbackground';
-import UbcColorBoxPadding from './ubccolorboxpadding';
 import UbcColorBoxMargin from './ubccolorboxmargin';
+import UbcColorBoxPadding from './ubccolorboxpadding';
 import UbcColorBoxShadow from './ubccolorboxshadow';
 import {
   Plugin
@@ -33,9 +33,9 @@ export default class UbcColorBox extends Plugin {
       UbcColorBoxToolbar,
       UbcColorBoxAlign,
       UbcColorBoxBackground,
+      UbcColorBoxMargin,
       UbcColorBoxPadding,
       UbcColorBoxShadow,
-      UbcColorBoxMargin
     ];
   }
 }

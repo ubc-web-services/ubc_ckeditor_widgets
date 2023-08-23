@@ -74,7 +74,7 @@ export default class UbcColumnsThreeGapCommand extends Command {
       selection
     } = model.document;
     const thisattribute = 'gapclass';
-    const columnsthree = selection.getFirstPosition().findAncestor('ubcColumnsThree');
+    const thiselement = selection.getFirstPosition().findAncestor('ubcColumnsThree');
 
     // Determine if the cursor (selection) is in a position where adding a
     // ubcColumnsThree is permitted. This is based on the schema of the model(s)
@@ -87,8 +87,8 @@ export default class UbcColumnsThreeGapCommand extends Command {
     // If the cursor is not in a location where a ubcColumnsThree can be added, return
     // null so the addition doesn't happen.
     this.isEnabled = allowedIn !== null;
-    if (columnsthree) {
-      this.value = columnsthree.getChild(0).getAttribute( thisattribute );
+    if (thiselement) {
+      this.value = thiselement.getChild(0).getAttribute( thisattribute );
       //this.value = true;
     } else {
       this.value = false;

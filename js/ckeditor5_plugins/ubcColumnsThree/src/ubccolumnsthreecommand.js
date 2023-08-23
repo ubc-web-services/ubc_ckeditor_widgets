@@ -50,7 +50,7 @@ export default class UbcColumnsThreeCommand extends Command {
     const {
       selection
     } = model.document;
-    const columns = selection.getFirstPosition().findAncestor('ubcColumnsThree');
+    const thiselement = selection.getFirstPosition().findAncestor('ubcColumnsThree');
 
     // Determine if the cursor (selection) is in a position where adding a
     // ubcColumnsThree is permitted. This is based on the schema of the model(s)
@@ -63,8 +63,7 @@ export default class UbcColumnsThreeCommand extends Command {
     // If the cursor is not in a location where a ubcColumnsThree can be added, return
     // null so the addition doesn't happen.
     this.isEnabled = allowedIn !== null;
-    if (columns) {
-      //this.value = colorbox.hasAttribute( this.attributeName );
+    if (thiselement) {
       this.value = true;
     } else {
       this.value = false;
