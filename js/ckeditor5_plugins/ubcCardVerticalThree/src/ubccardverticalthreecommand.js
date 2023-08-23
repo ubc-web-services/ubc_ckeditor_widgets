@@ -48,7 +48,7 @@ export default class UbcCardVerticalThreeCommand extends Command {
     const {
       selection
     } = model.document;
-    const cards = selection.getFirstPosition().findAncestor('ubcCardVerticalThree');
+    const thiselement = selection.getFirstPosition().findAncestor('ubcCardVerticalThree');
 
 
     // Determine if the cursor (selection) is in a position where adding a
@@ -62,7 +62,7 @@ export default class UbcCardVerticalThreeCommand extends Command {
     // If the cursor is not in a location where a ubcCardVerticalThree can be added, return
     // null so the addition doesn't happen.
     this.isEnabled = allowedIn !== null;
-    if (cards) {
+    if (thiselement) {
       this.value = true;
     } else {
       this.value = false;
@@ -75,7 +75,9 @@ function createUbcCardVerticalThree(writer) {
   // ubccardverticalthreeediting.js.
   // Create instances of the three elements registered with the editor in
   // ubccardverticaltwoediting.js.
-  const ubcCardVerticalThree = writer.createElement('ubcCardVerticalThree', defaultCardVerticalThreeStyles);
+  const ubcCardVerticalThree = writer.createElement('ubcCardVerticalThree', defaultCardVerticalThreeStyles, {
+    class: 'widget-card widget-card--vertical-three card--three md--flex-grid'
+  });
 
   const firstContainer = writer.createElement('ubcCardVerticalThreeContainer');
   const firstInner = writer.createElement('ubcCardVerticalThreeInner');

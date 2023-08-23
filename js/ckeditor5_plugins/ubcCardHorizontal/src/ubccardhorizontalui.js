@@ -2,8 +2,13 @@
  * @file registers the ubcCardHorizontal toolbar button and binds functionality to it.
  */
 
-import { Plugin } from 'ckeditor5/src/core';
-import { ButtonView, ContextualBalloon } from 'ckeditor5/src/ui';
+import {
+  Plugin
+} from 'ckeditor5/src/core';
+import {
+  ButtonView,
+  ContextualBalloon
+} from 'ckeditor5/src/ui';
 import icon from '../../../../icons/ubcCardHorizontal.svg';
 
 export default class UbcCardHorizontalUI extends Plugin {

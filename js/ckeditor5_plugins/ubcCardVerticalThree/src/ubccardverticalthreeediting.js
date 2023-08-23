@@ -125,7 +125,6 @@ export default class UbcCardVerticalThreeEditing extends Plugin {
       isObject: true,
       // Allow in places where other blocks are allowed (e.g. directly in the root).
       allowWhere: '$block',
-      allowAttributes: 'class backgroundclass gapclass marginclass shadowclass',
       allowChildren: ['ubcCardVerticalThreeContainer'],
     });
 
@@ -135,7 +134,7 @@ export default class UbcCardVerticalThreeEditing extends Plugin {
       // and keypress. For example, when the cursor is inside this box, the
       // keyboard shortcut for "select all" will be limited to the contents of
       // the box.
-      isLimit: false,
+      // isLimit: true,
       // This is only to be used within ubcCardVerticalThree.
       allowIn: 'ubcCardVerticalThree',
       allowChildren: ['ubcCardVerticalThreeInner'],

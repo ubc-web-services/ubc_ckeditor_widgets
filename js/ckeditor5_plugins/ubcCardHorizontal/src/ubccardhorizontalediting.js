@@ -110,7 +110,7 @@ export default class UbcCardHorizontalEditing extends Plugin {
     schema.register('ubcCardHorizontal', {
       // Behaves like a self-contained object (e.g. an image).
       isObject: true,
-      allowAttributes: 'class backgroundclass layoutclass marginclass shadowclass',
+      //allowAttributes: 'class',
       // Allow in places where other blocks are allowed (e.g. directly in the root).
       allowWhere: '$block',
       allowChildren: ['ubcCardHorizontalWrapper'],
@@ -121,7 +121,7 @@ export default class UbcCardHorizontalEditing extends Plugin {
       // and keypress. For example, when the cursor is inside this box, the
       // keyboard shortcut for "select all" will be limited to the contents of
       // the box.
-      isLimit: true,
+      //isLimit: true,
       // This is only to be used within ubcCardHorizontal.
       allowIn: 'ubcCardHorizontal',
       allowChildren: ['ubcCardHorizontalImage', 'ubcCardHorizontalInner'],
@@ -138,7 +138,7 @@ export default class UbcCardHorizontalEditing extends Plugin {
     });
 
     schema.register('ubcCardHorizontalInner', {
-      isLimit: true,
+      //isLimit: true,
       allowIn: 'ubcCardHorizontal',
       allowChildren: ['ubcCardHorizontalContent', 'ubcCardHorizontalFooter'],
     });

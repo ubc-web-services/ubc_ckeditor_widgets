@@ -95,7 +95,6 @@ export default class UbcCardVerticalOneEditing extends Plugin {
     schema.register('ubcCardVerticalOne', {
       // Behaves like a self-contained object (e.g. an image).
       isObject: true,
-      allowAttributes: 'class backgroundclass marginclass shadowclass',
       // Allow in places where other blocks are allowed (e.g. directly in the root).
       allowWhere: '$block',
       allowChildren: ['ubcCardVerticalOneInner'],
@@ -106,14 +105,14 @@ export default class UbcCardVerticalOneEditing extends Plugin {
       // and keypress. For example, when the cursor is inside this box, the
       // keyboard shortcut for "select all" will be limited to the contents of
       // the box.
-      isLimit: true,
+      // isLimit: true,
       // This is only to be used within ubcCardVerticalOne.
       allowIn: 'ubcCardVerticalOne',
       allowChildren: ['ubcCardVerticalOneImage', 'ubcCardVerticalOneContent', 'ubcCardVerticalOneFooter'],
     });
 
     schema.register('ubcCardVerticalOneImage', {
-      sLimit: true,
+      isLimit: true,
       isContent: true,
       isSelectable: true,
       allowIn: 'ubcCardVerticalOne',

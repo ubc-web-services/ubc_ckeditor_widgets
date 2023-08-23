@@ -110,7 +110,7 @@ export default class UbcCardVerticalTwoEditing extends Plugin {
       isObject: true,
       // Allow in places where other blocks are allowed (e.g. directly in the root).
       allowWhere: '$block',
-      allowAttributes: 'class backgroundclass gapclass marginclass shadowclass',
+      //allowAttributes: 'class backgroundclass gapclass marginclass shadowclass',
       allowChildren: ['ubcCardVerticalTwoContainer'],
     });
 
@@ -120,7 +120,7 @@ export default class UbcCardVerticalTwoEditing extends Plugin {
       // and keypress. For example, when the cursor is inside this box, the
       // keyboard shortcut for "select all" will be limited to the contents of
       // the box.
-      isLimit: true,
+      //isLimit: true,
       // This is only to be used within ubcCardVerticalTwo.
       allowIn: 'ubcCardVerticalTwo',
       allowChildren: ['ubcCardVerticalTwoInner'],

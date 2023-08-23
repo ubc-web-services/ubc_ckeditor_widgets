@@ -67,10 +67,30 @@ export default class UbcCardVerticalTwoMarginCommand extends Command {
   }
 
   refresh() {
-    const model = this.editor.model;
-    const doc = model.document;
+    const {
+      model
+    } = this.editor;
+    const {
+      selection
+    } = model.document;
     const thisattribute = 'marginclass';
-    this.value = doc.selection.getAttribute(thisattribute);
-    this.isEnabled = model.schema.getValidRanges(doc.selection, thisattribute);
+    const thiselement = selection.getFirstPosition().findAncestor('ubcCardVerticalTwo');
+
+    // Determine if the cursor (selection) is in a position where adding a
+    // ubcCardVerticalTwo is permitted. This is based on the schema of the model(s)
+    // currently containing the cursor.
+    const allowedIn = model.schema.findAllowedParent(
+      selection.getFirstPosition(),
+      'ubcCardVerticalTwo',
+    );
+
+    // If the cursor is not in a location where a ubcCardVerticalTwo can be added, return
+    // null so the addition doesn't happen.
+    this.isEnabled = thiselement !== null;
+    if (thiselement) {
+      this.value = thiselement.getAttribute( thisattribute );
+    } else {
+      this.value = false;
+    }
   }
 }

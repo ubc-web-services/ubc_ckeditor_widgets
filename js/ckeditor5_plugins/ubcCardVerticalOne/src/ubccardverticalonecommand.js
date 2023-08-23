@@ -73,7 +73,9 @@ export default class UbcCardVerticalOneCommand extends Command {
 function createUbcCardVerticalOne(writer) {
   // Create instances of the three elements registered with the editor in
   // ubcaccordionediting.js.
-  const ubcCardVerticalOne = writer.createElement('ubcCardVerticalOne', defaultCardVerticalOneStyles);
+  const ubcCardVerticalOne = writer.createElement('ubcCardVerticalOne', defaultCardVerticalOneStyles, {
+    class: 'widget-card card--one widget-card--vertical-one'
+  });
   const ubcCardVerticalOneInner = writer.createElement('ubcCardVerticalOneInner');
   const ubcCardVerticalOneImage = writer.createElement('ubcCardVerticalOneImage');
   const ubcCardVerticalOneImagePlaceholder = writer.createElement('imageBlock', {

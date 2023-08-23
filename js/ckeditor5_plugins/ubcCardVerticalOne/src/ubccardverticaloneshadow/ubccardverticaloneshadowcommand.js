@@ -54,4 +54,32 @@ export default class UbcCardVerticalOneShadowCommand extends Command {
       }
     });
   }
+
+  refresh() {
+    const {
+      model
+    } = this.editor;
+    const {
+      selection
+    } = model.document;
+    const thisattribute = 'shadowclass';
+    const thiselement = selection.getFirstPosition().findAncestor('ubcCardVerticalOne');
+
+    // Determine if the cursor (selection) is in a position where adding a
+    // ubcCardVerticalOne is permitted. This is based on the schema of the model(s)
+    // currently containing the cursor.
+    const allowedIn = model.schema.findAllowedParent(
+      selection.getFirstPosition(),
+      'ubcCardVerticalOne',
+    );
+
+    // If the cursor is not in a location where a ubcCardVerticalOne can be added, return
+    // null so the addition doesn't happen.
+    this.isEnabled = thiselement !== null;
+    if (thiselement) {
+      this.value = thiselement.getAttribute( thisattribute );
+    } else {
+      this.value = false;
+    }
+  }
 }

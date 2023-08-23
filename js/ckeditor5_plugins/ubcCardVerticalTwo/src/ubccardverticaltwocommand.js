@@ -48,7 +48,7 @@ export default class UbcCardVerticalTwoCommand extends Command {
     const {
       selection
     } = model.document;
-    const cards = selection.getFirstPosition().findAncestor('ubcCardVerticalTwo');
+    const thiselement = selection.getFirstPosition().findAncestor('ubcCardVerticalTwo');
 
     // Determine if the cursor (selection) is in a position where adding a
     // ubcCardVerticalTwo is permitted. This is based on the schema of the model(s)
@@ -61,7 +61,7 @@ export default class UbcCardVerticalTwoCommand extends Command {
     // If the cursor is not in a location where a ubcCardVerticalTwo can be added, return
     // null so the addition doesn't happen.
     this.isEnabled = allowedIn !== null;
-    if (cards) {
+    if (thiselement) {
       this.value = true;
     } else {
       this.value = false;
@@ -72,7 +72,9 @@ export default class UbcCardVerticalTwoCommand extends Command {
 function createUbcCardVerticalTwo(writer) {
   // Create instances of the elements registered with the editor in
   // ubccardverticaltwoediting.js.
-  const ubcCardVerticalTwo = writer.createElement('ubcCardVerticalTwo', defaultCardVerticalTwoStyles);
+  const ubcCardVerticalTwo = writer.createElement('ubcCardVerticalTwo', defaultCardVerticalTwoStyles, {
+    class: 'widget-card card--two md--flex-grid'
+  });
 
   const firstContainer = writer.createElement('ubcCardVerticalTwoContainer');
   const firstInner = writer.createElement('ubcCardVerticalTwoInner');

@@ -74,7 +74,9 @@ function createUbcCardHorizontal(writer) {
   // Create instances of the three elements registered with the editor in
   // ubccardhorizontalediting.js.
 
-  const ubcCardHorizontal = writer.createElement('ubcCardHorizontal', defaultCardHorizontalStyles);
+  const ubcCardHorizontal = writer.createElement('ubcCardHorizontal', defaultCardHorizontalStyles, {
+    class: 'widget-card widget-card--horizontal'
+  });
   const ubcCardHorizontalWrapper = writer.createElement('ubcCardHorizontalWrapper');
   const ubcCardHorizontalImage = writer.createElement('ubcCardHorizontalImage');
   const ubcCardHorizontalImagePlaceholder = writer.createElement('imageBlock', {

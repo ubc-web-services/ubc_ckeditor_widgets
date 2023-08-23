@@ -67,10 +67,30 @@ export default class UbcCardHorizontalBackgroundCommand extends Command {
   }
 
   refresh() {
-    const model = this.editor.model;
-    const doc = model.document;
+    const {
+      model
+    } = this.editor;
+    const {
+      selection
+    } = model.document;
     const thisattribute = 'backgroundclass';
-    this.value = doc.selection.getAttribute(thisattribute);
-    this.isEnabled = model.schema.getValidRanges(doc.selection, thisattribute);
+    const thiselement = selection.getFirstPosition().findAncestor('ubcCardHorizontal');
+
+    // Determine if the cursor (selection) is in a position where adding a
+    // ubcCardHorizontal is permitted. This is based on the schema of the model(s)
+    // currently containing the cursor.
+    const allowedIn = model.schema.findAllowedParent(
+      selection.getFirstPosition(),
+      'ubcCardHorizontal',
+    );
+
+    // If the cursor is not in a location where a ubcCardHorizontal can be added, return
+    // null so the addition doesn't happen.
+    this.isEnabled = thiselement !== null;
+    if (thiselement) {
+      this.value = thiselement.getAttribute( thisattribute );
+    } else {
+      this.value = false;
+    }
   }
 }
