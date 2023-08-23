@@ -82,10 +82,10 @@ export default class UbcCardVerticalTwoEditing extends Plugin {
     editor.model.schema.extend('heading6', {
       allowAttributes: ['class']
     });
-    editor.conversion.attributeToAttribute({
-      model: 'class',
-      view: 'class'
-    });
+    // editor.conversion.attributeToAttribute({
+    //   model: 'class',
+    //   view: 'class'
+    // });
     this._defineSchema();
     this._defineConverters();
     editor.commands.add(
