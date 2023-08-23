@@ -1,15 +1,16 @@
 /**
  * @file defines UbcColorBoxAlignCommand.
  */
-// cSpell:ignore ubccolorboxediting
 
 import {
   Command
 } from 'ckeditor5/src/core';
+
 /**
  *
  * @extends module:core/command~Command
  */
+
 export default class UbcColorBoxAlignCommand extends Command {
   /**
    * Creates a new `UbcColorBoxAlignCommand` instance.

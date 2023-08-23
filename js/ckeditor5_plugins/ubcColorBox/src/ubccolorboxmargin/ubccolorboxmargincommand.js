@@ -1,7 +1,6 @@
 /**
  * @file defines UbcColorBoxMarginCommand.
  */
-// cSpell:ignore ubccolorboxediting
 
 import {
   Command

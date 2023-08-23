@@ -1,7 +1,6 @@
 /**
  * @file defines UbcColumnsThreeMarginCommand.
  */
-// cSpell:ignore ubccolumnsthreeediting
 
 import {
   Command

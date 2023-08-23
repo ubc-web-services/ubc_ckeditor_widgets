@@ -2,7 +2,6 @@
  * @file defines UbcColorBoxCommand, which is executed when the ubcColorBox
  * toolbar button is pressed.
  */
-// cSpell:ignore ubccolorboxediting
 
 import {
   Command

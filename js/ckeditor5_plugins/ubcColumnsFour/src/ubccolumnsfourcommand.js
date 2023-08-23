@@ -2,7 +2,6 @@
  * @file defines UbcColumnsFourCommand, which is executed when the ubcColumnsFour
  * toolbar button is pressed.
  */
-// cSpell:ignore ubccolumnsfourediting
 
 import {
   Command

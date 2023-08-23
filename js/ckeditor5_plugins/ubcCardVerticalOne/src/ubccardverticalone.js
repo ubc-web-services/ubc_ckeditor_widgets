@@ -6,7 +6,6 @@
  * I.e, this file's purpose is to integrate all the separate parts of the plugin
  * before it's made discoverable via index.js.
  */
-// cSpell:ignore ubccardverticaloneediting ubccardverticaloneui
 
 // The contents of UbcCardVerticalOneUI and UbcCardVerticalOne editing could be included in this
 // file, but it is recommended to separate these concerns in different files.

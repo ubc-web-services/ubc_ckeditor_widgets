@@ -1,7 +1,6 @@
 /**
  * @file defines UbcCardHorizontalBackgroundCommand.
  */
-// cSpell:ignore ubccolorboxediting
 
 import {
   Command

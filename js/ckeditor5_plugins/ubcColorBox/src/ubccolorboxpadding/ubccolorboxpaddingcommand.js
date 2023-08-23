@@ -1,7 +1,6 @@
 /**
  * @file defines UbcColorBoxPaddingCommand.
  */
-// cSpell:ignore ubccolorboxediting
 
 import {
   Command

@@ -2,7 +2,6 @@
  * @file defines UbcCardVerticalOneCommand, which is executed when the ubcCardVerticalOne
  * toolbar button is pressed.
  */
-// cSpell:ignore ubccardverticaloneediting
 
 import {
   Command

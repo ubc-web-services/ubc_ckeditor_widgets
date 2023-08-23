@@ -1,7 +1,6 @@
 /**
  * @file defines UbcColumnsFourMarginCommand.
  */
-// cSpell:ignore ubccolumnsfourediting
 
 import {
   Command

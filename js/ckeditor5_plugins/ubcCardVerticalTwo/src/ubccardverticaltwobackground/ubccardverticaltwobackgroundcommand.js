@@ -1,7 +1,6 @@
 /**
  * @file defines UbcCardVerticalTwoBackgroundCommand.
  */
-// cSpell:ignore ubccolorboxediting
 
 import {
   Command

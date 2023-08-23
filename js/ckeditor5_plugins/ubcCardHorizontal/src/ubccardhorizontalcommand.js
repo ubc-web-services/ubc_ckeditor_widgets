@@ -2,7 +2,6 @@
  * @file defines UbcCardHorizontalCommand, which is executed when the ubcCardHorizontal
  * toolbar button is pressed.
  */
-// cSpell:ignore ubccardhorizontalediting
 
 import {
   Command

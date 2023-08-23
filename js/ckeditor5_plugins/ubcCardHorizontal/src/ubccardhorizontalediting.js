@@ -9,7 +9,6 @@ import {
   Widget
 } from 'ckeditor5/src/widget';
 import UbcCardHorizontalCommand from './ubccardhorizontalcommand';
-// cSpell:ignore ubccardhorizontal ubcardhorizontalcommand
 
 /**
  * CKEditor 5 plugins do not work directly with the DOM. They are defined as

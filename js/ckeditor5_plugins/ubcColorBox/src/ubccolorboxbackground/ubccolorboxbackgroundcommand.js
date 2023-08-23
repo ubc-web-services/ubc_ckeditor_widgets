@@ -1,16 +1,18 @@
 /**
  * @file defines UbcColorBoxBackgroundCommand.
  */
-// cSpell:ignore ubccolorboxediting
 
 import {
   Command
 } from 'ckeditor5/src/core';
+
 /**
  *
  * @extends module:core/command~Command
  */
+
 export default class UbcColorBoxBackgroundCommand extends Command {
+
   /**
    * Creates a new `UbcColorBoxBackgroundCommand` instance.
    *
@@ -20,6 +22,7 @@ export default class UbcColorBoxBackgroundCommand extends Command {
    * @param {String} attributeName The attribute that the active class is being applied to
    * @param {Object} classOptions The array of classes from which the allowed classes are taken
    */
+
   constructor(editor) {
     super(editor);
   }

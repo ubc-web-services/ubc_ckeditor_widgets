@@ -2,7 +2,6 @@
  * @file defines UbcColumnsTwoCommand, which is executed when the ubcColumnsTwo
  * toolbar button is pressed.
  */
-// cSpell:ignore ubccolumnstwoediting
 
 import {
   Command

@@ -6,7 +6,6 @@
  * I.e, this file's purpose is to integrate all the separate parts of the plugin
  * before it's made discoverable via index.js.
  */
-// cSpell:ignore ubcaccordionediting ubcaccordionui
 
 // The contents of UbcAccordionUI and UbcAccordion editing could be included in this
 // file, but it is recommended to separate these concerns in different files.

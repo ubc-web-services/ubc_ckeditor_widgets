@@ -1,7 +1,6 @@
 /**
  * @file defines UbcCardVerticalOneMarginCommand.
  */
-// cSpell:ignore ubccardhorizontalediting
 
 import {
   Command

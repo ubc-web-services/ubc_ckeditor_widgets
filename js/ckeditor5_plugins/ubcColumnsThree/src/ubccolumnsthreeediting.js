@@ -10,8 +10,6 @@ import {
 } from 'ckeditor5/src/widget';
 import UbcColumnsThreeCommand from './ubccolumnsthreecommand';
 
-// cSpell:ignore ubccolumnsthree ubccolumnsthreecommand
-
 /**
  * CKEditor 5 plugins do not work directly with the DOM. They are defined as
  * plugin-specific data models that are then converted to markup that

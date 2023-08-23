@@ -10,8 +10,6 @@ import {
 } from 'ckeditor5/src/widget';
 import UbcCardVerticalTwoCommand from './ubccardverticaltwocommand';
 
-// cSpell:ignore ubccardverticaltwo ubccardverticaltwocommand
-
 /**
  * CKEditor 5 plugins do not work directly with the DOM. They are defined as
  * plugin-specific data models that are then converted to markup that
@@ -110,7 +108,6 @@ export default class UbcCardVerticalTwoEditing extends Plugin {
       isObject: true,
       // Allow in places where other blocks are allowed (e.g. directly in the root).
       allowWhere: '$block',
-      //allowAttributes: 'class backgroundclass gapclass marginclass shadowclass',
       allowChildren: ['ubcCardVerticalTwoContainer'],
     });
 

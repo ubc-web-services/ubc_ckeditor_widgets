@@ -10,7 +10,6 @@ import {
 } from 'ckeditor5/src/widget';
 import UbcAccordionToggleCommand from './ubcaccordiontogglecommand';
 
-// cSpell:ignore ubcaccordiontoggle insertubcaccordiontogglecommand
 
 /**
  * CKEditor 5 plugins do not work directly with the DOM. They are defined as

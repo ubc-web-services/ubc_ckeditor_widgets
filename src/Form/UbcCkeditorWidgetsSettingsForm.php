@@ -41,22 +41,6 @@ class UbcCkeditorWidgetsSettingsForm extends ConfigFormBase {
       '#description' => $this->t('These classes will be applied as background colors.<br />Enter one class on each line in the format: <code>class|Label</code><br /><strong>* Note:</strong> this expects a prefix of <strong><code>bg-</code></strong>, so format as <strong><code>bg-[myvalue]</code></strong>.')
     ];
 
-    /*
-    $form['button_size'] = [
-      '#type' => 'textarea',
-      '#title' => $this->t('Add a set of classes for text sizes'),
-      '#default_value' => $config->get('button_size'),
-      '#description' => $this->t('These classes are intended to be added to links for adjusting the font size.<br />Enter one class on each line in the format: <code>class|Label</code><br /><strong>* Note:</strong> this expects a prefix of <strong><code>text-</code></strong>, so format as <strong><code>text-[myvalue]</code></strong>.')
-    ];
-
-    $form['button_style'] = [
-      '#type' => 'textarea',
-      '#title' => $this->t('Add a set of classes for adjusting button styles'),
-      '#default_value' => $config->get('button_style'),
-      '#description' => $this->t('These classes are intended to be added to links for adjusting the button style.<br />Enter one class on each line in the format: <code>class|Label</code><br /><strong>* Note:</strong> this expects a prefix of <strong><code>unit-button--</code></strong>, so format as <strong><code>unit-button--[myvalue]</code></strong>.')
-    ];
-    */
-
     $form['padding_styles'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Add a set of padding classes'),
@@ -116,8 +100,6 @@ class UbcCkeditorWidgetsSettingsForm extends ConfigFormBase {
     $config = $this->config('ubc_ckeditor_widgets.settings');
     $values = $form_state->getValues();
     $config->set('background_colors', $values['background_colors']);
-    // $config->set('button_size', $values['button_size']);
-    // $config->set('button_style', $values['button_style']);
     $config->set('gap_styles', $values['gap_styles']);
     $config->set('margin_styles', $values['margin_styles']);
     $config->set('padding_styles', $values['padding_styles']);

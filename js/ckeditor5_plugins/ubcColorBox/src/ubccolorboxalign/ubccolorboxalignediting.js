@@ -6,8 +6,6 @@ import {
 } from 'ckeditor5/src/widget';
 import UbcColorBoxAlignCommand from './ubccolorboxaligncommand';
 
-// cSpell:ignore ubccolorbox ubccolorboxcommand
-
 /**
  * CKEditor 5 plugins do not work directly with the DOM. They are defined as
  * plugin-specific data models that are then converted to markup that

@@ -1,7 +1,6 @@
 /**
  * @file defines UbcColumnsTwoMarginCommand.
  */
-// cSpell:ignore ubccolumnstwoediting
 
 import {
   Command

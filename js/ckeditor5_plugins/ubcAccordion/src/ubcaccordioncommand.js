@@ -2,7 +2,6 @@
  * @file defines UbcAccordionCommand, which is executed when the ubcAccordion
  * toolbar button is pressed.
  */
-// cSpell:ignore ubcaccordionediting
 
 import {
   Command

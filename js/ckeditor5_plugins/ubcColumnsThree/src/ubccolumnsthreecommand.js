@@ -2,7 +2,6 @@
  * @file defines UbcColumnsThreeCommand, which is executed when the ubcColumnsThree
  * toolbar button is pressed.
  */
-// cSpell:ignore ubccolumnsthreeediting
 
 import {
   Command
