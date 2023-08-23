@@ -9,6 +9,8 @@ ubc_ckeditor_widgets.ui:
       css/drop.shadow.css: {}
       css/gap.css: { }
       css/m.css: { }
+      css/p.css: { }
+      css/text.color.css: { }
       css/ubc.widget.default.styles.css: { }
       css/ubc.accordion.css: { }
       css/ubc.accordion.toggle.css: { }
@@ -62,10 +64,6 @@ ubc_card_horizontal:
   version: 3.1.9
   css:
     theme:
-      css/bg.color.css: { }
-      css/drop.shadow.css: {}
-      css/gap.css: { }
-      css/m.css: { }
       css/ubc.card.css: { }
   js:
     js/build/ubcCardHorizontal.js: { preprocess: false, minified: true }
@@ -83,10 +81,6 @@ ubc_card_vertical_one:
   version: 3.1.9
   css:
     theme:
-      css/bg.color.css: { }
-      css/drop.shadow.css: {}
-      css/gap.css: { }
-      css/m.css: { }
       css/ubc.card.css: { }
   js:
     js/build/ubcCardVerticalOne.js: { preprocess: false, minified: true }
@@ -104,10 +98,6 @@ ubc_card_vertical_two:
   version: 3.1.9
   css:
     theme:
-      css/bg.color.css: { }
-      css/drop.shadow.css: {}
-      css/gap.css: { }
-      css/m.css: { }
       css/ubc.card.css: { }
   js:
     js/build/ubcCardVerticalTwo.js: { preprocess: false, minified: true }
@@ -125,10 +115,6 @@ ubc_card_vertical_three:
   version: 3.1.9
   css:
     theme:
-      css/bg.color.css: { }
-      css/drop.shadow.css: {}
-      css/gap.css: { }
-      css/m.css: { }
       css/ubc.card.css: { }
   js:
     js/build/ubcCardVerticalThree.js: { preprocess: false, minified: true }
@@ -146,10 +132,6 @@ ubc_color_box:
   version: 3.1.9
   css:
     theme:
-      css/bg.color.css: { }
-      css/drop.shadow.css: {}
-      css/m.css: { }
-      css/p.css: { }
       css/ubc.color.box.css: { }
   js:
     js/build/ubcColorBox.js: { preprocess: false, minified: true }
@@ -167,8 +149,6 @@ ubc_columns_two:
   version: 3.1.9
   css:
     theme:
-      css/m.css: { }
-      css/gap.css: { }
       css/ubc.columns.css: { }
   js:
     js/build/ubcColumnsTwo.js: { preprocess: false, minified: true }
@@ -186,8 +166,6 @@ ubc_columns_three:
   version: 3.1.9
   css:
     theme:
-      css/m.css: { }
-      css/gap.css: { }
       css/ubc.columns.css: { }
   js:
     js/build/ubcColumnsThree.js: { preprocess: false, minified: true }
@@ -205,8 +183,6 @@ ubc_columns_four:
   version: 3.1.9
   css:
     theme:
-      css/m.css: { }
-      css/gap.css: { }
       css/ubc.columns.css: { }
   js:
     js/build/ubcColumnsFour.js: { preprocess: false, minified: true }
@@ -239,6 +215,7 @@ ubc_table_cell:
     - core/ckeditor5
 
 v4_widgets:
+  version: 3.1.9
   css:
     layout:
       css/ubc.ckeditor4.widgets.css: {}

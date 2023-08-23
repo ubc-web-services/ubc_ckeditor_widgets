@@ -10,8 +10,6 @@ const jsonSettings = JSON.parse(drupalSettings);
 
 // styles from config
 export const backgroundStyles = jsonSettings.ubcCkeditorWidgets.backgroundColors;
-// const buttonSize = jsonSettings.ubcCkeditorWidgets.buttonSize;
-//export const buttonStyle = jsonSettings.ubcCkeditorWidgets.buttonStyle;
 export const gapStyles = jsonSettings.ubcCkeditorWidgets.gapStyles;
 export const marginStyles = jsonSettings.ubcCkeditorWidgets.marginStyles;
 export const paddingStyles = jsonSettings.ubcCkeditorWidgets.paddingStyles;
@@ -28,14 +26,6 @@ export const alignStyles = [
     {'label' : 'Right', 'value' : 'align-right'},
 ];
 
-/*
-export const buttonType = [
-    {'label' : 'No Style', 'value' : ''},
-    {'label' : 'Unit Button', 'value' : 'unit-button'},
-    {'label' : 'Full width Unit Button', 'value' : 'unit-button--block'},
-];
-*/
-
 export const layoutStyles = [
     {'label' : 'Text Region Right', 'value' : 'widget-card__normal'},
     {'label' : 'Text Region Left', 'value' : 'widget-card__reverse'},
@@ -51,7 +41,7 @@ export const shadowStyles = [
  */
 export const defaultCardHorizontalStyles = {
     'backgroundclass': 'bg-white',
-    'layoutclass': 'widget-card--normal',
+    'layoutclass': 'widget-card__normal',
     'marginclass': 'my-6',
     'shadowclass': 'drop-shadow-none'
 };
