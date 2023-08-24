@@ -40,7 +40,7 @@ ubc_accordion.admin:
   version: 3.1.9
   css:
     theme:
-      css/ubcAccordion.admin.css: { }
+      css/ubc.accordion.admin.css: { }
 
 # Accordion Toggle
 ubc_accordion_toggle:
@@ -57,7 +57,7 @@ ubc_accordion_toggle.admin:
   version: 3.1.9
   css:
     theme:
-      css/ubcAccordionToggle.admin.css: { }
+      css/ubc.accordion.toggle.admin.css: { }
 
 # Card Horizontal
 ubc_card_horizontal:
@@ -74,7 +74,7 @@ ubc_card_horizontal.admin:
   version: 3.1.9
   css:
     theme:
-      css/ubcCard.admin.css: { }
+      css/ubc.card.admin.css: { }
 
 # Card Vertical One
 ubc_card_vertical_one:
@@ -91,7 +91,7 @@ ubc_card_vertical_one.admin:
   version: 3.1.9
   css:
     theme:
-      css/ubcCard.admin.css: { }
+      css/ubc.card.admin.css: { }
 
 # Card Vertical Two
 ubc_card_vertical_two:
@@ -108,7 +108,7 @@ ubc_card_vertical_two.admin:
   version: 3.1.9
   css:
     theme:
-      css/ubcCard.admin.css: { }
+      css/ubc.card.admin.css: { }
 
 # Card Vertical Three
 ubc_card_vertical_three:
@@ -125,7 +125,7 @@ ubc_card_vertical_three.admin:
   version: 3.1.9
   css:
     theme:
-      css/ubcCard.admin.css: { }
+      css/ubc.card.admin.css: { }
 
 # Color Box
 ubc_color_box:
@@ -142,7 +142,7 @@ ubc_color_box.admin:
   version: 3.1.9
   css:
     theme:
-      css/ubcColorBox.admin.css: { }
+      css/ubc.color.box.admin.css: { }
 
 # Two columns
 ubc_columns_two:
@@ -159,7 +159,7 @@ ubc_columns_two.admin:
   version: 3.1.9
   css:
     theme:
-      css/ubcColumns.admin.css: { }
+      css/ubc.columns.admin.css: { }
 
 # Three columns
 ubc_columns_three:
@@ -176,7 +176,7 @@ ubc_columns_three.admin:
   version: 3.1.9
   css:
     theme:
-      css/ubcColumns.admin.css: { }
+      css/ubc.columns.admin.css: { }
 
 # Four columns
 ubc_columns_four:
@@ -193,7 +193,7 @@ ubc_columns_four.admin:
   version: 3.1.9
   css:
     theme:
-      css/ubcColumns.admin.css: { }
+      css/ubc.columns.admin.css: { }
 
 # Tables
 ubc_table:
