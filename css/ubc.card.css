@@ -89,12 +89,25 @@
 @media (min-width: 480px) {
 
   .widget-card--horizontal .ubc-card--horiz {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(3,minmax(0,1fr));
+    grid-template-rows: auto;
+  }
+
+  .widget-card--horizontal .first-image {
+    grid-area: a;
+  }
+
+  .widget-card--horizontal .ubc-card__content_wrapper {
+    grid-area: b;
+  }
+
+  .widget-card--horizontal .ubc-card--horiz {
+    grid-template-areas: 'a b b';
   }
 
   .widget-card--horizontal.widget-card__reverse .ubc-card--horiz {
-    flex-direction: row-reverse;
+    grid-template-areas: 'b b a';
   }
 
 }
