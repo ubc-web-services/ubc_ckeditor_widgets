@@ -2,7 +2,7 @@
 
 # Add all required styles and JS to the public facing site
 ubc_ckeditor_widgets.ui:
-  version: 3.1.9
+  version: 3.1.12
   css:
     theme:
       css/bg.color.css: { }
@@ -27,7 +27,7 @@ ubc_ckeditor_widgets.ui:
 
 # Accordion
 ubc_accordion:
-  version: 3.1.9
+  version: 3.1.12
   css:
     theme:
       css/ubc.accordion.css: { }
@@ -37,14 +37,14 @@ ubc_accordion:
     - core/ckeditor5
 
 ubc_accordion.admin:
-  version: 3.1.9
+  version: 3.1.12
   css:
     theme:
       css/ubc.accordion.admin.css: { }
 
 # Accordion Toggle
 ubc_accordion_toggle:
-  version: 3.1.9
+  version: 3.1.12
   css:
     theme:
       css/ubc.accordion.toggle.css: { }
@@ -54,14 +54,14 @@ ubc_accordion_toggle:
     - core/ckeditor5
 
 ubc_accordion_toggle.admin:
-  version: 3.1.9
+  version: 3.1.12
   css:
     theme:
       css/ubc.accordion.toggle.admin.css: { }
 
 # Card Horizontal
 ubc_card_horizontal:
-  version: 3.1.9
+  version: 3.1.12
   css:
     theme:
       css/ubc.card.css: { }
@@ -71,14 +71,14 @@ ubc_card_horizontal:
     - core/ckeditor5
 
 ubc_card_horizontal.admin:
-  version: 3.1.9
+  version: 3.1.12
   css:
     theme:
       css/ubc.card.admin.css: { }
 
 # Card Vertical One
 ubc_card_vertical_one:
-  version: 3.1.9
+  version: 3.1.12
   css:
     theme:
       css/ubc.card.css: { }
@@ -88,14 +88,14 @@ ubc_card_vertical_one:
     - core/ckeditor5
 
 ubc_card_vertical_one.admin:
-  version: 3.1.9
+  version: 3.1.12
   css:
     theme:
       css/ubc.card.admin.css: { }
 
 # Card Vertical Two
 ubc_card_vertical_two:
-  version: 3.1.9
+  version: 3.1.12
   css:
     theme:
       css/ubc.card.css: { }
@@ -105,14 +105,14 @@ ubc_card_vertical_two:
     - core/ckeditor5
 
 ubc_card_vertical_two.admin:
-  version: 3.1.9
+  version: 3.1.12
   css:
     theme:
       css/ubc.card.admin.css: { }
 
 # Card Vertical Three
 ubc_card_vertical_three:
-  version: 3.1.9
+  version: 3.1.12
   css:
     theme:
       css/ubc.card.css: { }
@@ -122,14 +122,14 @@ ubc_card_vertical_three:
     - core/ckeditor5
 
 ubc_card_vertical_three.admin:
-  version: 3.1.9
+  version: 3.1.12
   css:
     theme:
       css/ubc.card.admin.css: { }
 
 # Color Box
 ubc_color_box:
-  version: 3.1.9
+  version: 3.1.12
   css:
     theme:
       css/ubc.color.box.css: { }
@@ -139,14 +139,14 @@ ubc_color_box:
     - core/ckeditor5
 
 ubc_color_box.admin:
-  version: 3.1.9
+  version: 3.1.12
   css:
     theme:
       css/ubc.color.box.admin.css: { }
 
 # Two columns
 ubc_columns_two:
-  version: 3.1.9
+  version: 3.1.12
   css:
     theme:
       css/ubc.columns.css: { }
@@ -156,14 +156,14 @@ ubc_columns_two:
     - core/ckeditor5
 
 ubc_columns_two.admin:
-  version: 3.1.9
+  version: 3.1.12
   css:
     theme:
       css/ubc.columns.admin.css: { }
 
 # Three columns
 ubc_columns_three:
-  version: 3.1.9
+  version: 3.1.12
   css:
     theme:
       css/ubc.columns.css: { }
@@ -173,14 +173,14 @@ ubc_columns_three:
     - core/ckeditor5
 
 ubc_columns_three.admin:
-  version: 3.1.9
+  version: 3.1.12
   css:
     theme:
       css/ubc.columns.admin.css: { }
 
 # Four columns
 ubc_columns_four:
-  version: 3.1.9
+  version: 3.1.12
   css:
     theme:
       css/ubc.columns.css: { }
@@ -190,14 +190,14 @@ ubc_columns_four:
     - core/ckeditor5
 
 ubc_columns_four.admin:
-  version: 3.1.9
+  version: 3.1.12
   css:
     theme:
       css/ubc.columns.admin.css: { }
 
 # Tables
 ubc_table:
-  version: 3.1.9
+  version: 3.1.12
   css:
     theme:
       css/ubc.table.css: { }
@@ -208,14 +208,14 @@ ubc_table:
 
 # Table Cells
 ubc_table_cell:
-  version: 3.1.9
+  version: 3.1.12
   js:
     js/build/ubcTableCellClass.js: { preprocess: false, minified: true }
   dependencies:
     - core/ckeditor5
 
 v4_widgets:
-  version: 3.1.9
+  version: 3.1.12
   css:
     layout:
       css/ubc.ckeditor4.widgets.css: {}

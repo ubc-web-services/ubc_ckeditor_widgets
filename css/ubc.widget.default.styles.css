@@ -4,6 +4,13 @@
   color: #212121 !important;
 }
 
+/* fix for images stretching beyond their natural width in editor */
+/* not the correct place for this, but the core style (in drupalmedia.css) is problematic */
+.ck-content .drupal-media img,
+.ck-content .image img {
+  min-width: inherit;
+}
+
 /* Misc styles */
 
 .unit-icon {
