@@ -8,7 +8,7 @@
 /* not the correct place for this, but the core style (in drupalmedia.css) is problematic */
 .ck-content .drupal-media img,
 .ck-content .image img {
-  min-width: inherit;
+  min-width: inherit !important;
 }
 
 /* Misc styles */
