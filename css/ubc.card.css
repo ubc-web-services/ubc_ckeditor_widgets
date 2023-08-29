@@ -35,6 +35,11 @@
 
 
 /* Cards */
+/* make sure that the card wrapper doesn't take on the background colour */
+.widget-card {
+  background-color: inherit !important;
+}
+
 .widget-card .ubc-card {
   height: 100%;
   position: relative;
