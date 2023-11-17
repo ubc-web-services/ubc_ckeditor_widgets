@@ -14,6 +14,11 @@
     font-size: .5rem;
 }
 
+/* fade label when widget is focussed */
+.widget-color-box.ck-widget:has(.ck-editor__nested-editable_focused)::after  {
+    opacity: .1;
+}
+
 /* Color Box */
 .widget-color-box {
     min-width: 10rem;

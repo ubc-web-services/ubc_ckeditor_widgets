@@ -13,6 +13,11 @@
   font-size: .5rem;
 }
 
+/* fade label when widget is focussed */
+.widget-column-options.ck-widget:has(.ck-editor__nested-editable_focused)::after  {
+  opacity: .1;
+}
+
 .widget-columns-2.ck-widget::after {
   content: 'Two Columns';
 }

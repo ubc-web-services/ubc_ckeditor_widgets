@@ -13,6 +13,11 @@
   font-size: .5rem;
 }
 
+/* fade label when widget is focussed */
+.widget-card.ck-widget:has(.ck-editor__nested-editable_focused)::after  {
+  opacity: .1;
+}
+
 .widget-card.widget-card--horizontal.ck-widget::after {
   content: 'Horizontal Card';
 }

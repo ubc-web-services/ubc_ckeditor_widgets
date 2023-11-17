@@ -16,6 +16,11 @@
   font-size: .5rem;
 }
 
+/* fade label when widget is focussed */
+.widget-accordion.ck-widget:has(.ck-editor__nested-editable_focused)::after  {
+  opacity: .1;
+}
+
 .ck .ck-editor__nested-editable.accordion__content {
   border: 1px solid #0055b7;
   padding: .5rem;
