@@ -23,6 +23,7 @@ ubc_ckeditor_widgets.ui:
     - core/drupal
     - core/drupalSettings
     - core/once
+    - core/jquery
 
 # Accordion
 ubc_accordion:
