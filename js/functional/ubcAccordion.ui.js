@@ -67,10 +67,11 @@
       once('openAccordionFromHash', 'html', context).forEach(function (element) {
         const targetId = $(window.location.hash);
         if (targetId.length) {
-          $(window).scrollTop(targetId.offset().top);
           targetId.parents('.widget-accordion').addClass('is-open');
           targetId.parents('.widget-accordion').children().children('.accordion__trigger').addClass('is-open').attr('aria-expanded', true);
           targetId.parents('.js-reveal__target.accordion__content').removeAttr('hidden');
+          let scrollTo = $(targetId)[0];
+          scrollTo.scrollIntoView();
         };
         addEventListener("hashchange", (event) => {});
         onhashchange = (event) => {
