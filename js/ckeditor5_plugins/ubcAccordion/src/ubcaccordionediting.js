@@ -42,19 +42,19 @@ export default class UbcAccordionEditing extends Plugin {
   }
 
   init() {
-
+    const editor = this.editor;
     this._defineSchema();
     this._defineConverters();
-    this.editor.model.schema.extend('ubcAccordion', {
+    editor.model.schema.extend('ubcAccordion', {
       allowAttributes: ['class']
     });
-    this.editor.conversion.attributeToAttribute({
+    editor.conversion.attributeToAttribute({
       model: 'class',
       view: 'class'
     });
-    this.editor.commands.add(
+    editor.commands.add(
       'ubcAccordion',
-      new UbcAccordionCommand(this.editor),
+      new UbcAccordionCommand(editor),
     );
   }
 

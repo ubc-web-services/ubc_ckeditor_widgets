@@ -48,11 +48,16 @@ export default class UbcColumnsTwoEditing extends Plugin {
   }
 
   init() {
+    const editor = this.editor;
+    editor.conversion.attributeToAttribute({
+      model: 'class',
+      view: 'class'
+    });
     this._defineSchema();
     this._defineConverters();
-    this.editor.commands.add(
+    editor.commands.add(
       'ubcColumnsTwo',
-      new UbcColumnsTwoCommand(this.editor),
+      new UbcColumnsTwoCommand(editor),
     );
   }
 

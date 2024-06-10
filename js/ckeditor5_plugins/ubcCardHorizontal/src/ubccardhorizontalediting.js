@@ -59,30 +59,31 @@ export default class UbcCardHorizontalEditing extends Plugin {
   }
 
   init() {
-    this.editor.model.schema.extend('heading2', {
+    const editor = this.editor;
+    editor.model.schema.extend('heading2', {
       allowAttributes: ['class']
     });
-    this.editor.model.schema.extend('heading3', {
+    editor.model.schema.extend('heading3', {
       allowAttributes: ['class']
     });
-    this.editor.model.schema.extend('heading4', {
+    editor.model.schema.extend('heading4', {
       allowAttributes: ['class']
     });
-    this.editor.model.schema.extend('heading5', {
+    editor.model.schema.extend('heading5', {
       allowAttributes: ['class']
     });
-    this.editor.model.schema.extend('heading6', {
+    editor.model.schema.extend('heading6', {
       allowAttributes: ['class']
     });
-    this.editor.conversion.attributeToAttribute({
+    editor.conversion.attributeToAttribute({
       model: 'class',
       view: 'class'
     });
     this._defineSchema();
     this._defineConverters();
-    this.editor.commands.add(
+    editor.commands.add(
       'ubcCardHorizontal',
-      new UbcCardHorizontalCommand(this.editor),
+      new UbcCardHorizontalCommand(editor),
     );
   }
 

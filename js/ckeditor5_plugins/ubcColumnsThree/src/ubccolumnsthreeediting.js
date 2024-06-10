@@ -52,11 +52,16 @@ export default class UbcColumnsThreeEditing extends Plugin {
   }
 
   init() {
+    const editor = this.editor;
+    editor.conversion.attributeToAttribute({
+      model: 'class',
+      view: 'class'
+    });
     this._defineSchema();
     this._defineConverters();
-    this.editor.commands.add(
+    editor.commands.add(
       'ubcColumnsThree',
-      new UbcColumnsThreeCommand(this.editor),
+      new UbcColumnsThreeCommand(editor),
     );
   }
 

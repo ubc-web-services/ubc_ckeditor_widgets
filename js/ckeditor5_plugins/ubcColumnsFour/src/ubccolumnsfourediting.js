@@ -54,11 +54,16 @@ export default class UbcColumnsFourEditing extends Plugin {
   }
 
   init() {
+    const editor = this.editor;
+    editor.conversion.attributeToAttribute({
+      model: 'class',
+      view: 'class'
+    });
     this._defineSchema();
     this._defineConverters();
-    this.editor.commands.add(
+    editor.commands.add(
       'ubcColumnsFour',
-      new UbcColumnsFourCommand(this.editor),
+      new UbcColumnsFourCommand(editor),
     );
   }
 

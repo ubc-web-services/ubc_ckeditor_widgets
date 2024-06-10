@@ -49,7 +49,6 @@ export default class UbcCardVerticalOneEditing extends Plugin {
 
   init() {
     const editor = this.editor;
-
     editor.model.schema.extend('heading2', {
       allowAttributes: ['class']
     });
@@ -64,6 +63,10 @@ export default class UbcCardVerticalOneEditing extends Plugin {
     });
     editor.model.schema.extend('heading6', {
       allowAttributes: ['class']
+    });
+    editor.conversion.attributeToAttribute({
+      model: 'class',
+      view: 'class'
     });
     this._defineSchema();
     this._defineConverters();
