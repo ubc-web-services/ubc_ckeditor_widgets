@@ -1,12 +1,204 @@
-# ubc_ckeditor_widgets.libraries.yml
+# This adds the plugin JavaScript to the page.
 
-widgets:
+# Add all required styles and JS to the public facing site
+ubc_ckeditor_widgets.ui:
+  css:
+    theme:
+      css/ubc.widget.default.styles.css: { }
+      css/ubc.accordion.css: { }
+      css/ubc.accordion.toggle.css: { }
+      css/ubc.card.css: { }
+      css/ubc.color.box.css: { }
+      css/ubc.columns.css: { }
+      css/ubc.table.css: { }
+      css/bg.color.css: { }
+      css/drop.shadow.css: {}
+      css/gap.css: { }
+      css/m.css: { }
+      css/p.css: { }
+      css/text.color.css: { }
+  js:
+    js/functional/ubcAccordion.ui.js: { }
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+    - core/once
+    - core/jquery
+
+# Accordion
+ubc_accordion:
+  css:
+    theme:
+      css/ubc.accordion.css: { }
+  js:
+    js/build/ubcAccordion.js: { preprocess: false, minified: true }
+  dependencies:
+    - core/ckeditor5
+
+ubc_accordion.admin:
+  css:
+    theme:
+      css/ubc.accordion.admin.css: { }
+
+# Accordion Toggle
+ubc_accordion_toggle:
+  css:
+    theme:
+      css/ubc.accordion.toggle.css: { }
+  js:
+    js/build/ubcAccordionToggle.js: { preprocess: false, minified: true }
+  dependencies:
+    - core/ckeditor5
+
+ubc_accordion_toggle.admin:
+  css:
+    theme:
+      css/ubc.accordion.toggle.admin.css: { }
+
+# Card Horizontal
+ubc_card_horizontal:
+  css:
+    theme:
+      css/ubc.card.css: { }
+  js:
+    js/build/ubcCardHorizontal.js: { preprocess: false, minified: true }
+  dependencies:
+    - core/ckeditor5
+
+ubc_card_horizontal.admin:
+  css:
+    theme:
+      css/ubc.card.admin.css: { }
+
+# Card Vertical One
+ubc_card_vertical_one:
+  css:
+    theme:
+      css/ubc.card.css: { }
+  js:
+    js/build/ubcCardVerticalOne.js: { preprocess: false, minified: true }
+  dependencies:
+    - core/ckeditor5
+
+ubc_card_vertical_one.admin:
+  css:
+    theme:
+      css/ubc.card.admin.css: { }
+
+# Card Vertical Two
+ubc_card_vertical_two:
+  css:
+    theme:
+      css/ubc.card.css: { }
+  js:
+    js/build/ubcCardVerticalTwo.js: { preprocess: false, minified: true }
+  dependencies:
+    - core/ckeditor5
+
+ubc_card_vertical_two.admin:
+  css:
+    theme:
+      css/ubc.card.admin.css: { }
+
+# Card Vertical Three
+ubc_card_vertical_three:
+  css:
+    theme:
+      css/ubc.card.css: { }
+  js:
+    js/build/ubcCardVerticalThree.js: { preprocess: false, minified: true }
+  dependencies:
+    - core/ckeditor5
+
+ubc_card_vertical_three.admin:
+  css:
+    theme:
+      css/ubc.card.admin.css: { }
+
+# Color Box
+ubc_color_box:
+  css:
+    theme:
+      css/ubc.color.box.css: { }
+  js:
+    js/build/ubcColorBox.js: { preprocess: false, minified: true }
+  dependencies:
+    - core/ckeditor5
+
+ubc_color_box.admin:
+  css:
+    theme:
+      css/ubc.color.box.admin.css: { }
+
+# Two columns
+ubc_columns_two:
+  css:
+    theme:
+      css/ubc.columns.css: { }
+  js:
+    js/build/ubcColumnsTwo.js: { preprocess: false, minified: true }
+  dependencies:
+    - core/ckeditor5
+
+ubc_columns_two.admin:
+  css:
+    theme:
+      css/ubc.columns.admin.css: { }
+
+# Three columns
+ubc_columns_three:
+  css:
+    theme:
+      css/ubc.columns.css: { }
+  js:
+    js/build/ubcColumnsThree.js: { preprocess: false, minified: true }
+  dependencies:
+    - core/ckeditor5
+
+ubc_columns_three.admin:
+  css:
+    theme:
+      css/ubc.columns.admin.css: { }
+
+# Four columns
+ubc_columns_four:
+  css:
+    theme:
+      css/ubc.columns.css: { }
+  js:
+    js/build/ubcColumnsFour.js: { preprocess: false, minified: true }
+  dependencies:
+    - core/ckeditor5
+
+ubc_columns_four.admin:
+  css:
+    theme:
+      css/ubc.columns.admin.css: { }
+
+# Tables
+ubc_table:
+  css:
+    theme:
+      css/ubc.table.css: { }
+  js:
+    js/build/ubcTableClass.js: { preprocess: false, minified: true }
+  dependencies:
+    - core/ckeditor5
+
+# Table Cells
+ubc_table_cell:
+  js:
+    js/build/ubcTableCellClass.js: { preprocess: false, minified: true }
+  dependencies:
+    - core/ckeditor5
+
+v4_widgets:
   css:
     layout:
-      css/ubc.ckeditor.widgets.css: {}
+      css/ubc.ckeditor4.widgets.css: {}
   js:
-    js/ubc_ckeditor_widgets.js: {}
+    js/ckeditor4/ubc_ckeditor_widgets.js: { minified: true }
   dependencies:
-    - core/jquery
-    - core/jquery.once
     - core/drupal
+    - core/drupalSettings
+    - core/once

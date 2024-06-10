@@ -1,0 +1,57 @@
+/* Editor-specific styles */
+
+.widget-accordion.ck-widget {
+  margin-top: 1.25rem;
+  position: relative;
+}
+
+.widget-accordion.ck-widget::after {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  content: 'Accordion';
+  background-color: #ccc;
+  color: #111;
+  padding: .5em;
+  font-size: .5rem;
+}
+
+/* fade label when widget is focussed */
+.widget-accordion.ck-widget:has(.ck-editor__nested-editable_focused)::after  {
+  opacity: .1;
+}
+
+.ck .ck-editor__nested-editable.accordion__content {
+  border: 1px solid #0055b7;
+  padding: .5rem;
+}
+
+.ck .ck-editor__nested-editable.accordion__trigger {
+  padding-left: .5rem;
+}
+
+/* Accordion general styles */
+.accordion__trigger h2,
+.accordion__trigger h3,
+.accordion__trigger h4,
+.accordion__trigger h5,
+.accordion__trigger h6 {
+  margin-bottom: 0;
+  padding-right: 2rem;
+  margin-top: 0;
+  line-height: 1.4;
+}
+
+.accordion__title {
+  letter-spacing: 0.025em;
+  font-family: var(--text-font-stack);
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-size: var(--base-font-size);
+  display: block;
+  /* to allow font size in span to override parent */
+}
+
+.accordion__trigger button {
+  text-align: left;
+}

@@ -1,0 +1,4 @@
+administer ubc ckeditor widgets:
+  title: Adminster UBC CKEditor Widgets
+  description: Adminster UBC CKEditor Widgets configuration
+  restrict access: TRUE

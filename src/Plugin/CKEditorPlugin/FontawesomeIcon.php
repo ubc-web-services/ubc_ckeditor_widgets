@@ -20,7 +20,7 @@ class FontawesomeIcon extends CKEditorPluginBase {
    * Implements \Drupal\ckeditor\Plugin\CKEditorPluginInterface::getFile().
    */
   public function getFile() {
-    return drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/fontawesome-icon/plugin.js';
+    return \Drupal::service('extension.list.module')->getPath('ubc_ckeditor_widgets') . '/plugins/fontawesome-icon/plugin.js';
   }
 
   /**
@@ -43,8 +43,8 @@ class FontawesomeIcon extends CKEditorPluginBase {
   public function getButtons() {
     return [
       'fontawesome-icon' => [
-        'label' => t('Fontawesome Icon'),
-        'image' => drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/fontawesome-icon/icons/fontawesome-icon.png',
+        'label' => $this->t('Fontawesome Icon'),
+        'image' => \Drupal::service('extension.list.module')->getPath('ubc_ckeditor_widgets') . '/plugins/fontawesome-icon/icons/fontawesome-icon.png',
       ],
     ];
   }

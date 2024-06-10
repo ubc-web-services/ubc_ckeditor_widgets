@@ -41,6 +41,34 @@
 
         init: function () {
 
+          if (this.element.hasClass('text-white'))
+            this.setData('background', 'text-white');
+          if (this.element.hasClass('text-grey-100'))
+            this.setData('background', 'text-grey-100');
+          if (this.element.hasClass('text-unit-primary'))
+            this.setData('background', 'text-unit-primary');
+          if (this.element.hasClass('text-unit-secondary'))
+            this.setData('background', 'text-unit-secondary');
+          if (this.element.hasClass('text-unit-tertiary'))
+            this.setData('background', 'text-unit-tertiary');
+          if (this.element.hasClass('text-unit-accent'))
+            this.setData('background', 'text-unit-accent');
+
+          if (this.element.hasClass('text-ubc-blue'))
+            this.setData('background', 'text-ubc-blue');
+          if (this.element.hasClass('text-ubc-blue-sea'))
+            this.setData('background', 'text-ubc-blue-sea');
+          if (this.element.hasClass('text-ubc-blue-cobalt'))
+            this.setData('background', 'text-ubc-blue-cobalt');
+          if (this.element.hasClass('text-ubc-blue-neptune'))
+            this.setData('background', 'text-ubc-blue-neptune');
+          if (this.element.hasClass('text-ubc-blue-cornflower'))
+            this.setData('background', 'text-ubc-blue-cornflower');
+          if (this.element.hasClass('text-ubc-blue-polar'))
+            this.setData('background', 'text-ubc-blue-polar');
+          if (this.element.hasClass('text-ubc-blue-frost'))
+            this.setData('background', 'text-ubc-blue-frost');
+
           if (this.element.hasClass('fa-lg'))
             this.setData('size', 'lg');
           if (this.element.hasClass('fa-2x'))
@@ -534,6 +562,20 @@
         },
 
         data: function () {
+          this.element.removeClass('text-white');
+          this.element.removeClass('text-grey-100');
+          this.element.removeClass('text-unit-primary');
+          this.element.removeClass('text-unit-secondary');
+          this.element.removeClass('text-unit-tertiary');
+          this.element.removeClass('text-unit-accent');
+          this.element.removeClass('text-ubc-blue');
+          this.element.removeClass('text-ubc-blue-sea');
+          this.element.removeClass('text-ubc-blue-cobalt');
+          this.element.removeClass('text-ubc-blue-neptune');
+          this.element.removeClass('text-ubc-blue-cornflower');
+          this.element.removeClass('text-ubc-blue-polar');
+          this.element.removeClass('text-ubc-blue-frost');
+
           this.element.removeClass('fa-lg');
           this.element.removeClass('fa-2x');
           this.element.removeClass('fa-3x');
@@ -782,7 +824,8 @@
           this.element.removeClass('fa-wrench');
           this.element.removeClass('fa-youtube-play');
 
-
+          if (this.data.background)
+            this.element.addClass(this.data.background);
           if (this.data.size)
             this.element.addClass('fa-' + this.data.size);
           if (this.data.align)

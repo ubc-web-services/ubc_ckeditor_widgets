@@ -13,13 +13,13 @@
       });
       // Register the widget.
       editor.widgets.add('flex-2columns-2-1', {
-        template: '<div class="columns--2-1 flex-grid">' +
-          '<div class="flex-2"><p>First Column</p></div>' +
-          '<div class="flex-1"><p>Second Column</p></div>' +
+        template: '<div class="columns--2-1 md--flex-grid">' +
+          '<div class="md--flex-2"><p>First Column</p></div>' +
+          '<div class="md--flex-1"><p>Second Column</p></div>' +
           '</div>',
-        allowedContent: 'div(!columns--2-1,!flex-grid);' +
-          'div(!flex-2);' +
-          'div(!flex-1);',
+        allowedContent: 'div(!columns--2-1,!md--flex-grid);' +
+          'div(!md--flex-2);' +
+          'div(!md--flex-1);',
         // Minimum HTML which is required by this widget to work.
         requiredContent: 'div(columns--2-1)',
         editables: {

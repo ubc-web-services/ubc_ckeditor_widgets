@@ -13,26 +13,26 @@
       });
       // Register the widget.
       editor.widgets.add('flex-3columns', {
-        template: '<div class="columns--3 flex-grid">' +
-          '<div class="flex-1"><p>First Column</p></div>' +
-          '<div class="flex-1"><p>Second Column</p></div>' +
-          '<div class="flex-1"><p>Third Column</p></div>' +
+        template: '<div class="columns--3 md--flex-grid">' +
+          '<div class="md--flex-1"><p>First Column</p></div>' +
+          '<div class="md--flex-1"><p>Second Column</p></div>' +
+          '<div class="md--flex-1"><p>Third Column</p></div>' +
           '</div>',
-        allowedContent: 'div(!columns--3,!flex-grid);' +
-        'div(!flex-1);' +
-        'div(!flex-1);' +
-        'div(!flex-1);',
+        allowedContent: 'div(!columns--3,!md--flex-grid);' +
+        'div(!md--flex-1);' +
+        'div(!md--flex-1);' +
+        'div(!md--flex-1);',
         // Minimum HTML which is required by this widget to work.
         requiredContent: 'div(columns--3)',
         editables: {
           col1: {
-            selector: '.flex-grid > div:nth-child(1)',
+            selector: '.md--flex-grid > div:nth-child(1)',
           },
           col2: {
-            selector: '.flex-grid > div:nth-child(2)',
+            selector: '.md--flex-grid > div:nth-child(2)',
           },
           col3: {
-            selector: '.flex-grid > div:nth-child(3)',
+            selector: '.md--flex-grid > div:nth-child(3)',
           }
         },
         upcast: function (element) {

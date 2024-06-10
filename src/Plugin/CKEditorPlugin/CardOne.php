@@ -20,7 +20,7 @@ class CardOne extends CKEditorPluginBase {
    * Implements \Drupal\ckeditor\Plugin\CKEditorPluginInterface::getFile().
    */
   public function getFile() {
-    return drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/card-one/plugin.js';
+    return \Drupal::service('extension.list.module')->getPath('ubc_ckeditor_widgets') . '/plugins/card-one/plugin.js';
   }
 
   /**
@@ -43,8 +43,8 @@ class CardOne extends CKEditorPluginBase {
   public function getButtons() {
     return [
       'card-one' => [
-        'label' => t('One Card'),
-        'image' => drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/card-one/icons/card-one.png',
+        'label' => $this->t('One Card'),
+        'image' => \Drupal::service('extension.list.module')->getPath('ubc_ckeditor_widgets') . '/plugins/card-one/icons/card-one.png',
       ],
     ];
   }

@@ -20,7 +20,7 @@ class CardTwo extends CKEditorPluginBase {
    * Implements \Drupal\ckeditor\Plugin\CKEditorPluginInterface::getFile().
    */
   public function getFile() {
-    return drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/card-two/plugin.js';
+    return \Drupal::service('extension.list.module')->getPath('ubc_ckeditor_widgets') . '/plugins/card-two/plugin.js';
   }
 
   /**
@@ -43,8 +43,8 @@ class CardTwo extends CKEditorPluginBase {
   public function getButtons() {
     return [
       'card-two' => [
-        'label' => t('Two Cards'),
-        'image' => drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/card-two/icons/card-two.png',
+        'label' => $this->t('Two Cards'),
+        'image' => \Drupal::service('extension.list.module')->getPath('ubc_ckeditor_widgets') . '/plugins/card-two/icons/card-two.png',
       ],
     ];
   }

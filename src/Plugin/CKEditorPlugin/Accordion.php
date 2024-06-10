@@ -20,7 +20,7 @@ class Accordion extends CKEditorPluginBase {
    * Implements \Drupal\ckeditor\Plugin\CKEditorPluginInterface::getFile().
    */
   public function getFile() {
-    return drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/accordion/plugin.js';
+    return \Drupal::service('extension.list.module')->getPath('ubc_ckeditor_widgets') . '/plugins/accordion/plugin.js';
   }
 
   /**
@@ -43,8 +43,8 @@ class Accordion extends CKEditorPluginBase {
   public function getButtons() {
     return [
       'accordion' => [
-        'label' => t('Accordion'),
-        'image' => drupal_get_path('module', 'ubc_ckeditor_widgets') . '/plugins/accordion/icons/accordion.png',
+        'label' => $this->t('Accordion'),
+        'image' => \Drupal::service('extension.list.module')->getPath('ubc_ckeditor_widgets') . '/plugins/accordion/icons/accordion.png',
       ],
     ];
   }
