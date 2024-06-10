@@ -28,28 +28,25 @@ watch`. They will be built to `js/build/{pluginNameDirectory}.js`.  co
 
 ### Version 4 widget repos:
 1. https://github.com/ubc-web-services/ubc_ckeditor_widgets/tree/vanilla-js
-(master branch is out of date - all current releases are from vanilla-js branch)
 2. https://github.com/ubc-web-services/ubc-column-options-widget
 3. https://github.com/ubc-web-services/ubc-color-box-widget
-4. https://github.com/ubc-web-services/ubc_ckeditor_widgets/tree/CKE5 (in progress work on CKE5 widgets)
 
 ### CKE 4 widgets [CKE 5 widget status]:
 - accordion [complete]
 - accordion toggle [complete]
-- card-horizontal [in progress]
-- card-one [in progress]
-- card-two [in progress]
-- card-three [in progress]
+- card-horizontal [complete]
+- card-one [complete]
+- card-two [complete]
+- card-three [complete]
 - 2 columns [deprecated]
 - 2 columns 1 2 [deprecated]
 - 2 columns 2 1 [deprecated]
 - 3 columns [deprecated]
 - fontawesome icon [deprecated - no cke5 equivalent]
-- 2 columns with options [in progress]
-- 3 columns with options [in progress]
-- 4 columns with options [in progress]
-- 4 columns with options [in progress]
-- Color Box [in progress]
+- 2 columns with options [complete]
+- 3 columns with options [complete]
+- 4 columns with options [complete]
+- Color Box [complete]
 
 ## Net new CKE5 widgets:
 - UBC Table Class (adds presentational classes to table elements) [complete]
@@ -68,4 +65,3 @@ watch`. They will be built to `js/build/{pluginNameDirectory}.js`.  co
 - Dev Tools for CKE5 - https://www.drupal.org/project/ckeditor5_dev
 - CKE5 Drupal API - https://www.drupal.org/docs/drupal-apis/ckeditor-5-api/overview
 - Development guide - https://www.drupal.org/docs/core-modules-and-themes/core-modules/ckeditor-5-module/ckeditor-5-development
-
