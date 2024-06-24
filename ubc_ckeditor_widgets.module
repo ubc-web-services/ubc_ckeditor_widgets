@@ -10,6 +10,10 @@
  */
 function ubc_ckeditor_widgets_page_attachments_alter(array &$page) {
 
+  // Attaches css assets globally.
+  $page['#attached']['library'][] = 'ubc_ckeditor_widgets/ubc_ckeditor_widgets.ui';
+
+  // Read config and add to drupalSettings
   $config = \Drupal::config('ubc_ckeditor_widgets.settings');
   $fields = [
     'background_colors',
