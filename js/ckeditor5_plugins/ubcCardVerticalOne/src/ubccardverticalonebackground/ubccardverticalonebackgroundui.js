@@ -8,7 +8,7 @@ import {
 import {
   addListToDropdown,
   createDropdown,
-  Model
+  ViewModel
 } from 'ckeditor5/src/ui';
 import {
   Collection
