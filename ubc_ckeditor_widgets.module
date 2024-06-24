@@ -10,162 +10,37 @@
  */
 function ubc_ckeditor_widgets_page_attachments_alter(array &$page) {
 
-
-  // Attaches css assets globally.
-  $page['#attached']['library'][] = 'ubc_ckeditor_widgets/ubc_ckeditor_widgets.ui';
-
-  // Pass settings to JavaScript.
-  /*
   $config = \Drupal::config('ubc_ckeditor_widgets.settings');
-  $page['#attached']['drupalSettings']['ubcCkeditorWidgets'] = [
-    'alignStyles' => $config->get('align_styles'),
-    'backgroundColors' => $config->get('background_colors'),
-    'gapStyles' => $config->get('gap_styles'),
-    'paddingStyles' => $config->get('padding_styles'),
-    'marginStyles' => $config->get('margin_styles'),
-    'threeColumnLayoutStyles' => $config->get('three_column_layout_styles'),
-    'twoColumnLayoutStyles' => $config->get('two_column_layout_styles'),
-
-  ];
-   */
-
-  /**
-  * The style sets of the various plugins.
-  * NOTE - these are not yet in use - refer to active styles in js/config/config.js
-  */
-
-  $page['#attached']['drupalSettings']['ubcCkeditorWidgets']['backgroundColors'] = [
-    ['label' => 'None', 'value' => 'bg-transparent'],
-    ['label' => 'White', 'value' => 'bg-white'],
-    ['label' => 'Light Grey', 'value' => 'bg-grey-100'],
-    ['label' => 'Unit Primary', 'value' => 'bg-unit-primary'],
-    ['label' => 'Unit Secondary', 'value' => 'bg-unit-secondary'],
-    ['label' => 'Unit Tertiary', 'value' => 'bg-unit-tertiary'],
-    ['label' => 'Unit Accent', 'value' => 'bg-unit-accent'],
-    ['label' => 'UBC Blue', 'value' => 'bg-ubc-blue'],
-    ['label' => 'UBC Sea Blue', 'value' => 'bg-ubc-blue-sea'],
-    ['label' => 'UBC Cobalt Blue', 'value' => 'bg-ubc-blue-cobalt'],
-    ['label' => 'UBC Neptune Blue', 'value' => 'bg-ubc-blue-neptune'],
-    ['label' => 'UBC Cornflower Blue', 'value' => 'bg-ubc-blue-cornflower'],
-    ['label' => 'UBC Polar Blue', 'value' => 'bg-ubc-blue-polar'],
-    ['label' => 'UBC Frost Blue', 'value' => 'bg-ubc-blue-frost'],
+  $fields = [
+    'background_colors' => 'backgroundColors',
+    'gap_styles' => 'gapStyles',
+    'padding_styles' => 'paddingStyles',
+    'margin_styles' => 'marginStyles',
+    'table_styles' => 'tableStyles',
+    'three_column_layout_styles' => 'threeColumnLayoutStyles',
+    'two_column_layout_styles' => 'twoColumnLayoutStyles',
+    'width_styles' => 'widthStyles',
   ];
 
-  $page['#attached']['drupalSettings']['ubcCkeditorWidgets']['gapStyles'] = [
-    ['label' => 'None', 'value' => 'gap-0'],
-    ['label' => 'Small', 'value' => 'gap-4'],
-    ['label' => 'Normal', 'value' => 'gap-6'],
-    ['label' => 'Large', 'value' => 'gap-8'],
-    ['label' => 'XLarge', 'value' => 'gap-12'],
-    ['label' => 'XXLarge', 'value' => 'gap-16'],
-  ];
+  $settings = [];
 
-  $page['#attached']['drupalSettings']['ubcCkeditorWidgets']['marginStyles'] = [
-    ['label' => 'None', 'value' => 'my-0'],
-    ['label' => 'Small Vertical', 'value' => 'my-4'],
-    ['label' => 'Normal Vertical', 'value' => 'my-6'],
-    ['label' => 'Large Vertical', 'value' => 'my-8'],
-    ['label' => 'XLarge Vertical', 'value' => 'my-12'],
-    ['label' => 'XXLarge Vertical', 'value' => 'my-16'],
-  ];
+  foreach ($fields as $field => $label) {
+    $key_value_pairs = $config->get($field);
+    if ($key_value_pairs) {
+      // Parse the newline-separated value|key pairs.
+      $pairs = explode("\n", $key_value_pairs);
+      foreach ($pairs as $pair) {
+        list($value, $key) = explode('|', $pair, 2);
+        $settings[$label][] = [
+          'label' => trim($key),
+          'value' => trim($value),
+        ];
+      }
+    }
+  }
 
-  $page['#attached']['drupalSettings']['ubcCkeditorWidgets']['paddingStyles'] = [
-    ['label' => 'None', 'value' => 'p-0'],
-    ['label' => 'Small', 'value' => 'p-4'],
-    ['label' => 'Normal', 'value' => 'p-6'],
-    ['label' => 'Large', 'value' => 'p-8'],
-    ['label' => 'XLarge', 'value' => 'p-12'],
-    ['label' => 'XXLarge', 'value' => 'p-16'],
-  ];
-
-  $page['#attached']['drupalSettings']['ubcCkeditorWidgets']['tableStyles'] = [
-    ['label' => 'None', 'value' => 'table--nostyle'],
-    ['label' => 'Plain', 'value' => 'table--plain'],
-    ['label' => 'Condensed', 'value' => 'table--condensed'],
-    ['label' => 'Striped', 'value' => 'table--striped'],
-    ['label' => 'Stripe on hover', 'value' => 'table--hover'],
-  ];
-
-  $page['#attached']['drupalSettings']['ubcCkeditorWidgets']['threeColumnLayoutStyles'] = [
-    ['label' => 'Equal Width', 'value' => 'align-equal'],
-    ['label' => 'Large Left', 'value' => 'align-large-left'],
-    ['label' => 'Large Center', 'value' => 'align-large-center'],
-    ['label' => 'Large Right', 'value' => 'align-large-right'],
-  ];
-
-  $page['#attached']['drupalSettings']['ubcCkeditorWidgets']['twoColumnLayoutStyles'] = [
-    ['label' => 'Equal Width', 'value' => 'align-equal'],
-    ['label' => 'Large Left', 'value' => 'align-large-left'],
-    ['label' => 'Large Right', 'value' => 'align-large-right'],
-  ];
-
-  $page['#attached']['drupalSettings']['ubcCkeditorWidgets']['widthStyles'] = [
-    ['label' => 'Column width: Auto', 'value' => 'w-auto'],
-    ['label' => 'Column width: 1/2', 'value' => 'w-half'],
-    ['label' => 'Column width: 1/3', 'value' => 'w-one-third'],
-    ['label' => 'Column width: 1/4', 'value' => 'w-one-quarter'],
-    ['label' => 'Column width: 1/5', 'value' => 'w-one-fifth'],
-    ['label' => 'Column width: 1/6', 'value' => 'w-one-sixth'],
-  ];
-
-  /**
-  * The default styles of the various plugins.
-  */
-  /*
-  $page['#attached']['drupalSettings']['ubcCkeditorWidgets']['defaultCardHorizontalStyles'] = [
-    ['backgroundclass' => 'bg-white'],
-    ['layoutclass' => 'widget-card__normal'],
-    ['marginclass' => 'my-6'],
-    ['shadowclass' => 'drop-shadow-none'],
-  ];
-
-  $page['#attached']['drupalSettings']['ubcCkeditorWidgets']['defaultCardVerticalOneStyles'] = [
-    ['backgroundclass' => 'bg-white'],
-    ['marginclass' => 'my-6'],
-    ['shadowclass' => 'drop-shadow-none'],
-  ];
-
-  $page['#attached']['drupalSettings']['ubcCkeditorWidgets']['defaultCardVerticalTwoStyles'] = [
-    ['backgroundclass' => 'bg-white'],
-    ['gapclass' => 'gap-6'],
-    ['marginclass' => 'my-6'],
-    ['shadowclass' => 'drop-shadow-none'],
-  ];
-
-  $page['#attached']['drupalSettings']['ubcCkeditorWidgets']['defaultCardVerticalThreeStyles'] = [
-    ['backgroundclass' => 'bg-white'],
-    ['gapclass' => 'gap-6'],
-    ['marginclass' => 'my-6'],
-    ['shadowclass' => 'drop-shadow-none'],
-  ];
-
-  $page['#attached']['drupalSettings']['ubcCkeditorWidgets']['defaultColorBoxStyles'] = [
-    ['alignclass' => 'align-center'],
-    ['backgroundclass' => 'bg-white'],
-    ['marginclass' => 'my-6'],
-    ['paddingclass' => 'p-6'],
-    ['shadowclass' => 'drop-shadow-none'],
-  ];
-
-  $page['#attached']['drupalSettings']['ubcCkeditorWidgets']['defaultColumnsFourStyles'] = [
-    ['gapclass' => 'gap-6'],
-    ['marginclass' => 'my-6'],
-    ['keylineclass' => 'widget-keyline-none'],
-  ];
-
-  $page['#attached']['drupalSettings']['ubcCkeditorWidgets']['defaultColumnsThreeStyles'] = [
-    ['gapclass' => 'gap-6'],
-    ['layoutcol3class' => 'align-equal'],
-    ['marginclass' => 'my-6'],
-    ['keylineclass' => 'widget-keyline-none'],
-  ];
-
-  $page['#attached']['drupalSettings']['ubcCkeditorWidgets']['defaultColumnsTwoStyles'] = [
-    ['gapclass' => 'gap-6'],
-    ['layoutcolclass' => 'align-equal'],
-    ['marginclass' => 'my-6'],
-    ['keylineclass' => 'widget-keyline-none'],
-  ];
-  */
+  if (!empty($settings)) {
+    $page['#attached']['drupalSettings']['ubcCkeditorWidgets'] = $settings;
+  }
 
 }
