@@ -12,30 +12,60 @@ function ubc_ckeditor_widgets_page_attachments_alter(array &$page) {
 
   $config = \Drupal::config('ubc_ckeditor_widgets.settings');
   $fields = [
-    'background_colors' => 'backgroundColors',
-    'gap_styles' => 'gapStyles',
-    'padding_styles' => 'paddingStyles',
-    'margin_styles' => 'marginStyles',
-    'table_styles' => 'tableStyles',
-    'three_column_layout_styles' => 'threeColumnLayoutStyles',
-    'two_column_layout_styles' => 'twoColumnLayoutStyles',
-    'width_styles' => 'widthStyles',
+    'background_colors',
+    'gap_styles',
+    'padding_styles',
+    'margin_styles',
+    'table_styles',
+    'three_column_layout_styles',
+    'two_column_layout_styles',
+    'width_styles',
+  ];
+
+  $default_values = [
+    'background_colors' => [
+      ['label' => 'White', 'value' => 'bg-white'],
+    ],
+    'gap_styles' => [
+      ['label' => 'Normal', 'value' => 'gap-6'],
+    ],
+    'padding_styles' => [
+      ['label' => 'Normal', 'value' => 'p-6'],
+    ],
+    'margin_styles' => [
+      ['label' => 'Normal', 'value' => 'my-6'],
+    ],
+    'table_styles' => [
+      ['label' => 'None', 'value' => 'table--nostyle'],
+    ],
+    'three_column_layout_styles' => [
+      ['label' => 'Equal Width', 'value' => 'align-equal'],
+    ],
+    'two_column_layout_styles' => [
+      ['label' => 'Equal Width', 'value' => 'align-equal'],
+    ],
+    'width_styles' => [
+      ['label' => 'Column width: Auto', 'value' => 'w-auto'],
+    ],
+
   ];
 
   $settings = [];
 
-  foreach ($fields as $field => $label) {
+  foreach ($fields as $field) {
     $key_value_pairs = $config->get($field);
     if ($key_value_pairs) {
       // Parse the newline-separated value|key pairs.
       $pairs = explode("\n", $key_value_pairs);
       foreach ($pairs as $pair) {
         list($value, $key) = explode('|', $pair, 2);
-        $settings[$label][] = [
+        $settings[convertToCamelCase($field)][] = [
           'label' => trim($key),
           'value' => trim($value),
         ];
       }
+    } else {
+      $settings[convertToCamelCase($field)] = $default_values[$field];
     }
   }
 
@@ -43,4 +73,18 @@ function ubc_ckeditor_widgets_page_attachments_alter(array &$page) {
     $page['#attached']['drupalSettings']['ubcCkeditorWidgets'] = $settings;
   }
 
+}
+
+/**
+ * Converts a snake_case string to camelCase.
+ *
+ * @param string $string
+ *   The snake_case string.
+ *
+ * @return string
+ *   The camelCase string.
+ */
+function convertToCamelCase($string) {
+  $result = lcfirst(str_replace(' ', '', ucwords(str_replace('_', ' ', $string))));
+  return $result;
 }
