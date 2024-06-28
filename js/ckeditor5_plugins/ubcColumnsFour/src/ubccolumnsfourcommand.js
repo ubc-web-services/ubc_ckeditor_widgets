@@ -77,16 +77,16 @@ function createUbcColumnsFour(writer) {
     class: 'widget-column-options widget-columns-4 align-equal'
   });
   const firstColumn = writer.createElement('ubcColumnsFourColumn', {
-    class: 'widget-region-one'
+    class: 'widget-region-one first-child--mt-0'
   });
   const secondColumn = writer.createElement('ubcColumnsFourColumn', {
-    class: 'widget-region-two'
+    class: 'widget-region-two first-child--mt-0'
   });
   const thirdColumn = writer.createElement('ubcColumnsFourColumn', {
-    class: 'widget-region-three'
+    class: 'widget-region-three first-child--mt-0'
   });
   const fourthColumn = writer.createElement('ubcColumnsFourColumn', {
-    class: 'widget-region-four'
+    class: 'widget-region-four first-child--mt-0'
   });
   const wrapper = writer.createElement('ubcColumnsFourWrapper', defaultColumnsGapStyle, {
     class: 'widget--md--grid'

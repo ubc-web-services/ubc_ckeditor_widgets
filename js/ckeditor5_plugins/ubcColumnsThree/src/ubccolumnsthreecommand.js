@@ -77,13 +77,13 @@ function createUbcColumnsThree(writer) {
     class: 'widget-column-options widget-columns-3'
   });
   const firstColumn = writer.createElement('ubcColumnsThreeColumn', {
-    class: 'widget-region-one'
+    class: 'widget-region-one first-child--mt-0'
   });
   const secondColumn = writer.createElement('ubcColumnsThreeColumn', {
-    class: 'widget-region-two'
+    class: 'widget-region-two first-child--mt-0'
   });
   const thirdColumn = writer.createElement('ubcColumnsThreeColumn', {
-    class: 'widget-region-three'
+    class: 'widget-region-three first-child--mt-0'
   });
   const wrapper = writer.createElement('ubcColumnsThreeWrapper', defaultColumnsGapStyle, {
     class: 'widget--md--grid'

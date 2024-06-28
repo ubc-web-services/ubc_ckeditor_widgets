@@ -155,7 +155,11 @@ export default class UbcColumnsTwoEditing extends Plugin {
     // <ubcColumnsTwoColumn> model, provided it is a child element of <ubcColumnsTwo>,
     // as required by the schema.
     conversion.for('upcast').elementToElement({
-      model: 'ubcColumnsTwoColumn',
+      model: (viewElement, { writer }) => {
+        return writer.createElement('ubcColumnsTwoColumn', {
+            class: viewElement.getAttribute('class')
+        });
+      },
       view: {
         name: 'div',
         classes: ['first-child--mt-0'],
