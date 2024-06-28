@@ -78,10 +78,10 @@ function createUbcColumnsTwo(writer) {
     class: 'widget-column-options widget-columns-2'
   });
   const firstColumn = writer.createElement('ubcColumnsTwoColumn', {
-    class: 'widget-region-one'
+    class: 'widget-region-one first-child--mt-0'
   });
   const secondColumn = writer.createElement('ubcColumnsTwoColumn', {
-    class: 'widget-region-two'
+    class: 'widget-region-two first-child--mt-0'
   });
   const wrapper = writer.createElement('ubcColumnsTwoWrapper', defaultColumnsGapStyle, {
     class: 'widget--md--grid'
