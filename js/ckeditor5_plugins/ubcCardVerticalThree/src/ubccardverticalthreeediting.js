@@ -80,6 +80,23 @@ export default class UbcCardVerticalThreeEditing extends Plugin {
 
   init() {
     const editor = this.editor;
+    this._defineSchema();
+    this._defineConverters();
+    editor.model.schema.extend('ubcCardVerticalThree', {
+      allowAttributes: ['class']
+    });
+    editor.model.schema.extend('ubcCardVerticalThreeInner', {
+      allowAttributes: ['class']
+    });
+    editor.model.schema.extend('ubcCardVerticalThreeImage', {
+      allowAttributes: ['class']
+    });
+    editor.model.schema.extend('ubcCardVerticalThreeContent', {
+      allowAttributes: ['class']
+    });
+    editor.model.schema.extend('ubcCardVerticalThreeFooter', {
+      allowAttributes: ['class']
+    });
     editor.model.schema.extend('heading2', {
       allowAttributes: ['class']
     });
@@ -99,8 +116,6 @@ export default class UbcCardVerticalThreeEditing extends Plugin {
       model: 'class',
       view: 'class'
     });
-    this._defineSchema();
-    this._defineConverters();
     editor.commands.add(
       'ubcCardVerticalThree',
       new UbcCardVerticalThreeCommand(editor),
@@ -198,7 +213,11 @@ export default class UbcCardVerticalThreeEditing extends Plugin {
     // processed by CKEditor, then CKEditor recognizes and loads it as a
     // <ubcCardVerticalThree> model.
     conversion.for('upcast').elementToElement({
-      model: 'ubcCardVerticalThree',
+      model: (viewElement, { writer }) => {
+        return writer.createElement('ubcCardVerticalThree', {
+            class: viewElement.getAttribute('class')
+        });
+      },
       view: {
         name: 'div',
         classes: ['widget-card', 'card--three', 'widget-card--vertical-three', 'md--flex-grid'],
@@ -206,7 +225,11 @@ export default class UbcCardVerticalThreeEditing extends Plugin {
     });
 
     conversion.for('upcast').elementToElement({
-      model: 'ubcCardVerticalThreeContainer',
+      model: (viewElement, { writer }) => {
+        return writer.createElement('ubcCardVerticalThreeContainer', {
+            class: viewElement.getAttribute('class')
+        });
+      },
       view: {
         name: 'div',
         classes: ['md--flex-1'],
@@ -214,7 +237,11 @@ export default class UbcCardVerticalThreeEditing extends Plugin {
     });
 
     conversion.for('upcast').elementToElement({
-      model: 'ubcCardVerticalThreeInner',
+      model: (viewElement, { writer }) => {
+        return writer.createElement('ubcCardVerticalThreeInner', {
+            class: viewElement.getAttribute('class')
+        });
+      },
       view: {
         name: 'div',
         classes: ['ubc-card', 'ubc-card--vert', 'hover--no-underline', 'group'],
@@ -222,7 +249,11 @@ export default class UbcCardVerticalThreeEditing extends Plugin {
     });
 
     conversion.for('upcast').elementToElement({
-      model: 'ubcCardVerticalThreeImage',
+      model: (viewElement, { writer }) => {
+        return writer.createElement('ubcCardVerticalThreeImage', {
+            class: viewElement.getAttribute('class')
+        });
+      },
       view: {
         name: 'div',
         classes: ['ubc-card__media', 'object-cover'],
@@ -230,7 +261,11 @@ export default class UbcCardVerticalThreeEditing extends Plugin {
     });
 
     conversion.for('upcast').elementToElement({
-      model: 'ubcCardVerticalThreeContent',
+      model: (viewElement, { writer }) => {
+        return writer.createElement('ubcCardVerticalThreeContent', {
+            class: viewElement.getAttribute('class')
+        });
+      },
       view: {
         name: 'div',
         classes: ['ubc-card__content'],
@@ -238,7 +273,11 @@ export default class UbcCardVerticalThreeEditing extends Plugin {
     });
 
     conversion.for('upcast').elementToElement({
-      model: 'ubcCardVerticalThreeFooter',
+      model: (viewElement, { writer }) => {
+        return writer.createElement('ubcCardVerticalThreeFooter', {
+            class: viewElement.getAttribute('class')
+        });
+      },
       view: {
         name: 'div',
         classes: ['ubc-card__actions'],

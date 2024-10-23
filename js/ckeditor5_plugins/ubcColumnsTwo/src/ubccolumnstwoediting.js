@@ -135,7 +135,11 @@ export default class UbcColumnsTwoEditing extends Plugin {
     // processed by CKEditor, then CKEditor recognizes and loads it as a
     // <ubcColumnsTwo> model.
     conversion.for('upcast').elementToElement({
-      model: 'ubcColumnsTwo',
+      model: (viewElement, { writer }) => {
+        return writer.createElement('ubcColumnsTwo', {
+            class: viewElement.getAttribute('class')
+        });
+      },
       view: {
         name: 'div',
         classes: ['widget-columns-2'],
@@ -143,7 +147,11 @@ export default class UbcColumnsTwoEditing extends Plugin {
     });
 
     conversion.for('upcast').elementToElement({
-      model: 'ubcColumnsTwoWrapper',
+      model: (viewElement, { writer }) => {
+        return writer.createElement('ubcColumnsTwoWrapper', {
+            class: viewElement.getAttribute('class')
+        });
+      },
       view: {
         name: 'div',
         classes: 'widget--md--grid',

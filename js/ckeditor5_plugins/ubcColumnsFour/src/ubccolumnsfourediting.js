@@ -55,12 +55,21 @@ export default class UbcColumnsFourEditing extends Plugin {
 
   init() {
     const editor = this.editor;
+    this._defineSchema();
+    this._defineConverters();
+    editor.model.schema.extend('ubcColumnsFour', {
+      allowAttributes: ['class']
+    });
+    editor.model.schema.extend('ubcColumnsFourWrapper', {
+      allowAttributes: ['class']
+    });
+    editor.model.schema.extend('ubcColumnsFourColumn', {
+      allowAttributes: ['class']
+    });
     editor.conversion.attributeToAttribute({
       model: 'class',
       view: 'class'
     });
-    this._defineSchema();
-    this._defineConverters();
     editor.commands.add(
       'ubcColumnsFour',
       new UbcColumnsFourCommand(editor),
@@ -144,7 +153,11 @@ export default class UbcColumnsFourEditing extends Plugin {
     // processed by CKEditor, then CKEditor recognizes and loads it as a
     // <ubcColumnsFour> model.
     conversion.for('upcast').elementToElement({
-      model: 'ubcColumnsFour',
+      model: (viewElement, { writer }) => {
+        return writer.createElement('ubcColumnsFour', {
+            class: viewElement.getAttribute('class')
+        });
+      },
       view: {
         name: 'div',
         classes: ['widget-columns-4'],
@@ -152,10 +165,13 @@ export default class UbcColumnsFourEditing extends Plugin {
     });
 
     conversion.for('upcast').elementToElement({
-      model: 'ubcColumnsFourWrapper',
+      model: (viewElement, { writer }) => {
+        return writer.createElement('ubcColumnsFourWrapper', {
+            class: viewElement.getAttribute('class')
+        });
+      },
       view: {
         name: 'div',
-        //classes: 'widget--md--grid',
       },
     });
 

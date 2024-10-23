@@ -53,12 +53,21 @@ export default class UbcColumnsThreeEditing extends Plugin {
 
   init() {
     const editor = this.editor;
+    this._defineSchema();
+    this._defineConverters();
+    editor.model.schema.extend('ubcColumnsThree', {
+      allowAttributes: ['class']
+    });
+    editor.model.schema.extend('ubcColumnsThreeWrapper', {
+      allowAttributes: ['class']
+    });
+    editor.model.schema.extend('ubcColumnsThreeColumn', {
+      allowAttributes: ['class']
+    });
     editor.conversion.attributeToAttribute({
       model: 'class',
       view: 'class'
     });
-    this._defineSchema();
-    this._defineConverters();
     editor.commands.add(
       'ubcColumnsThree',
       new UbcColumnsThreeCommand(editor),
@@ -139,7 +148,11 @@ export default class UbcColumnsThreeEditing extends Plugin {
     // processed by CKEditor, then CKEditor recognizes and loads it as a
     // <ubcColumnsThree> model.
     conversion.for('upcast').elementToElement({
-      model: 'ubcColumnsThree',
+      model: (viewElement, { writer }) => {
+        return writer.createElement('ubcColumnsThree', {
+            class: viewElement.getAttribute('class')
+        });
+      },
       view: {
         name: 'div',
         classes: ['widget-columns-3'],
@@ -147,7 +160,11 @@ export default class UbcColumnsThreeEditing extends Plugin {
     });
 
     conversion.for('upcast').elementToElement({
-      model: 'ubcColumnsThreeWrapper',
+      model: (viewElement, { writer }) => {
+        return writer.createElement('ubcColumnsThreeWrapper', {
+            class: viewElement.getAttribute('class')
+        });
+      },
       view: {
         name: 'div',
         classes: 'widget--md--grid',

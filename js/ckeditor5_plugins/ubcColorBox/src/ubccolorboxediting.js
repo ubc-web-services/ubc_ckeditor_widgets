@@ -39,12 +39,18 @@ export default class UbcColorBoxEditing extends Plugin {
 
   init() {
     const editor = this.editor;
+    this._defineSchema();
+    this._defineConverters();
+    editor.model.schema.extend('ubcColorBox', {
+      allowAttributes: ['class']
+    });
+    editor.model.schema.extend('ubcColorBoxInner', {
+      allowAttributes: ['class']
+    });
     editor.conversion.attributeToAttribute({
       model: 'class',
       view: 'class'
     });
-    this._defineSchema();
-    this._defineConverters();
     editor.commands.add(
       'ubcColorBox',
       new UbcColorBoxCommand(editor),
@@ -109,7 +115,11 @@ export default class UbcColorBoxEditing extends Plugin {
     // processed by CKEditor, then CKEditor recognizes and loads it as a
     // <ubcColorBox> model.
     conversion.for('upcast').elementToElement({
-      model: 'ubcColorBox',
+      model: (viewElement, { writer }) => {
+        return writer.createElement('ubcColorBox', {
+            class: viewElement.getAttribute('class')
+        });
+      },
       view: {
         name: 'div',
         classes: 'widget-color-box',
@@ -117,7 +127,11 @@ export default class UbcColorBoxEditing extends Plugin {
     });
 
     conversion.for('upcast').elementToElement({
-      model: 'ubcColorBoxInner',
+      model: (viewElement, { writer }) => {
+        return writer.createElement('ubcColorBoxInner', {
+            class: viewElement.getAttribute('class')
+        });
+      },
       view: {
         name: 'div',
         classes: ['widget-content', 'first-child--mt-0'],

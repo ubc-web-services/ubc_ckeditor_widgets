@@ -48,6 +48,15 @@ export default class UbcAccordionEditing extends Plugin {
     editor.model.schema.extend('ubcAccordion', {
       allowAttributes: ['class']
     });
+    editor.model.schema.extend('ubcAccordionTitleWrapper', {
+      allowAttributes: ['class']
+    });
+    editor.model.schema.extend('ubcAccordionTitle', {
+      allowAttributes: ['class']
+    });
+    editor.model.schema.extend('ubcAccordionDescription', {
+      allowAttributes: ['class']
+    });
     editor.conversion.attributeToAttribute({
       model: 'class',
       view: 'class'
@@ -140,7 +149,11 @@ export default class UbcAccordionEditing extends Plugin {
     // processed by CKEditor, then CKEditor recognizes and loads it as a
     // <ubcAccordion> model.
     conversion.for('upcast').elementToElement({
-      model: 'ubcAccordion',
+      model: (viewElement, { writer }) => {
+        return writer.createElement('ubcAccordion', {
+            class: viewElement.getAttribute('class')
+        });
+      },
       view: {
         name: 'div',
         classes: ['widget-accordion'],
@@ -148,7 +161,11 @@ export default class UbcAccordionEditing extends Plugin {
     });
 
     conversion.for('upcast').elementToElement({
-      model: 'ubcAccordionTitleWrapper',
+      model: (viewElement, { writer }) => {
+        return writer.createElement('ubcAccordionTitleWrapper', {
+            class: viewElement.getAttribute('class')
+        });
+      },
       view: {
         name: 'div',
         classes: ['accordion', 'js-reveal__parent'],
@@ -160,7 +177,11 @@ export default class UbcAccordionEditing extends Plugin {
     // <ubcAccordionTitle> model, provided it is a child element of <ubcAccordion>,
     // as required by the schema.
     conversion.for('upcast').elementToElement({
-      model: 'ubcAccordionTitle',
+      model: (viewElement, { writer }) => {
+        return writer.createElement('ubcAccordionTitle', {
+            class: viewElement.getAttribute('class')
+        });
+      },
       view: {
         name: 'div',
         classes: ['js-reveal__trigger', 'accordion__trigger'],
@@ -172,7 +193,11 @@ export default class UbcAccordionEditing extends Plugin {
     // <ubcAccordionDescription> model, provided it is a child element of
     // <ubcAccordion>, as required by the schema.
     conversion.for('upcast').elementToElement({
-      model: 'ubcAccordionDescription',
+      model: (viewElement, { writer }) => {
+        return writer.createElement('ubcAccordionDescription', {
+            class: viewElement.getAttribute('class')
+        });
+      },
       view: {
         name: 'div',
         classes: ['js-reveal__target', 'accordion__content', 'clearfix'],

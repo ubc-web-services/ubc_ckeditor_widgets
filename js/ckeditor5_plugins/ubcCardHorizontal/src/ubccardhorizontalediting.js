@@ -60,6 +60,30 @@ export default class UbcCardHorizontalEditing extends Plugin {
 
   init() {
     const editor = this.editor;
+    this._defineSchema();
+    this._defineConverters();
+    editor.conversion.attributeToAttribute({
+      model: 'class',
+      view: 'class'
+    });
+    editor.model.schema.extend('ubcCardHorizontal', {
+      allowAttributes: ['class']
+    });
+    editor.model.schema.extend('ubcCardHorizontalWrapper', {
+      allowAttributes: ['class']
+    });
+    editor.model.schema.extend('ubcCardHorizontalImage', {
+      allowAttributes: ['class']
+    });
+    editor.model.schema.extend('ubcCardHorizontalInner', {
+      allowAttributes: ['class']
+    });
+    editor.model.schema.extend('ubcCardHorizontalContent', {
+      allowAttributes: ['class']
+    });
+    editor.model.schema.extend('ubcCardHorizontalFooter', {
+      allowAttributes: ['class']
+    });
     editor.model.schema.extend('heading2', {
       allowAttributes: ['class']
     });
@@ -75,12 +99,6 @@ export default class UbcCardHorizontalEditing extends Plugin {
     editor.model.schema.extend('heading6', {
       allowAttributes: ['class']
     });
-    editor.conversion.attributeToAttribute({
-      model: 'class',
-      view: 'class'
-    });
-    this._defineSchema();
-    this._defineConverters();
     editor.commands.add(
       'ubcCardHorizontal',
       new UbcCardHorizontalCommand(editor),
@@ -190,7 +208,11 @@ export default class UbcCardHorizontalEditing extends Plugin {
     // processed by CKEditor, then CKEditor recognizes and loads it as a
     // <ubcCardHorizontal> model.
     conversion.for('upcast').elementToElement({
-      model: 'ubcCardHorizontal',
+      model: (viewElement, { writer }) => {
+        return writer.createElement('ubcCardHorizontal', {
+            class: viewElement.getAttribute('class')
+        });
+      },
       view: {
         name: 'div',
         classes: ['widget-card', 'widget-card--horizontal'],
@@ -198,7 +220,11 @@ export default class UbcCardHorizontalEditing extends Plugin {
     });
 
     conversion.for('upcast').elementToElement({
-      model: 'ubcCardHorizontalWrapper',
+      model: (viewElement, { writer }) => {
+        return writer.createElement('ubcCardHorizontalWrapper', {
+            class: viewElement.getAttribute('class')
+        });
+      },
       view: {
         name: 'div',
         classes: ['ubc-card', 'ubc-card--horiz', 'hover--no-underline', 'group'],
@@ -206,7 +232,11 @@ export default class UbcCardHorizontalEditing extends Plugin {
     });
 
     conversion.for('upcast').elementToElement({
-      model: 'ubcCardHorizontalImage',
+      model: (viewElement, { writer }) => {
+        return writer.createElement('ubcCardHorizontalImage', {
+            class: viewElement.getAttribute('class')
+        });
+      },
       view: {
         name: 'div',
         classes: ['first-image', 'ubc-card__media'],
@@ -218,7 +248,11 @@ export default class UbcCardHorizontalEditing extends Plugin {
     // <ubcCardHorizontalInner> model, provided it is a child element of <ubcCardHorizontal>,
     // as required by the schema.
     conversion.for('upcast').elementToElement({
-      model: 'ubcCardHorizontalInner',
+      model: (viewElement, { writer }) => {
+        return writer.createElement('ubcCardHorizontalInner', {
+            class: viewElement.getAttribute('class')
+        });
+      },
       view: {
         name: 'div',
         classes: ['ubc-card__content_wrapper'],
@@ -230,7 +264,11 @@ export default class UbcCardHorizontalEditing extends Plugin {
     // <ubcCardHorizontalContent> model, provided it is a child element of
     // <ubcCardHorizontal>, as required by the schema.
     conversion.for('upcast').elementToElement({
-      model: 'ubcCardHorizontalContent',
+      model: (viewElement, { writer }) => {
+        return writer.createElement('ubcCardHorizontalContent', {
+            class: viewElement.getAttribute('class')
+        });
+      },
       view: {
         name: 'div',
         classes: ['first-content', 'ubc-card__content'],
@@ -242,7 +280,11 @@ export default class UbcCardHorizontalEditing extends Plugin {
     // <ubcCardHorizontalFooter> model, provided it is a child element of
     // <ubcCardHorizontal>, as required by the schema.
     conversion.for('upcast').elementToElement({
-      model: 'ubcCardHorizontalFooter',
+      model: (viewElement, { writer }) => {
+        return writer.createElement('ubcCardHorizontalFooter', {
+            class: viewElement.getAttribute('class')
+        });
+      },
       view: {
         name: 'div',
         classes: ['first-footer', 'ubc-card__actions'],
