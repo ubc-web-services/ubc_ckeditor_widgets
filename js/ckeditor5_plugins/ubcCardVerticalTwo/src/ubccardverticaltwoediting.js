@@ -76,7 +76,7 @@ export default class UbcCardVerticalTwoEditing extends Plugin {
     editor.model.schema.extend('ubcCardVerticalTwoImage', {
       allowAttributes: ['class']
     });
-    editor.model.schema.extend('uubcCardVerticalTwoContent', {
+    editor.model.schema.extend('ubcCardVerticalTwoContent', {
       allowAttributes: ['class']
     });
     editor.model.schema.extend('ubcCardVerticalTwoFooter', {
