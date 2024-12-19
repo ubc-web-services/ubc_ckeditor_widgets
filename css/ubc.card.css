@@ -78,6 +78,14 @@
   margin-top: 0;
 }
 
+@media (max-width: 959px) {
+
+  .md--flex-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+}
 
 @media (min-width: 960px) {
 
