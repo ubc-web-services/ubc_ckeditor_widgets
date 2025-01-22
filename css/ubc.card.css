@@ -41,7 +41,7 @@
 
 /* Cards */
 /* make sure that the card wrapper doesn't take on the background colour */
-.widget-card {
+.widget-card:not(.card--one) {
   background-color: inherit !important;
 }
 
