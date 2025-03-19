@@ -13,6 +13,9 @@ import UbcColumnsTwoEditing from './ubccolumnstwoediting';
 import UbcColumnsTwoUI from './ubccolumnstwoui';
 import UbcColumnsTwoToolbar from './ubccolumnstwotoolbar';
 import UbcColumnsTwoGap from './ubccolumnstwogap';
+import UbcColumnsTwoBackground from './ubccolumnstwobackground';
+import UbcColumnsTwoPadding from './ubccolumnstwopadding';
+import UbcColumnsTwoShadow from './ubccolumnstwoshadow';
 import UbcColumnsTwoKeyline from './ubccolumnstwokeyline';
 import UbcColumnsTwoMargin from './ubccolumnstwomargin';
 import UbcColumnsTwoLayout from './ubccolumnstwolayout';
@@ -30,6 +33,9 @@ export default class UbcColumnsTwo extends Plugin {
       UbcColumnsTwoUI,
       UbcColumnsTwoToolbar,
       UbcColumnsTwoGap,
+      UbcColumnsTwoBackground,
+      UbcColumnsTwoShadow,
+      UbcColumnsTwoPadding,
       UbcColumnsTwoKeyline,
       UbcColumnsTwoMargin,
       UbcColumnsTwoLayout

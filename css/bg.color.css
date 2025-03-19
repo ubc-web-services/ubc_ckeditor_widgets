@@ -1,66 +1,105 @@
 /* background colours (with card overrides */
 
-.bg-unit-primary:not(.widget-card),
-.widget-card.bg-unit-primary .ubc-card {
+.bg-unit-primary:not(.widget-card, .widget-column-options),
+.widget-card.bg-unit-primary .ubc-card,
+.widget-column-options.bg-unit-primary .widget-region-one,
+.widget-column-options.bg-unit-primary .widget-region-two,
+.widget-column-options.bg-unit-primary .widget-region-three {
   background-color: var(--color-primary);
 }
 
-.bg-unit-secondary:not(.widget-card),
-.widget-card.bg-unit-secondary .ubc-card {
+.bg-unit-secondary:not(.widget-card, .widget-column-options),
+.widget-card.bg-unit-secondary .ubc-card,
+.widget-column-options.bg-unit-secondary .widget-region-one,
+.widget-column-options.bg-unit-secondary .widget-region-two,
+.widget-column-options.bg-unit-secondary .widget-region-three {
   background-color: var(--color-secondary);
 }
 
-.bg-unit-tertiary:not(.widget-card),
-.widget-card.bg-unit-tertiary .ubc-card {
+.bg-unit-tertiary:not(.widget-card, .widget-column-options),
+.widget-card.bg-unit-tertiary .ubc-card,
+.widget-column-options.bg-unit-tertiary .widget-region-one,
+.widget-column-options.bg-unit-tertiary .widget-region-two,
+.widget-column-options.bg-unit-tertiary .widget-region-three {
   background-color: var(--color-tertiary);
 }
 
-.bg-unit-accent:not(.widget-card),
-.widget-card.bg-unit-accent .ubc-card {
+.bg-unit-accent:not(.widget-card, .widget-column-options),
+.widget-card.bg-unit-accent .ubc-card,
+.widget-column-options.bg-unit-accent .widget-region-one,
+.widget-column-options.bg-unit-accent .widget-region-two,
+.widget-column-options.bg-unit-accent .widget-region-three {
   background-color: var(--color-accent);
 }
 
-.bg-white:not(.widget-card),
-.widget-card.bg-white .ubc-card {
+.bg-white:not(.widget-card, .widget-column-options),
+.widget-card.bg-white .ubc-card,
+.widget-column-options.bg-white .widget-region-one,
+.widget-column-options.bg-white .widget-region-two,
+.widget-column-options.bg-white .widget-region-three {
   background-color: #fff;
 }
 
-.bg-grey-100:not(.widget-card),
-.widget-card.bg-grey-100 .ubc-card {
+.bg-grey-100:not(.widget-card, .widget-column-options),
+.widget-card.bg-grey-100 .ubc-card,
+.widget-column-options.bg-grey-100 .widget-region-one,
+.widget-column-options.bg-grey-100 .widget-region-two,
+.widget-column-options.bg-grey-100 .widget-region-three {
   background-color: #f5f5f5;
 }
 
-.bg-ubc-blue:not(.widget-card),
-.widget-card.bg-ubc-blue .ubc-card {
+.bg-ubc-blue:not(.widget-card, .widget-column-options),
+.widget-card.bg-ubc-blue .ubc-card,
+.widget-column-options.bg-ubc-blue .widget-region-one,
+.widget-column-options.bg-ubc-blue .widget-region-two,
+.widget-column-options.bg-ubc-blue .widget-region-three {
   background-color: #002145;
 }
 
-.bg-ubc-blue-sea:not(.widget-card),
-.widget-card.bg-ubc-blue-sea .ubc-card {
+.bg-ubc-blue-sea:not(.widget-card, .widget-column-options),
+.widget-card.bg-ubc-blue-sea .ubc-card,
+.widget-column-options.bg-ubc-blue-sea .widget-region-one,
+.widget-column-options.bg-ubc-blue-sea .widget-region-two,
+.widget-column-options.bg-ubc-blue-sea .widget-region-three {
   background-color: #003A79;
 }
 
-.bg-ubc-blue-cobalt:not(.widget-card),
-.widget-card.bg-ubc-blue-cobalt .ubc-card {
+.bg-ubc-blue-cobalt:not(.widget-card, .widget-column-options),
+.widget-card.bg-ubc-blue-cobalt .ubc-card,
+.widget-column-options.bg-ubc-blue-cobalt .widget-region-one,
+.widget-column-options.bg-ubc-blue-cobalt .widget-region-two,
+.widget-column-options.bg-ubc-blue-cobalt .widget-region-three {
   background-color: #0055b7;
 }
 
-.bg-ubc-blue-neptune:not(.widget-card),
-.widget-card.bg-ubc-blue-neptune .ubc-card {
+.bg-ubc-blue-neptune:not(.widget-card, .widget-column-options),
+.widget-card.bg-ubc-blue-neptune .ubc-card,
+.widget-column-options.bg-ubc-blue-neptune .widget-region-one,
+.widget-column-options.bg-ubc-blue-neptune .widget-region-two,
+.widget-column-options.bg-ubc-blue-neptune .widget-region-three {
   background-color: #40b4e5;
 }
 
-.bg-ubc-blue-cornflower:not(.widget-card),
-.widget-card.bg-ubc-blue-cornflower .ubc-card {
+.bg-ubc-blue-cornflower:not(.widget-card, .widget-column-options),
+.widget-card.bg-ubc-blue-cornflower .ubc-card,
+.widget-column-options.bg-ubc-blue-cornflower .widget-region-one,
+.widget-column-options.bg-ubc-blue-cornflower .widget-region-two,
+.widget-column-options.bg-ubc-blue-cornflower .widget-region-three {
   background-color: #97d4e9;
 }
 
-.bg-ubc-blue-polar:not(.widget-card),
-.widget-card.bg-ubc-blue-polar .ubc-card {
+.bg-ubc-blue-polar:not(.widget-card, .widget-column-options),
+.widget-card.bg-ubc-blue-polar .ubc-card,
+.widget-column-options.bg-ubc-blue-polar .widget-region-one,
+.widget-column-options.bg-ubc-blue-polar .widget-region-two,
+.widget-column-options.bg-ubc-blue-polar .widget-region-three {
   background-color: #def1f8;
 }
 
-.bg-ubc-blue-frost:not(.widget-card),
-.widget-card.bg-ubc-blue-frost .ubc-card {
+.bg-ubc-blue-frost:not(.widget-card, .widget-column-options),
+.widget-card.bg-ubc-blue-frost .ubc-card,
+.widget-column-options.bg-ubc-blue-frost .widget-region-one,
+.widget-column-options.bg-ubc-blue-frost .widget-region-two,
+.widget-column-options.bg-ubc-blue-frost .widget-region-three {
   background-color: #f6fbfd;
 }

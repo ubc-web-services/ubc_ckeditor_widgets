@@ -14,6 +14,9 @@ import UbcColumnsThreeUI from './ubccolumnsthreeui';
 import UbcColumnsThreeToolbar from './ubccolumnsthreetoolbar';
 import UbcColumnsThreeGap from './ubccolumnsthreegap';
 import UbcColumnsThreeKeyline from './ubccolumnsthreekeyline';
+import UbcColumnsThreeBackground from './ubccolumnsthreebackground';
+import UbcColumnsThreePadding from './ubccolumnsthreepadding';
+import UbcColumnsThreeShadow from './ubccolumnsthreeshadow';
 import UbcColumnsThreeMargin from './ubccolumnsthreemargin';
 import UbcColumnsThreeLayout from './ubccolumnsthreelayout';
 import {
@@ -30,6 +33,9 @@ export default class UbcColumnsThree extends Plugin {
       UbcColumnsThreeUI,
       UbcColumnsThreeToolbar,
       UbcColumnsThreeGap,
+      UbcColumnsThreeBackground,
+      UbcColumnsThreeShadow,
+      UbcColumnsThreePadding,
       UbcColumnsThreeKeyline,
       UbcColumnsThreeMargin,
       UbcColumnsThreeLayout

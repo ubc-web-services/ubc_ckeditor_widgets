@@ -8,7 +8,8 @@ import {
 } from 'ckeditor5/src/core';
 import {
   defaultColumnsFourStyles,
-  defaultColumnsGapStyle
+  defaultColumnsGapStyle,
+  defaultColumnsExtraStyles
 } from '../../../config/config';
 
 export default class UbcColumnsFourCommand extends Command {
@@ -76,16 +77,16 @@ function createUbcColumnsFour(writer) {
   const ubcColumnsFour = writer.createElement('ubcColumnsFour', defaultColumnsFourStyles, {
     class: 'widget-column-options widget-columns-4 align-equal'
   });
-  const firstColumn = writer.createElement('ubcColumnsFourColumn', {
+  const firstColumn = writer.createElement('ubcColumnsFourColumn', defaultColumnsExtraStyles, {
     class: 'widget-region-one first-child--mt-0'
   });
-  const secondColumn = writer.createElement('ubcColumnsFourColumn', {
+  const secondColumn = writer.createElement('ubcColumnsFourColumn', defaultColumnsExtraStyles, {
     class: 'widget-region-two first-child--mt-0'
   });
-  const thirdColumn = writer.createElement('ubcColumnsFourColumn', {
+  const thirdColumn = writer.createElement('ubcColumnsFourColumn', defaultColumnsExtraStyles, {
     class: 'widget-region-three first-child--mt-0'
   });
-  const fourthColumn = writer.createElement('ubcColumnsFourColumn', {
+  const fourthColumn = writer.createElement('ubcColumnsFourColumn', defaultColumnsExtraStyles, {
     class: 'widget-region-four first-child--mt-0'
   });
   const wrapper = writer.createElement('ubcColumnsFourWrapper', defaultColumnsGapStyle, {

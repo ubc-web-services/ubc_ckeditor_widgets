@@ -19,6 +19,7 @@ ubc_ckeditor_widgets.ui:
       css/text.color.css: { }
   js:
     js/functional/ubcAccordion.ui.js: { }
+    js/functional/ubcColumn.ui.js: { }
   dependencies:
     - core/drupal
     - core/drupalSettings

@@ -159,11 +159,12 @@ export default class UbcColumnsThreeEditing extends Plugin {
     // <ubcColumnsThreeColumn> model, provided it is a child element of <ubcColumnsThree>,
     // as required by the schema.
     conversion.for('upcast').elementToElement({
-      model: (viewElement, { writer }) => {
+      /* model: (viewElement, { writer }) => {
         return writer.createElement('ubcColumnsThreeColumn', {
             class: viewElement.getAttribute('class')
         });
-      },
+      }, */
+      model: 'ubcColumnsThreeColumn',
       view: {
         name: 'div',
         classes: ['first-child--mt-0'],
