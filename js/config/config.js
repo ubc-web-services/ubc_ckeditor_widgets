@@ -96,3 +96,9 @@ export const defaultColumnsTwoStyles = {
 export const defaultColumnsGapStyle = {
     'gapclass': 'gap-6'
 };
+
+export const defaultColumnsExtraStyles = {
+    'paddingclass': 'p-0',
+    'backgroundclass': 'bg-transparent',
+    'shadowclass': 'drop-shadow-none'
+};

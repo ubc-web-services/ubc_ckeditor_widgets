@@ -164,11 +164,7 @@ export default class UbcColumnsFourEditing extends Plugin {
     // <ubcColumnsFourColumn> model, provided it is a child element of <ubcColumnsFour>,
     // as required by the schema.
     conversion.for('upcast').elementToElement({
-      model: (viewElement, { writer }) => {
-        return writer.createElement('ubcColumnsFourColumn', {
-            class: viewElement.getAttribute('class')
-        });
-      },
+      model: 'ubcColumnsFourColumn',
       view: {
         name: 'div',
         classes: ['first-child--mt-0'],

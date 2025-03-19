@@ -30,10 +30,16 @@
   content: 'Four Columns';
 }
 
+/* if a background colour is assigned, the columns display as cards, so we want to display them as a grid */
+.widget-column-options .widget--md--grid:not(:has(.bg-transparent)) {
+  display: grid;
+}
+
 /* General styles for columns */
 @media (max-width: 767px) {
 
-  .widget-column-options .first-child--mt-0> :first-child {
+  /* if a background colour is not assigned, we want the content to flow with the default margin-top */
+  .widget-column-options .first-child--mt-0.bg-transparent> :first-child {
     margin-top: 1.625rem;
   }
 

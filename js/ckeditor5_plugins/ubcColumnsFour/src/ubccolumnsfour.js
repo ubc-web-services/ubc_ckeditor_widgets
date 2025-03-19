@@ -13,6 +13,9 @@ import UbcColumnsFourEditing from './ubccolumnsfourediting';
 import UbcColumnsFourUI from './ubccolumnsfourui';
 import UbcColumnsFourToolbar from './ubccolumnsfourtoolbar';
 import UbcColumnsFourGap from './ubccolumnsfourgap';
+import UbcColumnsFourBackground from './ubccolumnsfourbackground';
+import UbcColumnsFourPadding from './ubccolumnsfourpadding';
+import UbcColumnsFourShadow from './ubccolumnsfourshadow';
 import UbcColumnsFourKeyline from './ubccolumnsfourkeyline';
 import UbcColumnsFourMargin from './ubccolumnsfourmargin';
 import {
@@ -29,6 +32,9 @@ export default class UbcColumnsFour extends Plugin {
       UbcColumnsFourUI,
       UbcColumnsFourToolbar,
       UbcColumnsFourGap,
+      UbcColumnsFourBackground,
+      UbcColumnsFourShadow,
+      UbcColumnsFourPadding,
       UbcColumnsFourMargin,
       UbcColumnsFourKeyline
     ];

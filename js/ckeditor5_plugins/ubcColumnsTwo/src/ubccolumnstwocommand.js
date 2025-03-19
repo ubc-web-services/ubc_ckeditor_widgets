@@ -8,7 +8,8 @@ import {
 } from 'ckeditor5/src/core';
 import {
   defaultColumnsTwoStyles,
-  defaultColumnsGapStyle
+  defaultColumnsGapStyle,
+  defaultColumnsExtraStyles,
 } from '../../../config/config';
 
 export default class UbcColumnsTwoCommand extends Command {
@@ -77,10 +78,10 @@ function createUbcColumnsTwo(writer) {
   const ubcColumnsTwo = writer.createElement('ubcColumnsTwo', defaultColumnsTwoStyles, {
     class: 'widget-column-options widget-columns-2'
   });
-  const firstColumn = writer.createElement('ubcColumnsTwoColumn', {
+  const firstColumn = writer.createElement('ubcColumnsTwoColumn', defaultColumnsExtraStyles, {
     class: 'widget-region-one first-child--mt-0'
   });
-  const secondColumn = writer.createElement('ubcColumnsTwoColumn', {
+  const secondColumn = writer.createElement('ubcColumnsTwoColumn', defaultColumnsExtraStyles, {
     class: 'widget-region-two first-child--mt-0'
   });
   const wrapper = writer.createElement('ubcColumnsTwoWrapper', defaultColumnsGapStyle, {
