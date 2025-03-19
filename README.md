@@ -18,6 +18,56 @@ faster.
 After installing dependencies, plugins can be built with `yarn build` or `yarn
 watch`. They will be built to `js/build/{pluginNameDirectory}.js`.  co
 
+##  Custom Styles
+
+Custom styles can be added to the widget dropdowns via the configuration form at:
+/admin/config/content/ubc-ckeditor-widgets
+
+###  Styles per widget
+The following style / widget combinations are supported:
+
+| Widget | Background Colour | Padding | Margin | Gap | Shadow | 2 Column Layout | 3 Column Layout | Table Styles | Table Column Width |
+|---|---|---|---|---|---|---|---|---|---|
+| Accordion | | | | | | | | | |
+| Accordion Toggle| | | | | | | | | |
+| Card: Horizontal | &check; | | &check; | | &check; | | | | |
+| Card: Vertical (1) | &check; | | &check; | | &check; | | | | |
+| Card: Vertical (2) | &check; | | &check; | &check; | &check; | | | | |
+| Card: Vertical (3) | &check; | | &check; | &check; | &check; | | | | |
+| Colour Box| &check; | &check; | &check; | | &check; | | | | |
+| Columns (2) | &check; | &check; | &check; | &check; | &check; | &check; | | | |
+| Columns (3) | &check; | &check; | &check; | &check; | &check; | | &check; | | |
+| Columns (4) | &check; | &check; | &check; | &check; | &check; | | | | |
+| Table Class | | | | | | | | &check; | |
+| Table Cell Class | | | | | | | | | &check; |
+
+###  Custom style prefixes
+To add custom styles, you must ensure your custom class maintains the following prefixes (`.prefix-[customclass]`):
+
+| Widget | Required Prefix |
+|---|---|
+| Background Colour | `bg-` |
+| Gap | `gap-` |
+| Margin | `m-` |
+| Padding | `p-` |
+| Shadow | custom styles not supported |
+| 2 Column Layout | `align-` |
+| 3 Column Layout | `align-` |
+| Table Styles | `table-` |
+| Table Column Width | `w-` |
+
+###  Adding Custom Style Support to the Theme
+There are two parts to this. You need to provide your custom styles to the theme and to the editor.
+
+1. THEME - these styles are added to your main stylesheet - that will be sufficent to have the applied styles reflected correctly.
+
+2. EDITOR - create a separate stylesheet that contains your custom widget styles. To ensure the styles don't leak into your admin theme, it is recommended to that you prefix every style with the class `.ck-editor `, ending up with something like `.ck-editor .bg-myclass`. You can then reference this stylesheet in your [theme].info file like so:
+
+```
+ckeditor5-stylesheets:
+	- css/customeditorstyles.css
+```
+
 ## CKEditor 5 widgets
 
 ### Goals:
