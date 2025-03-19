@@ -34,6 +34,7 @@
               let target = accordion.querySelector('.js-reveal__target');
               btn.setAttribute('aria-expanded', 'true');
               btn.classList.add('is-open');
+              accordion.classList.add('is-open');
               item.classList.add('is-open');
               target.removeAttribute('hidden');
               target.animate([
@@ -51,6 +52,7 @@
               let target = accordion.querySelector('.js-reveal__target');
               btn.setAttribute('aria-expanded', 'false');
               btn.classList.remove('is-open');
+              accordion.classList.remove('is-open');
               item.classList.remove('is-open');
               target.setAttribute('hidden', '');
             });
