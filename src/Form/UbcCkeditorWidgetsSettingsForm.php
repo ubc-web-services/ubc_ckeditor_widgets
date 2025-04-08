@@ -53,28 +53,28 @@ class UbcCkeditorWidgetsSettingsForm extends ConfigFormBase
         '#type' => 'color',
         '#title' => $this->t('Pick the colour to use as <b>Unit Primary</b>'),
         '#default_value' => $config->get('primary_color'),
-        '#description' => $this->t('This will be the colour applied to the widget as <code>unit-primary</code>')
+        '#description' => $this->t('This will be the colour applied to the widget as <code>unit-primary</code> using the <code>--color-primary</code> CSS variable.')
         ];
 
         $form['general']['secondary_color'] = [
         '#type' => 'color',
         '#title' => $this->t('Pick the colour to use as <b>Unit Secondary</b>'),
         '#default_value' => $config->get('secondary_color'),
-        '#description' => $this->t('This will be the colour applied to the widget as <code>unit-secondary</code>')
+        '#description' => $this->t('This will be the colour applied to the widget as <code>unit-secondary</code> using the <code>--color-secondary</code> CSS variable.')
         ];
 
         $form['general']['tertiary_color'] = [
         '#type' => 'color',
         '#title' => $this->t('Pick the colour to use as <b>Unit Tertiary</b>'),
         '#default_value' => $config->get('tertiary_color'),
-        '#description' => $this->t('This will be the colour applied to the widget as <code>unit-tertiary</code>')
+        '#description' => $this->t('This will be the colour applied to the widget as <code>unit-tertiary</code> using the <code>--color-tertiary</code> CSS variable.')
         ];
 
         $form['general']['accent_color'] = [
         '#type' => 'color',
         '#title' => $this->t('Pick the colour to use as <b>Unit Accent</b>'),
         '#default_value' => $config->get('accent_color'),
-        '#description' => $this->t('This will be the colour applied to the widget as <code>unit-accent</code>')
+        '#description' => $this->t('This will be the colour applied to the widget as <code>unit-accent</code> using the <code>--color-accent</code> CSS variable.')
         ];
 
         $form['background_colors'] = [
