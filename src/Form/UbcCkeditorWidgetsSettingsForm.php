@@ -43,7 +43,10 @@ class UbcCkeditorWidgetsSettingsForm extends ConfigFormBase
         '#title' => t('Colour Settings'),
         '#open' => true,
         '#group' => 'color',
-        '#description' => $this->t('These colours will define some of the widget background colour values in the widget dropdowns')
+        '#description' => $this->t('These colours will define some of the widget background colour values in the default widget dropdowns. Each colour will be added to the page head as a <a href=":url2">CSS Variable</a>. You can <a href=":url2">check current compatability at caniuse.com</a>', [
+            ':url' => 'https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascading_variables/Using_CSS_custom_properties',
+            ':url2' => 'https://caniuse.com/css-variables',
+            ]),
         ];
 
         $form['general']['primary_color'] = [
