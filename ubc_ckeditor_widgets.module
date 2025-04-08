@@ -80,6 +80,30 @@ function ubc_ckeditor_widgets_page_attachments_alter(array &$page) {
 }
 
 /**
+ * Implements hook_page_attachments().
+ */
+function ubc_ckeditor_widgets_page_attachments(array &$attachments) {
+  $config = \Drupal::config('ubc_ckeditor_widgets.settings');
+  $primary_color = $config->get('primary_color') ?? '#002145';
+  $secondary_color = $config->get('secondary_color') ?? '#e0e0e0';
+  $tertiary_color = $config->get('tertiary_color') ?? '#def1f8';
+  $accent_color = $config->get('accent_color') ?? '#003a79';
+  $attachments['#attached']['html_head'][] = [
+    [
+      '#type' => 'html_tag',
+      '#tag' => 'style',
+      '#value' => ':root {
+        --color-primary: ' . $primary_color . ' !important;
+        --color-secondary: ' . $secondary_color . ' !important;
+        --color-tertiary: ' . $tertiary_color . ' !important;
+        --color-accent: ' . $accent_color . ' !important;
+      }',
+    ],
+    'ubc_ckeditor_widgets_inline_styles',
+  ];
+}
+
+/**
  * Converts a snake_case string to camelCase.
  *
  * @param string $string

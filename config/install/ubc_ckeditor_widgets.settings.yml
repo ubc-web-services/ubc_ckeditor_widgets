@@ -7,3 +7,7 @@ table_styles: "table--nostyle|None\r\ntable--plain|Plain\r\ntable--condensed|Con
 three_column_layout_styles: "align-equal|Equal Width\r\nalign-large-left|Align Large Left\r\nalign-large-center|Align Large Center\r\nalign-large-right|Align Large Right"
 two_column_layout_styles: "align-equal|Equal Width\r\nalign-large-left|Align Large Left\r\nalign-large-right|Align Large Right"
 width_styles: "w-auto|Column width: Auto\r\nw-half|Column width: 1/2\r\nw-one-third|Column width: 1/3\r\nw-one-quarter|Column width: 1/4\r\nw-one-fifth|Column width: 1/5\r\nw-one-sixth|Column width: 1/6"
+primary_color: '#002145'
+secondary_color: '#e0e0e0'
+tertiary_colour: '#def1f8'
+accent_colour: '#003a79'
