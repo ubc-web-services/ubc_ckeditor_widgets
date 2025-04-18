@@ -90,29 +90,31 @@ function ubc_ckeditor_widgets_page_attachments(array &$attachments) {
   $secondary_color = $config->get('secondary_color') ?? '#e0e0e0';
   $tertiary_color = $config->get('tertiary_color') ?? '#def1f8';
   $accent_color = $config->get('accent_color') ?? '#003a79';
-  // Convert hex to RGB array
-  if ($primary_color && $rgb_array = Color::hexToRgb($primary_color)) {
-    // Convert array to string. ie: "255, 102, 0".
-    $primary_color = implode(', ', $rgb_array);
+
+  /* map form values to variable names */
+  $color_keys = [
+    $primary_color => 'color-primary',
+    $secondary_color => 'color-secondary',
+    $tertiary_color => 'color-tertiary',
+    $accent_color => 'color-accent',
+  ];
+  $css_variables = [];
+  /* get values and convert to rgb */
+  foreach ($color_keys as $theme_key => $variable_name) {
+    $hex = $theme_key;
+    if ($hex && $rgb = Color::hexToRgb($hex)) {
+      $rgb_string = implode(', ', $rgb);
+      $variables[$variable_name] = $rgb_string;
+      $css_variables[] = "--$variable_name: rgba($rgb_string, 1) !important;";
+    }
   }
-  if ($secondary_color && $rgb_array = Color::hexToRgb($secondary_color)) {
-    $secondary_color = implode(', ', $rgb_array);
-  }
-  if ($tertiary_color && $rgb_array = Color::hexToRgb($tertiary_color)) {
-    $tertiary_color = implode(', ', $rgb_array);
-  }
-  if ($accent_color && $rgb_array = Color::hexToRgb($accent_color)) {
-    $accent_color = implode(', ', $rgb_array);
-  }
+
   $attachments['#attached']['html_head'][] = [
     [
       '#type' => 'html_tag',
       '#tag' => 'style',
       '#value' => ':root {
-        --color-primary: rgba(' . $primary_color . ', 1) !important;
-        --color-secondary: rgba(' . $secondary_color . ', 1) !important;
-        --color-tertiary: rgba(' . $tertiary_color . ', 1) !important;
-        --color-accent: rgba(' . $accent_color . ', 1) !important;
+        ' . implode(' ', $css_variables) . '
       }',
     ],
     'ubc_ckeditor_widgets_inline_styles',
