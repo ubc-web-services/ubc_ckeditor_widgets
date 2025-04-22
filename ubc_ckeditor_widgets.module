@@ -105,7 +105,7 @@ function ubc_ckeditor_widgets_page_attachments(array &$attachments) {
     if ($hex && $rgb = Color::hexToRgb($hex)) {
       $rgb_string = implode(', ', $rgb);
       $variables[$variable_name] = $rgb_string;
-      $css_variables[] = "--$variable_name: rgba($rgb_string, 1) !important;";
+      $css_variables[] = "--$variable_name: rgba($rgb_string, 1) !important;--unit-$variable_name:$rgb_string;";
     }
   }
 
