@@ -48,7 +48,7 @@ To add custom styles, you must ensure your custom class maintains the following 
 |---|---|
 | Background Colour | `bg-` |
 | Gap | `gap-` |
-| Margin | `m-` |
+| Margin | `my-` |
 | Padding | `p-` |
 | Shadow | custom styles not supported |
 | 2 Column Layout | `align-` |
