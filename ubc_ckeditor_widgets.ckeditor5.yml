@@ -324,7 +324,7 @@ ubc_ckeditor_widgets_ubctableclass:
       - <figure>
       - <figure class="responsive-figure-table" aria-live>
       - <table>
-      - <table class="table--plain table--condensed table--striped table--hover">
+      - <table class="table--*">
     conditions:
       plugins: [ ckeditor5_table ]
 
@@ -340,8 +340,8 @@ ubc_ckeditor_widgets_ubctablecellclass:
     library: ubc_ckeditor_widgets/ubc_table_cell
     elements:
       - <th>
-      - <th class="w-half w-one-third w-one-quarter w-one-fifth w-one-sixth">
+      - <th class="w-*">
       - <td>
-      - <td class="w-half w-one-third w-one-quarter w-one-fifth w-one-sixth">
+      - <td class="w-*">
     conditions:
       plugins: [ ckeditor5_table ]
