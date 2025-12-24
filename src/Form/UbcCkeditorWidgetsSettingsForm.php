@@ -38,6 +38,45 @@ class UbcCkeditorWidgetsSettingsForm extends ConfigFormBase
     {
         $config = $this->config('ubc_ckeditor_widgets.settings');
 
+        $form['general'] = [
+        '#type' => 'details',
+        '#title' => t('Colour Settings'),
+        '#open' => true,
+        '#group' => 'color',
+        '#description' => $this->t('These colours will define some of the widget background colour values in the default widget dropdowns. Each colour will be added to the page head as a <a href=":url2">CSS Variable</a>. You can <a href=":url2">check current compatability at caniuse.com</a>', [
+            ':url' => 'https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascading_variables/Using_CSS_custom_properties',
+            ':url2' => 'https://caniuse.com/css-variables',
+            ]),
+        ];
+
+        $form['general']['primary_color'] = [
+        '#type' => 'color',
+        '#title' => $this->t('Pick the colour to use as <b>Unit Primary</b>'),
+        '#default_value' => $config->get('primary_color'),
+        '#description' => $this->t('This will be the colour applied to the widget as <code>unit-primary</code> using the <code>--color-primary</code> CSS variable.')
+        ];
+
+        $form['general']['secondary_color'] = [
+        '#type' => 'color',
+        '#title' => $this->t('Pick the colour to use as <b>Unit Secondary</b>'),
+        '#default_value' => $config->get('secondary_color'),
+        '#description' => $this->t('This will be the colour applied to the widget as <code>unit-secondary</code> using the <code>--color-secondary</code> CSS variable.')
+        ];
+
+        $form['general']['tertiary_color'] = [
+        '#type' => 'color',
+        '#title' => $this->t('Pick the colour to use as <b>Unit Tertiary</b>'),
+        '#default_value' => $config->get('tertiary_color'),
+        '#description' => $this->t('This will be the colour applied to the widget as <code>unit-tertiary</code> using the <code>--color-tertiary</code> CSS variable.')
+        ];
+
+        $form['general']['accent_color'] = [
+        '#type' => 'color',
+        '#title' => $this->t('Pick the colour to use as <b>Unit Accent</b>'),
+        '#default_value' => $config->get('accent_color'),
+        '#description' => $this->t('This will be the colour applied to the widget as <code>unit-accent</code> using the <code>--color-accent</code> CSS variable.')
+        ];
+
         $form['background_colors'] = [
         '#type' => 'textarea',
         '#title' => $this->t('Add a set of background color classes'),
@@ -104,6 +143,10 @@ class UbcCkeditorWidgetsSettingsForm extends ConfigFormBase
     {
         $config = $this->config('ubc_ckeditor_widgets.settings');
         $values = $form_state->getValues();
+        $config->set('primary_color', $form_state->getValue('primary_color'));
+        $config->set('secondary_color', $form_state->getValue('secondary_color'));
+        $config->set('tertiary_color', $form_state->getValue('tertiary_color'));
+        $config->set('accent_color', $form_state->getValue('accent_color'));
         $config->set('background_colors', $values['background_colors']);
         $config->set('gap_styles', $values['gap_styles']);
         $config->set('margin_styles', $values['margin_styles']);

@@ -3,13 +3,16 @@
  */
 
 import {
-  Plugin,
-  icons
+  Plugin
 } from 'ckeditor5/src/core';
 import {
   ButtonView,
   ContextualBalloon
 } from 'ckeditor5/src/ui';
+import objectLeft from '../../../../../icons/iconAlignleft.svg';
+import objectRight from '../../../../../icons/iconAlignright.svg';
+import objectCenter from '../../../../../icons/iconAligncenter.svg';
+import objectFullWidth from '../../../../../icons/iconFullwidth.svg';
 
 export default class UbcColorBoxAlignUI extends Plugin {
 
@@ -36,7 +39,7 @@ export default class UbcColorBoxAlignUI extends Plugin {
       // Create the toolbar button.
       buttonView.set({
         label: editor.t('Full Width'),
-        icon: icons.objectFullWidth,
+        icon: objectFullWidth,
         tooltip: true,
         class: 'cke5-ubccolorbox-align-full-button',
       });
@@ -58,7 +61,7 @@ export default class UbcColorBoxAlignUI extends Plugin {
       // Create the toolbar button.
       buttonView.set({
         label: editor.t('Align left and wrap text'),
-        icon: icons.objectLeft,
+        icon: objectLeft,
         tooltip: true,
         class: 'cke5-ubccolorbox-align-left-button',
       });
@@ -80,7 +83,7 @@ export default class UbcColorBoxAlignUI extends Plugin {
       // Create the toolbar button.
       buttonView.set({
         label: editor.t('Align Center'),
-        icon: icons.objectCenter,
+        icon: objectCenter,
         tooltip: true,
         class: 'cke5-ubccolorbox-align-center-button',
       });
@@ -102,7 +105,7 @@ export default class UbcColorBoxAlignUI extends Plugin {
       // Create the toolbar button.
       buttonView.set({
         label: editor.t('Align right and wrap text'),
-        icon: icons.objectRight,
+        icon: objectRight,
         tooltip: true,
         class: 'cke5-ubccolorbox-align-right-button',
       });

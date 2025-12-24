@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\Component\Utility\Color;
+
 /**
  * @file
  * Contains ubc_ckeditor_widgets.module.
@@ -77,6 +79,46 @@ function ubc_ckeditor_widgets_page_attachments_alter(array &$page) {
     $page['#attached']['drupalSettings']['ubcCkeditorWidgets'] = $settings;
   }
 
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function ubc_ckeditor_widgets_page_attachments(array &$attachments) {
+  $config = \Drupal::config('ubc_ckeditor_widgets.settings');
+  $primary_color = $config->get('primary_color') ?? '#002145';
+  $secondary_color = $config->get('secondary_color') ?? '#e0e0e0';
+  $tertiary_color = $config->get('tertiary_color') ?? '#def1f8';
+  $accent_color = $config->get('accent_color') ?? '#003a79';
+
+  /* map form values to variable names */
+  $color_keys = [
+    $primary_color => 'color-primary',
+    $secondary_color => 'color-secondary',
+    $tertiary_color => 'color-tertiary',
+    $accent_color => 'color-accent',
+  ];
+  $css_variables = [];
+  /* get values and convert to rgb */
+  foreach ($color_keys as $theme_key => $variable_name) {
+    $hex = $theme_key;
+    if ($hex && $rgb = Color::hexToRgb($hex)) {
+      $rgb_string = implode(', ', $rgb);
+      $variables[$variable_name] = $rgb_string;
+      $css_variables[] = "--$variable_name: rgba($rgb_string, 1) !important;--unit-$variable_name:$rgb_string;";
+    }
+  }
+
+  $attachments['#attached']['html_head'][] = [
+    [
+      '#type' => 'html_tag',
+      '#tag' => 'style',
+      '#value' => ':root {
+        ' . implode(' ', $css_variables) . '
+      }',
+    ],
+    'ubc_ckeditor_widgets_inline_styles',
+  ];
 }
 
 /**
