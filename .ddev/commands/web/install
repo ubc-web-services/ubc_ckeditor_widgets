@@ -6,4 +6,4 @@
 
 vendor/bin/drush site:install --yes
 vendor/bin/drush pm:install ubc_ckeditor_widgets --yes
-vendor/bin/drush user:password admin admin --yes
+vendor/bin/drush uli
