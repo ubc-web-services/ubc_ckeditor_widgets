@@ -20,6 +20,7 @@ ubc_ckeditor_widgets_ubcaccordion:
     library: ubc_ckeditor_widgets/ubc_accordion
     # The library loaded when configuring the text format using this plugin.
     admin_library: ubc_ckeditor_widgets/ubc_accordion.admin
+    class: Drupal\ubc_ckeditor_widgets\Plugin\CKEditor5Plugin\UbcAccordion
     toolbar_items:
       # This should match the name of the corresponding plugin exported in the
       # plugin's index.js.
@@ -44,6 +45,7 @@ ubc_ckeditor_widgets_ubcaccordiontoggle:
     label: Accordion Toggle
     library: ubc_ckeditor_widgets/ubc_accordion_toggle
     admin_library: ubc_ckeditor_widgets/ubc_accordion_toggle.admin
+    class: Drupal\ubc_ckeditor_widgets\Plugin\CKEditor5Plugin\UbcAccordionToggle
     toolbar_items:
       UbcAccordionToggle:
         label: Accordion Toggle
@@ -69,6 +71,7 @@ ubc_ckeditor_widgets_ubccardhorizontal:
     label: Horizontal Card
     library: ubc_ckeditor_widgets/ubc_card_horizontal
     admin_library: ubc_ckeditor_widgets/ubc_card_horizontal.admin
+    class: Drupal\ubc_ckeditor_widgets\Plugin\CKEditor5Plugin\UbcCardHorizontal
     toolbar_items:
       UbcCardHorizontal:
         label: Horizontal Card
@@ -102,6 +105,7 @@ ubc_ckeditor_widgets_ubccardverticalone:
     label: Vertical Card
     library: ubc_ckeditor_widgets/ubc_card_vertical_one
     admin_library: ubc_ckeditor_widgets/ubc_card_vertical_one.admin
+    class: Drupal\ubc_ckeditor_widgets\Plugin\CKEditor5Plugin\UbcCardVerticalOne
     toolbar_items:
       UbcCardVerticalOne:
         label: Vertical Card
@@ -137,6 +141,7 @@ ubc_ckeditor_widgets_ubccardverticaltwo:
     label: Two Vertical Cards
     library: ubc_ckeditor_widgets/ubc_card_vertical_two
     admin_library: ubc_ckeditor_widgets/ubc_card_vertical_two.admin
+    class: Drupal\ubc_ckeditor_widgets\Plugin\CKEditor5Plugin\UbcCardVerticalTwo
     toolbar_items:
       UbcCardVerticalTwo:
         label: Two Vertical Cards
@@ -172,6 +177,7 @@ ubc_ckeditor_widgets_ubccardverticalthree:
     label: Three Vertical Cards
     library: ubc_ckeditor_widgets/ubc_card_vertical_three
     admin_library: ubc_ckeditor_widgets/ubc_card_vertical_three.admin
+    class: Drupal\ubc_ckeditor_widgets\Plugin\CKEditor5Plugin\UbcCardVerticalThree
     toolbar_items:
       UbcCardVerticalThree:
         label: Three Vertical Cards
@@ -212,6 +218,7 @@ ubc_ckeditor_widgets_ubccolorbox:
     label: Color Box
     library: ubc_ckeditor_widgets/ubc_color_box
     admin_library: ubc_ckeditor_widgets/ubc_color_box.admin
+    class: Drupal\ubc_ckeditor_widgets\Plugin\CKEditor5Plugin\UbcColorBox
     toolbar_items:
       UbcColorBox:
         label: Color Box
@@ -243,6 +250,7 @@ ubc_ckeditor_widgets_ubccolumnstwo:
     label: Two Columns
     library: ubc_ckeditor_widgets/ubc_columns_two
     admin_library: ubc_ckeditor_widgets/ubc_columns_two.admin
+    class: Drupal\ubc_ckeditor_widgets\Plugin\CKEditor5Plugin\UbcColumnsTwo
     toolbar_items:
       UbcColumnsTwo:
         label: Two Columns
@@ -274,6 +282,7 @@ ubc_ckeditor_widgets_ubccolumnsthree:
     label: Three Columns
     library: ubc_ckeditor_widgets/ubc_columns_three
     admin_library: ubc_ckeditor_widgets/ubc_columns_three.admin
+    class: Drupal\ubc_ckeditor_widgets\Plugin\CKEditor5Plugin\UbcColumnsThree
     toolbar_items:
       UbcColumnsThree:
         label: Three Columns
@@ -303,6 +312,7 @@ ubc_ckeditor_widgets_ubccolumnsfour:
     label: Four Columns
     library: ubc_ckeditor_widgets/ubc_columns_four
     admin_library: ubc_ckeditor_widgets/ubc_columns_four.admin
+    class: Drupal\ubc_ckeditor_widgets\Plugin\CKEditor5Plugin\UbcColumnsFour
     toolbar_items:
       UbcColumnsFour:
         label: Four Columns
@@ -320,6 +330,7 @@ ubc_ckeditor_widgets_ubctableclass:
   drupal:
     label: UBC Table Toolbar Items
     library: ubc_ckeditor_widgets/ubc_table
+    class: Drupal\ubc_ckeditor_widgets\Plugin\CKEditor5Plugin\UbcTableClass
     elements:
       - <figure>
       - <figure class="responsive-figure-table" aria-live>
@@ -338,6 +349,7 @@ ubc_ckeditor_widgets_ubctablecellclass:
   drupal:
     label: UBC Table Cell Toolbar Items
     library: ubc_ckeditor_widgets/ubc_table_cell
+    class: Drupal\ubc_ckeditor_widgets\Plugin\CKEditor5Plugin\UbcTableCellClass
     elements:
       - <th>
       - <th class="w-*">
