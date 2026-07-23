@@ -45,7 +45,7 @@ ubc_ckeditor_widgets_ubcaccordiontoggle:
     label: Accordion Toggle
     library: ubc_ckeditor_widgets/ubc_accordion_toggle
     admin_library: ubc_ckeditor_widgets/ubc_accordion_toggle.admin
-    class: Drupal\ubc_ckeditor_widgets\Plugin\CKEditor5Plugin\UbcAccordionToggle
+    class: Drupal\ubc_ckeditor_widgets\Plugin\CKEditor5Plugin\UbcAccordiontoggle
     toolbar_items:
       UbcAccordionToggle:
         label: Accordion Toggle
