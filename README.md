@@ -11,11 +11,11 @@ plugins. Note that requiring `index.js` to be inside
 but a requirement of this starter template that can be changed in
 `webpack.config.js` as needed.
 
-In the module directory, run `yarn install` to set up the necessary assets. The
+In the module directory, run `npm install` to set up the necessary assets. The
 initial run of `install` may take a few minutes, but subsequent builds will be
 faster.
 
-After installing dependencies, plugins can be built with `yarn build` or `yarn
+After installing dependencies, plugins can be built with `npm build` or `npm
 watch`. They will be built to `js/build/{pluginNameDirectory}.js`.  co
 
 ##  Custom Styles
@@ -68,44 +68,7 @@ ckeditor5-stylesheets:
 	- css/customeditorstyles.css
 ```
 
-## CKEditor 5 widgets
-
-### Goals:
-- make editor widgets for CKEditor 5 that retain feature parity tothose from CKEditor 4
-- CKE4 and CKE5 widgets should exist in one module
-- CKE5 widgets from repo #2 and #3 should be moved to repo #1 (can leave repo #2 and #3 as is)
-- final markup in CKE5 widgets should be the same as is currently used by the CKE4 widgets
-
-### Version 4 widget repos:
-1. https://github.com/ubc-web-services/ubc_ckeditor_widgets/tree/vanilla-js
-2. https://github.com/ubc-web-services/ubc-column-options-widget
-3. https://github.com/ubc-web-services/ubc-color-box-widget
-
-### CKE 4 widgets [CKE 5 widget status]:
-- accordion [complete]
-- accordion toggle [complete]
-- card-horizontal [complete]
-- card-one [complete]
-- card-two [complete]
-- card-three [complete]
-- 2 columns [deprecated]
-- 2 columns 1 2 [deprecated]
-- 2 columns 2 1 [deprecated]
-- 3 columns [deprecated]
-- fontawesome icon [deprecated - no cke5 equivalent]
-- 2 columns with options [complete]
-- 3 columns with options [complete]
-- 4 columns with options [complete]
-- Color Box [complete]
-
-## Net new CKE5 widgets:
-- UBC Table Class (adds presentational classes to table elements) [complete]
-- UBC Table Cell Class (adds width classes to TD elements) [complete]
-
 ## CKEditor API
-- v4: https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR.html
-    - custom widget example:
-        - https://ckeditor.com/docs/ckeditor4/latest/examples/simplebox.html
 - v5: https://ckeditor.com/docs/ckeditor5/latest/api/index.html
     - plugin examples:
         - https://ckeditor.com/docs/ckeditor5/latest/framework/guides/plugins/creating-simple-plugin-timestamp.html
