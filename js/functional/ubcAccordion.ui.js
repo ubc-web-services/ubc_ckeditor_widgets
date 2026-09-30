@@ -3,6 +3,7 @@
     attach: function (context, settings) {
       once('widgetAccordions', '.widget-accordion', context).forEach(item => {
         let btn = item.querySelector('.js-reveal__trigger');
+        btn.setAttribute('tabindex', '0');
         btn.setAttribute('role', 'button');
         btn.addEventListener('click', () => {
           let expanded = btn.getAttribute('aria-expanded') === 'true';
