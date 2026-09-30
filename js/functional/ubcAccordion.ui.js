@@ -1,10 +1,38 @@
 (function (Drupal, drupalSettings, once) {
+  'use strict';
+
+  function changeTag(el, newTag) {
+    const newEl = document.createElement(newTag);
+
+    for (const attr of el.attributes) {
+      newEl.setAttribute(attr.name, attr.value);
+    }
+
+    newEl.append(...el.childNodes);
+    el.replaceWith(newEl);
+    return newEl;
+  }
+
+  Drupal.behaviors.divToButton = {
+    attach(context) {
+      once('div-to-button', '.js-reveal__trigger', context).forEach((div) => {
+        const button = changeTag(div, 'button');
+        button.type = 'button';
+
+        // Re-attach any listeners here, since the old div's are lost.
+        button.addEventListener('click', (e) => {
+          // ...
+        });
+      });
+    },
+  };
+
   Drupal.behaviors.ubcAccordionUi = {
     attach: function (context, settings) {
       once('widgetAccordions', '.widget-accordion', context).forEach(item => {
         let btn = item.querySelector('.js-reveal__trigger');
-        btn.setAttribute('tabindex', '0');
-        btn.setAttribute('role', 'button');
+        //btn.setAttribute('tabindex', '0');
+        //btn.setAttribute('role', 'button');
         btn.addEventListener('click', () => {
           let expanded = btn.getAttribute('aria-expanded') === 'true';
           let target = item.querySelector('.js-reveal__target');
