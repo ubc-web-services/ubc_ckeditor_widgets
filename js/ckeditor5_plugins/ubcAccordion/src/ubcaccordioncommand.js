@@ -64,9 +64,7 @@ function createUbcAccordion(writer, attributes) {
   const ubcAccordionTitle = writer.createElement('ubcAccordionTitle', {
     'aria-expanded': true
   });
-  const ubcAccordionDescription = writer.createElement('ubcAccordionDescription', {
-    hidden: null
-  });
+  const ubcAccordionDescription = writer.createElement('ubcAccordionDescription');
   const ubcAccordionTitleWrapper = writer.createElement('ubcAccordionTitleWrapper');
 
   // Append the title and description elements to the ubcAccordion, which matches

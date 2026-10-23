@@ -106,7 +106,6 @@ export default class UbcAccordionEditing extends Plugin {
       isLimit: true,
       allowIn: 'ubcAccordion',
       allowContentOf: '$root',
-      allowAttributes: 'hidden',
     });
 
     schema.addChildCheck((context, childDefinition) => {
