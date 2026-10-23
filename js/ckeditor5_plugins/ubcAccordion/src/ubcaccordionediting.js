@@ -29,7 +29,7 @@ import UbcAccordionCommand from './ubcaccordioncommand';
  *      <h3></h3>
  *    </div>
  *  </div>
- *  <div class="js-reveal__target accordion__content clearfix" hidden>
+ *  <div class="js-reveal__target accordion__content clearfix is-hidden">
  *  </div>
  * </div>
  *
@@ -227,7 +227,7 @@ export default class UbcAccordionEditing extends Plugin {
     });
 
     // Instances of <ubcAccordionDescription> are saved as
-    // <div class="js-reveal__target accordion__content clearfix" hidden>{{inner content}}</div>.
+    // <div class="js-reveal__target accordion__content clearfix">{{inner content}}</div>.
     conversion.for('dataDowncast').elementToElement({
       model: 'ubcAccordionDescription',
       view: (modelElement, {
@@ -236,7 +236,6 @@ export default class UbcAccordionEditing extends Plugin {
         return writer.createContainerElement(
           'div', {
             class: 'js-reveal__target accordion__content clearfix',
-            'hidden': 'hidden',
           },
         );
       },

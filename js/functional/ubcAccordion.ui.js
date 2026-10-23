@@ -37,7 +37,7 @@
           btn.setAttribute('aria-expanded', !expanded);
           btn.classList.toggle('is-open');
           item.classList.toggle('is-open');
-          target.toggleAttribute('hidden');
+          target.classList.toggle('is-hidden');
           target.animate([
             { transition: 'opacity', opacity: '0' },
             { opacity: '100' }
@@ -63,7 +63,7 @@
               btn.classList.add('is-open');
               accordion.classList.add('is-open');
               item.classList.add('is-open');
-              target.removeAttribute('hidden');
+              target.classList.remove('is-hidden');
               target.animate([
                 { transition: 'opacity', opacity: '0' },
                 { opacity: '100' }
@@ -81,7 +81,7 @@
               btn.classList.remove('is-open');
               accordion.classList.remove('is-open');
               item.classList.remove('is-open');
-              target.setAttribute('hidden', '');
+              target.classList.add('is-hidden');
             });
           }
         });

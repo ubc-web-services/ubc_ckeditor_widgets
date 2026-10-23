@@ -55,3 +55,7 @@
 .accordion__trigger button {
   text-align: left;
 }
+
+.accordion__content.is-hidden {
+  display: none;
+}
